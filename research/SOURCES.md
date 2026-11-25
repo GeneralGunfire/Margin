@@ -7,3 +7,8 @@
 ## Physical Sciences
 - DBE, CAPS FET Physical Sciences Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20%20PHYSICAL%20SCIENCE%20WEB.pdf . Read Gr 11 topic sections, assessment, practicals.
 - DBE 2021 Physical Sciences recovery ATP (found, NOT read): https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2021%20ATPs/FET%20Re-arranged/Physical%20Science/English/2021%20PHYSICAL%20SCIENCES%20ATP%20MEDIATION%20GRADE10-12.pdf?ver=2021-01-27-152256-670
+
+## English HL
+- DBE, CAPS FET English Home Language Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20HOME%20_%20ENGLISH%20GR%2010-12%20_%20WEB_5478.pdf . Teaching plan, assessment tables.
+- DBE Gr 10/11 literature exemplars page: https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/Grade10and11LiteratureExemplars.aspx . Links only.
+- WCED circular on DBE E11 of 2024 (found, not opened): https://wcedonline.westerncape.gov.za/circulars/minutes24/CMminutes/DCF/edcf0008-2024.pdf

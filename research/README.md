@@ -5,3 +5,4 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 |---|---|---|---|---|---|---|
 | Pure Maths | done | - | - | - | - | - |
 | Physical Sciences | done | - | - | - | - | - |
+| English HL | done | - | - | - | - | - |
