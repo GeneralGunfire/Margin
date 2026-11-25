@@ -7,7 +7,7 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | Physical Sciences | done | done (physical-sciences-depth.md) | - | - | - | - |
 | English HL | done | done (structure level; set texts unknown) | - | - | - | - |
 | History | done | done (legacy topics only) | - | - | - | - |
-| Business Studies | done | - | - | - | - | - |
+| Business Studies | done | done | - | - | - | - |
 | Tourism | done | - | - | - | - | - |
 | Life Orientation | done | - | - | - | - | - |
 | Religion Studies | done | - | - | - | - | - |
