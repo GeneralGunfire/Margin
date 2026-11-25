@@ -30,7 +30,7 @@ Source: DBE 2023/24 ATP Mathematics Gr 11, https://www.education.gov.za/LinkClic
 - PASS 4 UPDATE: Eastern Cape Gr 11 Nov papers 2024-2026 test Measurement (surface area/volume) as a separate 9-11 mark question in Paper 2 (see past-papers file). Treat Measurement as examinable revision of Gr 10 formulas (prisms, cylinders, cones, pyramids, spheres, composites).
 - Note: the ATP lists Measurement only as "revision" in Term 4 (no new Gr 11 Measurement content found), which supports the UNVERIFIED reading below that Gr 11 measurement is revision.
 - Theorem proofs: up to 12 marks may be asked in Paper 2 (CAPS Grades 11 and 12). Grade 11 may be asked proofs of circle theorems, but not converses; sine, cosine and area rule proofs are examinable.
-- Cognitive levels: Knowledge 20%, routine procedures 35%, complex procedures 30%, problem solving 15% (CAPS standard split; confirm in Pass 4 UNVERIFIED for Gr 11 specifically).
+- Cognitive levels (CAPS, confirmed in the extracted text): approximately 20% knowledge, 35% routine procedures, 30% complex procedures, 15% problem solving.
 - Grade 12 final: Paper 1 and 2, 3 h each, 150 marks each (Gr 12 adds calculus, counting, polynomials, compound angles).
 
 ## 3. Prior knowledge (Grade 10 checklist)
