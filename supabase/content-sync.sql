@@ -141,11 +141,15 @@ insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
 insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/measurement-revision/surface-area-and-volume-formulas', 'pure-mathematics/measurement-revision', 'Surface area and volume formulas', 1211)
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
+insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/number-patterns/linear-patterns-recap', 'pure-mathematics/number-patterns', 'Linear patterns recap', 1101)
+  on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
 insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/number-patterns/problems-and-contexts', 'pure-mathematics/number-patterns', 'Problems and contexts', 1113)
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
 insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/number-patterns/second-differences', 'pure-mathematics/number-patterns', 'Second differences', 1111)
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
 insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/number-patterns/the-general-term-formula', 'pure-mathematics/number-patterns', 'The general-term formula', 1112)
+  on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
+insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/probability/contingency-tables', 'pure-mathematics/probability', 'Contingency tables', 951)
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;
 insert into public.lessons (id, topic_id, title, sort) values ('pure-mathematics/probability/mutually-exclusive-versus-independent', 'pure-mathematics/probability', 'Mutually exclusive versus independent', 921)
   on conflict (id) do update set topic_id = excluded.topic_id, title = excluded.title, sort = excluded.sort;

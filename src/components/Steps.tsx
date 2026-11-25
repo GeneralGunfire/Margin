@@ -1,19 +1,9 @@
 import { Fragment, useMemo, useState } from "react";
 import katex from "katex";
+import { motion } from "motion/react";
 import { Eye, RotateCcw, StepForward } from "lucide-react";
 import { btn, btnPrimary, kicker } from "@/lib/styles";
 
-/**
- * Step-by-step worked solution. Authored in a lesson as a fenced block:
- *
- * ```steps
- * title: Evaluate $16^{3/4}$
- * Note shown on the left :: working on the right (KaTeX)
- * Another note :: = 2^3
- * ```
- *
- * The first step is visible; "Next step" reveals one more. Notes may contain inline $maths$.
- */
 const html = (tex: string, display: boolean) =>
   katex.renderToString(display ? String.raw`\displaystyle ${tex}` : tex, { throwOnError: false, strict: false });
 
@@ -53,23 +43,30 @@ export function Steps({ source }: { source: string }) {
   const [shown, setShown] = useState(1);
   const done = shown >= steps.length;
   return (
-    <figure className="not-prose my-6 overflow-hidden rounded-lg border border-border">
-      <figcaption className="flex items-center justify-between gap-3 border-b border-border bg-secondary px-4 py-2">
+    <figure className="not-prose my-6 overflow-hidden rounded-2xl border border-border/80 bg-card/45">
+      <figcaption className="flex items-center justify-between gap-3 border-b border-border/70 px-5 py-3">
         <span className={kicker}><Rich text={title} /></span>
         <span className="text-[11px] tabular-nums text-muted-foreground">Step {Math.min(shown, steps.length)} of {steps.length}</span>
       </figcaption>
-      <ol aria-live="polite" className="m-0 list-none divide-y divide-border p-0">
+      <ol aria-live="polite" className="m-0 list-none divide-y divide-border/60 p-0">
         {steps.slice(0, shown).map((s, i) => (
-          <li key={i} style={{ lineHeight: 1.5, marginBottom: 0 }} className="grid gap-x-6 gap-y-1 px-4 py-3 sm:grid-cols-[minmax(0,13rem)_minmax(0,1fr)]">
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            style={{ lineHeight: 1.5, marginBottom: 0 }}
+            className="grid gap-x-6 gap-y-1.5 px-5 py-3.5 sm:grid-cols-[minmax(0,13.5rem)_minmax(0,1fr)]"
+          >
             <p style={{ lineHeight: 1.5, margin: 0 }} className="self-center text-[13px] text-muted-foreground">
-              <span className="mr-2 font-semibold text-foreground/70">{i + 1}.</span>
+              <span className="mr-2 font-semibold text-foreground/75">{i + 1}.</span>
               <Rich text={s.note} />
             </p>
             <div className="min-w-0 self-center overflow-x-auto text-[1.05em]" dangerouslySetInnerHTML={{ __html: html(s.tex, true) }} />
-          </li>
+          </motion.li>
         ))}
       </ol>
-      <div className="flex flex-wrap items-center gap-2 border-t border-border px-4 py-2.5">
+      <div className="flex flex-wrap items-center gap-2 border-t border-border/70 px-5 py-3">
         {!done && (
           <button type="button" className={btnPrimary} onClick={() => setShown((n) => n + 1)}>
             <StepForward className="size-4" aria-hidden="true" /> Next step

@@ -9,96 +9,108 @@ subtopic: Nature of roots
 order: 231
 ---
 
-> **What you'll learn:** how the discriminant $\Delta = b^2 - 4ac$ tells you the nature of the roots of a quadratic without solving it.
+> **What you'll learn:** *why* $\Delta = b^2 - 4ac$ alone decides whether a quadratic has two, one, or zero real roots—and whether those roots are rational or surds—without solving the equation.
 >
 > **Prerequisites:** [The quadratic formula](/library/pure-mathematics/equations-and-inequalities/the-quadratic-formula).
 
-## The idea in plain language
+## 1. The piece under the square root runs the show
 
-In the quadratic formula the part under the root, $b^2 - 4ac$, decides everything about the answers. It is called the **discriminant** and is written $\Delta$ (delta).
+Look inside the quadratic formula $x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. The expression under the square root—$\Delta = b^2 - 4ac$, called the **discriminant**—controls everything:
 
-- If $\Delta$ is positive, the square root is a real number, and $\pm$ gives **two different** real roots.
-- If $\Delta = 0$, the $\pm$ does nothing, so the two roots are **equal**.
-- If $\Delta$ is negative, you cannot take a real square root, so there are **no real roots**.
+- **$\Delta > 0$:** $\sqrt{\Delta}$ is a positive real number, so $\pm$ creates **two distinct real roots** (the parabola crosses the $x$-axis twice).
+- **$\Delta = 0$:** $\sqrt{0} = 0$, so $\pm 0$ collapses both answers into **two equal real roots** (the parabola touches the $x$-axis once).
+- **$\Delta < 0$:** the square root of a negative number is non-real, so there are **no real roots** (the parabola misses the $x$-axis completely).
 
-On a graph, the roots are where the parabola meets the $x$-axis. So $\Delta$ also tells you how many times the parabola touches the axis.
+Explore all three cases interactively:
 
-![Three parabolas: one crossing the x-axis twice (delta positive), one touching it once (delta zero), one never reaching it (delta negative)](/content-images/discriminant-three-cases.svg)
-
-## The rules
+```diagram
+name: discriminant-explorer
+```
 
 ```rule
-title: Nature of the roots
+title: Nature of the roots (a, b, c rational)
 \Delta = b^{2} - 4ac
-\Delta > 0:\ \text{two unequal real roots} \qquad \Delta = 0:\ \text{two equal real roots} \qquad \Delta < 0:\ \text{no real roots}
+\Delta > 0:\ \text{real and unequal} \qquad \Delta = 0:\ \text{real and equal} \qquad \Delta < 0:\ \text{non-real}
 ```
 
-When $a$, $b$ and $c$ are rational and $\Delta > 0$:
-
-- $\Delta$ a **perfect square** gives **rational** roots (the quadratic factorises).
-- $\Delta$ **not** a perfect square gives **irrational** roots (surds).
-
-## Worked example 1 (basic)
-
-```steps
-title: Describe the roots of $x^{2} - 4x + 4 = 0$
-Identify $a$, $b$, $c$ :: a = 1,\quad b = -4,\quad c = 4
-Work out the discriminant :: \Delta = (-4)^{2} - 4(1)(4)
-Simplify :: \Delta = 16 - 16 = 0
-Conclusion :: \text{two equal real roots}
+```tryit
+title: Quick check
+prompt: Without solving, determine the nature of the roots of **(a)** $x^2 + 6x + 9 = 0$ and **(b)** $x^2 + x + 3 = 0$.
+hint: Compute $\Delta = b^2 - 4ac$ and check its sign.
+answer: **(a)** $\Delta = 6^2 - 4(1)(9) = 0 \implies$ real and equal roots. **(b)** $\Delta = 1^2 - 4(1)(3) = -11 < 0 \implies$ non-real roots.
 ```
 
-## Worked example 2 (rational or irrational)
+## 2. Rational vs irrational roots
 
-```steps
-title: Describe the roots of $2x^{2} + 3x - 5 = 0$ and of $3x^{2} - 5x + 1 = 0$
-First equation: $a = 2,\ b = 3,\ c = -5$ :: \Delta = 9 - 4(2)(-5) = 49
-$49 = 7^2$ is a perfect square :: \text{two unequal, rational roots}
-Second equation: $a = 3,\ b = -5,\ c = 1$ :: \Delta = 25 - 12 = 13
-13 is not a perfect square :: \text{two unequal, irrational roots}
+When $a$, $b$, and $c$ are rational and $\Delta > 0$, look at whether $\sqrt{\Delta}$ simplifies cleanly:
+
+```compare
+title: Perfect square Δ vs non-square Δ
+left_title: Δ is a perfect square → Rational
+left:
+For $2x^2 + 3x - 5 = 0$:
+$$\Delta = 3^2 - 4(2)(-5) = 49 = 7^2$$
+Since $\sqrt{49} = 7$ is exact, the roots are **rational** (and the quadratic factorises cleanly).
+right_title: Δ is NOT a perfect square → Irrational
+right:
+For $3x^2 - 5x + 1 = 0$:
+$$\Delta = (-5)^2 - 4(3)(1) = 13$$
+Since $\sqrt{13}$ is a surd, the roots are **irrational** (real and unequal).
 ```
 
-## Worked example 3 (exam level)
+```tryit
+title: Try it first
+prompt: Determine whether $6x^2 - x - 2 = 0$ has rational or irrational roots using $\Delta$.
+hint: Compute $\Delta = (-1)^2 - 4(6)(-2)$ and check if it is a perfect square.
+answer: $\Delta = 1 + 48 = 49 = 7^2 > 0$. Since $\Delta$ is a positive perfect square, the roots are **real, unequal, and rational**.
+```
+
+## 3. Worked examples
 
 ```steps
-title: Prove that $x^{2} - px - 3 = 0$ has real roots for every real $p$
-Identify $a$, $b$, $c$ :: a = 1,\quad b = -p,\quad c = -3
-Work out the discriminant :: \Delta = (-p)^{2} - 4(1)(-3)
-Simplify :: \Delta = p^{2} + 12
-A square is never negative :: p^{2} \geq 0
-So $\Delta$ is always positive :: \Delta \geq 12 > 0
-Conclusion :: \text{the roots are real for all } p
+title: Example 1: Describe the roots of $x^{2} - 4x + 4 = 0$
+Identify $a, b, c$ :: a = 1,\quad b = -4,\quad c = 4
+Compute $\Delta$ :: \Delta = (-4)^{2} - 4(1)(4) = 16 - 16 = 0
+State nature of roots :: \text{real and equal roots}
+```
+
+```steps
+title: Example 2: Show that $2x^{2} - 3x - 5 = 0$ has rational roots, then solve
+Compute $\Delta$ :: \Delta = (-3)^{2} - 4(2)(-5) = 9 + 40 = 49 = 7^{2}
+Since $49 > 0$ is a perfect square :: \text{roots are real, unequal and rational}
+Use the formula (or factorise) :: x = \frac{3 \pm 7}{4} \;\Longrightarrow\; x = \frac{5}{2} \text{ or } x = -1
+```
+
+```steps
+title: Example 3 (Exam level): Prove that $x^{2} - px - 3 = 0$ has real, unequal roots for all real $p$
+Identify $a, b, c$ :: a = 1,\quad b = -p,\quad c = -3
+Compute $\Delta$ :: \Delta = (-p)^{2} - 4(1)(-3) = p^{2} + 12
+Use $p^2 \geq 0$ for any real $p$ :: p^{2} \geq 0 \;\Longrightarrow\; \Delta = p^{2} + 12 \geq 12 > 0
+Conclusion :: \text{roots are real and unequal for every real } p
 ```
 
 > **Common mistakes**
 >
-> - Reading $\Delta = 0$ as "no roots". It means two **equal** roots (one repeated root).
-> - Forgetting that $\Delta$ is worked out with the signs of $b$ and $c$. For $c = -3$ the term $-4ac$ becomes positive when $a > 0$.
-> - Saying roots are rational whenever $\Delta > 0$. They are rational only when $\Delta$ is a perfect square.
-> - Using $\Delta$ before the equation is in standard form.
+> - **Thinking $\Delta = 0$ means "no roots":** it means **two equal real roots** (the vertex sits right on the $x$-axis).
+> - **Calling roots rational whenever $\Delta > 0$:** they are rational only if $\Delta$ is also a **perfect square** (and $a, b, c$ are rational).
+> - **Computing $\Delta$ before standard form:** always rearrange to $ax^2 + bx + c = 0$ first.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: Determine the nature of the roots of $x^{2} + 6x + 9 = 0$.
-A: $\Delta = 36 - 36 = 0$, so the roots are real and equal.
----
-Q: Determine the nature of the roots of $x^{2} + x + 3 = 0$.
-A: $\Delta = 1 - 12 = -11 < 0$, so there are no real roots.
----
 Q: Determine the nature of the roots of $x^{2} - 5x + 3 = 0$.
-A: $\Delta = 25 - 12 = 13 > 0$ and not a perfect square, so the roots are real, unequal and irrational.
+A: $\Delta = 25 - 12 = 13 > 0$ (not a perfect square), so the roots are real, unequal, and irrational.
 ---
-Q: Determine the nature of the roots of $6x^{2} - x - 2 = 0$.
-A: $\Delta = 1 + 48 = 49 = 7^2$, so the roots are real, unequal and rational.
+Q: Determine the nature of the roots of $4x^{2} - 12x + 9 = 0$.
+A: $\Delta = (-12)^2 - 4(4)(9) = 144 - 144 = 0$, so the roots are real and equal.
 ---
-Q: Show that $2x^{2} - 3x - 5 = 0$ has rational roots, then solve it.
-A: $\Delta = 9 + 40 = 49 = 7^2$, a perfect square, so the roots are rational. $x = \frac{3 \pm 7}{4}$, giving $x = \frac{5}{2}$ or $x = -1$.
+Q: Determine the nature of the roots of $2x^{2} + x + 4 = 0$.
+A: $\Delta = 1 - 32 = -31 < 0$, so the roots are non-real.
 ---
-Q: Prove that $x^{2} + (m+2)x + m = 0$ has real roots for every real $m$.
-A: $\Delta = (m+2)^2 - 4m = m^2 + 4m + 4 - 4m = m^2 + 4$. Since $m^2 \geq 0$, $\Delta \geq 4 > 0$, so the roots are always real (and unequal).
+Q: **(Exam level)** Prove that $x^{2} + (m+2)x + m = 0$ has real, unequal roots for every real value of $m$.
+A: $\Delta = (m+2)^2 - 4(1)(m) = m^2 + 4m + 4 - 4m = m^2 + 4$. Since $m^2 \geq 0$, $\Delta \geq 4 > 0$, so the roots are real and unequal for all real $m$.
 ```
 
 ## Further help

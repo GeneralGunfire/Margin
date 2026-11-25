@@ -9,97 +9,102 @@ subtopic: Trigonometric equations
 order: 323
 ---
 
-> **What you'll learn:** how to solve trig equations by factorising, by replacing $\tan\theta$ with $\frac{\sin\theta}{\cos\theta}$, and by using $\sin^2\theta + \cos^2\theta = 1$ to turn a mixed equation into a quadratic.
+> **What you'll learn:** how to turn mixed trigonometric equations into basic equations you can solve—by taking out a common factor, replacing $\tan\theta$, or using $\sin^{2}\theta + \cos^{2}\theta = 1$ to build a quadratic.
 >
-> **Prerequisites:** [General solution](/library/pure-mathematics/trigonometry-identities-reduction-formulae-and-equations/general-solution), and [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve).
+> **Prerequisites:** [General solution](/library/pure-mathematics/trigonometry-identities-reduction-formulae-and-equations/general-solution) and [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve).
 
-## The idea in plain language
+## 1. Reduce a mixed equation down to factors of one ratio
 
-Many exam equations do not give you a single ratio. The routine is: get the equation into a form where you can **factorise**, so you get a product equal to zero. Then each factor gives a basic equation.
+You cannot take $\sin^{-1}$ or $\cos^{-1}$ while different trig ratios are mixed together. Your goal is always to reshape the equation into **zero on one side and factors on the other** ($A \cdot B = 0$), where each factor contains a single trig ratio:
 
-Three situations:
-
-1. **Common factor:** take it out. Never divide by a ratio that could be zero, because you lose solutions.
-2. **Tangent with sine or cosine:** replace $\tan\theta$ by $\frac{\sin\theta}{\cos\theta}$.
-3. **Squares of two different ratios:** replace one using $\sin^2\theta = 1 - \cos^2\theta$ (or the other way) to get a quadratic in one ratio.
-
-## The tools
+- **Common factor:** move everything to one side and factor out the shared trig ratio.
+- **$\tan\theta$ mixed with $\sin\theta$ or $\cos\theta$:** replace $\tan\theta = \frac{\sin\theta}{\cos\theta}$ (noting $\cos\theta \neq 0$) and clear the denominator.
+- **Squared ratio + linear ratio:** replace the **squared** ratio using $\sin^{2}\theta = 1 - \cos^{2}\theta$ (or vice versa) to match the linear ratio and form a quadratic.
 
 ```rule
-title: Tools
-\tan\theta = \frac{\sin\theta}{\cos\theta} \qquad \sin^{2}\theta + \cos^{2}\theta = 1 \qquad AB = 0 \Rightarrow A = 0 \text{ or } B = 0
+title: Identities and zero-product law
+\tan\theta = \frac{\sin\theta}{\cos\theta} \quad (\cos\theta \neq 0) \qquad \sin^{2}\theta + \cos^{2}\theta = 1 \qquad AB = 0 \;\Longrightarrow\; A = 0 \text{ or } B = 0
 ```
 
-## Worked example 1 (common factor)
+## 2. Never divide by $\sin\theta$ or $\cos\theta$
 
-```steps
-title: Solve $2\sin^{2}\theta - \sin\theta = 0$ for $\theta \in [0^\circ;\ 360^\circ]$
-Take out the common factor :: \sin\theta\,(2\sin\theta - 1) = 0
-Two cases :: \sin\theta = 0 \quad\text{or}\quad \sin\theta = \frac{1}{2}
-First case :: \theta = 0^\circ,\ 180^\circ,\ 360^\circ
-Second case: reference angle $30^\circ$, quadrants I and II :: \theta = 30^\circ,\ 150^\circ
-All solutions :: \theta \in \{0^\circ,\ 30^\circ,\ 150^\circ,\ 180^\circ,\ 360^\circ\}
+```compare
+title: Solving sin θ cos θ = sin θ
+left_title: Right: move across and factorise
+left:
+$$\sin\theta\cos\theta - \sin\theta = 0$$
+$$\sin\theta(\cos\theta - 1) = 0$$
+You get **both** $\sin\theta = 0$ ($0^\circ, 180^\circ, 360^\circ$) and $\cos\theta = 1$ ($0^\circ, 360^\circ$).
+right_title: Wrong: dividing both sides by sin θ
+right:
+Dividing by $\sin\theta$ leaves only $\cos\theta = 1$—and silently **deletes $180^\circ$**, because you divided by zero!
 ```
 
-## Worked example 2 (using an identity)
-
-```steps
-title: Solve $2\sin^{2}\theta + \cos\theta - 1 = 0$ for $\theta \in [0^\circ;\ 360^\circ]$
-Replace $\sin^2\theta$ with $1 - \cos^2\theta$ :: 2(1 - \cos^{2}\theta) + \cos\theta - 1 = 0
-Expand and simplify :: -2\cos^{2}\theta + \cos\theta + 1 = 0
-Multiply by $-1$ :: 2\cos^{2}\theta - \cos\theta - 1 = 0
-Factorise :: (2\cos\theta + 1)(\cos\theta - 1) = 0
-Two cases :: \cos\theta = -\frac{1}{2} \quad\text{or}\quad \cos\theta = 1
-First case: quadrants II and III, reference angle $60^\circ$ :: \theta = 120^\circ,\ 240^\circ
-Second case :: \theta = 0^\circ,\ 360^\circ
-All solutions :: \theta \in \{0^\circ,\ 120^\circ,\ 240^\circ,\ 360^\circ\}
+```tryit
+title: Quick check
+prompt: Which ratio should you replace in $2\sin^{2}\theta + 5\cos\theta - 4 = 0$, and what quadratic in one ratio do you get?
+hint: You cannot turn linear $\cos\theta$ into $\sin\theta$ cleanly, so replace $\sin^{2}\theta$.
+answer: Replace $\sin^{2}\theta$ with $1 - \cos^{2}\theta$: $2(1 - \cos^{2}\theta) + 5\cos\theta - 4 = 0 \implies 2\cos^{2}\theta - 5\cos\theta + 2 = 0$, which factorises as $(2\cos\theta - 1)(\cos\theta - 2) = 0$.
 ```
 
-## Worked example 3 (exam level: tangent)
+## 3. Worked examples
 
 ```steps
-title: Solve $\tan\theta = 2\sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$
-Replace $\tan\theta$ :: \frac{\sin\theta}{\cos\theta} = 2\sin\theta
-Restriction: the denominator cannot be zero :: \cos\theta \neq 0
-Multiply by $\cos\theta$ :: \sin\theta = 2\sin\theta\cos\theta
-Move everything to one side (do not divide by $\sin\theta$) :: \sin\theta - 2\sin\theta\cos\theta = 0
-Factorise :: \sin\theta\,(1 - 2\cos\theta) = 0
-Two cases :: \sin\theta = 0 \quad\text{or}\quad \cos\theta = \frac{1}{2}
-First case :: \theta = 0^\circ,\ 180^\circ,\ 360^\circ
-Second case: quadrants I and IV :: \theta = 60^\circ,\ 300^\circ
-None of these has $\cos\theta = 0$ :: \theta \in \{0^\circ,\ 60^\circ,\ 180^\circ,\ 300^\circ,\ 360^\circ\}
+title: Example 1 (Common factor): Solve $2\sin^{2}\theta - \sin\theta = 0$ for $\theta \in [0^\circ;\ 360^\circ]$
+Factor out $\sin\theta$ :: \sin\theta\,(2\sin\theta - 1) = 0
+Split into two basic equations :: \sin\theta = 0 \quad\text{or}\quad \sin\theta = \frac{1}{2}
+Solve $\sin\theta = 0$ :: \theta = 0^\circ,\ 180^\circ,\ 360^\circ
+Solve $\sin\theta = \frac{1}{2}$ (Q I and Q II) :: \theta = 30^\circ,\ 150^\circ
+Combine all solutions :: \theta \in \{0^\circ,\ 30^\circ,\ 150^\circ,\ 180^\circ,\ 360^\circ\}
+```
+
+```steps
+title: Example 2 (Pythagorean identity): Solve $2\sin^{2}\theta + \cos\theta - 1 = 0$ for $\theta \in [0^\circ;\ 360^\circ]$
+Replace $\sin^{2}\theta$ with $1 - \cos^{2}\theta$ :: 2(1 - \cos^{2}\theta) + \cos\theta - 1 = 0
+Simplify and multiply by $-1$ :: 2\cos^{2}\theta - \cos\theta - 1 = 0
+Factorise the quadratic in $\cos\theta$ :: (2\cos\theta + 1)(\cos\theta - 1) = 0
+Split into two cases :: \cos\theta = -\frac{1}{2} \quad\text{or}\quad \cos\theta = 1
+Solve each case in $[0^\circ;\ 360^\circ]$ :: \theta \in \{0^\circ,\ 120^\circ,\ 240^\circ,\ 360^\circ\}
+```
+
+```steps
+title: Example 3 (Exam level — tangent equation): Solve $\tan\theta = 2\sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$
+Rewrite $\tan\theta$ and state restriction :: \frac{\sin\theta}{\cos\theta} = 2\sin\theta \quad (\cos\theta \neq 0)
+Multiply by $\cos\theta$ and move terms to one side :: \sin\theta - 2\sin\theta\cos\theta = 0
+Factor out $\sin\theta$ :: \sin\theta\,(1 - 2\cos\theta) = 0
+Solve $\sin\theta = 0$ and $\cos\theta = \frac{1}{2}$ :: \theta = 0^\circ, 180^\circ, 360^\circ \quad\text{or}\quad \theta = 60^\circ, 300^\circ
+Verify $\cos\theta \neq 0$ for all five solutions :: \theta \in \{0^\circ,\ 60^\circ,\ 180^\circ,\ 300^\circ,\ 360^\circ\}
 ```
 
 > **Common mistakes**
 >
-> - Dividing both sides by $\sin\theta$ and losing the solutions where $\sin\theta = 0$.
-> - Not moving everything to one side before factorising.
-> - Replacing $\sin^2\theta$ and forgetting the bracket: $2\sin^2\theta = 2(1 - \cos^2\theta)$.
-> - Missing the solutions at the ends of the interval.
-> - Accepting a solution that makes a denominator zero.
+> - **Dividing by $\sin\theta$ or $\cos\theta$:** always transpose to zero and factorise so you do not lose solutions.
+> - **Forgetting impossible trig values:** in a quadratic factor like $(\cos\theta + 2)(2\cos\theta - 1) = 0$, note that $\cos\theta = -2$ has **no solution** (since $-1 \leq \cos\theta \leq 1$).
+> - **Dropping brackets during substitution:** $2\sin^{2}\theta = 2(1 - \cos^{2}\theta) = 2 - 2\cos^{2}\theta$, not $2 - \cos^{2}\theta$.
+> - **Keeping invalid solutions that violate $\cos\theta \neq 0$** when the original equation contains $\tan\theta$.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: Solve $\sin\theta\cos\theta = \sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$.
-A: $\sin\theta\cos\theta - \sin\theta = 0$, so $\sin\theta(\cos\theta - 1) = 0$. Then $\sin\theta = 0$ gives $0^\circ, 180^\circ, 360^\circ$ and $\cos\theta = 1$ gives $0^\circ$ and $360^\circ$. So $\theta \in \{0^\circ,\ 180^\circ,\ 360^\circ\}$.
+A: $\sin\theta(\cos\theta - 1) = 0 \implies \sin\theta = 0$ ($0^\circ, 180^\circ, 360^\circ$) or $\cos\theta = 1$ ($0^\circ, 360^\circ$). So $\theta \in \{0^\circ,\ 180^\circ,\ 360^\circ\}$.
 ---
 Q: Solve $2\cos^{2}\theta = \cos\theta$ for $\theta \in [0^\circ;\ 360^\circ]$.
-A: $\cos\theta(2\cos\theta - 1) = 0$. Then $\cos\theta = 0$ gives $90^\circ$ and $270^\circ$, and $\cos\theta = \frac{1}{2}$ gives $60^\circ$ and $300^\circ$. So $\theta \in \{60^\circ,\ 90^\circ,\ 270^\circ,\ 300^\circ\}$.
+A: $\cos\theta(2\cos\theta - 1) = 0 \implies \cos\theta = 0$ ($90^\circ, 270^\circ$) or $\cos\theta = \frac{1}{2}$ ($60^\circ, 300^\circ$). So $\theta \in \{60^\circ,\ 90^\circ,\ 270^\circ,\ 300^\circ\}$.
 ---
 Q: Solve $2\sin^{2}\theta = 3\cos\theta$ for $\theta \in [0^\circ;\ 360^\circ]$.
-A: $2(1 - \cos^2\theta) = 3\cos\theta$, so $2\cos^2\theta + 3\cos\theta - 2 = 0$. Factorise: $(2\cos\theta - 1)(\cos\theta + 2) = 0$. $\cos\theta = -2$ is impossible. $\cos\theta = \frac{1}{2}$ gives $\theta = 60^\circ$ or $300^\circ$.
+A: $2(1 - \cos^{2}\theta) = 3\cos\theta \implies 2\cos^{2}\theta + 3\cos\theta - 2 = 0 \implies (2\cos\theta - 1)(\cos\theta + 2) = 0$. Since $\cos\theta = -2$ has no solution, $\cos\theta = \frac{1}{2} \implies \theta = 60^\circ$ or $\theta = 300^\circ$.
 ---
-Q: Solve $\tan\theta = 3\sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$, correct to 1 decimal place.
-A: $\frac{\sin\theta}{\cos\theta} = 3\sin\theta$, so $\sin\theta(1 - 3\cos\theta) = 0$. $\sin\theta = 0$ gives $0^\circ, 180^\circ, 360^\circ$. $\cos\theta = \frac{1}{3}$ gives reference angle $70{,}5^\circ$ in quadrants I and IV: $70{,}5^\circ$ and $289{,}5^\circ$.
+Q: **(Exam level)** Solve $\tan\theta = 3\sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$, correct to 1 decimal place.
+A: $\frac{\sin\theta}{\cos\theta} = 3\sin\theta$ ($\cos\theta \neq 0$) $\implies \sin\theta(1 - 3\cos\theta) = 0$. $\sin\theta = 0$ gives $0^\circ, 180^\circ, 360^\circ$; $\cos\theta = \frac{1}{3}$ gives $70{,}5^\circ$ and $289{,}5^\circ$. So $\theta \in \{0^\circ,\ 70{,}5^\circ,\ 180^\circ,\ 289{,}5^\circ,\ 360^\circ\}$.
 ---
 Q: Solve $2\sin^{2}\theta + 5\cos\theta - 4 = 0$ for $\theta \in [0^\circ;\ 360^\circ]$.
-A: $2(1 - \cos^2\theta) + 5\cos\theta - 4 = 0$, so $-2\cos^2\theta + 5\cos\theta - 2 = 0$ and $2\cos^2\theta - 5\cos\theta + 2 = 0$. Factorise: $(2\cos\theta - 1)(\cos\theta - 2) = 0$. $\cos\theta = 2$ is impossible, so $\cos\theta = \frac{1}{2}$: $\theta = 60^\circ$ or $300^\circ$.
+A: $2(1 - \cos^{2}\theta) + 5\cos\theta - 4 = 0 \implies 2\cos^{2}\theta - 5\cos\theta + 2 = 0 \implies (2\cos\theta - 1)(\cos\theta - 2) = 0$. $\cos\theta = 2$ has no solution, so $\cos\theta = \frac{1}{2} \implies \theta = 60^\circ$ or $\theta = 300^\circ$.
 ---
-Q: Solve $\sin\theta\,\tan\theta = \sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$.
-A: $\sin\theta\tan\theta - \sin\theta = 0$, so $\sin\theta(\tan\theta - 1) = 0$ with $\cos\theta \neq 0$. $\sin\theta = 0$ gives $0^\circ, 180^\circ, 360^\circ$. $\tan\theta = 1$ gives $45^\circ$ and $225^\circ$. So $\theta \in \{0^\circ,\ 45^\circ,\ 180^\circ,\ 225^\circ,\ 360^\circ\}$.
+Q: Solve $\sin\theta\tan\theta = \sin\theta$ for $\theta \in [0^\circ;\ 360^\circ]$.
+A: $\sin\theta(\tan\theta - 1) = 0$ with $\cos\theta \neq 0$. $\sin\theta = 0$ gives $0^\circ, 180^\circ, 360^\circ$; $\tan\theta = 1$ gives $45^\circ, 225^\circ$. So $\theta \in \{0^\circ,\ 45^\circ,\ 180^\circ,\ 225^\circ,\ 360^\circ\}$.
 ```
 
 ## Further help

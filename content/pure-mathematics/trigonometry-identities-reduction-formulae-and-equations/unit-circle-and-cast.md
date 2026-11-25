@@ -9,91 +9,101 @@ subtopic: Identities and reduction formulae
 order: 311
 ---
 
-> **What you'll learn:** how to use a point on the Cartesian plane to define sine, cosine and tangent for any angle, and how the CAST rule tells you the signs in each quadrant.
+> **What you'll learn:** how placing an angle on the Cartesian plane defines $\sin\theta$, $\cos\theta$, and $\tan\theta$ for any angle—not just acute ones—and why the CAST rule predicts every sign.
 >
-> **Prerequisites:** the right-angled triangle ratios (SOH CAH TOA) from Grade 10, and the Pythagorean theorem.
+> **Prerequisites:** Grade 10 right-angled triangle ratios (SOH CAH TOA) and Pythagoras' theorem.
 
-## The idea in plain language
+## 1. Beyond $90^\circ$: ratios from coordinates $(x;\ y)$ and radius $r$
 
-In a right-angled triangle the angle is always acute. To handle angles bigger than $90^\circ$ (and negative angles), place the angle on the Cartesian plane with its starting arm along the positive $x$-axis. A point $P(x;\ y)$ on the other arm, at distance $r$ from the origin, gives the ratios:
+A right-angled triangle can only hold acute angles between $0^\circ$ and $90^\circ$. To define trig ratios for **any** angle $\theta$, start the angle on the positive $x$-axis and rotate counter-clockwise to a terminal arm passing through a point $P(x;\ y)$ at distance $r = \sqrt{x^{2} + y^{2}} > 0$ from the origin:
 
-$$\sin\theta = \frac{y}{r}, \qquad \cos\theta = \frac{x}{r}, \qquad \tan\theta = \frac{y}{x}, \qquad r = \sqrt{x^2 + y^2}.$$
+$$\sin\theta = \frac{y}{r}, \qquad \cos\theta = \frac{x}{r}, \qquad \tan\theta = \frac{y}{x} \quad (x \neq 0)$$
 
-Here $r$ is always positive. The signs of $x$ and $y$ change from quadrant to quadrant, so the signs of the ratios change too. On a **unit circle** ($r = 1$) the point is simply $(\cos\theta;\ \sin\theta)$.
+Because $r$ is a distance, **$r$ is always positive**. The signs of $\sin\theta$, $\cos\theta$, and $\tan\theta$ come purely from the signs of $x$ and $y$ in each quadrant. Explore all four quadrants below:
 
-![A unit circle with the four quadrants labelled with the CAST rule: All in the first, Sin in the second, Tan in the third, Cos in the fourth](/content-images/unit-circle-cast.svg)
-
-## The CAST rule
+```diagram
+name: cast-explorer
+```
 
 ```rule
-title: CAST: which ratios are positive
-\text{I: } All \quad \text{II: } Sin \quad \text{III: } Tan \quad \text{IV: } Cos
+title: CAST rule — which ratios are positive
+\text{I (}0^\circ\text{–}90^\circ\text{): All} \qquad \text{II (}90^\circ\text{–}180^\circ\text{): Sin} \qquad \text{III (}180^\circ\text{–}270^\circ\text{): Tan} \qquad \text{IV (}270^\circ\text{–}360^\circ\text{): Cos}
 ```
 
-Starting in the fourth quadrant and going clockwise reads **C-A-S-T**. In each quadrant, only the named ratio (and its reciprocal) is positive. In the second quadrant $y > 0$ and $x < 0$, so $\sin\theta > 0$ but $\cos\theta < 0$ and $\tan\theta < 0$.
+## 2. Finding the exact quadrant from two clues
 
-## Worked example 1 (signs)
+When a question gives one ratio (such as $\tan\theta = -\frac{2}{3}$) and one extra clue (such as $\sin\theta > 0$ or an interval), combine both clues before drawing your triangle:
 
-```steps
-title: State whether each ratio is positive or negative: $\sin 210^\circ$, $\cos 120^\circ$, $\tan 300^\circ$
-$210^\circ$ is in the third quadrant, where only tan is positive :: \sin 210^\circ < 0
-$120^\circ$ is in the second quadrant, where only sin is positive :: \cos 120^\circ < 0
-$300^\circ$ is in the fourth quadrant, where only cos is positive :: \tan 300^\circ < 0
+```compare
+title: Two clues pin down a single quadrant
+left_title: Clue 1: Sign of the given ratio
+left:
+$\tan\theta = -\frac{2}{3} < 0$ narrows the angle to **Quadrant II or IV** (the two quadrants where $\tan$ is negative).
+right_title: Clue 2: Extra sign or interval
+right:
+Adding $\sin\theta > 0$ eliminates Quadrant IV and leaves **Quadrant II**, where $x < 0$ and $y > 0$, so $x = -3$ and $y = 2$.
 ```
 
-## Worked example 2 (from a ratio)
-
-```steps
-title: If $\cos\theta = -\frac{4}{5}$ and $90^\circ < \theta < 180^\circ$, find $\sin\theta$ and $\tan\theta$ without a calculator
-Cosine is $\frac{x}{r}$. Cosine is negative, so $x = -4$ and $r = 5$ :: x = -4,\quad r = 5
-Find $y$ with Pythagoras :: y^{2} = r^{2} - x^{2} = 25 - 16 = 9
-Second quadrant: $y > 0$ :: y = 3
-Sine is $\frac{y}{r}$ :: \sin\theta = \frac{3}{5}
-Tangent is $\frac{y}{x}$ :: \tan\theta = \frac{3}{-4} = -\frac{3}{4}
+```tryit
+title: Quick check
+prompt: If $\cos\theta = -\frac{5}{13}$ and $180^\circ < \theta < 360^\circ$, which quadrant is $\theta$ in, and what are $x$, $y$, and $r$?
+hint: $\cos\theta < 0$ in Quadrants II and III; $180^\circ < \theta < 360^\circ$ covers Quadrants III and IV.
+answer: The overlap is **Quadrant III**. Here $x = -5$, $r = 13$, and $y = -\sqrt{13^{2} - (-5)^{2}} = -12$ (negative because $y < 0$ in Q III).
 ```
 
-## Worked example 3 (exam level)
+## 3. Worked examples
 
 ```steps
-title: If $\tan\theta = -\frac{2}{3}$ and $\sin\theta > 0$, find $\cos\theta$ and the value of $13\sin^2\theta$
-Tangent is negative, so the angle is in quadrant II or IV :: \text{quadrants II or IV}
-Sine is positive, so quadrant II: $y > 0$ and $x < 0$ :: y = 2,\quad x = -3
-Find $r$ :: r = \sqrt{(-3)^{2} + 2^{2}} = \sqrt{13}
-Cosine is $\frac{x}{r}$ :: \cos\theta = -\frac{3}{\sqrt{13}}
-Sine is $\frac{y}{r}$ :: \sin\theta = \frac{2}{\sqrt{13}}
-Square the sine and multiply by 13 :: 13\sin^{2}\theta = 13 \times \frac{4}{13} = 4
+title: Example 1 (Quadrant signs): Determine the sign of $\sin 210^\circ$, $\cos 120^\circ$, and $\tan 300^\circ$
+$210^\circ$ lies in Quadrant III (only $\tan$ is positive) :: \sin 210^\circ < 0
+$120^\circ$ lies in Quadrant II (only $\sin$ is positive) :: \cos 120^\circ < 0
+$300^\circ$ lies in Quadrant IV (only $\cos$ is positive) :: \tan 300^\circ < 0
+```
+
+```steps
+title: Example 2 (From one ratio): If $\cos\theta = -\frac{4}{5}$ and $90^\circ < \theta < 180^\circ$, find $\sin\theta$ and $\tan\theta$
+Quadrant II has $x < 0$, $y > 0$, and $r > 0$ :: x = -4,\quad r = 5
+Solve for $y$ using Pythagoras :: y^{2} = r^{2} - x^{2} = 25 - 16 = 9 \;\Longrightarrow\; y = +3
+Read off $\sin\theta = \frac{y}{r}$ and $\tan\theta = \frac{y}{x}$ :: \sin\theta = \frac{3}{5},\qquad \tan\theta = -\frac{3}{4}
+```
+
+```steps
+title: Example 3 (Exam level): If $\tan\theta = -\frac{2}{3}$ and $\sin\theta > 0$, find $\cos\theta$ and $13\sin^{2}\theta$
+$\tan\theta < 0$ (Q II or IV) and $\sin\theta > 0$ (Q I or II) :: \theta \text{ is in Quadrant II}
+In Q II, $x < 0$ and $y > 0$ :: x = -3,\quad y = 2
+Compute $r = \sqrt{x^{2} + y^{2}}$ :: r = \sqrt{(-3)^{2} + 2^{2}} = \sqrt{13}
+Write $\cos\theta = \frac{x}{r}$ and $\sin\theta = \frac{y}{r}$ :: \cos\theta = -\frac{3}{\sqrt{13}},\qquad \sin\theta = \frac{2}{\sqrt{13}}
+Evaluate $13\sin^{2}\theta$ :: 13\left(\frac{2}{\sqrt{13}}\right)^{2} = 13 \cdot \frac{4}{13} = 4
 ```
 
 > **Common mistakes**
 >
-> - Using a negative $r$. The distance $r$ is always positive.
-> - Forgetting that $\tan\theta = \frac{y}{x}$, so a negative $x$ makes the tangent negative when $y$ is positive.
-> - Using the wrong quadrant because the angle is given in a different form. Always place the angle first.
-> - Writing the sign from memory of CAST without checking: "S" in quadrant II means **sin** is positive there, not cos.
-> - Dropping the sign of $x$ or $y$ when reading a point.
+> - **Making $r$ negative:** $r$ is always positive; put any negative sign on $x$ or $y$ according to the quadrant.
+> - **Keeping the wrong sign after taking a square root:** $y^{2} = 9$ has two roots ($\pm 3$); always check the quadrant to decide between $+3$ and $-3$.
+> - **Forgetting both negatives cancel in $\tan$:** in Quadrant III, $x < 0$ and $y < 0$, so $\tan\theta = \frac{y}{x} > 0$.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: State whether $\sin 300^\circ$, $\cos 300^\circ$ and $\tan 300^\circ$ are positive or negative.
-A: $300^\circ$ is in the fourth quadrant, where only cosine is positive. So $\sin 300^\circ < 0$, $\cos 300^\circ > 0$ and $\tan 300^\circ < 0$.
+Q: State whether $\sin 300^\circ$, $\cos 300^\circ$, and $\tan 300^\circ$ are positive or negative.
+A: $300^\circ$ is in Quadrant IV, where only cosine is positive. So $\sin 300^\circ < 0$, $\cos 300^\circ > 0$, and $\tan 300^\circ < 0$.
 ---
-Q: The point $P(-5;\ 12)$ lies on the terminal arm of angle $\theta$. Find $\sin\theta$, $\cos\theta$ and $\tan\theta$.
-A: $r = \sqrt{25 + 144} = 13$. So $\sin\theta = \frac{12}{13}$, $\cos\theta = -\frac{5}{13}$ and $\tan\theta = -\frac{12}{5}$.
+Q: The point $P(-5;\ 12)$ lies on the terminal arm of angle $\theta$. Find $\sin\theta$, $\cos\theta$, and $\tan\theta$.
+A: $r = \sqrt{(-5)^{2} + 12^{2}} = 13$. So $\sin\theta = \frac{12}{13}$, $\cos\theta = -\frac{5}{13}$, and $\tan\theta = -\frac{12}{5}$.
 ---
-Q: $\sin\theta = -\frac{3}{5}$ and $\theta$ is in the third quadrant. Find $\cos\theta$ and $\tan\theta$.
-A: $y = -3$, $r = 5$, so $x^2 = 25 - 9 = 16$. In quadrant III $x < 0$, so $x = -4$. Then $\cos\theta = -\frac{4}{5}$ and $\tan\theta = \frac{-3}{-4} = \frac{3}{4}$.
+Q: Given $\sin\theta = -\frac{3}{5}$ and $\theta$ is in Quadrant III, find $\cos\theta$ and $\tan\theta$.
+A: $y = -3$, $r = 5 \implies x^{2} = 25 - 9 = 16$. In Quadrant III $x < 0$, so $x = -4$. Then $\cos\theta = -\frac{4}{5}$ and $\tan\theta = \frac{-3}{-4} = \frac{3}{4}$.
 ---
-Q: $\cos\theta = \frac{8}{17}$ and $\sin\theta < 0$. Find $\tan\theta$.
-A: $x = 8$, $r = 17$, so $y^2 = 289 - 64 = 225$. Sine is negative, so $y = -15$ and $\tan\theta = -\frac{15}{8}$.
+Q: Given $\cos\theta = \frac{8}{17}$ and $\sin\theta < 0$, find $\tan\theta$.
+A: $\cos\theta > 0$ and $\sin\theta < 0$ places $\theta$ in Quadrant IV. With $x = 8$ and $r = 17$, $y = -\sqrt{289 - 64} = -15$, so $\tan\theta = -\frac{15}{8}$.
 ---
-Q: If $5\sin\theta + 4 = 0$ and $\theta \in (180^\circ;\ 270^\circ)$, find $\cos\theta$.
-A: $\sin\theta = -\frac{4}{5}$, so $y = -4$ and $r = 5$. Then $x^2 = 25 - 16 = 9$. In quadrant III $x < 0$, so $x = -3$ and $\cos\theta = -\frac{3}{5}$.
+Q: **(Exam level)** If $5\sin\theta + 4 = 0$ and $\theta \in (180^\circ;\ 270^\circ)$, find $\cos\theta$.
+A: $\sin\theta = -\frac{4}{5}$, so $y = -4$, $r = 5$, and $x = -3$ (Quadrant III). Therefore $\cos\theta = -\frac{3}{5}$.
 ---
-Q: $\tan\theta = \frac{5}{12}$ and $\cos\theta < 0$. Find $\sin\theta$ and $\cos\theta$.
-A: Tangent positive and cosine negative gives quadrant III, so $x = -12$ and $y = -5$. $r = \sqrt{144 + 25} = 13$. Then $\sin\theta = -\frac{5}{13}$ and $\cos\theta = -\frac{12}{13}$.
+Q: If $\tan\theta = \frac{5}{12}$ and $\cos\theta < 0$, find $\sin\theta$ and $\cos\theta$.
+A: $\tan\theta > 0$ and $\cos\theta < 0$ places $\theta$ in Quadrant III, so $x = -12$ and $y = -5$. Then $r = 13$, giving $\sin\theta = -\frac{5}{13}$ and $\cos\theta = -\frac{12}{13}$.
 ```
 
 ## Further help

@@ -9,108 +9,116 @@ subtopic: Rational exponents and their laws
 order: 112
 ---
 
-> **What you'll learn:** how to use the exponent laws when the exponents are fractions, to simplify expressions with letters.
+> **What you'll learn:** *why* the Grade 10 exponent laws still work with fractions, how to evaluate and simplify expressions with roots and negative rational powers cleanly, and how to avoid the traps around brackets and $+$ signs.
 >
-> **Prerequisites:** [From roots to fractional exponents](/library/pure-mathematics/exponents-and-surds/from-roots-to-fractional-exponents), and adding and subtracting fractions.
+> **Prerequisites:** [From roots to fractional exponents](/library/pure-mathematics/exponents-and-surds/from-roots-to-fractional-exponents), and adding/subtracting fractions.
 
-## The idea in plain language
+## 1. One habit that solves almost everything
 
-Good news: nothing new to learn. The laws you used for whole-number exponents work exactly the same for fractional exponents. The only extra skill is adding, subtracting and multiplying fractions neatly.
+Nothing changes when exponents become fractions—product still adds, quotient still subtracts, power-of-a-power still multiplies. The only catch is that roots hide the exponent.
 
-The habit that wins marks: **convert every root to a fractional exponent first**, then apply the laws, then (only if the question asks) go back to root form.
+Always convert every root into a **fractional exponent first**, apply the laws, and simplify:
 
-## The laws
+$$\frac{\sqrt{x^3}\cdot\sqrt[3]{x^2}}{x^{1/6}} = \frac{x^{3/2}\cdot x^{2/3}}{x^{1/6}} = x^{\frac{3}{2} + \frac{2}{3} - \frac{1}{6}} = x^{\frac{9+4-1}{6}} = x^2$$
 
-For $x, y > 0$ and rational exponents $m$ and $n$:
+```rule
+title: Exponent laws for rational exponents (x, y > 0)
+x^{m} \cdot x^{n} = x^{m+n} \qquad \frac{x^{m}}{x^{n}} = x^{m-n} \qquad \left(x^{m}\right)^{n} = x^{mn}
+(xy)^{n} = x^{n}y^{n} \qquad \left(\frac{x}{y}\right)^{n} = \frac{x^{n}}{y^{n}} \qquad x^{-n} = \frac{1}{x^{n}} \qquad x^{0} = 1
+```
 
-| Law | Rule |
-| --- | --- |
-| Product | $x^m \cdot x^n = x^{m+n}$ |
-| Quotient | $\frac{x^m}{x^n} = x^{m-n}$ |
-| Power of a power | $(x^m)^n = x^{mn}$ |
-| Power of a product | $(xy)^n = x^n y^n$ |
-| Power of a quotient | $\left(\frac{x}{y}\right)^n = \frac{x^n}{y^n}$ |
-| Negative exponent | $x^{-n} = \frac{1}{x^n}$ |
-| Zero exponent | $x^0 = 1$ |
+```tryit
+title: Quick check
+prompt: Simplify **(a)** $x^{1/2} \cdot x^{3/2}$ and **(b)** $\left(x^{2/3}\right)^{6}$.
+hint: Multiply like bases by **adding** exponents; raise a power to a power by **multiplying** exponents.
+answer: **(a)** $x^{\frac{1}{2}+\frac{3}{2}} = x^{2}$. **(b)** $x^{\frac{2}{3}\cdot 6} = x^{4}$.
+```
 
-Two reminders:
+## 2. Brackets, numbers, and signs
 
-- The laws do not work across a $+$ or $-$ sign. $x^{1/2} + x^{1/3}$ cannot be combined into one power.
-- When a bracket contains a number and letters, the outer exponent goes on **each** factor, including the number: $(27a^6)^{2/3} = 27^{2/3}\,a^{4}$.
+When a product sits inside a bracket raised to a fractional power, the exponent applies to **every factor**—numbers included:
 
-## Worked example 1 (basic)
+$$\left(27a^6 b^{-3}\right)^{2/3} = 27^{2/3}\cdot \left(a^6\right)^{2/3}\cdot \left(b^{-3}\right)^{2/3} = 9a^4 b^{-2} = \frac{9a^4}{b^2}$$
 
-Simplify $\frac{x^{3/2} \cdot x^{1/2}}{x}$.
+```compare
+title: Two classic traps
+left_title: Multiply vs add exponents
+left:
+Multiply exponents **only** for a power of a power:
+$$\left(x^{1/2}\right)^{1/3} = x^{1/6}$$
+Multiplying powers with the same base **adds** exponents:
+$$x^{1/2}\cdot x^{1/3} = x^{\frac{3}{6}+\frac{2}{6}} = x^{5/6}$$
+right_title: Terms added together
+right:
+Laws only apply to **multiplication and division**:
+$$x^{1/2} + x^{1/3} \neq x^{5/6}$$
+There is no single-power shortcut across $+$ or $-$.
+```
 
-Add the exponents on top: $\frac{3}{2}+\frac{1}{2} = 2$, so the top is $x^2$. Then divide by $x = x^1$:
-$$\frac{x^2}{x^1} = x^{2-1} = x.$$
+```tryit
+title: Try it first
+prompt: Simplify $\left(16x^8 y^{-4}\right)^{3/4}$ and leave your answer with positive exponents.
+hint: Compute $16^{3/4}$ first using root-first ($\sqrt[4]{16} = 2$), then multiply each variable exponent by $\frac{3}{4}$.
+answer: $16^{3/4} x^{8 \cdot \frac{3}{4}} y^{-4 \cdot \frac{3}{4}} = 2^3 x^6 y^{-3} = \dfrac{8x^6}{y^3}$.
+```
 
-## Worked example 2 (brackets and negative exponents)
-
-Simplify $\left(27a^6 b^{-3}\right)^{2/3}$, and leave the answer with positive exponents.
-
-**Step 1.** Apply the outer exponent to every factor:
-$$27^{2/3} \cdot (a^6)^{2/3} \cdot (b^{-3})^{2/3}.$$
-
-**Step 2.** Work out each piece:
-
-- $27^{2/3} = (\sqrt[3]{27})^2 = 9$
-- $(a^6)^{2/3} = a^{6 \cdot 2/3} = a^4$
-- $(b^{-3})^{2/3} = b^{-2}$
-
-**Step 3.** Put together and make the exponent positive:
-$$9a^4b^{-2} = \frac{9a^4}{b^2}.$$
-
-## Worked example 3 (exam level)
-
-Press **Next step** to build the solution one line at a time.
+## 3. Worked examples
 
 ```steps
-title: Simplify $\frac{\sqrt{x^3}\cdot\sqrt[3]{x^2}}{x^{1/6}}$
-Convert every root to an exponent first :: \frac{x^{3/2} \cdot x^{2/3}}{x^{1/6}}
-Multiply on top by adding exponents. Divide by subtracting :: = x^{3/2+2/3-1/6}
-Use a common denominator of 6 :: = x^{9/6+4/6-1/6}
-Add and subtract the numerators :: = x^{12/6}
-Simplify the fraction :: = x^{2}
+title: Example 1: Simplify $\dfrac{x^{3/2}\cdot x^{1/2}}{x}$ ($x > 0$)
+Add the exponents in the numerator :: \frac{x^{\frac{3}{2}+\frac{1}{2}}}{x^{1}} = \frac{x^{2}}{x^{1}}
+Subtract the denominator exponent :: = x^{2-1} = x
+```
+
+```steps
+title: Example 2: Simplify $\dfrac{\sqrt{x^3}\cdot\sqrt[3]{x^2}}{x^{1/6}}$ ($x > 0$)
+Convert every root to fractional exponent form :: \frac{x^{3/2} \cdot x^{2/3}}{x^{1/6}}
+Combine using product and quotient laws :: = x^{\frac{3}{2}+\frac{2}{3}-\frac{1}{6}}
+Write with common denominator 6 :: = x^{\frac{9}{6}+\frac{4}{6}-\frac{1}{6}}
+Add and simplify :: = x^{\frac{12}{6}} = x^{2}
+```
+
+```steps
+title: Example 3 (Exam level): Simplify $\left(\dfrac{8a^{-3}b^{6}}{27a^{3}}\right)^{-2/3}$
+Simplify inside the bracket first :: \left(\frac{8b^{6}}{27a^{6}}\right)^{-2/3}
+Flip the fraction to make the outer exponent positive :: = \left(\frac{27a^{6}}{8b^{6}}\right)^{2/3}
+Apply the exponent $\frac{2}{3}$ to every factor (root first for 27 and 8) :: = \frac{27^{2/3}\,a^{4}}{8^{2/3}\,b^{4}} = \frac{9a^{4}}{4b^{4}}
 ```
 
 > **Common mistakes**
 >
-> - Multiplying exponents when you should add: $x^{1/2} \cdot x^{1/3} = x^{5/6}$, not $x^{1/6}$.
-> - Adding exponents in a power of a power: $(x^{2/3})^3 = x^2$ (multiply), not $x^{11/3}$.
-> - Forgetting the number inside a bracket: in $(16x^8)^{3/4}$ the 16 must also be raised to $\frac{3}{4}$.
-> - Trying to combine terms across a plus sign, such as $x^{1/2} + x^{1/3}$.
-> - Losing a negative sign when subtracting a negative exponent: dividing by $x^{-2}$ means adding 2 to the exponent.
-> - Sloppy fraction arithmetic. Write the common denominator down; do not do it in your head.
+> - **Forgetting the coefficient:** $(16x^8)^{3/4}$ requires $16^{3/4} = 8$, not $16x^6$.
+> - **Subtracting negative exponents poorly:** $\frac{x^2}{x^{-3}} = x^{2 - (-3)} = x^5$, not $x^{-1}$.
+> - **Skipping common denominators:** write $\frac{3}{6} + \frac{2}{6}$ down rather than guessing $\frac{1}{2} + \frac{1}{3}$.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: Simplify $x^{1/2} \cdot x^{3/2}$.
-A: $x^{1/2+3/2} = x^2$.
+A: $x^{\frac{1}{2}+\frac{3}{2}} = x^2$.
 ---
 Q: Simplify $\left(x^{2/3}\right)^3$.
-A: $x^{2/3\cdot 3} = x^2$.
+A: $x^{\frac{2}{3}\cdot 3} = x^2$.
 ---
-Q: Simplify $4x^{1/2} \cdot 3x^{-3/2}$. Leave your answer with positive exponents.
-A: Multiply the numbers: $4 \times 3 = 12$. Add the exponents: $\frac{1}{2}+\left(-\frac{3}{2}\right) = -1$. So $12x^{-1} = \frac{12}{x}$.
+Q: Simplify $4x^{1/2} \cdot 3x^{-3/2}$ with positive exponents.
+A: Multiply coefficients ($4 \times 3 = 12$) and add exponents ($\frac{1}{2} - \frac{3}{2} = -1$): $12x^{-1} = \dfrac{12}{x}$.
 ---
 Q: Simplify $\left(16x^8\right)^{3/4}$.
-A: $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8$ and $(x^8)^{3/4} = x^6$. Answer: $8x^6$.
+A: $16^{3/4} = (\sqrt[4]{16})^3 = 8$ and $(x^8)^{3/4} = x^6$, giving $8x^6$.
 ---
-Q: Simplify $\frac{\sqrt{x}\cdot\sqrt[3]{x}}{x^{5/6}}$ (assume $x > 0$).
-A: Convert: $x^{1/2} \cdot x^{1/3} \div x^{5/6} = x^{1/2+1/3-5/6}$. Now $\frac{3}{6}+\frac{2}{6}-\frac{5}{6} = 0$, so the answer is $x^0 = 1$.
+Q: Simplify $\dfrac{\sqrt{x}\cdot\sqrt[3]{x}}{x^{5/6}}$ ($x > 0$).
+A: $\dfrac{x^{1/2}\cdot x^{1/3}}{x^{5/6}} = x^{\frac{3}{6}+\frac{2}{6}-\frac{5}{6}} = x^0 = 1$.
 ---
-Q: Simplify $\frac{\left(a^{2/3}b^{-1/2}\right)^6}{a^2 b^{-3}}$. Leave your answer with positive exponents.
-A: Top: $a^{2/3\cdot 6}\,b^{-1/2\cdot 6} = a^4 b^{-3}$. Divide: $a^{4-2}\,b^{-3-(-3)} = a^2 b^0 = a^2$.
+Q: Simplify $\dfrac{\left(a^{2/3}b^{-1/2}\right)^6}{a^2 b^{-3}}$ ($a, b > 0$).
+A: Numerator: $a^4 b^{-3}$. Divide: $a^{4-2} b^{-3 - (-3)} = a^2 b^0 = a^2$.
 ---
 Q: Simplify $\left(\tfrac{1}{2}x^{-1/2}\right)^{-2}$.
-A: Apply the exponent $-2$ to each factor: $\left(\tfrac{1}{2}\right)^{-2} = 4$ and $\left(x^{-1/2}\right)^{-2} = x^1$. Answer: $4x$.
+A: $\left(\tfrac{1}{2}\right)^{-2} \cdot \left(x^{-1/2}\right)^{-2} = 4x$.
 ```
 
 ## Further help
 
-- Siyavula Mathematics Grade 11, [1.1 Revision](https://www.siyavula.com/read/za/mathematics/grade-11/exponents-and-surds/01-exponents-and-surds-01) (the laws for integer exponents).
+- Siyavula Mathematics Grade 11, [1.1 Revision](https://www.siyavula.com/read/za/mathematics/grade-11/exponents-and-surds/01-exponents-and-surds-01).
 - Siyavula Mathematics Grade 11, [1.2 Rational exponents and surds](https://www.siyavula.com/read/za/mathematics/grade-11/exponents-and-surds/01-exponents-and-surds-02).

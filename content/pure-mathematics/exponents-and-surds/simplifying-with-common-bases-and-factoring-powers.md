@@ -9,101 +9,109 @@ subtopic: Rational exponents and their laws
 order: 113
 ---
 
-> **What you'll learn:** how to rewrite numbers with different bases as one base, and how to factor out a common power so that long expressions collapse to a simple number.
+> **What you'll learn:** how to break composite bases into primes so exponent laws apply, and why factoring out the smallest power collapses sums like $2^{n+2} - 2^n$ into clean numbers.
 >
-> **Prerequisites:** [Exponent laws with fractions](/library/pure-mathematics/exponents-and-surds/exponent-laws-with-fractions), and factorising a common factor.
+> **Prerequisites:** [Exponent laws with fractions](/library/pure-mathematics/exponents-and-surds/exponent-laws-with-fractions), and taking out a common factor.
 
-## The idea in plain language
+## 1. Products and quotients: prime-factor every base
 
-The exponent laws only work when the **bases match**. If you see $4^x$ and $2^x$ together, you cannot combine them until you notice $4 = 2^2$. So the first move is always:
+Exponent laws only merge powers that share a **base**. If you see $4^x$, $9^n$, or $12^n$, break each base into primes first ($4 = 2^2$, $9 = 3^2$, $12 = 2^2 \cdot 3$):
 
-1. Break every base into prime factors (2, 3, 5, 7, ...). For example $4 = 2^2$, $8 = 2^3$, $9 = 3^2$, $27 = 3^3$, $12 = 2^2 \cdot 3$.
-2. Rewrite the powers so that each prime has its own exponent.
-3. Apply the laws.
+$$\frac{12^n}{3^{n-1}\cdot 2^{2n}} = \frac{(2^2 \cdot 3)^n}{3^{n-1}\cdot 2^{2n}} = \frac{2^{2n}\cdot 3^n}{3^{n-1}\cdot 2^{2n}} = 3^{n-(n-1)} = 3$$
 
-Expressions that mix a **sum or difference** of powers, like $2^{n+2} - 2^n$, need a second trick: **factor out the smallest power**. Because $2^{n+2} = 2^n \cdot 2^2$, the term $2^n$ is a common factor.
-
-## Rules and tools
-
-- Split a sum in the exponent: $a^{n+k} = a^n \cdot a^k$, and $a^{n-k} = \frac{a^n}{a^k}$.
-- Split a product base: $(ab)^n = a^n b^n$, so $6^n = 2^n \cdot 3^n$ and $12^n = 2^{2n}\cdot 3^n$.
-- Factor out the **lowest** power: $3^{n+2} + 3^n = 3^n(3^2 + 1) = 3^n \cdot 10$.
-- Only common **factors** cancel, never single terms of a sum. Factorise first.
-
-## Worked example 1 (basic)
-
-```steps
-title: Simplify $\frac{2^{n+2} - 2^{n}}{2^{n-1}}$
-Split the exponents so each power looks like $2^n \times$ a number :: \frac{2^{n}\cdot 2^{2} - 2^{n}}{2^{n}\div 2}
-Factor $2^n$ out of the top :: = \frac{2^{n}(4-1)}{\frac{2^{n}}{2}}
-Work out the bracket :: = \frac{3\cdot 2^{n}}{\frac{2^{n}}{2}}
-Dividing by $\frac{2^n}{2}$ is multiplying by $\frac{2}{2^n}$, so $2^n$ cancels :: = 3 \cdot 2
-Finish :: = 6
+```rule
+title: Breaking bases and exponents apart
+(ab)^{n} = a^{n} b^{n} \qquad a^{n+k} = a^{n}\cdot a^{k} \qquad a^{n-k} = a^{n}\cdot a^{-k} = \frac{a^{n}}{a^{k}}
 ```
 
-The answer does not depend on $n$. That is what these questions are designed to show.
+```tryit
+title: Quick check
+prompt: Simplify **(a)** $9^{x/2} \cdot 3^{1-x}$ and **(b)** $\dfrac{2^{x+2}\cdot 3^{x-1}}{6^x}$.
+hint: Write $9 = 3^2$ in (a), and write $6^x = 2^x \cdot 3^x$ in (b).
+answer: **(a)** $(3^2)^{x/2} \cdot 3^{1-x} = 3^x \cdot 3^{1-x} = 3^{x + 1 - x} = 3$. **(b)** $\dfrac{2^x \cdot 4 \cdot 3^x \cdot 3^{-1}}{2^x \cdot 3^x} = \dfrac{4}{3}$.
+```
 
-## Worked example 2 (changing the base)
+## 2. Sums and differences: factor out the common power
 
-Simplify $9^{x/2} \cdot 3^{1-x}$.
+When a fraction contains $+$ or $-$ between powers, you **cannot** cancel individual terms. Instead, split each exponent (`a^{n+k} = a^n \cdot a^k`) and **factor out the shared base power**:
 
-**Step 1.** Write 9 as $3^2$:
-$$9^{x/2} = \left(3^2\right)^{x/2} = 3^{x}.$$
+```diagram
+name: factor-power
+```
 
-**Step 2.** Now the bases match, so add the exponents:
-$$3^{x}\cdot 3^{1-x} = 3^{x+1-x} = 3^1 = 3.$$
+Notice what happens when you factor out $a^n$: the $n$-dependence cancels completely, leaving pure arithmetic.
 
-## Worked example 3 (exam level)
+```compare
+title: Why you must factor before cancelling
+left_title: Right: factor the whole numerator
+left:
+$$\frac{3^{n+2} - 3^n}{8} = \frac{3^n(3^2 - 1)}{8} = \frac{3^n \cdot 8}{8} = 3^n$$
+Every term in the numerator contained $3^n$, so it became a factor of the entire top.
+right_title: Wrong: cancelling across + or −
+right:
+$$\frac{2^n + 5}{2^n} \neq 5$$
+$2^n$ is added to $5$, not multiplied by $5$. It is **not** a common factor and cannot cancel.
+```
 
-**(a)** Simplify $\frac{2^{n+1}\cdot 3^{n+2}}{6^n}$.
+```tryit
+title: Try it first
+prompt: Simplify $\dfrac{3^{n+1} + 3^n}{2 \cdot 3^{n-1}}$.
+hint: Factor $3^n$ out of the numerator ($3^{n+1} + 3^n = 3^n(3 + 1)$), and write $3^{n-1} = \dfrac{3^n}{3}$.
+answer: $\dfrac{3^n(3 + 1)}{2 \cdot \frac{3^n}{3}} = \dfrac{4}{\frac{2}{3}} = 4 \times \dfrac{3}{2} = 6$.
+```
 
-**(b)** Show that $\frac{3^{n+2}-3^n}{8} = 3^n$.
+## 3. Worked examples
 
-**(a)** Split the numerator and write $6^n = 2^n \cdot 3^n$:
-$$\frac{2^n\cdot 2 \cdot 3^n \cdot 9}{2^n \cdot 3^n} = 2 \cdot 9 = 18.$$
+```steps
+title: Example 1: Simplify $\dfrac{2^{n+2} - 2^{n}}{2^{n-1}}$
+Split the exponents around $2^n$ :: \frac{2^{n}\cdot 2^{2} - 2^{n}\cdot 1}{2^{n}\cdot 2^{-1}}
+Factor $2^n$ out of the numerator :: = \frac{2^{n}(4 - 1)}{2^{n}\cdot \frac{1}{2}}
+Cancel $2^n$ and divide by $\frac{1}{2}$ :: = \frac{3}{\frac{1}{2}} = 6
+```
 
-**(b)** Work on the left-hand side only. Factor out $3^n$:
-$$\frac{3^{n+2}-3^n}{8} = \frac{3^n\left(3^2 - 1\right)}{8} = \frac{3^n \cdot 8}{8} = 3^n.$$
+```steps
+title: Example 2: Simplify $\dfrac{2^{n+1}\cdot 3^{n+2}}{6^n}$
+Write $6^n$ as $2^n \cdot 3^n$ and split the top :: \frac{2^n \cdot 2^1 \cdot 3^n \cdot 3^2}{2^n \cdot 3^n}
+Cancel $2^n$ and $3^n$ :: = 2 \cdot 9 = 18
+```
 
-This equals the right-hand side, so the statement is shown to be true.
+```steps
+title: Example 3 (Exam level): Show that $\dfrac{5^{x+2} - 5^{x}}{3 \cdot 5^{x+1}} = \dfrac{8}{5}$
+Work on the left-hand side. Factor $5^x$ out of the top :: \text{LHS} = \frac{5^x(5^2 - 1)}{3 \cdot 5^x \cdot 5^1}
+Cancel $5^x$ and compute the numbers :: = \frac{25 - 1}{3 \cdot 5} = \frac{24}{15} = \frac{8}{5} = \text{RHS}
+```
 
 > **Common mistakes**
 >
-> - Cancelling part of a sum. In $\frac{2^n + 5}{2^n}$ the $2^n$ does not cancel to leave 5. Only a factor of the whole top can cancel.
-> - Losing the 1 when factoring: $3^{n+1}+3^n = 3^n(3+1)$, not $3^n \cdot 3$.
-> - Mixing up $2^{n+3}$ with $2^n + 3$. The $+3$ sits in the exponent, so it means $2^n \cdot 2^3$.
-> - Forgetting to change the base before adding exponents: $4^x \cdot 2^x = 2^{2x}\cdot 2^x = 2^{3x}$, not $2^{2x}$.
-> - Merging different bases and different exponents: $2^x \cdot 3^x = 6^x$ is fine, but $2^x \cdot 3^y$ is not $6^{x+y}$.
+> - **Dropping the $1$ when factoring:** $3^{n+1} + 3^n = 3^n(3 + 1)$, not $3^n(3)$.
+> - **Confusing $2^{n+3}$ with $2^n + 3$:** $+3$ in the exponent means multiply by $2^3 = 8$.
+> - **Merging unlike bases with unlike exponents:** $2^x \cdot 3^x = 6^x$ is valid, but $2^x \cdot 3^y \neq 6^{x+y}$.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: Simplify $\frac{2^{x+1}\cdot 2^{x-1}}{4^x}$.
-A: Top: $2^{x+1+x-1} = 2^{2x}$. Bottom: $4^x = (2^2)^x = 2^{2x}$. The quotient is $1$.
+Q: Simplify $\dfrac{2^{x+1}\cdot 2^{x-1}}{4^x}$.
+A: Top: $2^{(x+1)+(x-1)} = 2^{2x}$. Bottom: $4^x = (2^2)^x = 2^{2x}$. Quotient: $1$.
 ---
 Q: Evaluate without a calculator: $9^{1/2}\cdot 27^{2/3}$.
 A: $9^{1/2} = 3$ and $27^{2/3} = (\sqrt[3]{27})^2 = 9$. Product: $27$.
 ---
-Q: Simplify $\frac{25^x}{5^{2x-1}}$.
-A: $25^x = (5^2)^x = 5^{2x}$. Then $5^{2x} \div 5^{2x-1} = 5^{2x-(2x-1)} = 5^1 = 5$.
+Q: Simplify $\dfrac{25^x}{5^{2x-1}}$.
+A: $\dfrac{(5^2)^x}{5^{2x-1}} = 5^{2x-(2x-1)} = 5^1 = 5$.
 ---
-Q: Simplify $\frac{3^{n+2}-3^n}{8\cdot 3^{n-1}}$.
-A: Top: $3^n(3^2-1) = 8\cdot 3^n$. Bottom: $8\cdot 3^{n-1} = 8\cdot\frac{3^n}{3}$. So the quotient is $\frac{8\cdot 3^n}{8\cdot 3^n}\cdot 3 = 3$.
+Q: Simplify $\dfrac{3^{n+2}-3^n}{8\cdot 3^{n-1}}$.
+A: $\dfrac{3^n(9 - 1)}{8 \cdot \frac{3^n}{3}} = \dfrac{8 \cdot 3^n}{8 \cdot 3^n} \cdot 3 = 3$.
 ---
-Q: Simplify $\frac{2^{n+3}+2^{n+1}}{5\cdot 2^{n-1}}$.
-A: Top: $2^n(2^3+2^1) = 2^n\cdot 10$. Bottom: $5\cdot\frac{2^n}{2}$. Quotient: $\frac{10\cdot 2^n \cdot 2}{5\cdot 2^n} = \frac{20}{5} = 4$.
+Q: Simplify $\dfrac{2^{n+3}+2^{n+1}}{5\cdot 2^{n-1}}$.
+A: $\dfrac{2^n(8 + 2)}{5 \cdot \frac{2^n}{2}} = \dfrac{10}{\frac{5}{2}} = 4$.
 ---
-Q: Simplify $\frac{12^n}{3^{n-1}\cdot 2^{2n}}$.
-A: $12^n = (2^2\cdot 3)^n = 2^{2n}\cdot 3^n$. Bottom: $3^{n-1}\cdot 2^{2n}$. The $2^{2n}$ cancels, leaving $\frac{3^n}{3^{n-1}} = 3^{n-(n-1)} = 3$.
----
-Q: Simplify $\frac{2^{x+2}\cdot 3^{x-1}}{6^x}$.
-A: $2^{x+2} = 2^x\cdot 4$ and $3^{x-1} = \frac{3^x}{3}$, and $6^x = 2^x\cdot 3^x$. So
-$$\frac{2^x\cdot 4\cdot 3^x\cdot\frac{1}{3}}{2^x\cdot 3^x} = \frac{4}{3}.$$
+Q: Simplify $\dfrac{12^n}{3^{n-1}\cdot 2^{2n}}$.
+A: $\dfrac{2^{2n}\cdot 3^n}{3^{n-1}\cdot 2^{2n}} = 3^{n-(n-1)} = 3$.
 ---
 Q: Evaluate without a calculator: $49^{-1/2}\cdot 343^{2/3}$.
-A: $49^{-1/2} = \frac{1}{\sqrt{49}} = \frac{1}{7}$ and $343^{2/3} = (\sqrt[3]{343})^2 = 7^2 = 49$. Product: $\frac{49}{7} = 7$.
+A: $49^{-1/2} = \dfrac{1}{7}$ and $343^{2/3} = (\sqrt[3]{343})^2 = 7^2 = 49$. Product: $\dfrac{49}{7} = 7$.
 ```
 
 ## Further help

@@ -9,97 +9,112 @@ subtopic: Equations involving surds
 order: 141
 ---
 
-> **What you'll learn:** how to solve equations with a square root in them by isolating the root, squaring both sides, and checking for false answers.
+> **What you'll learn:** how to solve square-root equations cleanly in four steps, and *why* squaring both sides can create fake ("extraneous") solutions that must be checked and rejected.
 >
-> **Prerequisites:** [Rationalising denominators](/library/pure-mathematics/exponents-and-surds/rationalising-denominators), expanding $(a+b)^2$, and solving quadratic equations by factorising.
+> **Prerequisites:** [Rationalising denominators](/library/pure-mathematics/exponents-and-surds/rationalising-denominators), expanding $(a+b)^2$, and solving quadratic equations.
 
-## The idea in plain language
+## 1. Why squaring can invent a false answer
 
-To undo a square root, square it. But squaring is a blunt tool: $(-2)^2 = 4$ and $2^2 = 4$, so squaring can invent answers that the original equation never allowed. The fix is simple and non-negotiable: **always substitute your answers back** into the original equation.
+Squaring is not a one-to-one operation: both $2^2 = 4$ and $(-2)^2 = 4$. When you square both sides of $\sqrt{x+7} = x + 1$, you also solve the hidden twin equation $-\sqrt{x+7} = x + 1$.
 
-The graph shows why. For $\sqrt{x+7} = x + 1$ the quadratic gives two candidates, $x = 2$ and $x = -3$. The curve and the line cross only at $x = 2$. At $x = -3$ the curve is at height $2$ but the line is at height $-2$, so $-3$ is false.
+Look at the graph below for $\sqrt{x+7} = x + 1$. The algebra produces two candidates, $x = 2$ and $x = -3$:
+- At $x = 2$, the curve and line meet at height $3$ (**valid**).
+- At $x = -3$, the curve is at $+2$ while the line is at $-2$ (**false**—they only matched *after* squaring made $(-2)^2 = (+2)^2$).
 
-![The curve y = square root of (x + 7) and the line y = x + 1 cross at (2;3) only. At x = -3 the curve is at 2 and the line at -2.](/content-images/surd-equation-check.svg)
-
-## The method
+```diagram
+name: surd-extraneous-visual
+```
 
 ```rule
-title: Isolate, square, solve, check
-\sqrt{f(x)} = g(x) \;\Rightarrow\; f(x) = \left[g(x)\right]^{2} \;\text{, then test every answer}
+title: Four-step method for surd equations
+\text{1. Isolate the surd} \;\longrightarrow\; \text{2. Square both sides} \;\longrightarrow\; \text{3. Solve} \;\longrightarrow\; \text{4. Check in the ORIGINAL equation}
 ```
 
-1. Get the surd alone on one side.
-2. Square both sides. Square the whole side, not each term.
-3. Solve the new equation.
-4. Substitute each answer into the **original** equation. Reject any that fail.
-
-## Worked example 1 (basic)
-
-```steps
-title: Solve $\sqrt{x+7} = x+1$
-The surd is already alone. Square both sides :: x + 7 = (x+1)^{2}
-Expand the right side :: x + 7 = x^{2} + 2x + 1
-Write in standard form :: x^{2} + x - 6 = 0
-Factorise :: (x+3)(x-2) = 0
-Two candidates :: x = -3 \quad\text{or}\quad x = 2
-Check $x = 2$: $\sqrt{9} = 3$ and $2 + 1 = 3$ :: \text{accepted}
-Check $x = -3$: $\sqrt{4} = 2$ but $-3 + 1 = -2$ :: \text{rejected}
+```tryit
+title: Quick check
+prompt: Solve $\sqrt{x + 6} = x$ and test **both** quadratic answers in the original equation.
+hint: Square both sides, rearrange to $x^2 - x - 6 = 0$, factorise, and substitute both candidates back into $\sqrt{x+6} = x$.
+answer: $x + 6 = x^2 \implies (x-3)(x+2) = 0 \implies x = 3$ or $x = -2$. Checking $x = 3$: $\sqrt{9} = 3$ ($\checkmark$). Checking $x = -2$: $\sqrt{4} = 2 \neq -2$ (reject). Answer: $x = 3$.
 ```
 
-## Worked example 2 (isolate first)
+## 2. Two habits that protect your marks
 
-```steps
-title: Solve $\sqrt{2x-1} + 2 = x$
-Isolate the surd first :: \sqrt{2x-1} = x - 2
-Square both sides :: 2x - 1 = (x-2)^{2}
-Expand :: 2x - 1 = x^{2} - 4x + 4
-Standard form :: x^{2} - 6x + 5 = 0
-Factorise :: (x-1)(x-5) = 0
-Check $x = 1$: $\sqrt{1} + 2 = 3$, but the right side is $1$ :: \text{rejected}
-Check $x = 5$: $\sqrt{9} + 2 = 5$ :: \text{accepted}
+```compare
+title: Isolate and expand properly
+left_title: Right: isolate the surd first
+left:
+For $\sqrt{2x-1} + 2 = x$, move $+2$ first:
+$$\sqrt{2x-1} = x - 2$$
+Then square both **sides**:
+$$2x - 1 = (x - 2)^2 = x^2 - 4x + 4$$
+right_title: Wrong: squaring term by term
+right:
+$$\left(\sqrt{2x-1} + 2\right)^2 \neq (2x-1) + 4$$
+$$(x - 2)^2 \neq x^2 - 4$$
+Squaring a sum or difference always creates a middle $2ab$ term.
 ```
 
-## Worked example 3 (exam level)
+Also watch out: **always check in the original equation**, never in the squared equation (both candidates satisfy the squared equation by design). And don't assume one solution is always rejected—sometimes **both** work!
+
+```tryit
+title: Try it first
+prompt: Solve $x + 1 = \sqrt{5x + 1}$. Are one or both solutions valid?
+hint: The surd is already isolated. Square both sides, solve $x^2 - 3x = 0$, and test both roots.
+answer: $(x+1)^2 = 5x + 1 \implies x^2 - 3x = 0 \implies x = 0$ or $x = 3$. For $x = 0$: $1 = \sqrt{1}$ ($\checkmark$). For $x = 3$: $4 = \sqrt{16}$ ($\checkmark$). **Both** $x = 0$ and $x = 3$ are valid.
+```
+
+## 3. Worked examples
 
 ```steps
-title: Solve $\sqrt{x^{2}+5} = x+1$
-Square both sides :: x^{2} + 5 = (x+1)^{2}
-Expand :: x^{2} + 5 = x^{2} + 2x + 1
-The $x^2$ terms cancel :: 4 = 2x
-Solve :: x = 2
-Check: $\sqrt{9} = 3$ and $2 + 1 = 3$ :: \text{accepted}
+title: Example 1: Solve $\sqrt{x + 7} = x + 1$
+Surd is isolated; square both sides :: x + 7 = (x + 1)^{2}
+Expand and move everything to one side :: x + 7 = x^{2} + 2x + 1 \;\Longrightarrow\; x^{2} + x - 6 = 0
+Factorise :: (x + 3)(x - 2) = 0 \;\Longrightarrow\; x = -3 \text{ or } x = 2
+Check $x = 2$: $\sqrt{9} = 3$ and $2 + 1 = 3$ :: \text{valid} \implies x = 2
+Check $x = -3$: $\sqrt{4} = 2 \neq -2$ :: \text{rejected}
+```
+
+```steps
+title: Example 2: Solve $\sqrt{2x - 1} + 2 = x$
+Isolate the surd first :: \sqrt{2x - 1} = x - 2
+Square both sides :: 2x - 1 = (x - 2)^{2} = x^{2} - 4x + 4
+Standard form and factorise :: x^{2} - 6x + 5 = 0 \;\Longrightarrow\; (x - 1)(x - 5) = 0
+Check $x = 1$: $\sqrt{1} + 2 = 3 \neq 1$ :: \text{rejected}
+Check $x = 5$: $\sqrt{9} + 2 = 5$ :: \text{valid} \implies x = 5
+```
+
+```steps
+title: Example 3 (Exam level): Solve $\sqrt{x^{2} + 5} = x + 1$
+Square both sides :: x^{2} + 5 = (x + 1)^{2} = x^{2} + 2x + 1
+Subtract $x^2$ from both sides :: 5 = 2x + 1 \;\Longrightarrow\; 2x = 4 \;\Longrightarrow\; x = 2
+Check in original equation: $\sqrt{2^2 + 5} = \sqrt{9} = 3 = 2 + 1$ :: x = 2 \text{ is valid}
 ```
 
 > **Common mistakes**
 >
-> - Squaring before isolating the surd. $\sqrt{2x-1} + 2 = x$ cannot be squared term by term.
-> - Squaring each term of a side: $(x - 2)^2 \neq x^2 - 4$. Expand it as a bracket.
-> - Not checking. Most "extra" answers come from this step being skipped.
-> - Checking in the squared equation instead of the original. Both candidates will pass there.
-> - Thinking one answer is always false. In some questions both are valid; check each separately.
+> - **Forgetting to check:** skipping substitution leaves invalid answers and loses the final mark.
+> - **Treating $\sqrt{x+7} = -2$ as solvable:** a principal square root $\sqrt{\dots}$ is always $\geq 0$, so any step where a surd equals a negative number is immediately impossible.
+> - **Checking in the squared equation:** always test against the *very first line* of the question.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: Solve $\sqrt{x-2} = 3$.
-A: Square: $x - 2 = 9$, so $x = 11$. Check: $\sqrt{9} = 3$ ✓.
+Q: Solve $\sqrt{x - 2} = 3$.
+A: $x - 2 = 9 \implies x = 11$. Check: $\sqrt{9} = 3$ ($\checkmark$).
 ---
-Q: Solve $\sqrt{3x+4} = x$.
-A: Square: $3x + 4 = x^2$, so $x^2 - 3x - 4 = 0$ and $(x-4)(x+1) = 0$. Check $x = 4$: $\sqrt{16} = 4$ ✓. Check $x = -1$: $\sqrt{1} = 1$ but the right side is $-1$, so reject. Answer: $x = 4$.
+Q: Solve $\sqrt{3x + 4} = x$.
+A: $3x + 4 = x^2 \implies (x-4)(x+1) = 0$. Check $x = 4$: $\sqrt{16} = 4$ ($\checkmark$). Check $x = -1$: $\sqrt{1} = 1 \neq -1$ (reject). Answer: $x = 4$.
 ---
-Q: Solve $\sqrt{x+6} = x$.
-A: Square: $x + 6 = x^2$, so $x^2 - x - 6 = 0$ and $(x-3)(x+2) = 0$. Check $x = 3$: $\sqrt{9} = 3$ ✓. Check $x = -2$: $\sqrt{4} = 2$ but the right side is $-2$, so reject. Answer: $x = 3$.
+Q: Solve $x - 1 = \sqrt{x + 11}$.
+A: $x^2 - 2x + 1 = x + 11 \implies x^2 - 3x - 10 = 0 \implies (x-5)(x+2) = 0$. Check $x = 5$: $4 = \sqrt{16}$ ($\checkmark$). Check $x = -2$: $-3 \neq 3$ (reject). Answer: $x = 5$.
 ---
-Q: Solve $x - 1 = \sqrt{x+11}$.
-A: Square: $x^2 - 2x + 1 = x + 11$, so $x^2 - 3x - 10 = 0$ and $(x-5)(x+2) = 0$. Check $x = 5$: $4 = \sqrt{16}$ ✓. Check $x = -2$: $-3$ but $\sqrt{9} = 3$, so reject. Answer: $x = 5$.
+Q: Solve $\sqrt{x^{2} + 8} = x + 2$.
+A: $x^2 + 8 = x^2 + 4x + 4 \implies 4x = 4 \implies x = 1$. Check: $\sqrt{9} = 3 = 1 + 2$ ($\checkmark$).
 ---
-Q: Solve $x + 1 = \sqrt{5x+1}$.
-A: Square: $x^2 + 2x + 1 = 5x + 1$, so $x^2 - 3x = 0$ and $x(x-3) = 0$. Check $x = 0$: $1 = \sqrt{1}$ ✓. Check $x = 3$: $4 = \sqrt{16}$ ✓. Both are valid: $x = 0$ or $x = 3$.
----
-Q: Solve $\sqrt{x^{2}+8} = x + 2$.
-A: Square: $x^2 + 8 = x^2 + 4x + 4$, so $4 = 4x$ and $x = 1$. Check: $\sqrt{9} = 3$ and $1 + 2 = 3$ ✓.
+Q: **(Exam level)** Solve $2\sqrt{x + 3} - x = 3$.
+A: Isolate: $2\sqrt{x+3} = x + 3$. Square: $4(x+3) = x^2 + 6x + 9 \implies x^2 + 2x - 3 = 0 \implies (x+3)(x-1) = 0$. Check $x = -3$: $2(0) - (-3) = 3$ ($\checkmark$). Check $x = 1$: $2(2) - 1 = 3$ ($\checkmark$). Both $x = -3$ and $x = 1$ are valid.
 ```
 
 ## Further help

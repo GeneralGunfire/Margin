@@ -9,90 +9,111 @@ subtopic: Solving exponential equations
 order: 121
 ---
 
-> **What you'll learn:** how to solve an equation where the unknown sits in an exponent, by writing both sides as powers of the same base.
+> **What you'll learn:** *why* matching bases lets you equate exponents directly, and how to turn exponential equations with fractions, roots, or multiple terms into ordinary linear equations.
 >
 > **Prerequisites:** [Simplifying with common bases and factoring powers](/library/pure-mathematics/exponents-and-surds/simplifying-with-common-bases-and-factoring-powers), and solving linear equations.
 
-## The idea in plain language
+## 1. Why matching the base works
 
-An equation like $3^{2x} = 27^{x-1}$ looks hard because $x$ is up in the exponent. But look at the bases: $27$ is just $3^3$. Once both sides are powers of $3$, the two sides can only be equal if the exponents are equal. So you swap an exponential equation for an ordinary linear equation.
+Because an exponential graph $y = a^x$ (with $a > 0$ and $a \neq 1$) strictly climbs or falls without ever turning around, each $y$-value belongs to **exactly one** exponent $x$.
 
-## The rule
+So the moment both sides are written as single powers of the **same** base, their exponents must be equal:
 
 ```rule
 title: Same base, same exponent
 a^{m} = a^{n} \;\Longrightarrow\; m = n \qquad (a > 0,\ a \neq 1)
 ```
 
-**Method**
+Notice the restriction $a \neq 1$: $1^3 = 1^{99}$, so equating exponents when the base is $1$ would fail.
 
-1. Write every base as a power of the same small number (2, 3, 5, ...).
-2. Use the exponent laws until each side is a single power.
-3. Equate the exponents and solve.
-4. Check by substituting back.
-
-## Worked example 1 (basic)
-
-```steps
-title: Solve $3^{2x} = 27^{x-1}$
-Write 27 as a power of 3 :: 3^{2x} = \left(3^{3}\right)^{x-1}
-Multiply the exponents on the right :: 3^{2x} = 3^{3(x-1)}
-Same base, so the exponents are equal :: 2x = 3(x-1)
-Expand the bracket :: 2x = 3x - 3
-Collect the x terms :: x = 3
-Check: both sides give $729$ :: 3^{6} = 729 \quad\text{and}\quad 27^{2} = 729
+```tryit
+title: Quick check
+prompt: Solve **(a)** $2^x = 32$ and **(b)** $9^x = 27$.
+hint: Express $32$ as a power of $2$, and both $9$ and $27$ as powers of $3$.
+answer: **(a)** $2^x = 2^5 \implies x = 5$. **(b)** $(3^2)^x = 3^3 \implies 2x = 3 \implies x = \dfrac{3}{2}$.
 ```
 
-## Worked example 2 (two different bases)
+## 2. Three moves when the equation looks messy
+
+1. **Isolate the power term** if there is a coefficient or constant next to it (e.g., $5 \cdot 2^x = 40 \implies 2^x = 8$).
+2. **Rewrite roots and reciprocals as exponents:** $\frac{1}{27} = 3^{-3}$ and $\sqrt{8} = 2^{3/2}$.
+3. **Multiply inner and outer exponents** carefully using brackets before dropping the base.
+
+```compare
+title: Two mistakes that break the method
+left_title: Dropping unequal bases
+left:
+In $4^x = 2^3$, the bases are $4$ and $2$, so $x \neq 3$.
+First rewrite $4^x = 2^{2x}$:
+$$2^{2x} = 2^3 \implies 2x = 3 \implies x = \frac{3}{2}$$
+right_title: Dividing out coefficients vs exponents
+right:
+In $3 \cdot 2^x = 24$, **do not** multiply $3 \times 2$ to get $6^x$.
+Divide both sides by $3$ first:
+$$2^x = 8 = 2^3 \implies x = 3$$
+```
+
+```tryit
+title: Try it first
+prompt: Solve $2 \cdot 5^{x-1} = 50$.
+hint: Divide both sides by $2$ before rewriting $25$ as a power of $5$.
+answer: $5^{x-1} = 25 = 5^2 \implies x - 1 = 2 \implies x = 3$.
+```
+
+## 3. Worked examples
 
 ```steps
-title: Solve $4^{x+1} = 8^{x-2}$
-Both 4 and 8 are powers of 2 :: \left(2^{2}\right)^{x+1} = \left(2^{3}\right)^{x-2}
-Multiply the exponents :: 2^{2x+2} = 2^{3x-6}
-Equate the exponents :: 2x + 2 = 3x - 6
+title: Example 1: Solve $3^{2x} = 27^{x-1}$
+Write 27 as $3^3$ :: 3^{2x} = \left(3^{3}\right)^{x-1}
+Multiply the exponents on the right :: 3^{2x} = 3^{3x-3}
+Bases match, so equate exponents :: 2x = 3x - 3
+Solve for $x$ :: x = 3
+```
+
+```steps
+title: Example 2: Solve $4^{x+1} = 8^{x-2}$
+Rewrite both 4 and 8 as powers of 2 :: \left(2^{2}\right)^{x+1} = \left(2^{3}\right)^{x-2}
+Expand the exponents :: 2^{2x+2} = 2^{3x-6}
+Equate exponents :: 2x + 2 = 3x - 6
 Solve :: x = 8
 ```
 
-## Worked example 3 (exam level)
-
 ```steps
-title: Solve $2^{3x-1} = \frac{1}{\sqrt{8}}$
-Turn the right side into a power of 2 :: \sqrt{8} = 8^{1/2} = 2^{3/2}
-A reciprocal gives a negative exponent :: \frac{1}{\sqrt{8}} = 2^{-3/2}
-Equate the exponents :: 3x - 1 = -\frac{3}{2}
-Add 1 to both sides :: 3x = -\frac{1}{2}
-Divide by 3 :: x = -\frac{1}{6}
+title: Example 3 (Exam level): Solve $2^{3x-1} = \dfrac{1}{\sqrt{8}}$
+Convert $\sqrt{8}$ into base 2 :: \sqrt{8} = 8^{1/2} = \left(2^{3}\right)^{1/2} = 2^{3/2}
+Move to numerator with a negative exponent :: 2^{3x-1} = 2^{-3/2}
+Equate exponents :: 3x - 1 = -\frac{3}{2}
+Add 1 and divide by 3 :: 3x = -\frac{1}{2} \;\Longrightarrow\; x = -\frac{1}{6}
 ```
 
 > **Common mistakes**
 >
-> - Equating exponents before the bases match. $4^{x} = 2^{3}$ does **not** mean $x = 3$.
-> - Forgetting to multiply when raising a power to a power: $\left(3^3\right)^{x-1} = 3^{3(x-1)}$, so the bracket must be expanded.
-> - Dividing the bases instead of rewriting them: $\frac{9^x}{3^x}$ is not "3" until you write $9^x = 3^{2x}$.
-> - Losing a negative sign when you write a reciprocal as a negative exponent.
+> - **Forgetting brackets when multiplying exponents:** $(3^3)^{x-1} = 3^{3x-3}$, not $3^{3x-1}$.
+> - **Multiplying base and coefficient:** $3 \cdot 2^x \neq 6^x$ because the exponent $x$ belongs only to $2$.
+> - **Skipping the quick substitution check:** plugging $x$ back in takes ten seconds and catches sign flips immediately.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: Solve $2^{x} = 64$.
-A: $64 = 2^{6}$, so $2^{x} = 2^{6}$ and $x = 6$.
+A: $2^x = 2^6 \implies x = 6$.
 ---
 Q: Solve $5^{x-1} = 125$.
-A: $125 = 5^{3}$, so $x - 1 = 3$ and $x = 4$.
+A: $5^{x-1} = 5^3 \implies x - 1 = 3 \implies x = 4$.
 ---
-Q: Solve $9^{x} = 27$.
-A: $9 = 3^2$ and $27 = 3^3$, so $3^{2x} = 3^{3}$. Then $2x = 3$ and $x = \frac{3}{2}$.
+Q: Solve $3 \cdot 2^{x+1} = 48$.
+A: Divide by $3$: $2^{x+1} = 16 = 2^4$, so $x + 1 = 4$ and $x = 3$.
 ---
 Q: Solve $4^{2x-1} = 8^{x+1}$.
-A: $2^{2(2x-1)} = 2^{3(x+1)}$, which is $2^{4x-2} = 2^{3x+3}$. So $4x - 2 = 3x + 3$ and $x = 5$.
+A: $2^{2(2x-1)} = 2^{3(x+1)} \implies 4x - 2 = 3x + 3 \implies x = 5$.
 ---
-Q: Solve $\frac{2^{x+3}}{4^{x}} = 16$.
-A: $\frac{2^{x+3}}{2^{2x}} = 2^{x+3-2x} = 2^{3-x}$. Since $16 = 2^4$: $3 - x = 4$, so $x = -1$.
+Q: Solve $\dfrac{2^{x+3}}{4^{x}} = 16$.
+A: $\dfrac{2^{x+3}}{2^{2x}} = 2^{3-x} = 2^4 \implies 3 - x = 4 \implies x = -1$.
 ---
-Q: Solve $3^{x+1}\cdot 9^{x} = \frac{1}{27}$.
-A: $3^{x+1}\cdot 3^{2x} = 3^{3x+1}$ and $\frac{1}{27} = 3^{-3}$. So $3x + 1 = -3$ and $x = -\frac{4}{3}$.
+Q: Solve $3^{x+1}\cdot 9^{x} = \dfrac{1}{27}$.
+A: $3^{x+1}\cdot 3^{2x} = 3^{3x+1} = 3^{-3} \implies 3x + 1 = -3 \implies x = -\dfrac{4}{3}$.
 ```
 
 ## Further help

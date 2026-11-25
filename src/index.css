@@ -205,30 +205,33 @@ input:autofill { -webkit-text-fill-color: var(--foreground); box-shadow: 0 0 0 1
 
 /* ---- FullCalendar theming ---- */
 .fc {
-  --fc-border-color: var(--border);
-  --fc-page-bg-color: var(--background);
+  --fc-border-color: color-mix(in srgb, var(--border) 70%, transparent);
+  --fc-page-bg-color: transparent;
   --fc-neutral-bg-color: var(--secondary);
-  --fc-today-bg-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  --fc-today-bg-color: color-mix(in srgb, var(--primary) 10%, transparent);
   --fc-button-bg-color: var(--secondary);
   --fc-button-border-color: var(--border);
   --fc-button-text-color: var(--foreground);
-  --fc-button-hover-bg-color: var(--accent);
+  --fc-button-hover-bg-color: var(--muted);
   --fc-button-hover-border-color: var(--border);
-  --fc-button-active-bg-color: var(--primary);
-  --fc-button-active-border-color: var(--primary);
+  --fc-button-active-bg-color: var(--foreground);
+  --fc-button-active-border-color: var(--foreground);
   --fc-event-border-color: transparent;
   font-size: .875rem;
 }
-.fc .fc-toolbar { flex-wrap: wrap; gap: .5rem; }
-.fc .fc-toolbar-title { font-size: 1.1rem; }
-.fc .fc-button-primary:not(:disabled).fc-button-active { color: #fff; }
+.fc .fc-toolbar { flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem !important; }
+.fc .fc-toolbar-title { font-size: 1.05rem; font-weight: 500; letter-spacing: -0.015em; }
+.fc .fc-button { border-radius: var(--radius) !important; padding: 0.35rem 0.75rem !important; font-size: 0.75rem !important; font-weight: 500 !important; box-shadow: none !important; }
+.fc .fc-button-group > .fc-button { border-radius: var(--radius) !important; margin-left: 0.25rem; }
+.fc .fc-button-primary:not(:disabled).fc-button-active { color: var(--background); }
+.fc .fc-col-header-cell-cushion { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-foreground); padding: 0.6rem 0; font-weight: 500; }
+.fc .fc-daygrid-day-number { font-size: 0.78rem; color: var(--muted-foreground); padding: 0.45rem 0.55rem; }
+.fc .fc-day-today .fc-daygrid-day-number { color: var(--primary); font-weight: 600; }
 
-
-
-/* ---- Library and lesson surfaces (layout borrowed from the Scholar app, colours stay on this theme) ---- */
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
-.card-interactive { transition: transform .12s ease, border-color .1s ease, background-color .1s ease; }
-.card-interactive:hover { transform: translateY(-1.5px); border-color: color-mix(in srgb, var(--foreground) 22%, transparent); }
+/* ---- Library and lesson surfaces ---- */
+.card { background: color-mix(in srgb, var(--card) 55%, transparent); border: 1px solid color-mix(in srgb, var(--border) 80%, transparent); border-radius: 16px; }
+.card-interactive { transition: transform .15s ease, border-color .15s ease, background-color .15s ease; }
+.card-interactive:hover { transform: translateY(-1.5px); border-color: color-mix(in srgb, var(--foreground) 22%, transparent); background: color-mix(in srgb, var(--card) 85%, transparent); }
 .card-interactive:active { transform: none; }
 .label-rule { display: inline-block; width: 18px; height: 2px; border-radius: 1px; background: linear-gradient(90deg, var(--foreground), transparent); }
 @media (prefers-reduced-motion: reduce) { .card-interactive { transition: none; } .card-interactive:hover { transform: none; } }

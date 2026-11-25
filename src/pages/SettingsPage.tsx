@@ -5,11 +5,9 @@ import { useWeeklyGoal } from "@/lib/prefs";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth";
 import { useAvatarUrl } from "@/hooks/useAvatarUrl";
-import { btn, field, kicker } from "@/lib/styles";
 import { Btn } from "@/components/ui/btn";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Note } from "@/components/ui/note";
-import { Spinner } from "@/components/ui/loading";
 import { SubjectTag } from "@/components/ui/ui";
 import { PageHead } from "@/components/page";
 import PasswordInput from "@/components/auth/PasswordInput";
@@ -42,11 +40,14 @@ async function squareBlob(file: File): Promise<Blob> {
   }
 }
 
-function Section({ title, children }: { title: string; children: ReactNode }) {
+function Section({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
   return (
-    <section className="mt-10 border-t border-border pt-6">
-      <h2 className={kicker}>{title}</h2>
-      <div className="mt-4">{children}</div>
+    <section className="border-t border-border pt-7">
+      <div className="mb-4">
+        <h2 className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">{title}</h2>
+        {sub && <p className="mt-1 text-xs text-muted-foreground">{sub}</p>}
+      </div>
+      {children}
     </section>
   );
 }
@@ -69,7 +70,9 @@ export default function SettingsPage() {
     setName(profile?.display_name ?? "");
     setTag(profile?.public_tag ?? "");
   }, [profile]);
-  useEffect(() => () => { if (pending) URL.revokeObjectURL(pending.url); }, [pending]);
+  useEffect(() => () => {
+    if (pending) URL.revokeObjectURL(pending.url);
+  }, [pending]);
 
   const say = (ok: boolean, t: string) => setMsg({ ok, t });
   const dirty = !!pending || name.trim() !== (profile?.display_name ?? "") || tag.trim().toUpperCase() !== (profile?.public_tag ?? "");
@@ -143,55 +146,77 @@ export default function SettingsPage() {
   const shown = pending?.url ?? avatar;
 
   return (
-    <div className="max-w-2xl">
-      <PageHead kicker="Settings" title="Your account" sub="Your profile, your subjects and how Margin looks." />
+    <div className="max-w-2xl space-y-8">
+      <PageHead kicker="Settings" title="Your account" sub="Profile, subjects, weekly study goal and security." />
       {msg && <Note ok={msg.ok}>{msg.t}</Note>}
 
       <Section title="Profile">
-        <form onSubmit={saveProfile} className="flex flex-col gap-6">
-          <div className="flex flex-wrap items-center gap-5">
-            <span className="grid size-24 shrink-0 place-items-center overflow-hidden rounded-full border border-border bg-primary text-2xl font-semibold text-primary-foreground">
-              {shown ? <img src={shown} alt="Your picture" className="size-full object-cover" /> : (tag || name.slice(0, 1) || "?")}
+        <form onSubmit={saveProfile} className="space-y-6">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-full border border-border bg-secondary text-lg font-semibold text-foreground">
+              {shown ? <img src={shown} alt="Your picture" className="size-full object-cover" /> : tag || name.slice(0, 1) || "?"}
             </span>
-            <div className="space-y-2.5">
+            <div className="space-y-1.5">
               <div className="flex flex-wrap gap-2">
-                <button type="button" className={btn} onClick={() => pick.current?.click()}>
-                  <ImagePlus className="size-4" aria-hidden="true" /> {shown ? "Choose another" : "Choose a picture"}
-                </button>
+                <Btn size="sm" variant="secondary" onClick={() => pick.current?.click()}>
+                  <ImagePlus aria-hidden="true" /> {shown ? "Change photo" : "Upload photo"}
+                </Btn>
                 {(profile?.avatar_url || pending) && (
-                  <button type="button" className={btn} onClick={() => (pending ? setPending(null) : removePicture())}>
-                    <Trash2 className="size-4" aria-hidden="true" /> {pending ? "Discard" : "Remove"}
-                  </button>
+                  <Btn size="sm" variant="ghost" onClick={() => (pending ? setPending(null) : removePicture())}>
+                    <Trash2 aria-hidden="true" /> {pending ? "Discard" : "Remove"}
+                  </Btn>
                 )}
               </div>
-              <p className="max-w-sm text-xs leading-5 text-muted-foreground">JPEG, PNG or WebP, up to 2 MB. It is cropped to a square and resized in your browser before upload.</p>
+              <p className="text-[11px] text-muted-foreground">JPEG, PNG or WebP up to 2 MB, cropped square before upload.</p>
             </div>
-            <input ref={pick} type="file" accept=".jpg,.jpeg,.png,.webp" className="hidden" onChange={(e) => { void choose(e.target.files?.[0]); e.target.value = ""; }} />
+            <input
+              ref={pick}
+              type="file"
+              accept=".jpg,.jpeg,.png,.webp"
+              className="hidden"
+              onChange={(e) => {
+                void choose(e.target.files?.[0]);
+                e.target.value = "";
+              }}
+            />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="dn" className={kicker}>Display name</label>
-              <input id="dn" className={`${field} h-9`} value={name} maxLength={60} onChange={(e) => setName(e.target.value)} required />
-              <p className="text-xs text-muted-foreground">Private. Shown on papers you upload.</p>
+              <label htmlFor="dn" className="text-xs font-medium text-muted-foreground">Display name</label>
+              <input
+                id="dn"
+                className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm transition-colors hover:border-muted-foreground/60 focus-visible:border-ring focus-visible:outline-2 focus-visible:outline-ring"
+                value={name}
+                maxLength={60}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <p className="text-[11px] text-muted-foreground">Shown on past papers you upload.</p>
             </div>
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="tag" className={kicker}>Public tag</label>
-              <input id="tag" className={`${field} h-9 uppercase`} value={tag} maxLength={4} onChange={(e) => setTag(e.target.value)} required />
-              <p className="text-xs text-muted-foreground">Initials, up to four letters.</p>
+              <label htmlFor="tag" className="text-xs font-medium text-muted-foreground">Public tag</label>
+              <input
+                id="tag"
+                className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm uppercase transition-colors hover:border-muted-foreground/60 focus-visible:border-ring focus-visible:outline-2 focus-visible:outline-ring"
+                value={tag}
+                maxLength={4}
+                onChange={(e) => setTag(e.target.value)}
+                required
+              />
+              <p className="text-[11px] text-muted-foreground">Initials, up to four letters.</p>
             </div>
           </div>
 
           <div>
-            <Btn type="submit" variant="primary" disabled={!dirty} loading={busy === "profile"}>
+            <Btn type="submit" size="sm" variant="primary" disabled={!dirty} loading={busy === "profile"}>
               {busy === "profile" ? "Saving" : "Save profile"}
             </Btn>
           </div>
         </form>
       </Section>
 
-      <Section title="Subjects">
-        <p className="mb-4 text-sm text-muted-foreground">Unticked subjects are hidden from your Library, Past Papers filters and Calendar tags.</p>
+      <Section title="Subjects" sub="Unticked subjects are hidden from your Library, Past Papers and Calendar.">
         <ul className="grid gap-x-8 sm:grid-cols-2">
           {subjects.map((s) => (
             <li key={s.id} className="border-b border-border py-2.5">
@@ -203,28 +228,27 @@ export default function SettingsPage() {
         </ul>
       </Section>
 
-      <Section title="Study goal">
-        <p className="mb-4 text-sm text-muted-foreground">How many lessons you want to finish each week. The dashboard ring tracks it. Saved on this device.</p>
+      <Section title="Weekly goal" sub="Lessons you aim to finish each week. Tracked on your dashboard and saved on this device.">
         <div className="flex items-center gap-3">
-          <Btn size="icon" aria-label="Fewer lessons per week" onClick={() => setGoal(goal - 1)} disabled={goal <= 1}>
+          <Btn size="icon-sm" aria-label="Fewer lessons per week" onClick={() => setGoal(goal - 1)} disabled={goal <= 1}>
             <Minus aria-hidden="true" />
           </Btn>
           <span className="w-24 text-center" aria-live="polite">
-            <span className="text-2xl font-semibold tabular-nums">{goal}</span>
+            <span className="text-xl font-semibold tabular-nums">{goal}</span>
             <span className="ml-1.5 text-xs text-muted-foreground">per week</span>
           </span>
-          <Btn size="icon" aria-label="More lessons per week" onClick={() => setGoal(goal + 1)} disabled={goal >= 50}>
+          <Btn size="icon-sm" aria-label="More lessons per week" onClick={() => setGoal(goal + 1)} disabled={goal >= 50}>
             <Plus aria-hidden="true" />
           </Btn>
         </div>
       </Section>
 
       <Section title="Password">
-        <form onSubmit={changePw} className="grid max-w-md gap-3">
+        <form onSubmit={changePw} className="grid max-w-sm gap-3">
           <PasswordInput name="new-password" autoComplete="new-password" placeholder="New password" aria-label="New password" value={pw} onChange={(e) => setPw(e.target.value)} />
           <PasswordInput name="confirm-password" autoComplete="new-password" placeholder="Repeat new password" aria-label="Repeat new password" value={pw2} onChange={(e) => setPw2(e.target.value)} />
           <div>
-            <Btn type="submit" disabled={!pw} loading={busy === "password"}>
+            <Btn type="submit" size="sm" disabled={!pw} loading={busy === "password"}>
               Update password
             </Btn>
           </div>
@@ -232,17 +256,19 @@ export default function SettingsPage() {
       </Section>
 
       <Section title="Account">
-        <p className="mb-3 text-sm text-muted-foreground">Signed in as {session?.user.email}</p>
-        <button
-          type="button"
-          className={btn}
-          onClick={async () => {
-            nav("/login", { replace: true });
-            await signOut();
-          }}
-        >
-          Sign out
-        </button>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">Signed in as <span className="text-foreground">{session?.user.email}</span></p>
+          <Btn
+            size="sm"
+            variant="secondary"
+            onClick={async () => {
+              nav("/login", { replace: true });
+              await signOut();
+            }}
+          >
+            Sign out
+          </Btn>
+        </div>
       </Section>
     </div>
   );

@@ -9,91 +9,103 @@ subtopic: Simultaneous equations (one linear, one quadratic)
 order: 251
 ---
 
-> **What you'll learn:** how to solve two equations in two unknowns when one is linear and the other is quadratic, by substitution.
+> **What you'll learn:** how to solve two equations in $x$ and $y$ when one is linear and the other is quadratic by substituting one variable out.
 >
-> **Prerequisites:** [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve) and [The quadratic formula](/library/pure-mathematics/equations-and-inequalities/the-quadratic-formula), and making a letter the subject of a formula.
+> **Prerequisites:** [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve) and [The quadratic formula](/library/pure-mathematics/equations-and-inequalities/the-quadratic-formula).
 
-## The idea in plain language
+## 1. Collapse two unknowns down to one quadratic
 
-Two equations in $x$ and $y$ describe two conditions that must hold at the same time. When one equation is linear, you can rearrange it to get $x$ or $y$ **alone**, then replace that letter in the quadratic. That leaves one equation in one unknown, a quadratic, which you can solve.
+A single equation in two unknowns—like $x^{2} + y^{2} = 10$—has infinitely many solutions. Adding a linear condition—like $x - y = 2$—pins down the exact $(x;\ y)$ pairs that satisfy both at the same time.
 
-The answer is always a **pair**: finish by finding the matching value of the other letter for each solution.
-
-## The method
+Rearrange the **linear** equation so one variable stands alone, substitute it into the **quadratic**, and you are left with an ordinary one-variable quadratic equation.
 
 ```rule
-title: Substitution
-\text{1. make } y \text{ (or } x\text{) the subject of the linear equation} \quad \text{2. substitute into the quadratic} \quad \text{3. solve} \quad \text{4. find the other letter}
+title: Four-step substitution plan
+\text{1. Isolate } x \text{ or } y \text{ in the linear equation} \quad \text{2. Substitute into the quadratic} \quad \text{3. Solve for the first variable} \quad \text{4. Substitute back into the linear equation}
 ```
 
-Always substitute back into the **linear** equation to find the other value. It is the simplest, and it avoids false pairs.
+## 2. Choose the easier variable to isolate
 
-## Worked example 1 (basic)
-
-```steps
-title: Solve $y = x + 1$ and $y = x^{2} - 2x - 3$
-Both equal $y$, so set them equal :: x + 1 = x^{2} - 2x - 3
-Move everything to one side :: 0 = x^{2} - 3x - 4
-Factorise :: (x-4)(x+1) = 0
-Two values of $x$ :: x = 4 \quad\text{or}\quad x = -1
-Find $y$ from $y = x + 1$ :: y = 5 \quad\text{or}\quad y = 0
-Write the pairs :: (4;\ 5) \quad\text{and}\quad (-1;\ 0)
+```compare
+title: Picking which letter to isolate
+left_title: Good choice (no fractions)
+left:
+In $2x - y = 1$, $y$ has coefficient $-1$:
+$$y = 2x - 1$$
+Clean substitution with no denominators.
+right_title: Harder choice (introduces fractions)
+right:
+Isolating $x$ in $2x - y = 1$ gives:
+$$x = \frac{y + 1}{2}$$
+Still works, but clearing fractions adds extra algebra and sign errors.
 ```
 
-## Worked example 2 (both letters in the quadratic)
+> Always substitute back into the **linear** equation at the end—it gives a single matching partner for each solution and avoids creating false pairs.
 
-```steps
-title: Solve $x + y = 3$ and $x^{2} + xy + y^{2} = 7$
-Make $y$ the subject of the linear equation :: y = 3 - x
-Substitute into the quadratic :: x^{2} + x(3-x) + (3-x)^{2} = 7
-Expand each part :: x^{2} + 3x - x^{2} + 9 - 6x + x^{2} = 7
-Collect like terms :: x^{2} - 3x + 9 = 7
-Standard form :: x^{2} - 3x + 2 = 0
-Factorise :: (x-1)(x-2) = 0
-Find $y = 3 - x$ for each :: (1;\ 2) \quad\text{and}\quad (2;\ 1)
+```tryit
+title: Quick check
+prompt: Which letter should you isolate first in $3x + y = 7$ and $x^{2} + xy = 10$, and what does the substitution look like?
+hint: $y$ has coefficient $1$, so isolate $y$.
+answer: Isolate $y = 7 - 3x$, then substitute into the quadratic to get $x^{2} + x(7 - 3x) = 10$.
 ```
 
-## Worked example 3 (exam level)
+## 3. Worked examples
 
 ```steps
-title: Solve $2x - y = 1$ and $x^{2} + xy - y^{2} = 1$
-Make $y$ the subject :: y = 2x - 1
-Substitute :: x^{2} + x(2x-1) - (2x-1)^{2} = 1
-Expand $(2x-1)^2$ carefully :: x^{2} + 2x^{2} - x - (4x^{2} - 4x + 1) = 1
-Remove the bracket, changing signs :: 3x^{2} - x - 4x^{2} + 4x - 1 = 1
-Collect like terms :: -x^{2} + 3x - 1 = 1
-Standard form :: x^{2} - 3x + 2 = 0
-Factorise :: (x-1)(x-2) = 0
-Find $y = 2x - 1$ :: (1;\ 1) \quad\text{and}\quad (2;\ 3)
+title: Example 1 (Both given with $y$ alone): Solve $y = x + 1$ and $y = x^{2} - 2x - 3$
+Both equal $y$, so equate them :: x + 1 = x^{2} - 2x - 3
+Write in standard form :: x^{2} - 3x - 4 = 0
+Factorise :: (x - 4)(x + 1) = 0
+Solve for $x$ :: x = 4 \quad\text{or}\quad x = -1
+Find matching $y$ from $y = x + 1$ :: (4;\ 5) \quad\text{and}\quad (-1;\ 0)
+```
+
+```steps
+title: Example 2 (Both variables mixed): Solve $x + y = 3$ and $x^{2} + xy + y^{2} = 7$
+Isolate $y$ in the linear equation :: y = 3 - x
+Substitute into the quadratic :: x^{2} + x(3 - x) + (3 - x)^{2} = 7
+Expand carefully :: x^{2} + 3x - x^{2} + 9 - 6x + x^{2} = 7
+Simplify to standard form :: x^{2} - 3x + 2 = 0
+Factorise :: (x - 1)(x - 2) = 0 \;\Longrightarrow\; x = 1 \text{ or } x = 2
+Find $y = 3 - x$ for each $x$ :: (1;\ 2) \quad\text{and}\quad (2;\ 1)
+```
+
+```steps
+title: Example 3 (Exam level — negative squared bracket): Solve $2x - y = 1$ and $x^{2} + xy - y^{2} = 1$
+Isolate $y$ :: y = 2x - 1
+Substitute into the quadratic :: x^{2} + x(2x - 1) - (2x - 1)^{2} = 1
+Expand $(2x - 1)^{2}$ inside brackets first :: x^{2} + 2x^{2} - x - (4x^{2} - 4x + 1) = 1
+Distribute the minus sign :: 3x^{2} - x - 4x^{2} + 4x - 1 = 1
+Collect like terms and multiply by $-1$ :: -x^{2} + 3x - 2 = 0 \;\Longrightarrow\; x^{2} - 3x + 2 = 0
+Factorise and find $y = 2x - 1$ :: (x - 1)(x - 2) = 0 \;\Longrightarrow\; (1;\ 1) \text{ and } (2;\ 3)
 ```
 
 > **Common mistakes**
 >
-> - Giving only the $x$-values. The answer is a pair $(x;\ y)$ each time.
-> - Substituting into the wrong equation, or back into the quadratic (which can give false pairs).
-> - Expanding $(2x-1)^2$ as $4x^2 - 1$. It is $4x^2 - 4x + 1$.
-> - Not changing every sign when subtracting a bracket.
-> - Mismatching pairs: the $x$-value $4$ goes with $y = 5$, not with $y = 0$.
+> - **Stopping after finding $x$:** simultaneous equations always require ordered pairs $(x;\ y)$.
+> - **Mismatching pairs:** keep each $x$ paired with the $y$ computed directly from it.
+> - **Dropping brackets after a minus sign:** in $-(2x - 1)^{2}$, expand $(2x - 1)^{2} = 4x^{2} - 4x + 1$ inside brackets before applying the negative sign.
+> - **Squaring a binomial incorrectly:** $(3 - x)^{2} = 9 - 6x + x^{2}$, not $9 - x^{2}$.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: Solve $y = x - 1$ and $y = x^{2} - 4x + 3$.
-A: $x - 1 = x^2 - 4x + 3$, so $x^2 - 5x + 4 = 0$ and $(x-1)(x-4) = 0$. Then $x = 1,\ y = 0$ or $x = 4,\ y = 3$. Pairs: $(1;\ 0)$ and $(4;\ 3)$.
+A: $x - 1 = x^{2} - 4x + 3 \implies x^{2} - 5x + 4 = 0 \implies (x - 1)(x - 4) = 0$. Pairs: $(1;\ 0)$ and $(4;\ 3)$.
 ---
 Q: Solve $x + y = 5$ and $xy = 6$.
-A: $y = 5 - x$, so $x(5 - x) = 6$, giving $x^2 - 5x + 6 = 0$ and $(x-2)(x-3) = 0$. Pairs: $(2;\ 3)$ and $(3;\ 2)$.
+A: $y = 5 - x \implies x(5 - x) = 6 \implies x^{2} - 5x + 6 = 0 \implies (x - 2)(x - 3) = 0$. Pairs: $(2;\ 3)$ and $(3;\ 2)$.
 ---
 Q: Solve $y = 2x + 1$ and $y = x^{2} - 2$.
-A: $2x + 1 = x^2 - 2$, so $x^2 - 2x - 3 = 0$ and $(x-3)(x+1) = 0$. Pairs: $(3;\ 7)$ and $(-1;\ -1)$.
+A: $2x + 1 = x^{2} - 2 \implies x^{2} - 2x - 3 = 0 \implies (x - 3)(x + 1) = 0$. Pairs: $(3;\ 7)$ and $(-1;\ -1)$.
 ---
 Q: Solve $x - y = 2$ and $x^{2} + y^{2} = 10$.
-A: $y = x - 2$. Then $x^2 + (x-2)^2 = 10$, so $2x^2 - 4x + 4 = 10$ and $x^2 - 2x - 3 = 0$, giving $(x-3)(x+1) = 0$. Pairs: $(3;\ 1)$ and $(-1;\ -3)$.
+A: $y = x - 2 \implies x^{2} + (x - 2)^{2} = 10 \implies 2x^{2} - 4x - 6 = 0 \implies x^{2} - 2x - 3 = 0$. So $x = 3$ or $x = -1$. Pairs: $(3;\ 1)$ and $(-1;\ -3)$.
 ---
-Q: Solve $2x + y = 4$ and $x^{2} - y = 1$. Leave in surd form.
-A: $y = 4 - 2x$. Then $x^2 - (4 - 2x) = 1$, so $x^2 + 2x - 5 = 0$ and $x = -1 \pm \sqrt{6}$. Then $y = 4 - 2x = 6 \mp 2\sqrt{6}$. Pairs: $\left(-1 + \sqrt{6};\ 6 - 2\sqrt{6}\right)$ and $\left(-1 - \sqrt{6};\ 6 + 2\sqrt{6}\right)$.
+Q: **(Exam level)** Solve $2x + y = 4$ and $x^{2} - y = 1$, leaving your answers in simplest surd form.
+A: $y = 4 - 2x \implies x^{2} - (4 - 2x) = 1 \implies x^{2} + 2x - 5 = 0$. By the quadratic formula, $x = -1 \pm \sqrt{6}$, and $y = 4 - 2(-1 \pm \sqrt{6}) = 6 \mp 2\sqrt{6}$. Pairs: $(-1 + \sqrt{6};\ 6 - 2\sqrt{6})$ and $(-1 - \sqrt{6};\ 6 + 2\sqrt{6})$.
 ```
 
 ## Further help

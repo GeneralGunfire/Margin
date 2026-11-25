@@ -9,95 +9,98 @@ subtopic: Identities and reduction formulae
 order: 314
 ---
 
-> **What you'll learn:** how to prove a trigonometric identity, and how to find the angles for which an identity is undefined.
+> **What you'll learn:** how to prove trigonometric identities rigorously by transforming one side at a time, and how to find every angle where an identity becomes undefined.
 >
-> **Prerequisites:** [Simplifying expressions](/library/pure-mathematics/trigonometry-identities-reduction-formulae-and-equations/simplifying-expressions), and algebraic fractions.
+> **Prerequisites:** [Simplifying expressions](/library/pure-mathematics/trigonometry-identities-reduction-formulae-and-equations/simplifying-expressions) and algebraic fractions.
 
-## The idea in plain language
+## 1. Keep the two sides strictly separate
 
-To **prove** an identity you show that the left-hand side (LHS) and right-hand side (RHS) are equal for every allowed angle. The rule that keeps the proof honest: **work on one side only**, usually the more complicated one, until it matches the other side. Do not move terms across the equals sign, because that assumes what you are trying to prove.
+An identity proof is not an equation to solve—you are **not** looking for $x$, you are proving that the left-hand side (LHS) and right-hand side (RHS) represent the exact same expression for all allowed angles.
 
-Useful moves:
+Therefore, **never move terms across the equals sign**. Pick the messier side (usually the one with fractions or $\tan x$), rewrite it step by step using algebra and the two fundamental identities until it matches the other side, and finish with $\therefore \text{LHS} = \text{RHS}$.
 
-- Replace $\tan x$ by $\frac{\sin x}{\cos x}$.
-- Replace $\sin^2 x$ by $1 - \cos^2 x$ (or the reverse).
-- Combine fractions with a common denominator, or multiply by a conjugate.
-- Factorise, then cancel.
-
-An identity holds for all angles **except** those that make a denominator zero. Those are the angles for which it is **undefined**.
-
-## The identities
+```compare
+title: Valid proof vs illegal manipulation
+left_title: Valid: transform LHS alone
+left:
+Start with $\text{LHS} = \ldots$ and simplify using fractions, conjugates, $\tan x = \frac{\sin x}{\cos x}$, and $\sin^{2}x + \cos^{2}x = 1$ until you arrive at the RHS.
+right_title: Illegal: cross-multiplying across "="
+right:
+Multiplying both sides or moving terms from LHS to RHS **assumes the two sides are already equal**—which is what you were asked to prove!
+```
 
 ```rule
-title: Fundamental identities
+title: Fundamental identities and domain restrictions
 \tan x = \frac{\sin x}{\cos x} \qquad \sin^{2}x + \cos^{2}x = 1
-\tan x \text{ is undefined where } \cos x = 0: \ x = 90^\circ + k\cdot 180^\circ
+\text{An expression is undefined wherever a denominator} = 0 \text{ (including } \cos x = 0 \text{ inside } \tan x\text{)}
 ```
 
-## Worked example 1 (basic)
+## 2. Finding undefined values
 
-```steps
-title: Prove that $\tan x + \frac{1}{\tan x} = \frac{1}{\sin x\cos x}$
-Start with the LHS and replace $\tan x$ :: \frac{\sin x}{\cos x} + \frac{\cos x}{\sin x}
-Common denominator $\sin x\cos x$ :: \frac{\sin^{2}x + \cos^{2}x}{\sin x\cos x}
-Use $\sin^2 x + \cos^2 x = 1$ :: \frac{1}{\sin x\cos x}
-This equals the RHS :: \text{LHS} = \text{RHS}
+An identity breaks whenever **any denominator equals zero**—in the LHS, in the RHS, or hidden inside $\tan x = \frac{\sin x}{\cos x}$:
+
+- $\tan x$ is undefined when $\cos x = 0 \implies x = 90^\circ + k\cdot 180^\circ,\ k \in \mathbb{Z}$.
+- A fraction $\frac{A}{1 - \sin x}$ is undefined when $1 - \sin x = 0 \implies \sin x = 1 \implies x = 90^\circ + k\cdot 360^\circ$.
+
+```tryit
+title: Quick check
+prompt: For which values of $x \in [0^\circ;\ 360^\circ]$ is $\dfrac{\cos x}{1 + \sin x} + \tan x$ undefined?
+hint: Check both denominators: $1 + \sin x = 0$ and $\cos x = 0$ (from $\tan x$).
+answer: $1 + \sin x = 0 \implies \sin x = -1 \implies x = 270^\circ$. And $\tan x$ is undefined when $\cos x = 0 \implies x = 90^\circ$ or $270^\circ$. Combined: $x = 90^\circ$ or $x = 270^\circ$.
 ```
 
-## Worked example 2 (difference of squares)
+## 3. Worked examples
 
 ```steps
-title: Prove that $(1 - \sin x)(1 + \sin x) = \cos^{2}x$
-Expand the LHS :: 1 - \sin^{2}x
-Use $\sin^2 x + \cos^2 x = 1$ :: \cos^{2}x
-This equals the RHS :: \text{LHS} = \text{RHS}
+title: Example 1 (Replace $\tan x$ and add fractions): Prove $\tan x + \frac{1}{\tan x} = \frac{1}{\sin x\cos x}$
+Start with LHS and write $\tan x$ in terms of $\sin x, \cos x$ :: \text{LHS} = \frac{\sin x}{\cos x} + \frac{\cos x}{\sin x}
+Combine over LCD $\sin x\cos x$ :: = \frac{\sin^{2}x + \cos^{2}x}{\sin x\cos x}
+Apply $\sin^{2}x + \cos^{2}x = 1$ :: = \frac{1}{\sin x\cos x} = \text{RHS}
 ```
 
-## Worked example 3 (exam level)
+```steps
+title: Example 2 (Difference of squares): Prove $(1 - \sin x)(1 + \sin x) = \cos^{2}x$
+Expand the LHS :: \text{LHS} = 1 - \sin^{2}x
+Use $\sin^{2}x + \cos^{2}x = 1$ :: = \cos^{2}x = \text{RHS}
+```
 
 ```steps
-title: Prove that $\frac{\cos x}{1 - \sin x} = \frac{1 + \sin x}{\cos x}$ and state when it is undefined
-Multiply top and bottom of the LHS by $(1 + \sin x)$ :: \frac{\cos x(1 + \sin x)}{(1 - \sin x)(1 + \sin x)}
-Expand the bottom :: \frac{\cos x(1 + \sin x)}{1 - \sin^{2}x}
-Use $1 - \sin^2 x = \cos^2 x$ :: \frac{\cos x(1 + \sin x)}{\cos^{2}x}
-Cancel one $\cos x$ :: \frac{1 + \sin x}{\cos x}
-This equals the RHS :: \text{LHS} = \text{RHS}
-LHS undefined when $1 - \sin x = 0$, so $\sin x = 1$ :: x = 90^\circ + k\cdot 360^\circ
-RHS undefined when $\cos x = 0$ :: x = 90^\circ + k\cdot 180^\circ
-The identity is undefined for all of these :: x = 90^\circ + k\cdot 180^\circ,\ k \in \mathbb{Z}
+title: Example 3 (Exam level — conjugate & undefined values): Prove $\frac{\cos x}{1 - \sin x} = \frac{1 + \sin x}{\cos x}$ and find where it is undefined
+Multiply LHS numerator and denominator by $(1 + \sin x)$ :: \text{LHS} = \frac{\cos x(1 + \sin x)}{(1 - \sin x)(1 + \sin x)}
+Expand denominator and apply $1 - \sin^{2}x = \cos^{2}x$ :: = \frac{\cos x(1 + \sin x)}{1 - \sin^{2}x} = \frac{\cos x(1 + \sin x)}{\cos^{2}x}
+Cancel one $\cos x$ :: = \frac{1 + \sin x}{\cos x} = \text{RHS}
+LHS denominator $= 0$ when $\sin x = 1$ :: x = 90^\circ + k\cdot 360^\circ
+RHS denominator $= 0$ when $\cos x = 0$ (covers $90^\circ$ and $270^\circ$) :: x = 90^\circ + k\cdot 180^\circ,\quad k \in \mathbb{Z}
 ```
 
 > **Common mistakes**
 >
-> - Working on both sides at once, or moving terms across the equals sign.
-> - Dividing by an expression that could be zero without noting the restriction.
-> - Writing $\sin^2 x$ as $\sin x^2$ or $(\sin x)^2$ inconsistently.
-> - Cancelling terms across addition instead of factors.
-> - Forgetting that the final statement ("LHS = RHS") is part of the proof.
-> - Stating "undefined" values from only one side. Check both sides' denominators.
+> - **Cross-multiplying in a proof:** always keep `LHS = ...` separate from `RHS`.
+> - **Forgetting hidden denominators:** if $\tan x$ sits in the denominator ($\frac{1}{\tan x}$), check **both** $\cos x = 0$ (so $\tan x$ exists) and $\tan x = 0$ ($\sin x = 0$).
+> - **Checking only one side for undefined values:** include zeros from denominators on **both** the LHS and the RHS.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: Prove that $\frac{\sin x}{\tan x} = \cos x$.
-A: LHS $= \sin x \div \frac{\sin x}{\cos x} = \sin x \cdot \frac{\cos x}{\sin x} = \cos x$ = RHS.
+Q: Prove that $\dfrac{\sin x}{\tan x} = \cos x$.
+A: $\text{LHS} = \sin x \div \dfrac{\sin x}{\cos x} = \sin x \cdot \dfrac{\cos x}{\sin x} = \cos x = \text{RHS}$.
 ---
 Q: Prove that $\tan x\cos x = \sin x$.
-A: LHS $= \frac{\sin x}{\cos x}\cdot\cos x = \sin x$ = RHS.
+A: $\text{LHS} = \dfrac{\sin x}{\cos x}\cdot\cos x = \sin x = \text{RHS}$.
 ---
 Q: Prove that $(\sin x + \cos x)^{2} = 1 + 2\sin x\cos x$.
-A: LHS $= \sin^2 x + 2\sin x\cos x + \cos^2 x = 1 + 2\sin x\cos x$ = RHS.
+A: $\text{LHS} = \sin^{2}x + 2\sin x\cos x + \cos^{2}x = (\sin^{2}x + \cos^{2}x) + 2\sin x\cos x = 1 + 2\sin x\cos x = \text{RHS}$.
 ---
-Q: Prove that $\frac{1 - \cos^{2}x}{\sin x} = \sin x$.
-A: LHS $= \frac{\sin^2 x}{\sin x} = \sin x$ = RHS.
+Q: Prove that $\dfrac{1 - \cos^{2}x}{\sin x} = \sin x$.
+A: $\text{LHS} = \dfrac{\sin^{2}x}{\sin x} = \sin x = \text{RHS}$.
 ---
-Q: Prove that $\frac{\sin x}{1 + \cos x} + \frac{1 + \cos x}{\sin x} = \frac{2}{\sin x}$.
-A: LHS $= \frac{\sin^2 x + (1 + \cos x)^2}{\sin x(1 + \cos x)} = \frac{\sin^2 x + 1 + 2\cos x + \cos^2 x}{\sin x(1 + \cos x)} = \frac{2 + 2\cos x}{\sin x(1 + \cos x)} = \frac{2(1 + \cos x)}{\sin x(1 + \cos x)} = \frac{2}{\sin x}$ = RHS.
+Q: **(Exam level)** Prove that $\dfrac{\sin x}{1 + \cos x} + \dfrac{1 + \cos x}{\sin x} = \dfrac{2}{\sin x}$.
+A: $\text{LHS} = \dfrac{\sin^{2}x + (1 + \cos x)^{2}}{\sin x(1 + \cos x)} = \dfrac{\sin^{2}x + 1 + 2\cos x + \cos^{2}x}{\sin x(1 + \cos x)} = \dfrac{2 + 2\cos x}{\sin x(1 + \cos x)} = \dfrac{2(1 + \cos x)}{\sin x(1 + \cos x)} = \dfrac{2}{\sin x} = \text{RHS}$.
 ---
-Q: For which values of $x \in [0^\circ;\ 360^\circ]$ is $\frac{\sin x}{\tan x}$ undefined?
-A: It is undefined when $\tan x$ is undefined or when $\tan x = 0$. $\tan x$ is undefined at $90^\circ$ and $270^\circ$. $\tan x = 0$ at $0^\circ$, $180^\circ$ and $360^\circ$. So the expression is undefined at $0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$ and $360^\circ$.
+Q: For which values of $x \in [0^\circ;\ 360^\circ]$ is $\dfrac{\sin x}{\tan x}$ undefined?
+A: It is undefined where $\tan x$ is undefined ($\cos x = 0 \implies 90^\circ, 270^\circ$) or where the denominator $\tan x = 0$ ($\sin x = 0 \implies 0^\circ, 180^\circ, 360^\circ$). So $x \in \{0^\circ,\ 90^\circ,\ 180^\circ,\ 270^\circ,\ 360^\circ\}$.
 ```
 
 ## Further help

@@ -1,16 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, Copy, ExternalLink, Search } from "lucide-react";
-import { Btn } from "@/components/ui/btn";
 import { youtubeSearchUrl } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 const TOOLTIP = "Paste this into YouTube search";
 
 /**
- * "Find a video": a short search phrase to paste into YouTube, with Copy (primary) and an Open in YouTube link.
- * It only builds text and a link. Nothing is fetched from YouTube.
+ * Quiet inline "Find a video" bar: shows the search phrase with subtle Copy and Open in YouTube actions.
  */
 export default function VideoSearch({ phrase, className }: { phrase: string; className?: string }) {
-  const text = useRef<HTMLParagraphElement>(null);
+  const text = useRef<HTMLSpanElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [status, setStatus] = useState<"idle" | "copied" | "selected">("idle");
 
@@ -23,7 +22,6 @@ export default function VideoSearch({ phrase, className }: { phrase: string; cla
     timer.current = setTimeout(() => setStatus("idle"), 2000);
   };
 
-  /** Select the phrase so it can be copied by hand (long-press or Ctrl+C). */
   const selectText = () => {
     const node = text.current;
     const sel = window.getSelection();
@@ -42,14 +40,13 @@ export default function VideoSearch({ phrase, className }: { phrase: string; cla
         return flash("copied");
       }
     } catch {
-      /* fall through to the manual fallback */
+      /* fall through */
     }
-    // Fallback for browsers without the clipboard API (or when it is blocked): select the text, try the old copy command.
     if (selectText()) {
       try {
         if (document.execCommand("copy")) return flash("copied");
       } catch {
-        /* leave it selected */
+        /* leave selected */
       }
       flash("selected");
     }
@@ -57,40 +54,48 @@ export default function VideoSearch({ phrase, className }: { phrase: string; cla
 
   return (
     <div
-      className={`flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-border bg-secondary/40 px-3 py-2 ${className ?? ""}`}
+      className={cn("flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-muted-foreground", className)}
       title={TOOLTIP}
       role="group"
       aria-label="Find a video"
     >
-      <span className="inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-muted-foreground">
-        <Search className="size-3.5" aria-hidden="true" /> Find a video
+      <span className="inline-flex shrink-0 items-center gap-1.5">
+        <Search className="size-3.5" aria-hidden="true" />
+        <span>Video search:</span>
       </span>
 
-      <p
+      <span
         ref={text}
         onClick={selectText}
         title={TOOLTIP}
-        className="line-clamp-2 min-w-0 flex-1 basis-56 cursor-text select-all rounded-md border border-input bg-background px-2.5 py-1.5 text-[13px] leading-snug"
+        className="cursor-text select-all text-foreground/90 underline decoration-border underline-offset-4"
       >
         {phrase}
-      </p>
+      </span>
 
-      <div className="flex shrink-0 items-center gap-1">
-        <Btn variant="primary" size="sm" onClick={copy} title={TOOLTIP} className="min-w-[4.75rem] max-sm:h-11 max-sm:min-w-[5.5rem]">
-          {status === "copied" ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+      <span className="inline-flex items-center gap-2">
+        <button
+          type="button"
+          onClick={copy}
+          title={TOOLTIP}
+          className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+        >
+          {status === "copied" ? <Check className="size-3 text-primary" aria-hidden="true" /> : <Copy className="size-3" aria-hidden="true" />}
           {status === "copied" ? "Copied" : "Copy"}
-        </Btn>
-        <Btn variant="ghost" size="sm" className="max-sm:h-11" asChild>
-          <a href={youtubeSearchUrl(phrase)} target="_blank" rel="noopener noreferrer">
-            Open in YouTube <ExternalLink aria-hidden="true" />
-          </a>
-        </Btn>
-      </div>
+        </button>
+        <a
+          href={youtubeSearchUrl(phrase)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-medium text-primary transition-colors hover:bg-secondary"
+        >
+          YouTube <ExternalLink className="size-3" aria-hidden="true" />
+        </a>
+      </span>
 
       <span role="status" aria-live="polite" className="sr-only">
-        {status === "copied" ? "Copied to clipboard" : status === "selected" ? "Text selected. Copy it with your device's copy command." : ""}
+        {status === "copied" ? "Copied to clipboard" : status === "selected" ? "Text selected." : ""}
       </span>
-      {status === "selected" && <span className="basis-full text-[11px] text-muted-foreground">Selected. Press and hold or use Ctrl+C to copy.</span>}
     </div>
   );
 }

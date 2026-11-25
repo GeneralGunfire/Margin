@@ -9,94 +9,100 @@ subtopic: Word problems leading to quadratics
 order: 261
 ---
 
-> **What you'll learn:** how to turn a word problem into a quadratic equation, solve it, and reject answers that do not make sense in the context.
+> **What you'll learn:** how to translate a word problem into a quadratic equation, solve it, and filter out roots that make no sense in the real context.
 >
-> **Prerequisites:** [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve), [The quadratic formula](/library/pure-mathematics/equations-and-inequalities/the-quadratic-formula) and [Equations that become quadratics](/library/pure-mathematics/equations-and-inequalities/equations-that-become-quadratics).
+> **Prerequisites:** [Factorise and solve](/library/pure-mathematics/equations-and-inequalities/factorise-and-solve), [The quadratic formula](/library/pure-mathematics/equations-and-inequalities/the-quadratic-formula), and [Equations that become quadratics](/library/pure-mathematics/equations-and-inequalities/equations-that-become-quadratics).
 
-## The idea in plain language
+## 1. Turning a story into a quadratic equation
 
-Word problems are quadratics in disguise. The maths is the easy part. The skill is reading the story and writing it as an equation. A good routine:
+The algebra in a word problem is rarely the hardest part—setting up the equation cleanly is. Follow a repeatable sequence:
 
-1. **Define** what $x$ stands for, with units.
-2. Write the other quantities **in terms of $x$**.
-3. Build an equation from the fact the question gives (an area, a product, a time).
-4. Solve it.
-5. **Check each answer in the story.** A length cannot be negative. A number of people must be a whole number.
-6. Answer the question in a sentence, with units.
-
-## The rule
+1. **Define $x$** clearly (including units).
+2. **Express all other quantities** in terms of $x$.
+3. **Write one equation** connecting them using the condition in the problem.
+4. **Solve** the quadratic, then **check every solution** against reality (lengths, ages, speeds, and counts cannot be negative).
 
 ```rule
-title: Common models
-\text{area} = l \times w \qquad \text{time} = \frac{\text{distance}}{\text{speed}} \qquad \text{Pythagoras: } a^{2} + b^{2} = c^{2}
+title: Common relationships used in modelling
+\text{Area} = l \times w \qquad \text{Time} = \frac{\text{distance}}{\text{speed}} \qquad a^{2} + b^{2} = c^{2}
 ```
 
-## Worked example 1 (area)
+## 2. Getting speed–distance–time subtraction the right way round
+
+```compare
+title: Which fraction is bigger?
+left_title: Slower speed → LONGER time
+left:
+Walking $12\text{ km}$ at $x\text{ km/h}$ takes **more** time than at $(x + 2)\text{ km/h}$:
+$$\text{time difference} = \frac{12}{x} - \frac{12}{x + 2} = 1$$
+right_title: Swapped subtraction → NEGATIVE time
+right:
+Putting the smaller time first gives $-1$:
+$$\frac{12}{x + 2} - \frac{12}{x} = 1 \quad \text{(wrong sign!)}$$
+Always subtract **smaller time from larger time**.
+```
+
+```tryit
+title: Quick check
+prompt: A rectangle's length is $5\text{ cm}$ more than its width, and its area is $36\text{ cm}^{2}$. Set up the quadratic equation for the width $x$ and state why one root must be rejected.
+hint: Width $= x$, length $= x + 5$, area $= x(x + 5) = 36$.
+answer: $x(x + 5) = 36 \implies x^{2} + 5x - 36 = 0 \implies (x + 9)(x - 4) = 0$. Reject $x = -9$ because width cannot be negative, so width $= 4\text{ cm}$.
+```
+
+## 3. Worked examples
 
 ```steps
-title: The length of a rectangle is 3 cm more than its width. Its area is 54 cm². Find its dimensions.
-Let the width be $x$ cm. The length is then :: x + 3
-Area is length times width :: x(x+3) = 54
-Expand :: x^{2} + 3x = 54
+title: Example 1 (Geometry — area): Length is $3\text{ cm}$ more than width, area is $54\text{ cm}^{2}$
+Let width be $x\text{ cm}$, so length is $x + 3$ :: \text{width} = x,\quad \text{length} = x + 3
+Area equation :: x(x + 3) = 54
 Standard form :: x^{2} + 3x - 54 = 0
-Factorise :: (x+9)(x-6) = 0
-$x = -9$ is impossible for a width :: x = 6
-Length is $x + 3$ :: \text{width } 6 \text{ cm, length } 9 \text{ cm}
+Factorise :: (x + 9)(x - 6) = 0
+Reject $x = -9$ (length $> 0$) :: x = 6
+Answer both dimensions :: \text{width } 6\text{ cm},\ \text{length } 9\text{ cm}
 ```
 
-## Worked example 2 (numbers)
-
 ```steps
-title: Two positive numbers differ by 4 and their product is 96. Find them.
-Let the smaller number be $x$. The other is :: x + 4
-Their product is 96 :: x(x+4) = 96
-Standard form :: x^{2} + 4x - 96 = 0
-Factorise :: (x+12)(x-8) = 0
+title: Example 2 (Consecutive or related numbers): Two positive numbers differ by $4$ and have product $96$
+Let the smaller number be $x$, so the larger is $x + 4$ :: x(x + 4) = 96
+Standard form and factorise :: x^{2} + 4x - 96 = 0 \;\Longrightarrow\; (x + 12)(x - 8) = 0
 Positive numbers only, so reject $x = -12$ :: x = 8
-The numbers :: 8 \text{ and } 12
+Write both numbers :: 8 \text{ and } 12
 ```
 
-## Worked example 3 (exam level: speed)
-
 ```steps
-title: Thabo walks 12 km at $x$ km/h. If he walked 2 km/h faster, the walk would take 1 hour less. Find $x$.
-Time at speed $x$ :: \frac{12}{x}
-Time at speed $x + 2$ :: \frac{12}{x+2}
-The difference is 1 hour :: \frac{12}{x} - \frac{12}{x+2} = 1
-Multiply every term by $x(x+2)$ :: 12(x+2) - 12x = x(x+2)
-Simplify the left side :: 24 = x^{2} + 2x
-Standard form :: x^{2} + 2x - 24 = 0
-Factorise :: (x+6)(x-4) = 0
-A speed cannot be negative :: x = 4 \text{ km/h}
+title: Example 3 (Exam level — speed and time): Thabo walks $12\text{ km}$ at $x\text{ km/h}$. At $(x + 2)\text{ km/h}$, the walk takes $1\text{ hour}$ less. Find $x$.
+Time at speed $x$ is larger than time at speed $x + 2$ :: \frac{12}{x} - \frac{12}{x + 2} = 1
+Multiply by LCD $x(x + 2)$ :: 12(x + 2) - 12x = x(x + 2)
+Simplify :: 24 = x^{2} + 2x \;\Longrightarrow\; x^{2} + 2x - 24 = 0
+Factorise :: (x + 6)(x - 4) = 0
+Reject $x = -6$ (speed $> 0$) :: x = 4\text{ km/h}
 ```
 
 > **Common mistakes**
 >
-> - Not defining the letter. Write "Let $x$ be ..." every time.
-> - Forgetting to reject impossible answers (negative lengths or speeds).
-> - Mixing units: if the speed is in km/h, the time is in hours.
-> - Answering with only $x$ when the question asks for something else (the length, the other number).
-> - Setting up the wrong difference: decide which time is bigger before subtracting.
+> - **Not rejecting impossible roots:** always check whether a negative or non-integer root violates the problem.
+> - **Mixing units:** if speed is in $\text{km/h}$ and distance in $\text{km}$, convert any time in minutes into hours first (e.g. $30\text{ min} = \frac{1}{2}\text{ h}$).
+> - **Answering only $x$:** if the question asks for both dimensions or the faster speed, finish the last calculation and include units.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: A rectangle has perimeter 34 cm and area 60 cm². Find its length and width.
-A: Length plus width is 17. Let the width be $x$: the length is $17 - x$. Then $x(17 - x) = 60$, so $x^2 - 17x + 60 = 0$ and $(x-5)(x-12) = 0$. The dimensions are 5 cm and 12 cm.
+Q: A rectangle has perimeter $34\text{ cm}$ and area $60\text{ cm}^{2}$. Find its dimensions.
+A: Half-perimeter is $17\text{ cm}$, so if width $= x$, length $= 17 - x$. Then $x(17 - x) = 60 \implies x^{2} - 17x + 60 = 0 \implies (x - 5)(x - 12) = 0$. The dimensions are $5\text{ cm}$ and $12\text{ cm}$.
 ---
-Q: The product of two consecutive positive integers is 156. Find them.
-A: Let them be $n$ and $n + 1$. Then $n(n+1) = 156$, so $n^2 + n - 156 = 0$ and $(n+13)(n-12) = 0$. Reject $n = -13$. The integers are 12 and 13.
+Q: The product of two consecutive positive integers is $156$. Find them.
+A: Let the integers be $n$ and $n + 1$. Then $n(n + 1) = 156 \implies n^{2} + n - 156 = 0 \implies (n + 13)(n - 12) = 0$. Reject $n = -13$. The integers are $12$ and $13$.
 ---
-Q: A ball is thrown up. Its height is $h = 20t - 5t^{2}$ metres after $t$ seconds. When is it 15 m high?
-A: $20t - 5t^2 = 15$, so $5t^2 - 20t + 15 = 0$. Divide by 5: $t^2 - 4t + 3 = 0$, so $(t-1)(t-3) = 0$. It is 15 m high after 1 second (going up) and after 3 seconds (coming down).
+Q: A ball's height is $h = 20t - 5t^{2}$ metres after $t$ seconds. When is it $15\text{ m}$ high?
+A: $20t - 5t^{2} = 15 \implies 5t^{2} - 20t + 15 = 0 \implies t^{2} - 4t + 3 = 0 \implies (t - 1)(t - 3) = 0$. Both are positive: at $t = 1\text{ s}$ (going up) and $t = 3\text{ s}$ (coming down).
 ---
-Q: The shorter side of a right-angled triangle is $x$ cm, the other short side is $(x + 7)$ cm and the hypotenuse is 13 cm. Find $x$.
-A: Pythagoras: $x^2 + (x+7)^2 = 169$, so $2x^2 + 14x + 49 = 169$ and $x^2 + 7x - 60 = 0$. $(x+12)(x-5) = 0$. Reject $x = -12$. So $x = 5$ cm and the sides are 5, 12 and 13 cm.
+Q: The legs of a right-angled triangle are $x\text{ cm}$ and $(x + 7)\text{ cm}$, and the hypotenuse is $13\text{ cm}$. Find $x$.
+A: $x^{2} + (x + 7)^{2} = 13^{2} \implies 2x^{2} + 14x + 49 = 169 \implies x^{2} + 7x - 60 = 0 \implies (x + 12)(x - 5) = 0$. Reject $x = -12$, so $x = 5\text{ cm}$.
 ---
-Q: Sipho cycles 24 km at $x$ km/h. On the way back his speed is 4 km/h slower and the trip takes 1 hour longer. Find $x$.
-A: $\frac{24}{x-4} - \frac{24}{x} = 1$. Multiply by $x(x-4)$: $24x - 24(x-4) = x(x-4)$, so $96 = x^2 - 4x$ and $x^2 - 4x - 96 = 0$. $(x-12)(x+8) = 0$. Reject $x = -8$. Sipho's speed is 12 km/h.
+Q: **(Exam level)** Sipho cycles $24\text{ km}$ at $x\text{ km/h}$. Coming back at $(x - 4)\text{ km/h}$ takes $1\text{ hour}$ longer. Find $x$.
+A: Slower speed takes longer: $\frac{24}{x - 4} - \frac{24}{x} = 1$. Multiply by $x(x - 4)$: $24x - 24(x - 4) = x(x - 4) \implies x^{2} - 4x - 96 = 0 \implies (x - 12)(x + 8) = 0$. Reject $x = -8$, so $x = 12\text{ km/h}$.
 ```
 
 ## Further help

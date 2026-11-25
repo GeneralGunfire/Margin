@@ -9,129 +9,160 @@ subtopic: Rational exponents and their laws
 order: 111
 ---
 
-> **What you'll learn:** how a root can be written as a fractional exponent (and back again), and how to work out values like $16^{3/4}$ without a calculator.
->
-> **Prerequisites:** the Grade 10 laws for integer exponents, and knowing your squares, cubes and roots (the table below).
+> **What you'll learn:** *why* a fractional exponent means a root and a power, how to evaluate numbers like $16^{3/4}$ and $8^{-2/3}$ without a calculator, and how to switch cleanly between root form and exponent form.
 
-## The idea in plain language
+## 1. Why a fractional exponent is a root
 
-In Grade 10 an exponent counted how many times a number was multiplied by itself. So what could $x^{1/2}$ possibly mean? Half a multiplication?
+In Grade 10, exponents counted repeated multiplication ($5^2 = 5 \times 5 = 25$). So what could $25^{1/2}$ mean?
 
-Let the exponent laws decide. If the product law $x^m \cdot x^n = x^{m+n}$ is to keep working, then
+Instead of guessing, let the Grade 10 product law $x^m \cdot x^n = x^{m+n}$ tell us:
 
-$$x^{1/2} \cdot x^{1/2} = x^{1/2+1/2} = x^1 = x.$$
+$$25^{1/2} \cdot 25^{1/2} = 25^{\frac{1}{2} + \frac{1}{2}} = 25^1 = 25$$
 
-So $x^{1/2}$ is a number that, multiplied by itself, gives $x$. That is exactly the square root. The same thinking gives $x^{1/3}\cdot x^{1/3}\cdot x^{1/3} = x$, so $x^{1/3}$ is the cube root.
+$25^{1/2}$ is the positive number that multiplies by itself to give $25$. That is the exact definition of the **square root**: $25^{1/2} = \sqrt{25} = 5$.
 
-## Rules and definitions
+The same logic works for any unit fraction $\frac{1}{q}$:
 
-For $x > 0$ and integers $p$ and $q$ with $q \geq 2$:
+$$27^{1/3} \cdot 27^{1/3} \cdot 27^{1/3} = 27^{\frac{1}{3}+\frac{1}{3}+\frac{1}{3}} = 27^1 = 27 \implies 27^{1/3} = \sqrt[3]{27} = 3$$
+
+```tryit
+title: Quick check
+prompt: Without a calculator, find the value of **(a)** $49^{1/2}$ and **(b)** $16^{1/4}$.
+hint: Ask yourself: what positive number multiplied by itself $2$ times gives $49$? And $4$ times gives $16$?
+answer: **(a)** $49^{1/2} = \sqrt{49} = 7$ (since $7^2 = 49$). **(b)** $16^{1/4} = \sqrt[4]{16} = 2$ (since $2^4 = 16$).
+```
+
+## 2. Power over root: what $x^{p/q}$ means
+
+Using the power-of-a-power law $(x^m)^n = x^{mn}$, we can split $\frac{p}{q}$ in two orders:
+
+$$x^{p/q} = \left(x^{1/q}\right)^p = \left(\sqrt[q]{x}\right)^p \qquad \text{or} \qquad x^{p/q} = \left(x^p\right)^{1/q} = \sqrt[q]{x^p}$$
+
+```diagram
+name: exponent-anatomy
+```
 
 ```rule
-title: Fractional exponents
-\text{root: } x^{1/q} = \sqrt[q]{x}
-\text{power over root: } x^{p/q} = \left(\sqrt[q]{x}\right)^{p} = \sqrt[q]{x^{p}}
-\text{negative exponent: } x^{-p/q} = \frac{1}{x^{p/q}}
+title: Rational exponents (for x > 0 and integers p, q with q >= 2)
+x^{1/q} = \sqrt[q]{x}
+x^{p/q} = \left(\sqrt[q]{x}\right)^{p} = \sqrt[q]{x^{p}}
+x^{-p/q} = \frac{1}{x^{p/q}} = \frac{1}{\left(\sqrt[q]{x}\right)^{p}}
 ```
 
-- The **denominator** $q$ is the root. The **numerator** $p$ is the power.
-- A negative exponent flips the number over. It does **not** make the answer negative.
-- **Tip:** take the root first, then the power. It keeps the numbers small: $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8$, which is easier than $\sqrt[4]{4096}$.
+We state the general rules for $x > 0$ because even roots of negative numbers (like $(-16)^{1/2} = \sqrt{-16}$) are non-real.
 
-Know these by heart, because every question in this topic relies on them:
+### Take the root first, then the power
 
-| Squares | Cubes | Fourth and fifth powers |
-| --- | --- | --- |
-| $4,\ 9,\ 16,\ 25,\ 36,\ 49,\ 64,\ 81,\ 100$ | $8,\ 27,\ 64,\ 125,\ 216$ | $2^4=16,\ 3^4=81,\ 2^5=32$ |
+Without a calculator, always take the **root first** so your numbers stay small. Compare both ways below:
 
-## Worked example 1 (basic)
-
-Evaluate without a calculator: **(a)** $25^{1/2}$ **(b)** $27^{1/3}$ **(c)** $16^{3/4}$.
-
-**(a)** The denominator is 2, so take the square root: $25^{1/2} = \sqrt{25} = 5$.
-
-**(b)** The denominator is 3, so take the cube root: $27^{1/3} = \sqrt[3]{27} = 3$.
-
-**(c)** Root first (the 4th root of 16 is 2), then the power 3:
-$$16^{3/4} = \left(\sqrt[4]{16}\right)^3 = 2^3 = 8.$$
-
-Part (c) again, one step at a time. Press **Next step** to reveal each line:
-
-```steps
-title: Evaluate $16^{3/4}$
-The denominator is 4 and the numerator is 3 :: 16^{3/4}
-Root first: the 4th root of 16 :: = \left(\sqrt[4]{16}\right)^{3}
-Since $2^4 = 16$, the 4th root of 16 is 2 :: = 2^{3}
-Now the power :: = 8
+```diagram
+name: root-vs-power
 ```
 
-## Worked example 2 (negative exponents)
+## 3. Negative fractional exponents
 
-Evaluate without a calculator: **(a)** $8^{-2/3}$ **(b)** $\left(\frac{1}{4}\right)^{-3/2}$.
+A negative exponent **flips** the term across the fraction line—it **never** makes the answer negative:
 
-**(a)** Deal with the negative sign first by flipping:
-$$8^{-2/3} = \frac{1}{8^{2/3}} = \frac{1}{\left(\sqrt[3]{8}\right)^2} = \frac{1}{2^2} = \frac{1}{4}.$$
+$$x^{-p/q} = \frac{x^0}{x^{p/q}} = \frac{1}{x^{p/q}}$$
 
-**(b)** A negative exponent on a fraction flips the fraction:
-$$\left(\frac{1}{4}\right)^{-3/2} = 4^{3/2} = \left(\sqrt{4}\right)^3 = 2^3 = 8.$$
+If the base is a fraction, flipping it upside down turns the negative exponent positive:
 
-## Worked example 3 (exam level)
+$$\left(\frac{a}{b}\right)^{-p/q} = \left(\frac{b}{a}\right)^{p/q}$$
 
-Evaluate without a calculator. Work out each power on its own, then combine.
-
-```steps
-title: Evaluate $\frac{4^{3/2} \cdot 27^{2/3}}{8^{-1/3}}$
-Start with the top-left power :: 4^{3/2} = \left(\sqrt{4}\right)^{3} = 2^{3} = 8
-Next, the top-right power :: 27^{2/3} = \left(\sqrt[3]{27}\right)^{2} = 3^{2} = 9
-Now the bottom. Flip because the exponent is negative :: 8^{-1/3} = \frac{1}{\sqrt[3]{8}} = \frac{1}{2}
-Put the values back in :: \frac{8 \cdot 9}{\frac{1}{2}} = 72 \div \frac{1}{2}
-Dividing by a half doubles the number :: = 72 \times 2 = 144
+```compare
+title: Watch where the minus sign sits
+left_title: In the exponent: $8^{-2/3}$
+left:
+Flips the power into the denominator:
+$$8^{-2/3} = \frac{1}{8^{2/3}} = \frac{1}{(\sqrt[3]{8})^2} = \frac{1}{2^2} = \frac{1}{4}$$
+The result is **positive**.
+right_title: In front of the base: $-8^{2/3}$
+right:
+Multiplies the positive power by $-1$:
+$$-8^{2/3} = -\left(\sqrt[3]{8}\right)^2 = -(2^2) = -4$$
+Compare with $(-8)^{2/3} = (\sqrt[3]{-8})^2 = (-2)^2 = +4$.
 ```
 
-## Converting between roots and exponents
+```tryit
+title: Try it first
+prompt: Evaluate without a calculator: **(a)** $9^{-3/2}$ and **(b)** $\left(\dfrac{8}{27}\right)^{-2/3}$.
+hint: Flip first to make the exponent positive, then take the root before the power.
+answer: **(a)** $9^{-3/2} = \dfrac{1}{(\sqrt{9})^3} = \dfrac{1}{3^3} = \dfrac{1}{27}$. **(b)** $\left(\dfrac{8}{27}\right)^{-2/3} = \left(\dfrac{27}{8}\right)^{2/3} = \left(\dfrac{3}{2}\right)^2 = \dfrac{9}{4}$.
+```
 
-To work with letters, you will often switch forms:
+## 4. Worked examples and converting forms
 
-| Root form | Exponent form |
+Most non-calculator questions rely on recognising powers of $2$, $3$, and $5$ (and turning decimals like $0{,}008 = \frac{8}{1000} = \frac{1}{125}$ into simplified fractions first):
+
+| Base | Powers to recognise |
 | --- | --- |
-| $\sqrt{x}$ | $x^{1/2}$ |
-| $\sqrt[3]{x^2}$ | $x^{2/3}$ |
-| $\frac{1}{\sqrt{x}}$ | $x^{-1/2}$ |
-| $\frac{4}{\sqrt[3]{x^2}}$ | $4x^{-2/3}$ (only the $x$ moves, the 4 stays) |
+| $2$ | $2^2=4,\quad 2^3=8,\quad 2^4=16,\quad 2^5=32,\quad 2^6=64$ |
+| $3$ | $3^2=9,\quad 3^3=27,\quad 3^4=81,\quad 3^5=243$ |
+| $5$ | $5^2=25,\quad 5^3=125,\quad 5^4=625$ |
+
+```steps
+title: Example 1: Evaluate $(0{,}008)^{-2/3}$ without a calculator
+Convert the decimal to a simplified fraction :: 0{,}008 = \frac{8}{1000} = \frac{1}{125}
+Flip the fraction to make the exponent positive :: \left(\frac{1}{125}\right)^{-2/3} = 125^{2/3}
+Root first ($\sqrt[3]{125} = 5$), then square :: = \left(\sqrt[3]{125}\right)^{2} = 5^{2} = 25
+```
+
+```steps
+title: Example 2 (Exam level): Evaluate $\dfrac{4^{3/2} \cdot 27^{2/3}}{8^{-1/3} \cdot 16^{1/4}}$
+Move $8^{-1/3}$ to the numerator so all exponents are positive :: \dfrac{4^{3/2} \cdot 27^{2/3} \cdot 8^{1/3}}{16^{1/4}}
+Evaluate each power using root-first ($4^{3/2}=2^3=8$, $27^{2/3}=3^2=9$, $8^{1/3}=2$, $16^{1/4}=2$) :: = \dfrac{8 \cdot 9 \cdot 2}{2}
+Cancel $2$ and multiply :: = 8 \cdot 9 = 72
+```
+
+When simplifying algebraic expressions, switch roots into fractional exponents first:
+
+| Root form | Exponent form | Note |
+| --- | --- | --- |
+| $\sqrt{x}$ | $x^{1/2}$ | Unwritten root index is $2$. |
+| $\sqrt[3]{x^5}$ | $x^{5/3}$ | Power $5$ over root $3$. |
+| $\dfrac{4}{\sqrt[3]{x^2}}$ | $4x^{-2/3}$ | Only $x^2$ moves up; the $4$ stays in the numerator. |
+| $\sqrt[3]{8x^2}$ | $2x^{2/3}$ | The cube root applies to both $8$ and $x^2$. |
 
 > **Common mistakes**
 >
-> - Reading $x^{p/q}$ with the numerator as the root. The **denominator** is the root: $8^{2/3}$ involves a cube root, not a square root.
-> - Giving $\pm$ answers. $9^{1/2} = 3$ only. The exponent notation stands for the positive root.
-> - Thinking a negative exponent gives a negative answer. $8^{-2/3} = \frac{1}{4}$, which is positive.
-> - Flipping the coefficient too: $\frac{4}{\sqrt[3]{x^2}} = 4x^{-2/3}$, not $\frac{1}{4}x^{2/3}$.
-> - Doing the power first on big numbers (for example $16^3 = 4096$) and then struggling with the root. Root first.
+> - **Swapping power and root:** $8^{2/3} = (\sqrt[3]{8})^2 = 4$, not $(\sqrt{8})^3$.
+> - **Writing $\pm$ on $9^{1/2}$:** $9^{1/2} = \sqrt{9} = 3$ only (principal positive root).
+> - **Moving a free coefficient:** $\frac{4}{\sqrt[3]{x^2}} = 4x^{-2/3}$, not $\frac{1}{4}x^{-2/3}$.
+> - **Splitting roots across $+$ or $-$:** $\sqrt{9 + 16} = \sqrt{25} = 5$, not $3 + 4$.
 
-## Practice
+## 5. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
-Q: Write in exponent form: **(a)** $\sqrt{x}$ **(b)** $\sqrt[3]{x^5}$ **(c)** $\frac{1}{\sqrt[4]{x}}$ **(d)** $\frac{6}{\sqrt{x^3}}$
-A: (a) $x^{1/2}$. (b) $x^{5/3}$. (c) $x^{-1/4}$. (d) $6x^{-3/2}$.
+Q: Write in exponential form ($x > 0$): **(a)** $\sqrt[3]{x^5}$ **(b)** $\dfrac{1}{\sqrt[4]{x}}$ **(c)** $\dfrac{6}{\sqrt{x^3}}$ **(d)** $\sqrt{9x^3}$
+A: **(a)** $x^{5/3}$
+**(b)** $x^{-1/4}$
+**(c)** $6x^{-3/2}$
+**(d)** $\sqrt{9} \cdot \sqrt{x^3} = 3x^{3/2}$
 ---
-Q: Evaluate without a calculator: **(a)** $49^{1/2}$ **(b)** $125^{1/3}$ **(c)** $32^{1/5}$
-A: (a) $\sqrt{49} = 7$. (b) $\sqrt[3]{125} = 5$. (c) $\sqrt[5]{32} = 2$, because $2^5 = 32$.
+Q: Write in root form with positive exponents only: **(a)** $x^{3/4}$ **(b)** $5x^{-2/3}$ **(c)** $(5x)^{-2/3}$
+A: **(a)** $\sqrt[4]{x^3}$
+**(b)** $\dfrac{5}{\sqrt[3]{x^2}}$ (only $x$ has the negative exponent)
+**(c)** $\dfrac{1}{\sqrt[3]{25x^2}}$ (brackets include the $5$)
 ---
-Q: Evaluate without a calculator: **(a)** $81^{3/4}$ **(b)** $64^{2/3}$ **(c)** $8^{5/3}$
-A: (a) $(\sqrt[4]{81})^3 = 3^3 = 27$. (b) $(\sqrt[3]{64})^2 = 4^2 = 16$. (c) $(\sqrt[3]{8})^5 = 2^5 = 32$.
----
-Q: Evaluate without a calculator: **(a)** $27^{-2/3}$ **(b)** $32^{-2/5}$ **(c)** $\left(\frac{16}{81}\right)^{-3/4}$
-A: (a) $\frac{1}{(\sqrt[3]{27})^2} = \frac{1}{3^2} = \frac{1}{9}$.
-(b) $\frac{1}{(\sqrt[5]{32})^2} = \frac{1}{2^2} = \frac{1}{4}$.
-(c) Flip the fraction: $\left(\frac{81}{16}\right)^{3/4} = \left(\sqrt[4]{\tfrac{81}{16}}\right)^3 = \left(\tfrac{3}{2}\right)^3 = \frac{27}{8}$.
----
-Q: Evaluate without a calculator: $\left(0{,}008\right)^{-2/3}$
-A: Write $0{,}008 = \frac{8}{1000} = \left(\frac{2}{10}\right)^3 = \left(\frac{1}{5}\right)^3$. Then
-$$\left(\tfrac{1}{5}\right)^{3 \cdot \left(-2/3\right)} = \left(\tfrac{1}{5}\right)^{-2} = 5^2 = 25.$$
+Q: Evaluate without a calculator: **(a)** $81^{3/4}$ **(b)** $64^{2/3}$ **(c)** $32^{-2/5}$ **(d)** $\left(\dfrac{16}{81}\right)^{-3/4}$
+A: **(a)** $(\sqrt[4]{81})^3 = 3^3 = 27$
+**(b)** $(\sqrt[3]{64})^2 = 4^2 = 16$
+**(c)** $\dfrac{1}{(\sqrt[5]{32})^2} = \dfrac{1}{2^2} = \dfrac{1}{4}$
+**(d)** $\left(\dfrac{81}{16}\right)^{3/4} = \left(\dfrac{3}{2}\right)^3 = \dfrac{27}{8}$
 ---
 Q: Evaluate without a calculator: $9^{-1/2} \cdot 125^{2/3}$
-A: $9^{-1/2} = \frac{1}{\sqrt{9}} = \frac{1}{3}$ and $125^{2/3} = (\sqrt[3]{125})^2 = 5^2 = 25$. Product: $\frac{25}{3}$.
+A: $9^{-1/2} = \dfrac{1}{\sqrt{9}} = \dfrac{1}{3}$ and $125^{2/3} = (\sqrt[3]{125})^2 = 5^2 = 25$.
+Product: $\dfrac{1}{3} \cdot 25 = \dfrac{25}{3}$.
+---
+Q: Evaluate without a calculator: $32^{3/5} + 27^{-1/3}$
+A: $32^{3/5} = (\sqrt[5]{32})^3 = 2^3 = 8$ and $27^{-1/3} = \dfrac{1}{\sqrt[3]{27}} = \dfrac{1}{3}$.
+Sum: $8 + \dfrac{1}{3} = \dfrac{25}{3}$.
+---
+Q: **(Exam level)** Evaluate without a calculator: $\dfrac{81^{3/4} - 16^{1/2}}{125^{-1/3}}$
+A: $81^{3/4} = 3^3 = 27$, $16^{1/2} = 4$, and $125^{-1/3} = \dfrac{1}{5}$.
+$$\frac{27 - 4}{\frac{1}{5}} = 23 \times 5 = 115$$
 ```
 
 ## Further help

@@ -39,15 +39,15 @@ export function PageHeader({ title, children }: { title: string; children?: Reac
   );
 }
 
-/** Coloured subject chip. Optional `label` (e.g. "Algebra") is shown after the name. */
+/** Subject label with its colour dot (no capsule pill clutter). */
 export function SubjectTag({ name, color, label }: { name: string; color: string; label?: string }) {
   return (
-    <span
-      className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium"
-      style={{ background: color, color: textOn(color) }}
-    >
-      {name}
-      {label ? ` · ${label}` : ""}
+    <span className="inline-flex items-center gap-2.5 text-sm font-medium text-foreground">
+      <span aria-hidden="true" className="size-2.5 shrink-0 rounded-full" style={{ background: color }} />
+      <span>
+        {name}
+        {label ? <span className="text-muted-foreground">{` · ${label}`}</span> : null}
+      </span>
     </span>
   );
 }

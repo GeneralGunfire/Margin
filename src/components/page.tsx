@@ -4,8 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { kicker } from "@/lib/styles";
 
-/* Page building blocks in the New Forge style: thin dividers instead of boxes, small spaced-capital labels. */
-
 const reduced = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /** A number that counts up to its value when it first appears. */
@@ -36,30 +34,30 @@ export function useReady(delay = 60) {
   return ready;
 }
 
-/** Title block at the top of a page. */
+/** Clean editorial page header matching Dashboard and LessonPage. */
 export function PageHead({ kicker: k, title, sub, children }: { kicker?: ReactNode; title: ReactNode; sub?: ReactNode; children?: ReactNode }) {
   return (
-    <header className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+    <header className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
       <div className="min-w-0">
-        {k && <p className={kicker}>{k}</p>}
-        <h1 className="mt-1.5 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{title}</h1>
-        {sub && <p className="mt-1 text-sm text-muted-foreground">{sub}</p>}
+        {k && <p className="text-xs text-muted-foreground">{k}</p>}
+        <h1 className="mt-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">{title}</h1>
+        {sub && <p className="mt-1.5 max-w-2xl text-xs text-muted-foreground sm:text-[13px]">{sub}</p>}
       </div>
-      {children && <div className="flex flex-wrap items-center gap-1.5">{children}</div>}
+      {children && <div className="flex flex-wrap items-center gap-2">{children}</div>}
     </header>
   );
 }
 
-/** A labelled module: a thin divider above, no box. */
+/** Calm architectural surface module with generous padding and optional header link. */
 export function Mod({ title, link, to, span = "", children, className }: { title: string; link?: string; to?: string; span?: string; children: ReactNode; className?: string }) {
   return (
-    <section className={cn("min-w-0 border-t border-border pt-4", span, className)}>
-      <div className="mb-3 flex items-baseline justify-between gap-3">
+    <section className={cn("min-w-0 rounded-2xl border border-border/80 bg-card/45 p-5 sm:p-6", span, className)}>
+      <div className="mb-4 flex items-baseline justify-between gap-3">
         <h2 className={kicker}>{title}</h2>
         {link && to ? (
-          <Link to={to} className="inline-flex items-center gap-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground">
+          <Link to={to} className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground">
             {link}
-            <ArrowUpRight aria-hidden="true" className="size-3" />
+            <ArrowUpRight aria-hidden="true" className="size-3.5" />
           </Link>
         ) : null}
       </div>
@@ -68,21 +66,21 @@ export function Mod({ title, link, to, span = "", children, className }: { title
   );
 }
 
-/** A stat: small label, big number that counts up. */
+/** Clean metric tile: quiet kicker, light display number, short note. */
 export function Stat({ k, value, suffix = "", note, bad, to }: { k: string; value: number; suffix?: string; note?: string; bad?: boolean; to?: string }) {
   const n = useCount(value);
   const body = (
-    <>
+    <div className="rounded-2xl border border-border/75 bg-card/40 p-5 transition-colors hover:border-border">
       <dt className={kicker}>{k}</dt>
-      <dd className={cn("mt-1 text-3xl font-semibold tabular-nums tracking-tight", bad && value > 0 && "text-destructive")}>
+      <dd className={cn("mt-2 text-3xl font-light tabular-nums tracking-tight sm:text-4xl", bad && value > 0 && "text-destructive")}>
         {n}
-        {suffix}
+        <span className="text-xl text-muted-foreground">{suffix}</span>
       </dd>
-      {note ? <p className="mt-0.5 truncate text-xs text-muted-foreground">{note}</p> : null}
-    </>
+      {note ? <p className="mt-1.5 truncate text-xs text-muted-foreground">{note}</p> : null}
+    </div>
   );
   return to ? (
-    <Link to={to} className="block rounded-md transition-opacity hover:opacity-80">{body}</Link>
+    <Link to={to} className="block rounded-2xl transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0">{body}</Link>
   ) : (
     <div>{body}</div>
   );
@@ -91,12 +89,12 @@ export function Stat({ k, value, suffix = "", note, bad, to }: { k: string; valu
 /** A calm empty state: icon, one line, one hint. */
 export function Quiet({ icon, title, note, to, action }: { icon: ReactNode; title: string; note?: string; to?: string; action?: string }) {
   return (
-    <div className="flex items-start gap-2.5 text-muted-foreground">
-      <span aria-hidden="true" className="mt-0.5 grid size-4 place-items-center">{icon}</span>
+    <div className="flex items-start gap-3 text-muted-foreground">
+      <span aria-hidden="true" className="mt-0.5 grid size-5 shrink-0 place-items-center text-muted-foreground/80">{icon}</span>
       <div>
-        <p className="text-[13px] font-medium text-foreground/80">{title}</p>
+        <p className="text-sm font-medium text-foreground/85">{title}</p>
         {note && <p className="mt-0.5 text-xs leading-5">{note}</p>}
-        {to && action && <Link to={to} className="mt-1 inline-block text-xs font-medium text-primary hover:underline">{action}</Link>}
+        {to && action && <Link to={to} className="mt-2 inline-block text-xs font-medium text-primary hover:underline">{action}</Link>}
       </div>
     </div>
   );
@@ -113,7 +111,7 @@ export function Meter({ pct, color = "var(--primary)", className }: { pct: numbe
 }
 
 /** A progress ring that draws itself in. Put text in the middle with children. */
-export function Ring({ value, max, size = 112, stroke = 8, children }: { value: number; max: number; size?: number; stroke?: number; children?: ReactNode }) {
+export function Ring({ value, max, size = 112, stroke = 7, children }: { value: number; max: number; size?: number; stroke?: number; children?: ReactNode }) {
   const ready = useReady();
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;

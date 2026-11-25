@@ -9,94 +9,104 @@ subtopic: Identities and reduction formulae
 order: 313
 ---
 
-> **What you'll learn:** how to simplify long trig expressions by applying the reduction formulae, then the identities $\tan\theta = \frac{\sin\theta}{\cos\theta}$ and $\sin^2\theta + \cos^2\theta = 1$.
+> **What you'll learn:** how to simplify long trigonometric expressions cleanly using reduction formulae, the quotient identity $\tan x = \frac{\sin x}{\cos x}$, and the Pythagorean identity $\sin^{2}x + \cos^{2}x = 1$.
 >
 > **Prerequisites:** [Reduction to acute angles](/library/pure-mathematics/trigonometry-identities-reduction-formulae-and-equations/reduction-to-acute-angles).
 
-## The idea in plain language
+## 1. Reduce first, convert $\tan x$ second, cancel last
 
-Simplifying a trig expression has three steps, in this order:
+Long trig fractions look intimidating only until all the angles match. Put every expression through the same three-stage pipeline:
 
-1. **Reduce** every ratio to a function of $x$ alone, using the reduction formulae. Write down each reduction as you go.
-2. Replace $\tan x$ by $\frac{\sin x}{\cos x}$ if that helps.
-3. **Cancel** common factors, or use $\sin^2 x + \cos^2 x = 1$.
-
-Treat $x$ as an acute angle when you reduce. This always gives the correct signs.
-
-## The tools
+1. **Reduce every angle** to acute $x$ (using $180^\circ \pm x$, $360^\circ - x$, $-x$, or $90^\circ \pm x$).
+2. **Rewrite** $\tan x = \frac{\sin x}{\cos x}$ and watch for $\sin^{2}x + \cos^{2}x = 1$.
+3. **Factorise and cancel** common factors—never terms across $+$ or $-$.
 
 ```rule
-title: Identities
-\tan x = \frac{\sin x}{\cos x}
-\sin^{2}x + \cos^{2}x = 1 \qquad \sin^{2}x = 1 - \cos^{2}x \qquad \cos^{2}x = 1 - \sin^{2}x
+title: Core identities for simplifying
+\tan x = \frac{\sin x}{\cos x} \qquad \sin^{2}x + \cos^{2}x = 1
+\sin^{2}x = 1 - \cos^{2}x \qquad \cos^{2}x = 1 - \sin^{2}x
 ```
 
-## Worked example 1 (basic)
+## 2. Handling reversed angles like $(x - 180^\circ)$ and $(x - 360^\circ)$
 
-```steps
-title: Simplify $\sin(180^\circ - x)\cdot\cos(-x)$
-$\sin(180^\circ - x)$ keeps its sign in quadrant II :: \sin(180^\circ - x) = \sin x
-Cosine ignores a negative angle :: \cos(-x) = \cos x
-Multiply :: \sin x \cos x
+Exams frequently write the angle backwards—for instance $\sin(x - 180^\circ)$ instead of $\sin(180^\circ - x)$. You can handle any reversed angle in one reliable move: **add $360^\circ$ inside the angle** (because adding a full turn never changes the ratio):
+
+```compare
+title: Two ways to handle (x - 180°)
+left_title: Add 360° inside the angle (safest!)
+left:
+Adding $360^\circ$ changes $(x - 180^\circ)$ into $(180^\circ + x)$:
+- $\sin(x - 180^\circ) = \sin(180^\circ + x) = -\sin x$
+- $\cos(x - 180^\circ) = \cos(180^\circ + x) = -\cos x$
+Works identically for $\sin$, $\cos$, and $\tan$.
+right_title: Factor out a minus sign
+right:
+Remember $\sin(-\alpha) = -\sin\alpha$ whereas $\cos(-\alpha) = +\cos\alpha$:
+- $\sin(x - 180^\circ) = -\sin(180^\circ - x) = -\sin x$
+- $\cos(x - 180^\circ) = +\cos(180^\circ - x) = -\cos x$
+Easy to drop the sign on cosine if you rush!
 ```
 
-## Worked example 2 (with a fraction)
-
-```steps
-title: Simplify $\frac{\sin(180^\circ + x)\cos(90^\circ - x)}{\tan(360^\circ - x)}$
-Reduce each ratio :: \sin(180^\circ + x) = -\sin x
-Next :: \cos(90^\circ - x) = \sin x
-Next :: \tan(360^\circ - x) = -\tan x
-Substitute :: \frac{(-\sin x)(\sin x)}{-\tan x}
-The two negatives cancel :: \frac{\sin^{2}x}{\tan x}
-Replace $\tan x$ :: \frac{\sin^{2}x}{\frac{\sin x}{\cos x}}
-Multiply by the reciprocal :: \sin^{2}x \cdot \frac{\cos x}{\sin x}
-Cancel one $\sin x$ :: \sin x \cos x
+```tryit
+title: Quick check
+prompt: Simplify $\cos(x - 360^\circ) \cdot \tan(180^\circ - x)$ in terms of $\sin x$ and $\cos x$ only.
+hint: Add $360^\circ$ to $(x - 360^\circ)$, reduce $\tan(180^\circ - x)$, then replace $\tan x$.
+answer: $\cos(x - 360^\circ) = \cos x$ and $\tan(180^\circ - x) = -\tan x = -\frac{\sin x}{\cos x}$. Multiplying gives $\cos x \cdot \left(-\frac{\sin x}{\cos x}\right) = -\sin x$.
 ```
 
-## Worked example 3 (exam level)
+## 3. Worked examples
 
 ```steps
-title: Simplify $\frac{\sin(x - 180^\circ)\cos(90^\circ + x)}{\cos(-x)\tan(180^\circ + x)}$
-Rewrite $x - 180^\circ$ as $-(180^\circ - x)$ :: \sin(x - 180^\circ) = -\sin(180^\circ - x) = -\sin x
-Reduce the next one :: \cos(90^\circ + x) = -\sin x
-Reduce the bottom :: \cos(-x) = \cos x \quad\text{and}\quad \tan(180^\circ + x) = \tan x
-Substitute :: \frac{(-\sin x)(-\sin x)}{\cos x \cdot \tan x}
-Multiply the top; replace $\tan x$ in the bottom :: \frac{\sin^{2}x}{\cos x \cdot \frac{\sin x}{\cos x}}
-The $\cos x$ cancels in the bottom :: \frac{\sin^{2}x}{\sin x}
-Cancel :: \sin x
+title: Example 1 (Basic product): Simplify $\sin(180^\circ - x)\cdot\cos(-x)$
+$\sin(180^\circ - x)$ is in Q II (positive) :: \sin(180^\circ - x) = \sin x
+$\cos(-x)$ is in Q IV (positive) :: \cos(-x) = \cos x
+Multiply the reduced factors :: \sin x \cos x
+```
+
+```steps
+title: Example 2 (Fraction with tangent): Simplify $\dfrac{\sin(180^\circ + x)\cos(90^\circ - x)}{\tan(360^\circ - x)}$
+Reduce each piece :: \sin(180^\circ + x) = -\sin x,\quad \cos(90^\circ - x) = \sin x,\quad \tan(360^\circ - x) = -\tan x
+Substitute and cancel the minus signs :: \frac{(-\sin x)(\sin x)}{-\tan x} = \frac{\sin^{2}x}{\tan x}
+Replace $\tan x = \frac{\sin x}{\cos x}$ :: \sin^{2}x \cdot \frac{\cos x}{\sin x} = \sin x\cos x
+```
+
+```steps
+title: Example 3 (Exam level — reversed angle and squared reduction): Simplify $\dfrac{\sin(x - 180^\circ)\cos(90^\circ + x)}{\cos(-x)\tan(180^\circ + x)}$
+Add $360^\circ$ to $x - 180^\circ$ :: \sin(x - 180^\circ) = \sin(180^\circ + x) = -\sin x
+Reduce $\cos(90^\circ + x)$ (Q II, cosine negative, co-ratio) :: \cos(90^\circ + x) = -\sin x
+Reduce denominator :: \cos(-x) = \cos x,\quad \tan(180^\circ + x) = \tan x
+Substitute into the fraction :: \frac{(-\sin x)(-\sin x)}{\cos x \cdot \frac{\sin x}{\cos x}}
+Cancel $\cos x$ in the denominator, then one $\sin x$ :: \frac{\sin^{2}x}{\sin x} = \sin x
 ```
 
 > **Common mistakes**
 >
-> - Skipping the reduction step and trying to simplify with the angles still in place.
-> - Sign errors: write the sign of each reduced ratio immediately.
-> - Cancelling terms across a plus or minus sign instead of factors.
-> - Forgetting that $\sin(x - 180^\circ)$ needs rewriting as $-\sin(180^\circ - x)$ first.
-> - Leaving the answer in terms of $\tan x$ when the question asks for sine and cosine only.
+> - **Neglecting signs on squared ratios vs unsquared ratios:** $\cos^{2}(180^\circ - x) = (-\cos x)^{2} = +\cos^{2}x$, so a square always turns a negative sign positive.
+> - **Cancelling across $+$ or $-$:** in $\frac{1 - \cos^{2}x}{\cos x}$, you cannot cancel $\cos x$; first replace $1 - \cos^{2}x$ with $\sin^{2}x$.
+> - **Forgetting to write $\cos(-x) = +\cos x$:** unlike sine and tangent, cosine absorbs the negative sign.
 
-## Practice
+## 4. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: Simplify $\sin(180^\circ + x)\cdot\cos(360^\circ - x)$.
-A: $\sin(180^\circ + x) = -\sin x$ and $\cos(360^\circ - x) = \cos x$. The product is $-\sin x\cos x$.
+A: $(-\sin x)(\cos x) = -\sin x\cos x$.
 ---
-Q: Simplify $\frac{\cos(180^\circ - x)}{\sin(90^\circ - x)}$.
-A: $\cos(180^\circ - x) = -\cos x$ and $\sin(90^\circ - x) = \cos x$. The quotient is $-1$.
+Q: Simplify $\dfrac{\cos(180^\circ - x)}{\sin(90^\circ - x)}$.
+A: $\dfrac{-\cos x}{\cos x} = -1$.
 ---
 Q: Simplify $\tan(180^\circ - x)\cdot\cos(90^\circ - x)\cdot\sin(-x)$ in terms of $\sin x$ and $\cos x$ only.
-A: $\tan(180^\circ - x) = -\tan x$, $\cos(90^\circ - x) = \sin x$, $\sin(-x) = -\sin x$. The product is $\tan x \sin^2 x = \frac{\sin^3 x}{\cos x}$.
+A: $(-\tan x)(\sin x)(-\sin x) = \dfrac{\sin x}{\cos x}\cdot\sin^{2}x = \dfrac{\sin^{3}x}{\cos x}$.
 ---
-Q: Simplify $\frac{\sin(180^\circ + x)\cdot\tan(360^\circ - x)}{\cos(90^\circ + x)}$.
-A: $\sin(180^\circ + x) = -\sin x$, $\tan(360^\circ - x) = -\tan x$, $\cos(90^\circ + x) = -\sin x$. So the expression is $\frac{(-\sin x)(-\tan x)}{-\sin x} = -\tan x$.
+Q: Simplify $\dfrac{\sin(180^\circ + x)\cdot\tan(360^\circ - x)}{\cos(90^\circ + x)}$.
+A: $\dfrac{(-\sin x)(-\tan x)}{-\sin x} = -\tan x$.
 ---
-Q: Simplify $\frac{\cos(-x)\sin(90^\circ + x)}{\sin(180^\circ - x)\tan(180^\circ + x)}$ using only $\sin x$ and $\cos x$.
-A: $\cos(-x) = \cos x$, $\sin(90^\circ + x) = \cos x$, $\sin(180^\circ - x) = \sin x$, $\tan(180^\circ + x) = \tan x$. So $\frac{\cos^2 x}{\sin x \cdot \frac{\sin x}{\cos x}} = \frac{\cos^3 x}{\sin^2 x}$.
+Q: **(Exam level)** Simplify $\dfrac{\cos(-x)\sin(90^\circ + x)}{\sin(180^\circ - x)\tan(180^\circ + x)}$ in terms of $\sin x$ and $\cos x$ only.
+A: $\dfrac{(\cos x)(\cos x)}{(\sin x)\left(\frac{\sin x}{\cos x}\right)} = \dfrac{\cos^{2}x}{\frac{\sin^{2}x}{\cos x}} = \dfrac{\cos^{3}x}{\sin^{2}x}$.
 ---
-Q: Simplify $\frac{1 - \cos^{2}(180^\circ - x)}{\tan x \cos x}$.
-A: $\cos(180^\circ - x) = -\cos x$, so $\cos^2(180^\circ - x) = \cos^2 x$. The top is $1 - \cos^2 x = \sin^2 x$. The bottom is $\frac{\sin x}{\cos x}\cdot\cos x = \sin x$. The result is $\sin x$.
+Q: Simplify $\dfrac{1 - \cos^{2}(180^\circ - x)}{\tan x \cos x}$.
+A: $\cos^{2}(180^\circ - x) = (-\cos x)^{2} = \cos^{2}x$. Top becomes $1 - \cos^{2}x = \sin^{2}x$. Bottom becomes $\frac{\sin x}{\cos x}\cdot\cos x = \sin x$. Result: $\dfrac{\sin^{2}x}{\sin x} = \sin x$.
 ```
 
 ## Further help

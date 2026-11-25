@@ -3,21 +3,19 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { Plus, Trash2 } from "lucide-react";
 import { supabase, type EventRow } from "@/lib/supabase";
 import { useAuth } from "@/lib/auth";
 import { textOn } from "@/lib/utils";
 import { fromInput, toInput, todayKey } from "@/lib/cal";
+import { relativeDay } from "@/lib/stats";
 import { Btn } from "@/components/ui/btn";
 import { Input, Textarea } from "@/components/ui/ui";
-import { Mod, PageHead, Quiet } from "@/components/page";
-import { CalendarClock, Plus, Trash2 } from "lucide-react";
-import { relativeDay } from "@/lib/stats";
-
+import { PageHead } from "@/components/page";
 import { Select } from "@/components/ui/select";
 import { Dialog } from "@/components/ui/dialog";
 import { DateTimeField } from "@/components/ui/datetime-field";
 import { Note } from "@/components/ui/note";
-import { Spinner } from "@/components/ui/loading";
 
 const KINDS = [
   { value: "study", label: "Study session" },
@@ -31,7 +29,7 @@ type Draft = { id?: string; title: string; kind: EventRow["kind"]; subject_id: s
 function Labelled({ label, htmlFor, children }: { label: string; htmlFor?: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={htmlFor} className="text-sm text-muted-foreground">{label}</label>
+      <label htmlFor={htmlFor} className="text-xs font-medium text-muted-foreground">{label}</label>
       {children}
     </div>
   );
@@ -94,12 +92,8 @@ export default function CalendarPage() {
 
   const visible = events.filter((e) => !e.subject_id || !hidden.has(e.subject_id));
   const now = new Date();
-  const upcoming = visible.filter((e) => new Date(e.ends_at ?? e.starts_at) >= now).slice(0, 7);
-  const thisMonth = visible.filter((e) => {
-    const d = new Date(e.starts_at);
-    return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
-  });
-  const count = (k: EventRow["kind"]) => thisMonth.filter((e) => e.kind === k).length;
+  const upcoming = visible.filter((e) => new Date(e.ends_at ?? e.starts_at) >= now).slice(0, 6);
+
   const edit = (e: EventRow) =>
     setDraft({
       id: e.id,
@@ -110,23 +104,24 @@ export default function CalendarPage() {
       end: e.ends_at ? toInput(e.ends_at) : "",
       notes: e.notes ?? "",
     });
+
   return (
-    <>
-      <PageHead kicker="Calendar" title="Your calendar" sub="Exams, tests, study sessions and deadlines. Only you see these.">
-        <Btn variant="primary" onClick={() => setDraft(blank(todayKey()))}><Plus aria-hidden="true" /> Add event</Btn>
+    <div className="space-y-8">
+      <PageHead kicker="Calendar" title="Your calendar" sub="Exams, tests, study sessions and deadlines. Private to you.">
+        <Btn size="sm" variant="primary" onClick={() => setDraft(blank(todayKey()))}>
+          <Plus aria-hidden="true" /> Add event
+        </Btn>
       </PageHead>
-      <div className="mt-6 grid gap-x-10 gap-y-8 border-t border-border pt-5 lg:grid-cols-[minmax(0,1fr)_19rem]">
-        <div className="min-w-0">
-      {err && !draft && <Note className="mb-3 mt-0">{err}</Note>}
-      <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        headerToolbar={{ left: "prev,next today", center: "title", right: narrow ? "" : "dayGridMonth,timeGridWeek" }}
-        height="auto"
-        firstDay={1}
-        events={events
-          .filter((e) => !e.subject_id || !hidden.has(e.subject_id))
-          .map((e) => {
+
+      <div className="border-t border-border pt-6">
+        {err && !draft && <Note className="mb-3 mt-0">{err}</Note>}
+        <FullCalendar
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          initialView="dayGridMonth"
+          headerToolbar={{ left: "prev,next today", center: "title", right: narrow ? "" : "dayGridMonth,timeGridWeek" }}
+          height="auto"
+          firstDay={1}
+          events={visible.map((e) => {
             const c = color(e.subject_id);
             return {
               id: e.id,
@@ -137,67 +132,34 @@ export default function CalendarPage() {
               textColor: textOn(c),
             };
           })}
-        dateClick={(i) => setDraft(blank(i.dateStr))}
-        eventClick={(i) => {
-          const e = events.find((x) => x.id === i.event.id);
-          if (e) edit(e);
-        }}
-      />
-        </div>
-
-        <aside className="flex flex-col gap-8">
-          <Mod title="Coming up" className="border-t-0 pt-0">
-            {upcoming.length === 0 ? (
-              <Quiet icon={<CalendarClock className="size-4" />} title="Nothing coming up" note="Click a day to add a test, exam, study session or deadline." />
-            ) : (
-              <ul className="divide-y divide-border">
-                {upcoming.map((e) => (
-                  <li key={e.id} className="first:pt-0">
-                    <button type="button" onClick={() => edit(e)} className="group flex w-full items-start gap-3 py-2.5 text-left">
-                      <span className="mt-1.5 size-2 shrink-0 rounded-full" style={{ background: color(e.subject_id) }} aria-hidden="true" />
-                      <span className="min-w-0 flex-1">
-                        <span className="block truncate text-[13px] font-medium group-hover:text-primary">{e.title}</span>
-                        <span className="block text-[11px] text-muted-foreground">
-                          {relativeDay(e.starts_at)}, {new Date(e.starts_at).toLocaleDateString(undefined, { day: "numeric", month: "short" })}
-                          {!e.all_day && `, ${new Date(e.starts_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`}
-                        </span>
-                      </span>
-                      <span className="shrink-0 text-[10px] capitalize text-muted-foreground">{e.kind}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </Mod>
-
-          <Mod title="This month">
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-4">
-              {([["Exams", "exam"], ["Tests", "test"], ["Study sessions", "study"], ["Deadlines", "deadline"]] as const).map(([label, kind]) => (
-                <div key={kind}>
-                  <dt className="text-[11px] text-muted-foreground">{label}</dt>
-                  <dd className="text-2xl font-semibold tabular-nums tracking-tight">{count(kind)}</dd>
-                </div>
-              ))}
-            </dl>
-          </Mod>
-
-          <Mod title="Subjects" link="Edit" to="/settings">
-            {mySubjects.length === 0 ? (
-              <p className="text-xs text-muted-foreground">No subjects ticked.</p>
-            ) : (
-              <ul className="flex flex-col gap-2">
-                {mySubjects.map((s) => (
-                  <li key={s.id} className="flex items-center gap-2.5 text-[13px]">
-                    <span className="size-2.5 shrink-0 rounded-full" style={{ background: s.color }} aria-hidden="true" />
-                    <span className="min-w-0 flex-1 truncate">{s.name}</span>
-                    <span className="tabular-nums text-muted-foreground">{visible.filter((e) => e.subject_id === s.id).length}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </Mod>
-        </aside>
+          dateClick={(i) => setDraft(blank(i.dateStr))}
+          eventClick={(i) => {
+            const e = events.find((x) => x.id === i.event.id);
+            if (e) edit(e);
+          }}
+        />
       </div>
+
+      {upcoming.length > 0 && (
+        <section className="border-t border-border pt-6">
+          <h2 className="mb-3 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">Upcoming</h2>
+          <ul className="divide-y divide-border">
+            {upcoming.map((e) => (
+              <li key={e.id} className="first:pt-0">
+                <button type="button" onClick={() => edit(e)} className="group flex w-full items-center gap-3 py-2.5 text-left">
+                  <span className="size-2 shrink-0 rounded-full" style={{ background: color(e.subject_id) }} aria-hidden="true" />
+                  <span className="min-w-0 flex-1 truncate text-[13px] font-medium text-foreground group-hover:text-primary">{e.title}</span>
+                  <span className="shrink-0 text-[11px] capitalize text-muted-foreground">{e.kind}</span>
+                  <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">
+                    {relativeDay(e.starts_at)} · {new Date(e.starts_at).toLocaleDateString(undefined, { day: "numeric", month: "short" })}
+                    {!e.all_day && ` · ${new Date(e.starts_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <Dialog
         open={!!draft}
@@ -208,7 +170,11 @@ export default function CalendarPage() {
         footer={
           draft && (
             <>
-              {draft.id && <Btn variant="destructive" className="mr-auto" onClick={del}><Trash2 aria-hidden="true" /> Delete</Btn>}
+              {draft.id && (
+                <Btn variant="destructive" className="mr-auto" onClick={del}>
+                  <Trash2 aria-hidden="true" /> Delete
+                </Btn>
+              )}
               <Btn variant="ghost" onClick={close}>Cancel</Btn>
               <Btn type="submit" variant="primary" form="event-form" loading={saving}>Save</Btn>
             </>
@@ -245,10 +211,6 @@ export default function CalendarPage() {
           </form>
         )}
       </Dialog>
-    </>
+    </div>
   );
 }
-
-
-
-

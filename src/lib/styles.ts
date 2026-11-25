@@ -1,39 +1,39 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Shared class strings for the app pages. Restyle the whole app from here and from src/components/page.tsx.
- * Buttons: one base, a variant and a size. The <Btn> component and the btn* strings below both use these.
+ * Shared class strings for Margin. Inspired by the Login screen:
+ * light editorial typography, spaced-capital kickers, sculptural pill buttons, and calm dark surfaces.
  */
-export const kicker = "text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground";
+export const kicker = "text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground";
 
 export const btnBase =
-  "relative inline-flex shrink-0 select-none items-center justify-center gap-2 whitespace-nowrap rounded-md border border-transparent font-medium " +
-  "transition-[background-color,border-color,color,transform,box-shadow] duration-150 " +
+  "relative inline-flex shrink-0 select-none items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent font-medium " +
+  "transition-[background-color,border-color,color,opacity,transform] duration-150 " +
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring " +
-  "active:translate-y-px motion-reduce:transition-none motion-reduce:active:translate-y-0 " +
-  "disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress " +
+  "active:scale-[0.98] motion-reduce:transition-none motion-reduce:active:scale-100 " +
+  "disabled:pointer-events-none disabled:opacity-45 aria-busy:cursor-progress " +
   "[&_svg]:shrink-0";
 
 export const btnVariant = {
-  /** The main action on a screen. */
+  /** Primary action: monochrome high-contrast pill matching the Sign In button. */
   primary:
-    "bg-primary text-primary-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.18),0_1px_2px_rgb(0_0_0/0.25)] hover:bg-primary/90",
-  /** A normal action. */
+    "bg-foreground text-background hover:opacity-90",
+  /** Secondary action: subtle surface pill. */
   secondary: "border-border bg-secondary text-foreground hover:border-muted-foreground/40 hover:bg-muted",
-  /** A quieter action with just an outline. */
+  /** Outlined pill. */
   outline: "border-border bg-transparent text-foreground hover:bg-secondary",
-  /** The quietest action: text until you hover. */
-  ghost: "text-muted-foreground hover:bg-secondary hover:text-foreground",
-  /** Deletes and other things that cannot be undone. Red only on hover and in the border. */
+  /** Quietest action: text until hovered. */
+  ghost: "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
+  /** Destructive actions: red only here. */
   destructive: "border-destructive/40 bg-destructive/10 text-destructive hover:border-destructive hover:bg-destructive hover:text-white",
-  /** Looks like a link. */
-  link: "h-auto px-0 text-primary underline-offset-4 hover:underline",
+  /** Inline link action. */
+  link: "h-auto rounded-none px-0 text-primary underline-offset-4 hover:underline",
 } as const;
 
 export const btnSize = {
-  sm: "h-8 px-2.5 text-xs [&_svg]:size-3.5",
-  md: "h-9 px-3.5 text-sm [&_svg]:size-4",
-  lg: "h-11 px-5 text-sm [&_svg]:size-4",
+  sm: "h-8 px-3.5 text-xs [&_svg]:size-3.5",
+  md: "h-9 px-4 text-sm [&_svg]:size-4",
+  lg: "h-11 px-6 text-xs font-semibold uppercase tracking-[0.18em] [&_svg]:size-4",
   icon: "size-9 text-sm [&_svg]:size-4",
   "icon-sm": "size-8 text-xs [&_svg]:size-3.5",
 } as const;
@@ -45,11 +45,10 @@ export type BtnSize = keyof typeof btnSize;
 export const buttonClass = (variant: BtnVariant = "secondary", size: BtnSize = "md", extra?: string) =>
   cn(btnBase, btnVariant[variant], btnSize[size], extra);
 
-// Ready-made strings used across the pages.
 export const btn = buttonClass("secondary");
 export const btnPrimary = buttonClass("primary");
 export const btnGhost = buttonClass("ghost");
-export const chip = buttonClass("outline", "sm", "rounded-full text-muted-foreground");
+export const chip = buttonClass("outline", "sm", "text-muted-foreground");
 
 export const field =
-  "w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors hover:border-muted-foreground/60 focus-visible:border-ring focus-visible:outline-2 focus-visible:outline-ring";
+  "w-full rounded-xl border border-input bg-background px-3.5 py-2 text-sm text-foreground placeholder:text-muted-foreground transition-colors hover:border-muted-foreground/60 focus-visible:border-ring focus-visible:outline-2 focus-visible:outline-ring";

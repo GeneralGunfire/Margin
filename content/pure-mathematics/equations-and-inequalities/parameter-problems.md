@@ -9,93 +9,102 @@ subtopic: Nature of roots
 order: 232
 ---
 
-> **What you'll learn:** how to find the value or the range of a letter ($k$, $p$, $m$) so that a quadratic has equal, real or non-real roots.
+> **What you'll learn:** how to find the value or range of a parameter ($k$, $p$, or $m$) so that a quadratic has equal, real, distinct, or non-real roots.
 >
-> **Prerequisites:** [What the discriminant tells us](/library/pure-mathematics/equations-and-inequalities/what-the-discriminant-tells-us), and solving simple inequalities.
+> **Prerequisites:** [What the discriminant tells us](/library/pure-mathematics/equations-and-inequalities/what-the-discriminant-tells-us) and linear/quadratic inequalities.
 
-## The idea in plain language
+## 1. Turn the root condition into an equation or inequality in $\Delta$
 
-Parameter questions give you a quadratic with an unknown letter and describe how the roots must behave. Your job is to turn the description into a statement about $\Delta$, then solve for the letter.
+In a parameter problem, the equation contains an extra letter—such as $x^{2} + kx + 9 = 0$—and the question tells you how many real solutions it has. Because $\Delta = b^{2} - 4ac$ decides the nature of the roots, you translate the English condition directly into a statement about $\Delta$, then solve for the parameter:
 
-| The question says | Write |
-| --- | --- |
-| equal roots | $\Delta = 0$ |
-| real roots | $\Delta \geq 0$ |
-| two distinct real roots | $\Delta > 0$ |
-| no real roots (non-real) | $\Delta < 0$ |
-
-When the condition is an inequality, treat $\Delta$ as an expression in the letter and solve the inequality. **Reverse the inequality sign when you divide by a negative number.**
-
-## The rule
+| Condition in the question | Condition on $\Delta$ | Typical result |
+| --- | --- | --- |
+| Equal roots (one repeated root) | $\Delta = 0$ | Specific value(s) of $k$ |
+| Real roots (includes equal roots) | $\Delta \geq 0$ | A range of $k$ |
+| Two distinct / unequal real roots | $\Delta > 0$ | A strict range of $k$ |
+| Non-real / no real roots | $\Delta < 0$ | A strict range of $k$ |
 
 ```rule
-title: The recipe
-\text{1. find } \Delta \text{ in terms of the letter} \qquad \text{2. set the condition on } \Delta \qquad \text{3. solve for the letter}
+title: Four-step recipe for parameter problems
+\text{1. Write } ax^{2} + bx + c = 0 \quad \text{2. Compute } \Delta = b^{2} - 4ac \quad \text{3. Apply } \Delta \text{ condition} \quad \text{4. Solve for the parameter}
 ```
 
-## Worked example 1 (equal roots)
+```compare
+title: Watch the boundary sign
+left_title: "Real roots" → Δ ≥ 0
+left:
+"Real" includes **both** unequal real roots ($\Delta > 0$) and equal real roots ($\Delta = 0$).
+Use $\geq 0$ so you keep the boundary value.
+right_title: "Distinct / unequal real roots" → Δ > 0
+right:
+"Distinct" means two **different** roots, so equal roots ($\Delta = 0$) are excluded.
+Use strictly $> 0$ and drop the boundary value.
+```
+
+```tryit
+title: Quick check
+prompt: For $x^{2} + 6x + k = 0$, write down the inequality you must solve if the equation has **(a)** non-real roots, and **(b)** real roots.
+hint: First compute $\Delta = 6^{2} - 4(1)(k) = 36 - 4k$.
+answer: **(a)** $36 - 4k < 0 \implies k > 9$. **(b)** $36 - 4k \geq 0 \implies k \leq 9$.
+```
+
+## 2. Worked examples
 
 ```steps
-title: For which values of $k$ does $x^{2} + kx + 9 = 0$ have equal roots?
-Identify $a$, $b$, $c$ :: a = 1,\quad b = k,\quad c = 9
-Write the discriminant :: \Delta = k^{2} - 4(1)(9) = k^{2} - 36
+title: Example 1 (Equal roots): Find $k$ if $x^{2} + kx + 9 = 0$ has equal roots
+Identify $a, b, c$ :: a = 1,\quad b = k,\quad c = 9
+Compute $\Delta$ :: \Delta = k^{2} - 4(1)(9) = k^{2} - 36
 Equal roots means $\Delta = 0$ :: k^{2} - 36 = 0
-Solve :: (k-6)(k+6) = 0
-Two values :: k = 6 \quad\text{or}\quad k = -6
+Factorise and solve :: (k - 6)(k + 6) = 0 \;\Longrightarrow\; k = 6 \text{ or } k = -6
 ```
 
-## Worked example 2 (an inequality)
-
 ```steps
-title: For which values of $k$ does $x^{2} - 4x + k = 0$ have non-real roots?
-Identify $a$, $b$, $c$ :: a = 1,\quad b = -4,\quad c = k
-Write the discriminant :: \Delta = 16 - 4k
+title: Example 2 (Linear inequality in the parameter): Find $k$ if $x^{2} - 4x + k = 0$ has non-real roots
+Identify $a, b, c$ :: a = 1,\quad b = -4,\quad c = k
+Compute $\Delta$ :: \Delta = (-4)^{2} - 4(1)(k) = 16 - 4k
 Non-real roots means $\Delta < 0$ :: 16 - 4k < 0
-Subtract 16 from both sides :: -4k < -16
-Divide by $-4$ and reverse the sign :: k > 4
+Isolate $k$ :: -4k < -16
+Divide by $-4$ and flip the inequality sign :: k > 4
 ```
 
-## Worked example 3 (exam level)
-
 ```steps
-title: Show that $x^{2} + (k+1)x + k = 0$ always has real roots, and find $k$ when the roots are equal
-Identify $a$, $b$, $c$ :: a = 1,\quad b = k + 1,\quad c = k
-Write the discriminant :: \Delta = (k+1)^{2} - 4k
-Expand :: \Delta = k^{2} + 2k + 1 - 4k
-Simplify to a perfect square :: \Delta = k^{2} - 2k + 1 = (k-1)^{2}
-A square is never negative, so the roots are always real :: (k-1)^{2} \geq 0
-Equal roots when $\Delta = 0$ :: k = 1
+title: Example 3 (Exam level — quadratic inequality in $k$): Find $k$ if $x^{2} + kx + (k + 3) = 0$ has non-real roots
+Identify $a, b, c$ :: a = 1,\quad b = k,\quad c = k + 3
+Compute $\Delta$ :: \Delta = k^{2} - 4(1)(k + 3) = k^{2} - 4k - 12
+Set $\Delta < 0$ :: k^{2} - 4k - 12 < 0
+Factorise :: (k - 6)(k + 2) < 0
+Critical values are $-2$ and $6$; between them is negative :: -2 < k < 6
 ```
 
 > **Common mistakes**
 >
-> - Forgetting to square the whole bracket: $(k+1)^2 = k^2 + 2k + 1$, not $k^2 + 1$.
-> - Not reversing the inequality when dividing by a negative number.
-> - Using $\Delta > 0$ when the question says "real roots". Real includes equal roots, so use $\Delta \geq 0$.
-> - Writing only one value of $k$ when $k^2 = 36$ gives two.
+> - **Forgetting to flip the inequality** when dividing by a negative number (like $-4k < -16 \implies k > 4$).
+> - **Using $\Delta > 0$ for "real roots":** real roots include equal roots, so use $\Delta \geq 0$.
+> - **Dropping one solution** when taking a square root (for example, $k^{2} = 36$ gives both $6$ and $-6$).
+> - **Missing a quadratic restriction:** if $k$ is the coefficient of $x^{2}$, check whether $k \neq 0$ is needed for the equation to remain quadratic.
 
-## Practice
+## 3. Practice
 
-Try each question first, then open it to see the full working.
+Try each question on paper before opening the worked answer.
 
 ```questions
 Q: For which values of $p$ does $x^{2} + px + 16 = 0$ have equal roots?
-A: $\Delta = p^2 - 64 = 0$, so $p = 8$ or $p = -8$.
+A: $\Delta = p^{2} - 4(1)(16) = p^{2} - 64 = 0$, so $p = 8$ or $p = -8$.
 ---
 Q: For which values of $k$ does $x^{2} - 6x + k = 0$ have two distinct real roots?
-A: $\Delta = 36 - 4k > 0$, so $-4k > -36$ and $k < 9$.
+A: $\Delta = 36 - 4k > 0 \implies -4k > -36 \implies k < 9$.
 ---
 Q: For which values of $m$ does $2x^{2} + 4x + m = 0$ have no real roots?
-A: $\Delta = 16 - 8m < 0$, so $-8m < -16$ and $m > 2$.
+A: $\Delta = 16 - 8m < 0 \implies -8m < -16 \implies m > 2$.
 ---
-Q: For which values of $k$ does $kx^{2} + 6x + 3 = 0$ have real roots?
-A: $\Delta = 36 - 12k \geq 0$, so $-12k \geq -36$ and $k \leq 3$. Also $k \neq 0$, otherwise the equation is not quadratic.
+Q: Find $k$ if $x^{2} - (k + 3)x + 4 = 0$ has equal roots.
+A: $\Delta = (k + 3)^{2} - 16 = 0 \implies (k + 3)^{2} = 16 \implies k + 3 = \pm 4$, so $k = 1$ or $k = -7$.
 ---
-Q: Find $k$ if $x^{2} - (k+3)x + 4 = 0$ has equal roots. Both values.
-A: $\Delta = (k+3)^2 - 16 = 0$, so $(k+3)^2 = 16$ and $k + 3 = \pm 4$. Then $k = 1$ or $k = -7$.
+Q: **(Exam level)** For which values of $k$ does $kx^{2} + 6x + 3 = 0$ ($k \neq 0$) have real roots?
+A: $\Delta = 36 - 12k \geq 0 \implies k \leq 3$. Since $k \neq 0$, the solution is $k \leq 3,\ k \neq 0$.
 ---
-Q: Prove that $x^{2} + (2m-1)x + m^{2} - m = 0$ has two distinct real roots for every real $m$.
-A: $\Delta = (2m-1)^2 - 4(m^2 - m) = 4m^2 - 4m + 1 - 4m^2 + 4m = 1$. Since $\Delta = 1 > 0$ for every $m$, the roots are always real and distinct.
+Q: **(Exam level)** Prove that $x^{2} + (2m - 1)x + m^{2} - m = 0$ has two distinct real roots for every real value of $m$.
+A: $\Delta = (2m - 1)^{2} - 4(1)(m^{2} - m) = 4m^{2} - 4m + 1 - 4m^{2} + 4m = 1$. Since $\Delta = 1 > 0$ for all real $m$, the equation always has two distinct real roots.
 ```
 
 ## Further help
