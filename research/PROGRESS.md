@@ -2,7 +2,7 @@
 Branch: research-content (repo initialised by this run; the folder was not a git repo). Only `research/` is committed. `.env.local` is gitignored; never add other folders.
 
 ## Current
-- Pass 1 (Skeleton): Pure Mathematics DONE, Physical Sciences DONE, English HL DONE, History DONE (with big curriculum flag). Next: Business Studies, Tourism, Life Orientation, Religion Studies, Afrikaans FAL, AP Maths.
+- Pass 1 (Skeleton): Pure Mathematics DONE, Physical Sciences DONE, English HL DONE, History DONE (with big curriculum flag). Business Studies DONE. Next: Tourism, Life Orientation, Religion Studies, Afrikaans FAL, AP Maths.
 - Passes 2 to 6 not started.
 
 ## Method notes

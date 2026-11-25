@@ -18,3 +18,6 @@
 - DBE 2023/24 ATP History Gr 11: https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.430%20ATP%202023-24%20Gr%2011%20His%20final.pdf . Term-by-term topic and tasks.
 - DBE DRAFT amended CAPS History Gr 10-12 (2026): https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/AMENDED%20CAPS%20DOC%20HISTORY%20GRADE%2010%20-12.pdf?ver=2026-03-25-094629-013 . Gr 11 headings only.
 - PMG call for comments (draft status, closed 19 May 2026): https://pmg.org.za/call-for-comment/1708/
+
+## Business Studies
+- DBE CAPS Business Studies Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20BUSINESS%20STUDIES%20_%20GR%2010-12%20_%20Web_0CA7.pdf . Gr 11 ATP, assessment.
