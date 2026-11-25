@@ -5,6 +5,7 @@
 - Pass 1 (skeleton): all ten subjects. AP Maths only partly (no IEB syllabus obtained).
 - Pass 2 (depth): nine subjects (not AP Maths). Per-topic summaries, key concepts, prerequisites, typical exam style, common mistakes, lesson breakdowns (L1-L5), visuals needed.
 - Pass 3 (resources): Pure Maths and Physical Sciences have a verified resource map (155 Siyavula Grade 11 pages fetched and title-checked; YouTube titles/channels confirmed by oEmbed but NOT watched). Other subjects: a weak first pass.
+- History: all five topics rebuilt from the user-supplied Via Afrika Gr 11 guide (17 dates spot-checked, 14 disagreements logged).
 - Pass 4 (past papers): Pure Maths (Eastern Cape Gr 11 Nov memos 2023-2026), Physical Sciences (2024-2026), History and Business Studies (EC Nov 2024).
 - Pass 5 (verification): a link check (203 unique URLs, all reachable except one bot-checked site and one placeholder) and several fixes; a full "sceptical teacher" re-read of every file has NOT been done.
 - Pass 6 (extras): see status table below.
@@ -68,7 +69,7 @@ Other flags: Tourism (CAPS says seven domestic market segments, the ATP says fiv
 | Pure Maths | done | done | done (verified pages) | done (EC 2023-26) | partial | see PROGRESS.md |
 | Physical Sciences | done | done | done (verified pages) | done (EC 2024-26) | partial | see PROGRESS.md |
 | English HL | done | done (structure) | weak | not obtained | partial | see PROGRESS.md |
-| History | done | done (legacy) | weak | done (EC 2024 only) | partial | see PROGRESS.md |
+| History | done | done (legacy, rebuilt from Via Afrika guide) | one full guide added (not reviewed by a teacher) | done (EC 2024 only) | partial | see PROGRESS.md |
 | Business Studies | done | done | weak | done (EC 2024 only) | partial | see PROGRESS.md |
 | Tourism | done | done | weak | not obtained | partial | see PROGRESS.md |
 | Life Orientation | done | done | weak | not obtained | partial | see PROGRESS.md |

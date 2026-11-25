@@ -12,3 +12,5 @@
 - Pass 5: searched for newer ATPs (2025-27) on the DBE curriculum page; none linked. 2023/24 ATPs remain the latest official plans found.
 
 - Added resources-history-via-afrika.md (user-supplied Via Afrika Gr 11 History study guide; structure only, VERIFIED-PAGE; content not reviewed).
+
+- History (Via Afrika pass): history-depth.md Topics 1-5 rebuilt from the full read of the Via Afrika guide with page numbers and CHECK flags; history.md outline fixed (added 1905 revolution, 1830/1848, Japan, Sharpeville/Rivonia/state response, and a new section 9 cross-check); resources-history-via-afrika.md extended with edition info, 17-item date check (14 disagreements), marking comparison with the EC 2024 memo; cognitive-level disagreement (CAPS 30/50/20 vs EC paper 30/40/30) recorded.

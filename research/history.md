@@ -38,8 +38,8 @@ CAPS suggested time: Topics 1, 2, 3, 5: 6 weeks each; Topic 4: 10 weeks; researc
 
 ### Term 1. Task 1 (source or essay, 50) + Test 1 (100)
 - Overview of Gr 11, revision of skills: working with sources, visual and written sources, paragraph writing
-- **Topic 1: Communism in Russia 1900-1940.** What is communism; Marx's writings (background); February and October 1917 revolutions (background, source-based); Civil War and war communism; Lenin seizes control; Marxism-Leninism and the NEP; Lenin's death and the power struggle; Stalin's interpretation of Marx (essay focus).
-- **Topic 2: Capitalism in the USA 1900-1940.** American dream (background); 1920s boom; Wall Street Crash 1929 (in detail, source-based); election of FDR and the New Deal; analysis and assessment of the New Deal; outbreak of WW2 (background); responses to the crisis of capitalism.
+- **Topic 1: Communism in Russia 1900-1940.** What is communism; Marx's writings (background); the 1905 revolution and its link to 1917 (in the legacy CAPS and the Via Afrika guide; not seen in the ATP text I read); February and October 1917 revolutions (background, source-based); Civil War and war communism; Lenin seizes control; Marxism-Leninism and the NEP; Lenin's death and the power struggle; Stalin's interpretation of Marx (essay focus).
+- **Topic 2: Capitalism in the USA 1900-1940.** American dream (background); 1920s boom; Wall Street Crash 1929 (in detail, source-based); election of FDR and the New Deal; analysis and assessment of the New Deal; outbreak of WW2 (background); responses to the crisis of capitalism. Legacy CAPS names the impact on Germany and Japan; the Via Afrika guide also covers the USSR, Latin America and South Africa (Carnegie Commission, gold standard).
 - Research project planned (topic given, key question, assessment criteria).
 
 ### Term 2. Task 3 research (50) + mid-year exam (150)
@@ -57,7 +57,7 @@ CAPS suggested time: Topics 1, 2, 3, 5: 6 weeks each; Topic 4: 10 weeks; researc
 - **Topic 5: Apartheid South Africa (1940s-1960s).** Global racism and segregation in the 1920s-30s; segregation after Union; how segregation laid the foundation for apartheid; challenges of Indians, Coloured resistance, Black resistance; National Party victory 1948; what apartheid was and how it differed from segregation; why NP adopted it; creation of the apartheid state (laws against multiracial labour, banning of the CPSA).
 
 ### Term 4. Final exam
-- Topic 5 continued: overcoming/resistance to apartheid (programme of action, mass mobilisation, alliances, state responses); no formal task on this part.
+- Topic 5 continued: overcoming/resistance to apartheid (programme of action, mass mobilisation, alliances, state responses); the ATP also lists the Sharpeville massacre and its impact, the Rivonia Trial (1964) and its consequences, and the apartheid state's response (an earlier version of this file left these out); no formal task on this part.
 - Revision and skills; Paper 1 and Paper 2 exams.
 
 ## 4B. DRAFT amended CAPS Gr 11 (NOT confirmed for 2027)
@@ -83,3 +83,11 @@ Apartheid and human rights ↔ Life Orientation (democracy and human rights); ca
 - Sub-topic weeks for the legacy CAPS beyond the 6/10/6/6/6 suggestion are not verified.
 - Draft document not read beyond headings and key questions.
 - Newer ATPs (2025-26) not checked.
+
+## 9. Cross-check against the Via Afrika Gr 11 guide, the legacy CAPS and the 2023/24 ATP (added in the Via Afrika pass)
+- **In the guide AND the legacy CAPS but missing from my earlier outline:** the 1905 revolution (guide Topic 1 Unit 1); the 1830 and 1848 revolutions and German/Italian unification as the start of nationalism (guide Topic 4 Unit 1); Japan's response to the Depression; the Sharpeville and Rivonia units (the ATP also lists these). Now added above.
+- **In the guide only (not in CAPS or ATP text I read):** Prohibition, the Ku Klux Klan and women's role in the 1920s USA; Bosnia 1992 as a destructive-nationalism example; the Eeufees 1938 detail; Black Consciousness, Soweto 1976, UDF 1983 and the 1990s transition under African nationalism; Namibia and Fischer in more detail. Treat these as enrichment unless the school's textbook confirms them.
+- **In the ATP/CAPS but not covered by the guide:** the research task (oral history or research project), the recovery content (South African War and Union 1910, only touched as context in guide Topic 4), and the ATP's term sequencing (the guide is ordered Topic 1 to 5, not by term).
+- **Case-study choice:** the guide covers both Topic 3 case studies and all four Topic 4 case studies; the ATP lets provinces choose, so teach only what the school's list says.
+- **Cognitive levels:** the legacy CAPS table gives Gr 11 as 30/50/20 (read from the CAPS text), but the EC Gr 11 Nov 2024 paper states 30/40/30 (15/20/15 marks per 50-mark question), which is the Gr 12 weighting. DISAGREEMENT; school/provincial practice UNCONFIRMED.
+- **Edition:** the guide's PDF was created in November 2019 (file metadata) and is written to the legacy CAPS; it does not cover the DRAFT amended CAPS.

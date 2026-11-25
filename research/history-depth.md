@@ -1,10 +1,11 @@
 # History Grade 11 — PASS 2: DEPTH (companion to history.md)
 
-Covers the LEGACY five-topic Gr 11 (default assumption). The DRAFT amended CAPS topics (Atlantic World, slavery and Haiti, southern African kingdoms, Scramble for Africa) are NOT given depth until the school confirms; see history.md. Dates and facts below are standard well-established history; anything I am less sure of is marked UNVERIFIED. No sources or exam questions are copied. Resources: none verified yet (Pass 3). Each topic has an "essay vs source-based" angle as in the 2023/24 ATP.
+Covers the LEGACY five-topic Gr 11 (default assumption). The DRAFT amended CAPS topics (Atlantic World, slavery and Haiti, southern African kingdoms, Scramble for Africa) are NOT given depth until the school confirms; see history.md. Topics 1-5 below were rebuilt from the Via Afrika Gr 11 guide (guide page numbers given; CHECK marks flag where the guide's dates disagree with reference sources, see resources-history-via-afrika.md). Anything I am less sure of is marked UNVERIFIED. No sources or exam questions are copied. Resources: Via Afrika study guide (resources-history-via-afrika.md); others weak verified yet (Pass 3). Each topic has an "essay vs source-based" angle as in the 2023/24 ATP.
 
 ## Skills spine (all topics; Term 1 start)
 - Source skills: extraction (quote/use evidence), define terms, interpret/explain, compare sources, usefulness (purpose, author, date, audience), reliability, bias, limitations. Cognitive split Gr 11: 30% L1, 50% L2, 20% L3.
 - Essay skills: read the question, plan, introduction that answers the question, PEEL paragraphs, line of argument, conclusion linked to introduction; chronology.
+- Marking (see resources-history-via-afrika.md): source questions use tick schemes like (2 x 2) = two points at two marks; paragraph answers use a 3-level holistic rubric; essays are marked holistically with ticks for the introduction, each main point and the conclusion plus a 7-level content-by-presentation matrix out of 50 (EC 2024 memo); 'to what extent' needs a stance. The cognitive split in the legacy CAPS table is 30/50/20, but the EC Gr 11 Nov 2024 paper prints 30/40/30 (flagged in history.md section 9).
 - Mistakes: narrating without answering; copying the source; judging usefulness without a reason; no balance.
 - Lessons: L1 "Reading a source"; L2 "Usefulness and reliability"; L3 "Essay planning"; L4 "PEEL paragraphs".
 - Visuals: source-analysis template; essay planning frame; timelines.
