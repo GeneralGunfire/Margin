@@ -19,3 +19,6 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 ## Pass 3 (Resources) status
 - Pure Maths + Physical Sciences: DONE (resources-pure-maths-physical-sciences.md). 155 Siyavula Gr 11 pages fetched OK (scripts in scratchpad, not committed). YouTube = metadata-verified via oEmbed only.
 - Other subjects: WEAK first pass done (resources-others.md). Next: Pass 4 (past papers) starting with Pure Maths, then Pass 5, Pass 6.
+
+## Pass 4 (Past papers) status
+- Pure Maths + Physical Sciences: DONE for EC Gr 11 Nov memos (2023-2026 maths, 2024-2026 PS). File: past-papers-pure-maths-physical-sciences.md. Other subjects not yet. Next: Business Studies (EC 2022/2023 QPs), then others, then Gr 12 foundation checks.

@@ -50,3 +50,7 @@
 ## Resources (Pass 3)
 - Siyavula Gr 11 Mathematics and Physical Sciences open textbooks: https://www.siyavula.com/read/za/mathematics/grade-11 and https://www.siyavula.com/read/za/physical-sciences/grade-11 (all section pages fetched; used for resource mapping).
 - YouTube oEmbed endpoint used to confirm video titles/channels (no content watched).
+
+## Past papers (Pass 4)
+- Eastern Cape Gr 11 November exam memos (Maths 2023-2026, Physical Sciences 2024-2026): https://www.ecexams.co.za/ExaminationPapers.htm and per-year pages; used for topic/mark tables only.
+- DBE Gr 11 common papers page (empty of papers when fetched): https://www.education.gov.za/Curriculum/NationalSeniorCertificate%28NSC%29Examinations/Grade11Exams.aspx
