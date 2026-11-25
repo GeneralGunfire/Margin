@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- Theme tokens (Modern Minimal). Edit here to restyle the whole app. ---- */
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #333333;
+  --accent: #e0f2fe;
+  --accent-foreground: #1e3a8a;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3b82f6;
+  --destructive: #ef4444;
+  --radius: 0.375rem;
+  /* Diagram tokens (Physics diagrams). Light and dark variants; no red. */
+  --dg-bg: #f9fafb; --dg-line: #6b7280; --dg-text: #333333;
+  --vec-a: #1d4ed8; --vec-b: #b45309; --vec-result: #047857; --vec-aux: #6b7280;
+}
+
+.dark {
+  --background: #171717;
+  --foreground: #e5e5e5;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #262626;
+  --secondary-foreground: #e5e5e5;
+  --accent: #1e3a8a;
+  --accent-foreground: #e5e5e5;
+  --muted: #1f1f1f;
+  --muted-foreground: #a3a3a3;
+  --card: #262626;
+  --card-foreground: #e5e5e5;
+  --border: #404040;
+  --input: #404040;
+  --ring: #3b82f6;
+  --destructive: #ef4444;
+  --dg-bg: #171717; --dg-line: #a3a3a3; --dg-text: #e5e5e5;
+  --vec-a: #60a5fa; --vec-b: #fbbf24; --vec-result: #34d399; --vec-aux: #a3a3a3;
+}
+
+@theme inline {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: #ffffff;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+@layer base {
+  * { border-color: var(--border); }
+  html { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+  body { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+}
+
+/* ---- Entrance: one subtle fade for auth screens; off for reduced motion ---- */
+@keyframes enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.enter { animation: enter .5s cubic-bezier(.22, 1, .36, 1) both; }
+@media (prefers-reduced-motion: reduce) { .enter { animation: none; } }
+
+/* ---- Auth art: slow drift of the line ribbons, a light travelling along a few lines ---- */
+@keyframes auth-drift { from { transform: translateY(-18px) scaleY(.97); } to { transform: translateY(18px) scaleY(1.04); } }
+@keyframes auth-travel { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.auth-drift { animation: auth-drift 24s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+.auth-travel { stroke-dasharray: .07 .93; animation: auth-travel 11s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .auth-drift, .auth-travel { animation: none; } .auth-travel { display: none; } }
+
+
+/* ---- Scrollbars: slim, rounded, soft grey, blue when pressed (everywhere in Margin) ---- */
+* { scrollbar-width: auto; scrollbar-color: auto; }
+*::-webkit-scrollbar { width: 12px; height: 12px; }
+*::-webkit-scrollbar-track, *::-webkit-scrollbar-corner { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background-color: var(--border); background-clip: content-box;
+  border: 3px solid transparent; border-radius: 999px; min-height: 40px; min-width: 40px;
+}
+*::-webkit-scrollbar-thumb:hover { background-color: var(--muted-foreground); }
+*::-webkit-scrollbar-thumb:active { background-color: var(--primary); }
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+}
+
+/* ---- Popups and floating panels: a short fade and rise (none for reduced motion) ---- */
+@keyframes ui-pop { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes ui-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ui-rise { from { opacity: 0; transform: translateY(8px) scale(.985); } to { opacity: 1; transform: none; } }
+.ui-pop { animation: ui-pop .12s ease-out; }
+.ui-fade { animation: ui-fade .15s ease-out; }
+.ui-rise { animation: ui-rise .18s cubic-bezier(.2, .7, .2, 1); }
+@media (prefers-reduced-motion: reduce) { .ui-pop, .ui-fade, .ui-rise { animation: none; } }
+
+/* Search boxes: hide the browser's own clear button; form controls follow the theme */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+.dark input, .dark textarea, .dark select { color-scheme: dark; }
+
+/* Autofill: keep the box in the theme instead of the browser's blue */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--foreground);
+  caret-color: var(--foreground);
+  box-shadow: 0 0 0 1000px var(--secondary) inset !important;
+  transition: background-color 600000s ease-in-out 0s;
+}
+input:autofill { -webkit-text-fill-color: var(--foreground); box-shadow: 0 0 0 1000px var(--secondary) inset !important; }
+
+/* ---- Sign-in motion ---- */
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes art-in { from { opacity: 0; transform: scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+@keyframes sweep { from { transform: translateX(-120%); } to { transform: translateX(220%); } }
+@keyframes splash-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes line-run { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+
+.rise-group > * { animation: rise .7s cubic-bezier(.22, 1, .36, 1) both; }
+.rise-group > :nth-child(1) { animation-delay: 60ms; }
+.rise-group > :nth-child(2) { animation-delay: 130ms; }
+.rise-group > :nth-child(3) { animation-delay: 200ms; }
+.rise-group > :nth-child(4) { animation-delay: 270ms; }
+.rise-group > :nth-child(5) { animation-delay: 340ms; }
+.rise-group > :nth-child(6) { animation-delay: 410ms; }
+.rise-group > :nth-child(7) { animation-delay: 480ms; }
+.rise-group > :nth-child(8) { animation-delay: 550ms; }
+.rise-group > :nth-child(9) { animation-delay: 620ms; }
+.rise-group > :nth-child(10) { animation-delay: 690ms; }
+.art-in { animation: art-in .9s cubic-bezier(.22, 1, .36, 1) .1s both; }
+
+/* Placeholder behind the artwork: dark plum with a slow light sweep, matching the image's tones */
+.art-placeholder { background: linear-gradient(160deg, #1d0f1c, #2b1220 60%, #3a1a14); }
+.art-placeholder::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 170, 90, .14) 50%, transparent 70%);
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Sign In button while busy: a light sweeps across it */
+.btn-sweep { position: relative; overflow: hidden; }
+.btn-sweep::after {
+  content: ""; position: absolute; inset: 0; width: 45%;
+  background: linear-gradient(100deg, transparent, color-mix(in srgb, var(--background) 45%, transparent), transparent);
+  animation: sweep 1.1s ease-in-out infinite;
+}
+
+/* Splash while the session is checked */
+.splash { animation: splash-in .4s ease-out .15s both; }
+.loader-line { position: relative; display: block; width: 7rem; height: 2px; overflow: hidden; border-radius: 9999px; background: var(--border); }
+.loader-line::after {
+  content: ""; position: absolute; inset: 0; width: 40%; border-radius: 9999px; background: var(--primary);
+  animation: line-run 1.2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-group > *, .art-in, .splash { animation: none; }
+  .art-placeholder::before, .btn-sweep::after { animation: none; }
+  .loader-line::after { animation: none; width: 100%; opacity: .5; }
+}
+/* ---- Lesson content (Markdown) ---- */
+.prose-lesson { line-height: 1.7; }
+.prose-lesson h1 { font-size: 1.75rem; font-weight: 650; margin: 0 0 1rem; }
+.prose-lesson h2 { font-size: 1.35rem; font-weight: 600; margin: 2rem 0 .75rem; }
+.prose-lesson h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; }
+.prose-lesson p, .prose-lesson ul, .prose-lesson ol, .prose-lesson blockquote { margin: 0 0 1rem; }
+.prose-lesson ul { list-style: disc; padding-left: 1.5rem; }
+.prose-lesson ol { list-style: decimal; padding-left: 1.5rem; }
+.prose-lesson a { color: var(--primary); text-decoration: underline; }
+.prose-lesson img { max-width: 100%; border-radius: var(--radius); margin: 1rem 0; }
+.prose-lesson blockquote { border-left: 3px solid var(--border); padding-left: 1rem; color: var(--muted-foreground); }
+.prose-lesson code { background: var(--secondary); padding: .1rem .3rem; border-radius: 4px; font-size: .9em; }
+.prose-lesson table { border-collapse: collapse; margin: 0 0 1rem; display: block; overflow-x: auto; }
+.prose-lesson th, .prose-lesson td { border: 1px solid var(--border); padding: .4rem .75rem; text-align: left; }
+.prose-lesson th { background: var(--secondary); }
+/* Maths: body-sized inline, slightly larger centred display; extra line height stops stacked fractions and exponents colliding. */
+.prose-lesson p, .prose-lesson li, .prose-lesson td, .prose-lesson th { line-height: 2; }
+.prose-lesson .katex { font-size: 1em; }
+.prose-lesson .katex-display { overflow-x: auto; overflow-y: hidden; margin: 1.1em 0; padding: .25em 0; text-align: center; }
+.prose-lesson .katex-display > .katex { font-size: 1.1em; }
+.prose-lesson li { margin-bottom: .35rem; }
+.prose-lesson h3 { margin-top: 1.75rem; }
+
+/* ---- FullCalendar theming ---- */
+.fc {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: var(--background);
+  --fc-neutral-bg-color: var(--secondary);
+  --fc-today-bg-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  --fc-button-bg-color: var(--secondary);
+  --fc-button-border-color: var(--border);
+  --fc-button-text-color: var(--foreground);
+  --fc-button-hover-bg-color: var(--accent);
+  --fc-button-hover-border-color: var(--border);
+  --fc-button-active-bg-color: var(--primary);
+  --fc-button-active-border-color: var(--primary);
+  --fc-event-border-color: transparent;
+  font-size: .875rem;
+}
+.fc .fc-toolbar { flex-wrap: wrap; gap: .5rem; }
+.fc .fc-toolbar-title { font-size: 1.1rem; }
+.fc .fc-button-primary:not(:disabled).fc-button-active { color: #fff; }
+
+
+
+/* ---- Library and lesson surfaces (layout borrowed from the Scholar app, colours stay on this theme) ---- */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
+.card-interactive { transition: transform .12s ease, border-color .1s ease, background-color .1s ease; }
+.card-interactive:hover { transform: translateY(-1.5px); border-color: color-mix(in srgb, var(--foreground) 22%, transparent); }
+.card-interactive:active { transform: none; }
+.label-rule { display: inline-block; width: 18px; height: 2px; border-radius: 1px; background: linear-gradient(90deg, var(--foreground), transparent); }
+@media (prefers-reduced-motion: reduce) { .card-interactive { transition: none; } .card-interactive:hover { transform: none; } }
+
+.lesson-md { line-height: 1.8; font-size: .95em; }
+.lesson-md p { margin: 0 0 .5rem; line-height: 1.8; }
+.lesson-md > :last-child { margin-bottom: 0; }
+.lesson-md .katex-display { margin: .6em 0; text-align: left; padding: 0; }
+.lesson-md .katex-display > .katex { font-size: 1.05em; text-align: left; }
+.prose-lesson .callout p, .prose-lesson .callout ul { margin: 0 0 .5rem; }
+.prose-lesson .callout > div > :last-child { margin-bottom: 0; }
+.prose-lesson .callout blockquote { all: unset; }
+
+/* Formula legend table inside lesson formula boxes: compact, no grid, wraps on mobile */
+.prose-lesson .formula-legend { display: table; width: 100%; margin: 0; }
+.prose-lesson .formula-legend th, .prose-lesson .formula-legend td { border: 0; background: transparent; padding: .3rem .6rem .3rem 0; line-height: 1.35; }
