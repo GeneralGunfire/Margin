@@ -12,3 +12,9 @@
 - DBE, CAPS FET English Home Language Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20HOME%20_%20ENGLISH%20GR%2010-12%20_%20WEB_5478.pdf . Teaching plan, assessment tables.
 - DBE Gr 10/11 literature exemplars page: https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/Grade10and11LiteratureExemplars.aspx . Links only.
 - WCED circular on DBE E11 of 2024 (found, not opened): https://wcedonline.westerncape.gov.za/circulars/minutes24/CMminutes/DCF/edcf0008-2024.pdf
+
+## History
+- DBE legacy CAPS History: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20%20HISTORY%20GR%2010-12%20%20WeB.pdf . Assessment, Gr 11 weighting, cognitive levels.
+- DBE 2023/24 ATP History Gr 11: https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.430%20ATP%202023-24%20Gr%2011%20His%20final.pdf . Term-by-term topic and tasks.
+- DBE DRAFT amended CAPS History Gr 10-12 (2026): https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/AMENDED%20CAPS%20DOC%20HISTORY%20GRADE%2010%20-12.pdf?ver=2026-03-25-094629-013 . Gr 11 headings only.
+- PMG call for comments (draft status, closed 19 May 2026): https://pmg.org.za/call-for-comment/1708/
