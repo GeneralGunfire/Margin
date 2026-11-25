@@ -16,7 +16,18 @@ Mathematics (not Maths Literacy). Grade 11 extends Grade 10 algebra to rational 
 - T1: investigation or project (min 50 marks; max one project a year) plus a test. T2: assignment (min 50 marks) and mid-year exam (Paper 1: 2 h, 100 marks; Paper 2: 2 h, 100 marks). T3: two tests (min 50 marks, 1 h each). T4: a test (min 50 marks) and final exam (300 marks).
 - Mid-year Paper 1 (100): general algebra ~25, equations/inequalities ~35, number patterns ~15, functions ~25 (each ±3). Paper 2 (100): analytical geometry ~30, trigonometry ~70 (±3).
 - Final Paper 1 (3 h, 150): exponents/surds/equations/inequalities ~45, number patterns ~25, functions ~45, finance ~15, probability ~20 (±3).
-- Final Paper 2 (3 h, 150): trigonometry ~50, analytical geometry ~30, Euclidean geometry and measurement ~50, statistics ~20 (the extracted text gives Euclid 50 but a different table shows 40/60 splits; two layouts disagree, UNVERIFIED, resolve in Pass 4 with real papers).
+- Final Paper 2 (3 h, 150): trigonometry 50, analytical geometry 30, Euclidean geometry (and measurement) 50, statistics 20. CONFIRMED by the DBE 2023/24 Gr 11 ATP (see below), which resolves an earlier ambiguity in the 2011 CAPS table layout.
+
+### !! 2023/24 DBE ATP changes the TERM ORDER (and SBA weights) vs the 2011 CAPS pace setter
+Source: DBE 2023/24 ATP Mathematics Gr 11, https://www.education.gov.za/LinkClick.aspx?fileticket=d9piy_Yst2E%3d&tabid=3205&portalid=0&mid=10752 (listed on https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/2023ATPsFET.aspx). Read the pace-setter page; the content boxes repeat the CAPS Gr 11 statements.
+- Term 1 (11 wks): Exponents and surds; Equations and inequalities; **Trigonometry (reduction formulae, trig equations and general solutions)**. SBA: investigation/project + test.
+- Term 2: **Euclidean Geometry**; **Analytical Geometry**; **Functions (including trigonometric functions)**. SBA: assignment + mid-year exam.
+- Term 3: **Trigonometry (sine, cosine and area rules)**; **Statistics**; **Probability**; **Finance, growth and decay**. SBA: two tests.
+- Term 4: **Number patterns**; revision of measurement; revision of Algebra; revision of Trigonometry; examination. SBA: one test.
+- SBA tasks (7): T1 investigation/project 15% + test 14%; T2 assignment 15% + mid-year exam 14%; T3 test 14% + test 14%; T4 test 14%. (These sum to 100% of the SBA; differs from the 2011 CAPS table of 20/10/10/30/10/10/10.)
+- Final exam weights (ATP): Paper 1 (150): algebraic expressions, equations and inequalities 45; number patterns 25; finance 15; functions and graphs 45; probability 20. Paper 2 (150): statistics 20; analytical geometry 30; trigonometry 50; Euclidean geometry 50.
+- WHICH ORDER APPLIES IN 2027 is unconfirmed: the school follows its own work schedule based on the then-current ATP. The 2011 pace-setter order is kept in Section 4 below as originally recorded; the ATP order above is the more recent DBE document and is the better default for 2027. Both are tagged in Section 4. LOGGED in ASSUMPTIONS.md.
+- Note: the ATP lists Measurement only as "revision" in Term 4 (no new Gr 11 Measurement content found), which supports the UNVERIFIED reading below that Gr 11 measurement is revision.
 - Theorem proofs: up to 12 marks may be asked in Paper 2 (CAPS Grades 11 and 12). Grade 11 may be asked proofs of circle theorems, but not converses; sine, cosine and area rule proofs are examinable.
 - Cognitive levels: Knowledge 20%, routine procedures 35%, complex procedures 30%, problem solving 15% (CAPS standard split; confirm in Pass 4 UNVERIFIED for Gr 11 specifically).
 - Grade 12 final: Paper 1 and 2, 3 h each, 150 marks each (Gr 12 adds calculus, counting, polynomials, compound angles).

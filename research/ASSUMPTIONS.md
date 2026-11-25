@@ -7,3 +7,4 @@
 6. English HL: Gr 11 literature texts are school-chosen from the national catalogue; none assumed.
 7. AP Maths: did not invent a syllabus. File is a placeholder with COVERED ELSEWHERE items and flagged hypotheses; waiting for the user's IEB document.
 8. Did not bypass bot-check (Cloudflare) pages on maths.stithian.com / educoast.co.za.
+9. Pure Maths term order: the 2023/24 DBE ATP (T1 exp/surds, equations, trig reduction; T2 Euclid, analytical, functions; T3 trig rules, stats, probability, finance; T4 patterns) differs from the 2011 CAPS pace setter (T1 incl. patterns+analytical geometry; T2 functions+trig; T3 Euclid/trig rules/finance/probability; T4 stats). I treat the ATP as the better default for 2027 and keep both; Pass 5 must re-check against any 2026/27 ATP.
