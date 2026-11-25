@@ -11,5 +11,5 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | Tourism | done | done | - | - | - | - |
 | Life Orientation | done | done | - | - | - | - |
 | Religion Studies | done | done (generic examples) | - | - | - | - |
-| Afrikaans FAL | done | - | - | - | - | - |
+| Afrikaans FAL | done | done (generic literature) | - | - | - | - |
 | AP Maths | PARTIAL (no IEB syllabus) | - | - | - | - | - |
