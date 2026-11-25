@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Circle, Clock, Flag, List } from "lucide-react";
 import { useAuth } from "@/lib/auth";
-import { lessonById, lessonMinutes, neighbours, outlineFor, slugify, type Lesson } from "@/lib/content";
+import { lessonById, lessonMinutes, neighbours, outlineFor, slugify, videoSearchPhrase, type Lesson } from "@/lib/content";
+import VideoSearch from "@/components/lesson/VideoSearch";
 import { useProgress } from "@/hooks/useProgress";
 import { btn, btnPrimary, field, kicker } from "@/lib/styles";
 import { Note } from "@/components/ui/note";
@@ -96,11 +97,7 @@ export default function LessonPage() {
 
         <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
           <div className="min-w-0 flex-1 basis-80">
-            <p className={cn(kicker, "flex items-center gap-2.5")}>
-              <span className="label-rule" aria-hidden="true" />
-              {lesson.subtopic ?? lesson.topic}
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{lesson.title}</h1>
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">{lesson.title}</h1>
             <div className="mt-3 flex flex-wrap items-center gap-1.5">
               {pos > 0 && siblings.length > 1 && <span className={chip}>Lesson {pos} of {siblings.length}</span>}
               {lesson.term && <span className={chip}>Term {lesson.term}</span>}
@@ -121,6 +118,8 @@ export default function LessonPage() {
             </div>
           )}
         </header>
+
+        {!isStub && <VideoSearch phrase={videoSearchPhrase(lesson, s?.name ?? lesson.subject)} className="mt-4" />}
 
         <div className="mt-5 xl:hidden"><Outline lesson={lesson} progress={progress} compact /></div>
 

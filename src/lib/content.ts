@@ -14,6 +14,7 @@ export type Lesson = {
   subtopic?: string; // optional grouping inside a topic
   status: "live" | "stub"; // stubs are placeholders: shown greyed out, not counted, not clickable
   pages: string[]; // textbook page references
+  youtubeQuery?: string; // optional YouTube search phrase for this exact lesson (frontmatter youtube_query)
   body: string;
 };
 
@@ -68,6 +69,7 @@ function build(): Lesson[] {
       subtopic: data.subtopic ? String(data.subtopic) : undefined,
       status: String(data.status) === "stub" ? "stub" : "live",
       pages,
+      youtubeQuery: data.youtube_query ? String(data.youtube_query).trim() : undefined,
       body,
     });
   }
@@ -132,3 +134,22 @@ export function outlineFor(lesson: Lesson): Lesson[] {
 
 /** Rough reading time in minutes (maths-heavy text reads slowly). */
 export const lessonMinutes = (l: Lesson) => Math.max(3, Math.round(l.body.split(/\s+/).length / 120));
+
+/** Longest search phrase we show. Longer phrases are noisy in YouTube search. */
+export const VIDEO_PHRASE_MAX = 80;
+
+/**
+ * The text a learner pastes into YouTube search to find videos on this exact lesson.
+ * Uses the lesson's own `youtube_query` exactly as written; otherwise builds
+ * "Grade 11 <title> <subject> South Africa", dropping the tail if it gets too long.
+ */
+export function videoSearchPhrase(lesson: Lesson, subjectName: string): string {
+  const own = lesson.youtubeQuery?.trim();
+  if (own) return own;
+  const title = lesson.title.replace(/\s+/g, " ").trim();
+  const tries = [`Grade 11 ${title} ${subjectName} South Africa`, `Grade 11 ${title} ${subjectName}`, `Grade 11 ${title}`];
+  return tries.find((s) => s.length <= VIDEO_PHRASE_MAX) ?? tries[2].slice(0, VIDEO_PHRASE_MAX).trim();
+}
+
+/** The YouTube results page for a phrase. We only build a link; no YouTube API is called. */
+export const youtubeSearchUrl = (phrase: string) => `https://www.youtube.com/results?search_query=${encodeURIComponent(phrase)}`;
