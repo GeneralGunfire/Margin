@@ -18,4 +18,4 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 
 ## Pass 3 (Resources) status
 - Pure Maths + Physical Sciences: DONE (resources-pure-maths-physical-sciences.md). 155 Siyavula Gr 11 pages fetched OK (scripts in scratchpad, not committed). YouTube = metadata-verified via oEmbed only.
-- Next: resources for English HL, History, Business Studies, Tourism, LO, Religion Studies, Afrikaans FAL. Then Pass 4 (past papers), Pass 5, Pass 6.
+- Other subjects: WEAK first pass done (resources-others.md). Next: Pass 4 (past papers) starting with Pure Maths, then Pass 5, Pass 6.
