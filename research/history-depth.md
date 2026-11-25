@@ -103,14 +103,43 @@ Summary box per unit; questions: mind maps of causes and consequences, define te
 
 ## Research task (Term 1-2): plan, interviews/oral history or research question; essay-form findings; self-reflection and recommendations (per ATP). Lessons: L1 "Framing a research question"; L2 "Sources and interviews"; L3 "Presenting findings".
 
-## Topic 3: Ideas of race (Paper 1)
-- Covers: nineteenth-century hierarchies of race; eugenics; modern understanding (Human Genome Project: no biological basis for race categories); practices in USA, Australia, Namibia, South Africa; case study choice: Australia (colonisation, racial suicide/decay debates, white immigration policies, child migrants, the stolen generation) OR Nazi Germany (consolidation from 1933, Nazi racial ideology, racial state, targeted groups, choices people made).
-- Key concepts: race, racism, eugenics, social Darwinism, genocide, segregation, assimilation.
-- Examined: source-based on Australia OR Nazi Germany; essay "creation of a racial state" etc.
-- Mistakes: treating race as biological; excusing racist thinking as "of its time" without analysis; mixing up Nuremberg laws and later events; chronological errors.
-- Lessons: L1 "Concept of race and racism"; L2 "Eugenics and race science"; L3 "Case study part 1"; L4 "Case study part 2"; L5 "Practices in SA and Namibia".
-- Sensitive content: handle Holocaust and genocide material with care (flag for the Margin content team).
-- Visuals: propaganda images/posters; map of Australia or Europe.
+## Topic 3: Ideas of race in the late 19th and 20th centuries (Paper 1) — rebuilt from the Via Afrika guide, pp. 77-100
+Key question in the guide: what were the consequences when pseudo-scientific ideas of race became part of government policy and law. The guide covers BOTH case studies (Australia and Nazi Germany); CAPS asks for one of the two. "CHECK" = disagrees with standard references.
+
+### Unit 1 (pp. 78-82): Theories and practice of race
+- **Race science:** Linnaeus (1730s, four groups), Blumenbach (1795, five groups, Caucasian "best"), Camper (1790s, facial/skull ranking), Samuel Morton (mid-1800s, brain size; the guide's unit text writes "Stanley Morton", CHECK, its summary writes Samuel), Tiedemann disagreed, Nott and Gliddon (1854, table of races).
+- **Darwin and Social Darwinism:** natural selection; Herbert Spencer ("survival of the fittest"); used to justify imperial rule, racial hierarchies and human exhibitions (e.g. Saartjie Baartman).
+- **Eugenics:** Francis Galton coined the word; Davenport's Eugenics Record Office; positive eugenics (better-baby and fittest-family contests) vs negative eugenics (sterilisation: 30 US states, about 65 000 people per the guide).
+- **Modern understanding:** all humans one species; Human Genome Project (guide: "2008", and "in 2003" in the next line; CHECK, the project ran 1990-2003) showed about 99.9% genetic sameness; race has no biological basis.
+- **Practices by place:** USA (marriage laws, IQ tests, immigration limits, Native Americans); Australia (assimilation, "breeding out"); Germany (race purity); South Africa (anti-miscegenation, segregation, birth-control for white supremacy); Namibia (1904 genocide of the Herero and Nama, Eugen Fischer's research that later influenced the Nazis).
+- **Skills practised:** explaining a "scientific" claim and why it is pseudo-science; comparing practices across countries; source work on eugenics posters.
+
+### Case study 1: Australia and indigenous Australians (pp. 83-86)
+- **Background:** British colony at Botany Bay/Port Jackson 26 January 1788; convicts (162 000 to 1867 per guide); conflict and dispossession; smallpox; population fell (guide: about 1 million to about 80 000 by 1888, treat as an estimate); colonies and federation in 1901 (the guide writes South Australia "1936", CHECK: 1836).
+- **Race theories and policy:** Aboriginal people seen as "primitive"; eugenics societies; "racial decay/suicide" fears; Immigration Restriction Act 1901 (White Australia policy); £5 baby bonus 1912; British child migrants (1920-67, the "Lost Generation").
+- **Stolen Generations:** assimilation policy to "breed out" Aboriginal ancestry (Spencer 1913 proposals, Cook and Neville in the 1930s, Hasluck 1951); about 100 000 children removed 1910-70 (guide's figure, estimates differ); policy ended in 1971 per the guide; official inquiry 1997; apology by PM Rudd (guide: 2009; CHECK: the apology to the Stolen Generations was 13 February 2008) and a later apology for the Lost Generation (guide: 2010).
+- **Skills practised:** evaluating government policy documents and photographs; empathy and perspective in sources from different sides; essay on "how did race theories shape Australian policy".
+
+### Case study 2: Nazi Germany and the Holocaust (pp. 87-94)
+- **Consolidating power 1933-34:** Hitler chancellor 1933; Reichstag Fire decree; Enabling Act; banning other parties and unions; Night of the Long Knives 30 June 1934 (guide: about 400 killed; estimates vary); Hindenburg's death 1934 and the title Führer; SS and Himmler, Gestapo.
+- **Racial ideology:** Aryan master race (Herrenvolk), Social Darwinism and eugenics, Fischer, Bauer, Lenz; "the other" as scapegoat.
+- **Positive eugenics:** Lebensborn (guide: 1936; CHECK, usually dated 1935). **Negative eugenics:** Sterilisation Law July 1933 (300 000-400 000 per guide), concentration camps for "asocials", Operation T4 euthanasia (70 273 deaths by gassing per Nazi records).
+- **Targeted groups:** Jews (boycotts, Nuremberg Laws 1935, Aryanisation, Kristallnacht November 1938, curfews and confiscation 1939); Sinti and Roma; political and religious opponents; "asocials", homosexuals, disabled people.
+- **Choices people made:** perpetrators, bystanders, resisters, rescuers (e.g. Le Chambon); Jewish responses: exile, accommodation, defiance (Warsaw Ghetto uprising April 1943).
+- **Final Solution:** Einsatzgruppen, ghettos, Chelmno gas vans, death camps (Auschwitz, Treblinka, Majdanek), Zyklon-B, about 6 million Jews killed; death marches; liberation of Auschwitz January 1945 (Soviets) and Bergen-Belsen (British).
+- **Justice:** Nuremberg trials (retributive justice), shortcomings, link to later restorative justice such as South Africa's TRC.
+- **Sensitive content:** handle Holocaust and genocide material with care; show propaganda sources with context, not as endorsement (flag for the Margin content team).
+- **Skills practised:** analysing Nazi propaganda illustrations (guide Q2-4: symbols, audience, purpose), identifying bias, comparing perpetrators and bystanders.
+- **Essay angles:** how did eugenics shape Nazi policy; to what extent was the Holocaust inevitable once the Nazis took power; why did most Germans remain bystanders.
+
+### Common mistakes (Topic 3)
+Treating race as biological; presenting racist claims as fact; blurring the Nuremberg Laws (1935), Kristallnacht (1938) and the Final Solution (1941-42); giving casualty figures as exact; confusing the Warsaw Ghetto uprising (1943) with the 1944 Warsaw Uprising (the guide's Q1 g says 1944; CHECK).
+
+### Lesson breakdown (Topic 3)
+L1 Race science and Social Darwinism (pp. 78-79); L2 Eugenics and its practice in USA, SA, Namibia (pp. 80-82); L3 Australia: colonisation to the Stolen Generations (pp. 83-86); L4 Nazi consolidation and racial ideology (pp. 87-90); L5 Persecution to Final Solution and justice (pp. 90-94), with the summary and propaganda-source questions (pp. 95-100).
+
+### Guide features useful for Margin
+Explicit "perpetrator, bystander, resister, rescuer" frame; summary boxes; propaganda source activities with scaffolded questions (symbol, audience, message); answers from p. 195.
 
 ## Topic 4: Nationalisms (Paper 2; provinces/schools choose ANY TWO case studies)
 - Core: what nationalism is; origins; Italy and Germany as initiation; "imagined community" theory.
