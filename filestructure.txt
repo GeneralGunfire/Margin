@@ -102,6 +102,8 @@
 |-- public
     |-- auth-art.jpg
     |-- content-images
+        |-- exp-always-positive.svg
+        |-- surd-equation-check.svg
 |-- README.md
 |-- research
     |-- afrikaans-fal-depth.md
