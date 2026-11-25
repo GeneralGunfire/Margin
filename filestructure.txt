@@ -102,8 +102,6 @@
 |-- public
     |-- auth-art.jpg
     |-- content-images
-        |-- fractional-exponent-steps.svg
-        |-- rational-exponent-roots.svg
 |-- README.md
 |-- research
     |-- afrikaans-fal-depth.md
@@ -149,9 +147,12 @@
             |-- PasswordInput.tsx
         |-- dashboard
         |-- Layout.tsx
+        |-- lesson
+            |-- blocks.tsx
         |-- Logo.tsx
         |-- page.tsx
         |-- Splash.tsx
+        |-- Steps.tsx
         |-- ui
             |-- animated-sidebar-utils
                 |-- ease.ts
@@ -199,6 +200,7 @@
         |-- ResetPassword.tsx
         |-- SettingsPage.tsx
 |-- supabase
+    |-- content-sync-compact.sql
     |-- content-sync.sql
     |-- schema.sql
 |-- tsconfig.app.json

@@ -48,6 +48,7 @@ function App() {
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/library" element={<Library />} />
         <Route path="/library/:subject" element={<Library />} />
+        <Route path="/library/:subject/:topic" element={<Library />} />
         <Route path="/library/:subject/:topic/:lesson" element={<LessonPage />} />
         <Route path="/papers" element={<PastPapers />} />
         <Route path="/settings" element={<SettingsPage />} />

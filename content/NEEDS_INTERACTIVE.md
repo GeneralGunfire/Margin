@@ -1,6 +1,6 @@
 # Interactive graphics wanted later
 
-No lesson written so far needs an interactive graph. The first sub-topic (Exponents and surds, 1.1) uses a static SVG graph and one light animated SVG.
+No lesson written so far needs an interactive graph. The first sub-topic (Exponents and surds, 1.1) uses no diagrams; its worked examples use the step-by-step block instead.
 
 Candidates from research/pure-maths-depth.md, for when those lessons are written:
 

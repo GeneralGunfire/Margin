@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { CalendarDays, FileText, LayoutDashboard, LibraryBig, LogOut, PanelLeft, Settings, X } from "lucide-react";
 import {
@@ -45,7 +45,11 @@ function Avatar() {
 
 /** App shell: collapsible animated sidebar, top bar with the page title, and a drawer on mobile. */
 export default function Layout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+  // Every page change starts at the top (breadcrumb #anchors scroll themselves).
+  useLayoutEffect(() => {
+    if (!hash) window.scrollTo({ top: 0, left: 0 });
+  }, [pathname, hash]);
   const navigate = useNavigate();
   const { signOut, profile } = useAuth();
   const [open, setOpen] = useState(() => {

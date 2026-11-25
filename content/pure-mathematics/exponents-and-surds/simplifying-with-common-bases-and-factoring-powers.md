@@ -8,9 +8,9 @@ subtopic: Rational exponents and their laws
 order: 113
 ---
 
-**What you'll learn:** how to rewrite numbers with different bases as one base, and how to factor out a common power so that long expressions collapse to a simple number.
-
-**Prerequisites:** [Exponent laws with fractions](/library/pure-mathematics/exponents-and-surds/exponent-laws-with-fractions), and factorising a common factor.
+> **What you'll learn:** how to rewrite numbers with different bases as one base, and how to factor out a common power so that long expressions collapse to a simple number.
+>
+> **Prerequisites:** [Exponent laws with fractions](/library/pure-mathematics/exponents-and-surds/exponent-laws-with-fractions), and factorising a common factor.
 
 ## The idea in plain language
 
@@ -31,16 +31,14 @@ Expressions that mix a **sum or difference** of powers, like $2^{n+2} - 2^n$, ne
 
 ## Worked example 1 (basic)
 
-Simplify $\frac{2^{n+2} - 2^{n}}{2^{n-1}}$.
-
-**Step 1.** Split the exponents so every power has the form $2^n \times$ a number:
-$$2^{n+2} = 2^n \cdot 4 \qquad\text{and}\qquad 2^{n-1} = \frac{2^n}{2}.$$
-
-**Step 2.** Factor $2^n$ out of the top:
-$$2^{n+2}-2^n = 2^n(4-1) = 3\cdot 2^n.$$
-
-**Step 3.** Divide, remembering that dividing by $\frac{2^n}{2}$ is the same as multiplying by $\frac{2}{2^n}$:
-$$\frac{3\cdot 2^n}{\frac{2^n}{2}} = 3 \cdot 2 = 6.$$
+```steps
+title: Simplify $\frac{2^{n+2} - 2^{n}}{2^{n-1}}$
+Split the exponents so each power looks like $2^n \times$ a number :: \frac{2^{n}\cdot 2^{2} - 2^{n}}{2^{n}\div 2}
+Factor $2^n$ out of the top :: = \frac{2^{n}(4-1)}{\frac{2^{n}}{2}}
+Work out the bracket :: = \frac{3\cdot 2^{n}}{\frac{2^{n}}{2}}
+Dividing by $\frac{2^n}{2}$ is multiplying by $\frac{2}{2^n}$, so $2^n$ cancels :: = 3 \cdot 2
+Finish :: = 6
+```
 
 The answer does not depend on $n$. That is what these questions are designed to show.
 
@@ -78,41 +76,34 @@ This equals the right-hand side, so the statement is shown to be true.
 
 ## Practice
 
-**1.** Simplify $\frac{2^{x+1}\cdot 2^{x-1}}{4^x}$.
+Try each question first, then open it to see the full working.
 
-**2.** Evaluate without a calculator: $9^{1/2}\cdot 27^{2/3}$.
-
-**3.** Simplify $\frac{25^x}{5^{2x-1}}$.
-
-**4.** Simplify $\frac{3^{n+2}-3^n}{8\cdot 3^{n-1}}$.
-
-**5.** Simplify $\frac{2^{n+3}+2^{n+1}}{5\cdot 2^{n-1}}$.
-
-**6.** Simplify $\frac{12^n}{3^{n-1}\cdot 2^{2n}}$.
-
-**7.** Simplify $\frac{2^{x+2}\cdot 3^{x-1}}{6^x}$.
-
-**8.** Evaluate without a calculator: $49^{-1/2}\cdot 343^{2/3}$.
-
-### Answers with full working
-
-**1.** Top: $2^{x+1+x-1} = 2^{2x}$. Bottom: $4^x = (2^2)^x = 2^{2x}$. The quotient is $1$.
-
-**2.** $9^{1/2} = 3$ and $27^{2/3} = (\sqrt[3]{27})^2 = 9$. Product: $27$.
-
-**3.** $25^x = (5^2)^x = 5^{2x}$. Then $5^{2x} \div 5^{2x-1} = 5^{2x-(2x-1)} = 5^1 = 5$.
-
-**4.** Top: $3^n(3^2-1) = 8\cdot 3^n$. Bottom: $8\cdot 3^{n-1} = 8\cdot\frac{3^n}{3}$. So the quotient is $\frac{8\cdot 3^n}{8\cdot 3^n}\cdot 3 = 3$.
-
-**5.** Top: $2^n(2^3+2^1) = 2^n\cdot 10$. Bottom: $5\cdot\frac{2^n}{2}$. Quotient: $\frac{10\cdot 2^n \cdot 2}{5\cdot 2^n} = \frac{20}{5} = 4$.
-
-**6.** $12^n = (2^2\cdot 3)^n = 2^{2n}\cdot 3^n$. Bottom: $3^{n-1}\cdot 2^{2n}$. The $2^{2n}$ cancels, leaving $\frac{3^n}{3^{n-1}} = 3^{n-(n-1)} = 3$.
-
-**7.** $2^{x+2} = 2^x\cdot 4$ and $3^{x-1} = \frac{3^x}{3}$, and $6^x = 2^x\cdot 3^x$. So
+```questions
+Q: Simplify $\frac{2^{x+1}\cdot 2^{x-1}}{4^x}$.
+A: Top: $2^{x+1+x-1} = 2^{2x}$. Bottom: $4^x = (2^2)^x = 2^{2x}$. The quotient is $1$.
+---
+Q: Evaluate without a calculator: $9^{1/2}\cdot 27^{2/3}$.
+A: $9^{1/2} = 3$ and $27^{2/3} = (\sqrt[3]{27})^2 = 9$. Product: $27$.
+---
+Q: Simplify $\frac{25^x}{5^{2x-1}}$.
+A: $25^x = (5^2)^x = 5^{2x}$. Then $5^{2x} \div 5^{2x-1} = 5^{2x-(2x-1)} = 5^1 = 5$.
+---
+Q: Simplify $\frac{3^{n+2}-3^n}{8\cdot 3^{n-1}}$.
+A: Top: $3^n(3^2-1) = 8\cdot 3^n$. Bottom: $8\cdot 3^{n-1} = 8\cdot\frac{3^n}{3}$. So the quotient is $\frac{8\cdot 3^n}{8\cdot 3^n}\cdot 3 = 3$.
+---
+Q: Simplify $\frac{2^{n+3}+2^{n+1}}{5\cdot 2^{n-1}}$.
+A: Top: $2^n(2^3+2^1) = 2^n\cdot 10$. Bottom: $5\cdot\frac{2^n}{2}$. Quotient: $\frac{10\cdot 2^n \cdot 2}{5\cdot 2^n} = \frac{20}{5} = 4$.
+---
+Q: Simplify $\frac{12^n}{3^{n-1}\cdot 2^{2n}}$.
+A: $12^n = (2^2\cdot 3)^n = 2^{2n}\cdot 3^n$. Bottom: $3^{n-1}\cdot 2^{2n}$. The $2^{2n}$ cancels, leaving $\frac{3^n}{3^{n-1}} = 3^{n-(n-1)} = 3$.
+---
+Q: Simplify $\frac{2^{x+2}\cdot 3^{x-1}}{6^x}$.
+A: $2^{x+2} = 2^x\cdot 4$ and $3^{x-1} = \frac{3^x}{3}$, and $6^x = 2^x\cdot 3^x$. So
 $$\frac{2^x\cdot 4\cdot 3^x\cdot\frac{1}{3}}{2^x\cdot 3^x} = \frac{4}{3}.$$
-
-**8.** $49^{-1/2} = \frac{1}{\sqrt{49}} = \frac{1}{7}$ and $343^{2/3} = (\sqrt[3]{343})^2 = 7^2 = 49$. Product: $\frac{49}{7} = 7$.
-
+---
+Q: Evaluate without a calculator: $49^{-1/2}\cdot 343^{2/3}$.
+A: $49^{-1/2} = \frac{1}{\sqrt{49}} = \frac{1}{7}$ and $343^{2/3} = (\sqrt[3]{343})^2 = 7^2 = 49$. Product: $\frac{49}{7} = 7$.
+```
 
 ## Further help
 

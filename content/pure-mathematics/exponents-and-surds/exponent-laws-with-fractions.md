@@ -8,9 +8,9 @@ subtopic: Rational exponents and their laws
 order: 112
 ---
 
-**What you'll learn:** how to use the exponent laws when the exponents are fractions, to simplify expressions with letters.
-
-**Prerequisites:** [From roots to fractional exponents](/library/pure-mathematics/exponents-and-surds/from-roots-to-fractional-exponents), and adding and subtracting fractions.
+> **What you'll learn:** how to use the exponent laws when the exponents are fractions, to simplify expressions with letters.
+>
+> **Prerequisites:** [From roots to fractional exponents](/library/pure-mathematics/exponents-and-surds/from-roots-to-fractional-exponents), and adding and subtracting fractions.
 
 ## The idea in plain language
 
@@ -62,17 +62,16 @@ $$9a^4b^{-2} = \frac{9a^4}{b^2}.$$
 
 ## Worked example 3 (exam level)
 
-Simplify $\frac{\sqrt{x^3}\cdot\sqrt[3]{x^2}}{x^{1/6}}$.
+Press **Next step** to build the solution one line at a time.
 
-**Step 1.** Convert the roots: $\sqrt{x^3} = x^{3/2}$ and $\sqrt[3]{x^2} = x^{2/3}$.
-
-**Step 2.** Multiply on top by adding exponents, then divide by subtracting the exponent of the bottom:
-$$x^{3/2+2/3-1/6}.$$
-
-**Step 3.** Use a common denominator of 6:
-$$\frac{3}{2}+\frac{2}{3}-\frac{1}{6} = \frac{9}{6}+\frac{4}{6}-\frac{1}{6} = \frac{12}{6} = 2.$$
-
-**Answer:** $x^2$.
+```steps
+title: Simplify $\frac{\sqrt{x^3}\cdot\sqrt[3]{x^2}}{x^{1/6}}$
+Convert every root to an exponent first :: \frac{x^{3/2} \cdot x^{2/3}}{x^{1/6}}
+Multiply on top by adding exponents. Divide by subtracting :: = x^{3/2+2/3-1/6}
+Use a common denominator of 6 :: = x^{9/6+4/6-1/6}
+Add and subtract the numerators :: = x^{12/6}
+Simplify the fraction :: = x^{2}
+```
 
 > **Common mistakes**
 >
@@ -85,36 +84,30 @@ $$\frac{3}{2}+\frac{2}{3}-\frac{1}{6} = \frac{9}{6}+\frac{4}{6}-\frac{1}{6} = \f
 
 ## Practice
 
-**1.** Simplify $x^{1/2} \cdot x^{3/2}$.
+Try each question first, then open it to see the full working.
 
-**2.** Simplify $\left(x^{2/3}\right)^3$.
-
-**3.** Simplify $4x^{1/2} \cdot 3x^{-3/2}$. Leave your answer with positive exponents.
-
-**4.** Simplify $\left(16x^8\right)^{3/4}$.
-
-**5.** Simplify $\frac{\sqrt{x}\cdot\sqrt[3]{x}}{x^{5/6}}$ (assume $x > 0$).
-
-**6.** Simplify $\frac{\left(a^{2/3}b^{-1/2}\right)^6}{a^2 b^{-3}}$. Leave your answer with positive exponents.
-
-**7.** Simplify $\left(\tfrac{1}{2}x^{-1/2}\right)^{-2}$.
-
-### Answers with full working
-
-**1.** $x^{1/2+3/2} = x^2$.
-
-**2.** $x^{2/3\cdot 3} = x^2$.
-
-**3.** Multiply the numbers: $4 \times 3 = 12$. Add the exponents: $\frac{1}{2}+\left(-\frac{3}{2}\right) = -1$. So $12x^{-1} = \frac{12}{x}$.
-
-**4.** $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8$ and $(x^8)^{3/4} = x^6$. Answer: $8x^6$.
-
-**5.** Convert: $x^{1/2} \cdot x^{1/3} \div x^{5/6} = x^{1/2+1/3-5/6}$. Now $\frac{3}{6}+\frac{2}{6}-\frac{5}{6} = 0$, so the answer is $x^0 = 1$.
-
-**6.** Top: $a^{2/3\cdot 6}\,b^{-1/2\cdot 6} = a^4 b^{-3}$. Divide: $a^{4-2}\,b^{-3-(-3)} = a^2 b^0 = a^2$.
-
-**7.** Apply the exponent $-2$ to each factor: $\left(\tfrac{1}{2}\right)^{-2} = 4$ and $\left(x^{-1/2}\right)^{-2} = x^1$. Answer: $4x$.
-
+```questions
+Q: Simplify $x^{1/2} \cdot x^{3/2}$.
+A: $x^{1/2+3/2} = x^2$.
+---
+Q: Simplify $\left(x^{2/3}\right)^3$.
+A: $x^{2/3\cdot 3} = x^2$.
+---
+Q: Simplify $4x^{1/2} \cdot 3x^{-3/2}$. Leave your answer with positive exponents.
+A: Multiply the numbers: $4 \times 3 = 12$. Add the exponents: $\frac{1}{2}+\left(-\frac{3}{2}\right) = -1$. So $12x^{-1} = \frac{12}{x}$.
+---
+Q: Simplify $\left(16x^8\right)^{3/4}$.
+A: $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = 8$ and $(x^8)^{3/4} = x^6$. Answer: $8x^6$.
+---
+Q: Simplify $\frac{\sqrt{x}\cdot\sqrt[3]{x}}{x^{5/6}}$ (assume $x > 0$).
+A: Convert: $x^{1/2} \cdot x^{1/3} \div x^{5/6} = x^{1/2+1/3-5/6}$. Now $\frac{3}{6}+\frac{2}{6}-\frac{5}{6} = 0$, so the answer is $x^0 = 1$.
+---
+Q: Simplify $\frac{\left(a^{2/3}b^{-1/2}\right)^6}{a^2 b^{-3}}$. Leave your answer with positive exponents.
+A: Top: $a^{2/3\cdot 6}\,b^{-1/2\cdot 6} = a^4 b^{-3}$. Divide: $a^{4-2}\,b^{-3-(-3)} = a^2 b^0 = a^2$.
+---
+Q: Simplify $\left(\tfrac{1}{2}x^{-1/2}\right)^{-2}$.
+A: Apply the exponent $-2$ to each factor: $\left(\tfrac{1}{2}\right)^{-2} = 4$ and $\left(x^{-1/2}\right)^{-2} = x^1$. Answer: $4x$.
+```
 
 ## Further help
 

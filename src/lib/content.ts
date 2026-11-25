@@ -129,3 +129,6 @@ export function neighbours(lesson: Lesson): { prev?: Lesson; next?: Lesson } {
 export function outlineFor(lesson: Lesson): Lesson[] {
   return lessons.filter((l) => l.topicId === lesson.topicId && (l.subtopic ?? "") === (lesson.subtopic ?? ""));
 }
+
+/** Rough reading time in minutes (maths-heavy text reads slowly). */
+export const lessonMinutes = (l: Lesson) => Math.max(3, Math.round(l.body.split(/\s+/).length / 120));
