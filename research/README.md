@@ -5,7 +5,7 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 |---|---|---|---|---|---|---|
 | Pure Maths | done | done (pure-maths-depth.md) | - | - | - | - |
 | Physical Sciences | done | done (physical-sciences-depth.md) | - | - | - | - |
-| English HL | done | - | - | - | - | - |
+| English HL | done | done (structure level; set texts unknown) | - | - | - | - |
 | History | done | - | - | - | - | - |
 | Business Studies | done | - | - | - | - | - |
 | Tourism | done | - | - | - | - | - |
