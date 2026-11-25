@@ -9,3 +9,8 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 ## Method notes
 - PDFs: web-fetch agent cannot decode PDFs; it saves raw bytes under .claude/projects/.../tool-results. Copy to scratchpad and run `pdftotext` (available in Git Bash), then read.
 - Use WebSearch to find official URLs, then download/extract.
+
+## Open TODO list (found during Pass 1)
+- Still to compare against 2023/24 ATPs: English HL Gr 11 (fileticket=4WZaNZmHP38%3d&mid=10754), Life Orientation Gr 11 (bpueOI1aTK4%3d&mid=10752), Religion Studies Gr 11 (5If-aHdBq7Q%3d; skimmed once), Tourism (read), History (read). URL pattern: https://www.education.gov.za/LinkClick.aspx?fileticket=<ticket>&tabid=3205&portalid=0&mid=<mid>
+- Check for 2025/2026/2027 ATPs on https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12.aspx (not yet looked).
+- AP Maths needs the user's IEB document.
