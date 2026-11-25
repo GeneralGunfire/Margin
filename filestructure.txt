@@ -5,6 +5,8 @@
     |-- physical-sciences
         |-- mechanics
             |-- newtons-laws.md
+        |-- vectors-in-two-dimensions
+            |-- resultant-of-perpendicular-vectors.md
     |-- pure-mathematics
         |-- analytical-geometry
             |-- angle-between-lines-and-in-a-triangle.md
@@ -102,8 +104,16 @@
 |-- public
     |-- auth-art.jpg
     |-- content-images
+        |-- complete-square-vertex.svg
+        |-- discriminant-three-cases.svg
         |-- exp-always-positive.svg
+        |-- line-parabola-intersections.svg
+        |-- parabola-inequality-regions.svg
+        |-- reduction-angles.svg
+        |-- sign-number-line.svg
+        |-- sine-equals-half.svg
         |-- surd-equation-check.svg
+        |-- unit-circle-cast.svg
 |-- README.md
 |-- research
     |-- afrikaans-fal-depth.md
@@ -148,9 +158,14 @@
             |-- Field.tsx
             |-- PasswordInput.tsx
         |-- dashboard
+        |-- diagram
+            |-- index.tsx
+            |-- toolkit.tsx
+            |-- vectors.tsx
         |-- Layout.tsx
         |-- lesson
             |-- blocks.tsx
+            |-- VideoSearch.tsx
         |-- Logo.tsx
         |-- page.tsx
         |-- Splash.tsx
