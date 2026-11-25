@@ -12,3 +12,4 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | Life Orientation | done | - | - | - | - | - |
 | Religion Studies | done | - | - | - | - | - |
 | Afrikaans FAL | done | - | - | - | - | - |
+| AP Maths | PARTIAL (no IEB syllabus) | - | - | - | - | - |

@@ -37,3 +37,6 @@
 - DBE KABV Afrikaans Eerste Addisionele Taal Gr 10-12: https://www.education.gov.za/LinkClick.aspx?fileticket=6H2viirgJpM%3D
 - DBE 2023/24 ATP Afrikaans EAT Gr 11 (skimmed): https://www.education.gov.za/LinkClick.aspx?fileticket=-C0szn0PLYA%3d&tabid=3205&portalid=0&mid=10759
 - DBE 2023/24 FET ATP index page (also lists Gr 11 ATPs for Maths, Physical Science, LO etc., found, to use in Pass 4/5): https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/2023ATPsFET.aspx
+
+## AP Maths (IEB)
+- No official IEB AP Maths syllabus obtained. Papers seen in search results only (not read): https://maths.stithian.com/AP%20Maths%20Final%20Papers%202020/Advanced%20Programme%20Maths%20P1%20Memo%202020.pdf (bot check). IEB Further Studies Maths SAG (different course, not used): https://www.theanswer.co.za/wp-content/uploads/2023/09/FS-Maths_Subject-Assessment-Guidelines.pdf

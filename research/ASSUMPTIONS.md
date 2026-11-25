@@ -5,3 +5,5 @@
 4. Web-fetch agent used only to retrieve pages; claims come from my own reading of extracted text.
 5. History: assumed legacy Gr 11 CAPS content (Russia/USA/race/nationalisms/apartheid) for 2027, because the amended CAPS Gr 10-12 History is a DRAFT (comment closed 19 May 2026) with no confirmed implementation date found. Both outlined.
 6. English HL: Gr 11 literature texts are school-chosen from the national catalogue; none assumed.
+7. AP Maths: did not invent a syllabus. File is a placeholder with COVERED ELSEWHERE items and flagged hypotheses; waiting for the user's IEB document.
+8. Did not bypass bot-check (Cloudflare) pages on maths.stithian.com / educoast.co.za.
