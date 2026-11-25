@@ -1,5 +1,6 @@
 ---
 title: Area rule
+youtube_query: Grade 11 trigonometry area rule
 subject: pure-mathematics
 topic: Trigonometry: sine, cosine and area rules
 part: Geometry

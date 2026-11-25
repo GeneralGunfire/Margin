@@ -1,5 +1,6 @@
 ---
 title: Angle between lines and in a triangle
+youtube_query: Grade 11 analytical geometry angle between two lines
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

@@ -1,5 +1,6 @@
 ---
 title: Reduction to acute angles
+youtube_query: Grade 11 trigonometry reduction formulae
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

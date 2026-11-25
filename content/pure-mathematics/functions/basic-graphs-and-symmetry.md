@@ -1,5 +1,6 @@
 ---
 title: Basic graphs and symmetry
+youtube_query: Grade 11 basic function graphs and symmetry
 subject: pure-mathematics
 topic: Functions
 part: Algebra

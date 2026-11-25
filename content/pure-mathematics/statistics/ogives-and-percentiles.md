@@ -1,5 +1,6 @@
 ---
 title: Ogives and percentiles
+youtube_query: Grade 11 ogives cumulative frequency and percentiles
 subject: pure-mathematics
 topic: Statistics
 part: Geometry

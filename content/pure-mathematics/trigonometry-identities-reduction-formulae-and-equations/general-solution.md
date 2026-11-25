@@ -1,5 +1,6 @@
 ---
 title: General solution
+youtube_query: Grade 11 trigonometry general solution
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

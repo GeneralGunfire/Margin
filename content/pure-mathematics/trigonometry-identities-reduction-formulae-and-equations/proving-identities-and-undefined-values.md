@@ -1,5 +1,6 @@
 ---
 title: Proving identities and undefined values
+youtube_query: Grade 11 proving trigonometric identities
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

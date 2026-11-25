@@ -1,5 +1,6 @@
 ---
 title: Three events
+youtube_query: Grade 11 probability of three events
 subject: pure-mathematics
 topic: Probability
 part: Algebra

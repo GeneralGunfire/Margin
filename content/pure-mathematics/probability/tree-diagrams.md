@@ -1,5 +1,6 @@
 ---
 title: Tree diagrams
+youtube_query: Grade 11 probability tree diagrams
 subject: pure-mathematics
 topic: Probability
 part: Algebra

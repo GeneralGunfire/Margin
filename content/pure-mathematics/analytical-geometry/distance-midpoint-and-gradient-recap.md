@@ -1,5 +1,6 @@
 ---
 title: Distance, midpoint and gradient recap
+youtube_query: Grade 11 distance midpoint and gradient formulas
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

@@ -1,5 +1,6 @@
 ---
 title: Sine rule and proof
+youtube_query: Grade 11 sine rule proof and use
 subject: pure-mathematics
 topic: Trigonometry: sine, cosine and area rules
 part: Geometry

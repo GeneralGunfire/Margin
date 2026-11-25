@@ -1,5 +1,6 @@
 ---
 title: Same-base method
+youtube_query: Grade 11 exponential equations same base method
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

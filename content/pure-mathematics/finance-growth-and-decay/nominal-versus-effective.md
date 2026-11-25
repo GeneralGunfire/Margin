@@ -1,5 +1,6 @@
 ---
 title: Nominal versus effective
+youtube_query: Grade 11 nominal and effective interest rates
 subject: pure-mathematics
 topic: Finance, growth and decay
 part: Algebra

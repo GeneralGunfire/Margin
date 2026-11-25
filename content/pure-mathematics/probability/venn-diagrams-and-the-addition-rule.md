@@ -1,5 +1,6 @@
 ---
 title: Venn diagrams and the addition rule
+youtube_query: Grade 11 Venn diagrams and the addition rule probability
 subject: pure-mathematics
 topic: Probability
 part: Algebra

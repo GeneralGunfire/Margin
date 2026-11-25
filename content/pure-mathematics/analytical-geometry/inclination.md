@@ -1,5 +1,6 @@
 ---
 title: Inclination
+youtube_query: Grade 11 inclination of a straight line
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

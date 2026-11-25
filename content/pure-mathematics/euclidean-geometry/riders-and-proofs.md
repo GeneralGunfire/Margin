@@ -1,5 +1,6 @@
 ---
 title: Riders and proofs
+youtube_query: Grade 11 circle geometry riders and proofs
 subject: pure-mathematics
 topic: Euclidean geometry
 part: Geometry

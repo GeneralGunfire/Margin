@@ -1,5 +1,6 @@
 ---
 title: Asymptotes and shape
+youtube_query: Grade 11 hyperbola and exponential graph asymptotes
 subject: pure-mathematics
 topic: Functions
 part: Algebra

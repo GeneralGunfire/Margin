@@ -1,5 +1,6 @@
 ---
 title: Mixed 2D problems
+youtube_query: Grade 11 sine cosine and area rule problems
 subject: pure-mathematics
 topic: Trigonometry: sine, cosine and area rules
 part: Geometry

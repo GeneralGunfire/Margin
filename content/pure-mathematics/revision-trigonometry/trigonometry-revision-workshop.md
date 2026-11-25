@@ -1,5 +1,6 @@
 ---
 title: Trigonometry revision workshop
+youtube_query: Grade 11 trigonometry revision South Africa
 subject: pure-mathematics
 topic: Revision: Trigonometry
 part: Geometry

@@ -1,5 +1,6 @@
 ---
 title: Effect of p
+youtube_query: Grade 11 effect of p on function graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

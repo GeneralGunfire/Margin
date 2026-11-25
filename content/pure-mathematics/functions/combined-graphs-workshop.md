@@ -1,5 +1,6 @@
 ---
 title: Combined graphs workshop
+youtube_query: Grade 11 sketching combined function graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

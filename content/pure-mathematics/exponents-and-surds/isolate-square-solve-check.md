@@ -1,5 +1,6 @@
 ---
 title: Isolate, square, solve, check
+youtube_query: Grade 11 solving surd equations
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

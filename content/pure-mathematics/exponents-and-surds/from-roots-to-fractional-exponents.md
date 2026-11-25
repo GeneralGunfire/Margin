@@ -1,5 +1,6 @@
 ---
 title: From roots to fractional exponents
+youtube_query: Grade 11 surds and fractional exponents
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

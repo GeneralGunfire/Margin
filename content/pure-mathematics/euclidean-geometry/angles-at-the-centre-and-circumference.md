@@ -1,5 +1,6 @@
 ---
 title: Angles at the centre and circumference
+youtube_query: Grade 11 circle geometry angle at the centre theorem
 subject: pure-mathematics
 topic: Euclidean geometry
 part: Geometry

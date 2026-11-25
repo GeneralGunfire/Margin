@@ -1,5 +1,6 @@
 ---
 title: Timeline problems
+youtube_query: Grade 11 finance timeline problems compound interest
 subject: pure-mathematics
 topic: Finance, growth and decay
 part: Algebra

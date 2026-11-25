@@ -1,5 +1,6 @@
 ---
 title: Equations needing identities or factorising
+youtube_query: Grade 11 trig equations using identities and factorising
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

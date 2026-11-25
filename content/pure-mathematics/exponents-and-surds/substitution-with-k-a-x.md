@@ -1,5 +1,6 @@
 ---
 title: Substitution with k = a^x
+youtube_query: Grade 11 exponential equations using substitution
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

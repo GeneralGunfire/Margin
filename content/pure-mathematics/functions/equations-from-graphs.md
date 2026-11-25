@@ -1,5 +1,6 @@
 ---
 title: Equations from graphs
+youtube_query: Grade 11 determining equations from graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

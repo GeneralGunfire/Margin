@@ -1,5 +1,6 @@
 ---
 title: Cyclic quadrilaterals
+youtube_query: Grade 11 cyclic quadrilateral theorems
 subject: pure-mathematics
 topic: Euclidean geometry
 part: Geometry

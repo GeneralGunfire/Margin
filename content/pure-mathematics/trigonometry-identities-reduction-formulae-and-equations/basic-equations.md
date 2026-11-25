@@ -1,5 +1,6 @@
 ---
 title: Basic equations
+youtube_query: Grade 11 solving basic trigonometric equations
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

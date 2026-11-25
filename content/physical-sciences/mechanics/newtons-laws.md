@@ -1,5 +1,6 @@
 ---
 title: Newton's Laws of Motion
+youtube_query: Grade 11 Newton's laws of motion physical sciences
 subject: physical-sciences
 topic: Mechanics
 order: 1

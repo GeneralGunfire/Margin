@@ -1,5 +1,6 @@
 ---
 title: Simplifying expressions
+youtube_query: Grade 11 simplifying trigonometric expressions
 subject: pure-mathematics
 topic: Trigonometry: identities, reduction formulae and equations
 part: Geometry

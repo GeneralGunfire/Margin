@@ -1,5 +1,6 @@
 ---
 title: Equation from a graph
+youtube_query: Grade 11 finding the equation from a graph
 subject: pure-mathematics
 topic: Functions
 part: Algebra

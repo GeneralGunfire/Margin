@@ -1,5 +1,6 @@
 ---
 title: Effect of a, p and q
+youtube_query: Grade 11 effect of a p q on graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

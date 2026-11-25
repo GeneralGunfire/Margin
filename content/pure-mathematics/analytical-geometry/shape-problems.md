@@ -1,5 +1,6 @@
 ---
 title: Shape problems
+youtube_query: Grade 11 analytical geometry parallelogram and rhombus problems
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

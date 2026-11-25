@@ -1,5 +1,6 @@
 ---
 title: Sketching and reading combined graphs
+youtube_query: Grade 11 reading and sketching combined graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

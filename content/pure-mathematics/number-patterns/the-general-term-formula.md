@@ -1,5 +1,6 @@
 ---
 title: The general-term formula
+youtube_query: Grade 11 quadratic sequence general term
 subject: pure-mathematics
 topic: Number patterns
 part: Algebra

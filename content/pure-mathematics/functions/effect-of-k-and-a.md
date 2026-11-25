@@ -1,5 +1,6 @@
 ---
 title: Effect of k and a
+youtube_query: Grade 11 effect of k and a on graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

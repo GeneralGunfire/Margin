@@ -1,5 +1,6 @@
 ---
 title: Simplifying surds
+youtube_query: Grade 11 simplifying surds
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

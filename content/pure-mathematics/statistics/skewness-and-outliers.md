@@ -1,5 +1,6 @@
 ---
 title: Skewness and outliers
+youtube_query: Grade 11 skewness outliers and box and whisker plots
 subject: pure-mathematics
 topic: Statistics
 part: Geometry

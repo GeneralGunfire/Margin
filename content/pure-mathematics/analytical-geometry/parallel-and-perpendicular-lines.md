@@ -1,5 +1,6 @@
 ---
 title: Parallel and perpendicular lines
+youtube_query: Grade 11 parallel and perpendicular lines gradients
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

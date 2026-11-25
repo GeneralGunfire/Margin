@@ -1,5 +1,6 @@
 ---
 title: Shape and asymptote
+youtube_query: Grade 11 shape and asymptote of function graphs
 subject: pure-mathematics
 topic: Functions
 part: Algebra

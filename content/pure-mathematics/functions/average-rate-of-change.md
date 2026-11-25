@@ -1,5 +1,6 @@
 ---
 title: Average rate of change
+youtube_query: Grade 11 average gradient of a function
 subject: pure-mathematics
 topic: Functions
 part: Algebra

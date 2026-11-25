@@ -1,5 +1,6 @@
 ---
 title: Adding and multiplying surds
+youtube_query: Grade 11 adding and multiplying surds
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

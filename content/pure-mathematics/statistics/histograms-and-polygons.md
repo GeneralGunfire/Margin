@@ -1,5 +1,6 @@
 ---
 title: Histograms and polygons
+youtube_query: Grade 11 histograms and frequency polygons
 subject: pure-mathematics
 topic: Statistics
 part: Geometry

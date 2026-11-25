@@ -1,5 +1,6 @@
 ---
 title: Simplifying with common bases and factoring powers
+youtube_query: Grade 11 simplifying exponents common bases and factorising
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

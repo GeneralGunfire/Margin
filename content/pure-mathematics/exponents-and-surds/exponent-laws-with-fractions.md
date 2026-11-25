@@ -1,5 +1,6 @@
 ---
 title: Exponent laws with fractions
+youtube_query: Grade 11 exponent laws with fractions
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

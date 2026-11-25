@@ -1,5 +1,6 @@
 ---
 title: Equation from two points
+youtube_query: Grade 11 finding a function from two points
 subject: pure-mathematics
 topic: Functions
 part: Algebra

@@ -1,5 +1,6 @@
 ---
 title: Variance and standard deviation
+youtube_query: Grade 11 variance and standard deviation
 subject: pure-mathematics
 topic: Statistics
 part: Geometry

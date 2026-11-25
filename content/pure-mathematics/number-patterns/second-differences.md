@@ -1,5 +1,6 @@
 ---
 title: Second differences
+youtube_query: Grade 11 quadratic number patterns second difference
 subject: pure-mathematics
 topic: Number patterns
 part: Algebra

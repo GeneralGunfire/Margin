@@ -1,5 +1,6 @@
 ---
 title: Rationalising denominators
+youtube_query: Grade 11 rationalising the denominator surds
 subject: pure-mathematics
 topic: Exponents and surds
 part: Algebra

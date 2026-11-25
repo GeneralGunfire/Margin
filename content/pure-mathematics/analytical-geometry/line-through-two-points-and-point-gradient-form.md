@@ -1,5 +1,6 @@
 ---
 title: Line through two points and point-gradient form
+youtube_query: Grade 11 equation of a line through two points
 subject: pure-mathematics
 topic: Analytical geometry
 part: Geometry

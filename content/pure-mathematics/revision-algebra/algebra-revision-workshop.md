@@ -1,5 +1,6 @@
 ---
 title: Algebra revision workshop
+youtube_query: Grade 11 algebra revision South Africa
 subject: pure-mathematics
 topic: Revision: Algebra
 part: Algebra
