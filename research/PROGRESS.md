@@ -23,3 +23,6 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 ## Pass 4 (Past papers) status
 - Pure Maths + Physical Sciences: DONE for EC Gr 11 Nov memos (2023-2026 maths, 2024-2026 PS). File: past-papers-pure-maths-physical-sciences.md. Other subjects not yet. Next: Business Studies (EC 2022/2023 QPs), then others, then Gr 12 foundation checks.
 - History + Business Studies Pass 4: DONE for EC 2024 only (past-papers-history-business-studies.md). Remaining Pass 4: English HL, Tourism, LO, Religion Studies, Afrikaans FAL, AP Maths (blocked).
+
+## Pass 6 status
+- pass6-extras.md written for all subjects except AP Maths (strategy, glossary, formulas/key facts, Gr 11-Gr 12 bridge). Not expert-reviewed.

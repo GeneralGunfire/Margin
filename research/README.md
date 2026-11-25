@@ -48,6 +48,7 @@ Other flags: Tourism (CAPS says seven domestic market segments, the ATP says fiv
 | CHANGELOG.md | corrections found along the way |
 | SOURCES.md | every source used |
 | EXTRA_SUBJECTS.md | other subjects worth adding |
+| pass6-extras.md | Pass 6: strategy, glossary, formulas, bridge notes |
 | pure-maths.md, pure-maths-depth.md | Pure Mathematics (Algebra/Geometry tags) |
 | physical-sciences.md, physical-sciences-depth.md | Physical Sciences (Physics/Chemistry tags) |
 | english-hl.md, english-hl-depth.md | English Home Language |
