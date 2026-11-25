@@ -59,8 +59,8 @@ The resultant of two or more vectors is the single vector which has the same eff
 title: Size (magnitude) of the resultant
 formula: R^2 = A^2 + B^2
 formula: R = \sqrt{A^2 + B^2}
-R | magnitude of the resultant | N, m, m·s^{-1} (same unit as A and B) | scalar (the magnitude of a vector)
-A, B | magnitudes of the two perpendicular vectors | same unit as R | scalars (magnitudes of vectors)
+R | magnitude of the resultant | N, m or m·s⁻¹ | scalar (the magnitude of a vector)
+A, B | magnitudes of the two perpendicular vectors | as for A and B | scalars (magnitudes of vectors)
 use: when two vectors of the same kind (two forces, two velocities, two displacements) act at 90° to each other.
 ```
 
@@ -68,9 +68,9 @@ use: when two vectors of the same kind (two forces, two velocities, two displace
 title: Direction of the resultant
 formula: \tan\theta = \frac{\text{opposite}}{\text{adjacent}} = \frac{B}{A}
 formula: \theta = \tan^{-1}\!\left(\frac{B}{A}\right)
-\theta | angle between R and vector A | ° (degrees) | scalar
-B | side opposite θ (the vector that does not touch θ) | same unit as A | scalar (magnitude)
-A | side adjacent to θ (the vector that touches θ) | same unit as B | scalar (magnitude)
+\theta | angle between R and vector A | degrees (°) | scalar
+B | side opposite θ (the vector that does not touch θ) | as for B | scalar (magnitude)
+A | side adjacent to θ (the vector that touches θ) | as for A | scalar (magnitude)
 use: after finding R, to say which way it points. State which line θ is measured from, for example "37° south of west".
 ```
 

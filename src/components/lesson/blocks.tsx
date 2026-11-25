@@ -6,6 +6,7 @@ import rehypeKatex from "rehype-katex";
 import katex from "katex";
 import { AlertTriangle, ChevronDown, ChevronUp, Info } from "lucide-react";
 import { Steps } from "@/components/Steps";
+import { DiagramBlock } from "@/components/diagram";
 import { cn } from "@/lib/utils";
 
 /**
@@ -14,6 +15,11 @@ import { cn } from "@/lib/utils";
  *   ```steps      step-by-step working with a "Next step" button (see Steps.tsx)
  *   ```rule       a boxed formula card: "title: ..." then one line of LaTeX per row
  *   ```questions  practice questions: "Q:" and "A:" sections separated by a line of ---
+ *
+ *   ```definition  a highlighted definition to memorise: "title: ..." then the wording
+ *   ```formula     KaTeX formula(s) ("formula: ..."), a legend ("sym | name | unit | scalar or vector") and "use: ..."
+ *   ```worked      Physics-style worked example: lines "Given:", "Unknown:", "Equation:", "Substitution:", "Answer:"
+ *   ```diagram     an SVG diagram from src/components/diagram ("name: ..." plus options)
  *
  * Blockquotes become callouts; one that starts with "Common mistakes" gets the warning style.
  */
@@ -46,6 +52,99 @@ function Rule({ source }: { source: string }) {
       {rows.map((r, i) => (
         <div key={i} className="overflow-x-auto py-1.5 text-center" style={{ fontSize: "1.1em" }} dangerouslySetInnerHTML={{ __html: tex(r) }} />
       ))}
+    </figure>
+  );
+}
+
+const NL = "\n";
+
+function Definition({ source }: { source: string }) {
+  let title = "Definition";
+  const body: string[] = [];
+  for (const raw of source.split(NL)) {
+    if (/^title:/i.test(raw.trim())) title = raw.trim().replace(/^title:\s*/i, "");
+    else body.push(raw);
+  }
+  return (
+    <aside className="def-box my-5 rounded-xl border border-primary/40 border-l-primary bg-primary/10 px-5 py-3">
+      <p className="flex flex-wrap items-center justify-between gap-2 text-[10px] font-bold uppercase tracking-[0.1em] text-primary">
+        <span>Definition: {title}</span>
+        <span className="rounded-full border border-primary/40 px-2 py-0.5 normal-case tracking-normal">Memorise word for word</span>
+      </p>
+      <div className="mt-1.5 text-[15px] font-medium"><Md>{body.join(NL).trim()}</Md></div>
+    </aside>
+  );
+}
+
+function Formula({ source }: { source: string }) {
+  let title = "Formula";
+  let use = "";
+  const formulas: string[] = [];
+  const legend: string[][] = [];
+  for (const raw of source.split(NL)) {
+    const l = raw.trim();
+    if (!l) continue;
+    if (/^title:/i.test(l)) title = l.replace(/^title:\s*/i, "");
+    else if (/^formula:/i.test(l)) formulas.push(l.replace(/^formula:\s*/i, ""));
+    else if (/^use:/i.test(l)) use = l.replace(/^use:\s*/i, "");
+    else if (l.includes("|")) legend.push(l.split("|").map((c) => c.trim()));
+  }
+  return (
+    <figure className="my-5 rounded-xl border border-primary/40 bg-primary/10 px-5 pt-3 pb-4">
+      <figcaption className="text-[10px] font-bold uppercase tracking-[0.1em] text-primary">Formula: {title}</figcaption>
+      {formulas.map((f, i) => (
+        <div key={i} className="overflow-x-auto py-1.5 text-center" style={{ fontSize: "1.15em" }} dangerouslySetInnerHTML={{ __html: tex(f) }} />
+      ))}
+      {legend.length > 0 && (
+        <div className="mt-2 overflow-x-auto">
+          <table className="formula-legend text-[12.5px]">
+            <thead>
+              <tr className="text-left text-[10px] uppercase tracking-[0.08em] text-muted-foreground">
+                <th className="py-1 pr-3 font-semibold">Symbol</th><th className="py-1 pr-3 font-semibold">Quantity</th><th className="py-1 pr-3 font-semibold">SI unit</th><th className="py-1 font-semibold">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {legend.map((r, i) => (
+                <tr key={i} className="border-t border-border/60 align-top">
+                  <td className="py-1.5 pr-3" dangerouslySetInnerHTML={{ __html: katex.renderToString(r[0] ?? "", { throwOnError: false }) }} />
+                  <td className="py-1.5 pr-3">{r[1]}</td>
+                  <td className="py-1.5 pr-3">{r[2]}</td>
+                  <td className="py-1.5">{r[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {use && <p className="mt-3 text-[13px]"><span className="font-semibold">When to use it: </span><span className="text-muted-foreground">{use}</span></p>}
+    </figure>
+  );
+}
+
+const WORKED_LABELS = ["Given", "Unknown", "Equation", "Substitution", "Answer"];
+
+function Worked({ source }: { source: string }) {
+  let title = "Worked example";
+  const rows: { label: string; text: string }[] = [];
+  for (const raw of source.split(NL)) {
+    const l = raw.trim();
+    if (!l) continue;
+    if (/^title:/i.test(l)) { title = l.replace(/^title:\s*/i, ""); continue; }
+    const m = l.match(/^([A-Za-z]+):\s*(.*)$/);
+    if (m && WORKED_LABELS.includes(m[1])) rows.push({ label: m[1], text: m[2] });
+    else rows.push({ label: "", text: l });
+  }
+  return (
+    <figure className="my-6 overflow-hidden rounded-lg border border-border">
+      <figcaption className="border-b border-border bg-secondary px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground"><Md>{title}</Md></figcaption>
+      <dl className="divide-y divide-border/60">
+        {rows.map((r, i) => (
+          <div key={i} className={cn("grid gap-x-4 px-4 py-2 sm:grid-cols-[7.5rem_1fr]", r.label === "Answer" && "bg-primary/10")}>
+            <dt className={cn("text-[10px] font-bold uppercase tracking-[0.1em] pt-1.5", r.label === "Answer" ? "text-primary" : "text-muted-foreground")}>{r.label}</dt>
+            <dd className="min-w-0 overflow-x-auto"><Md>{r.text}</Md></dd>
+          </div>
+        ))}
+      </dl>
     </figure>
   );
 }
@@ -118,6 +217,10 @@ export function LessonMarkdown({ body }: { body: string }) {
           const src = String(children);
           if (/language-steps/.test(className ?? "")) return <Steps source={src} />;
           if (/language-rule/.test(className ?? "")) return <Rule source={src} />;
+          if (/language-definition/.test(className ?? "")) return <Definition source={src} />;
+          if (/language-formula/.test(className ?? "")) return <Formula source={src} />;
+          if (/language-worked/.test(className ?? "")) return <Worked source={src} />;
+          if (/language-diagram/.test(className ?? "")) return <DiagramBlock source={src} />;
           if (/language-questions/.test(className ?? "")) return <Questions source={src} />;
           return <code className={className}>{children}</code>;
         },

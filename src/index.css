@@ -23,6 +23,9 @@
   --ring: #3b82f6;
   --destructive: #ef4444;
   --radius: 0.375rem;
+  /* Diagram tokens (Physics diagrams). Light and dark variants; no red. */
+  --dg-bg: #f9fafb; --dg-line: #6b7280; --dg-text: #333333;
+  --vec-a: #1d4ed8; --vec-b: #b45309; --vec-result: #047857; --vec-aux: #6b7280;
 }
 
 .dark {
@@ -42,6 +45,8 @@
   --input: #404040;
   --ring: #3b82f6;
   --destructive: #ef4444;
+  --dg-bg: #171717; --dg-line: #a3a3a3; --dg-text: #e5e5e5;
+  --vec-a: #60a5fa; --vec-b: #fbbf24; --vec-result: #34d399; --vec-aux: #a3a3a3;
 }
 
 @theme inline {
@@ -236,3 +241,7 @@ input:autofill { -webkit-text-fill-color: var(--foreground); box-shadow: 0 0 0 1
 .prose-lesson .callout p, .prose-lesson .callout ul { margin: 0 0 .5rem; }
 .prose-lesson .callout > div > :last-child { margin-bottom: 0; }
 .prose-lesson .callout blockquote { all: unset; }
+
+/* Formula legend table inside lesson formula boxes: compact, no grid, wraps on mobile */
+.prose-lesson .formula-legend { display: table; width: 100%; margin: 0; }
+.prose-lesson .formula-legend th, .prose-lesson .formula-legend td { border: 0; background: transparent; padding: .3rem .6rem .3rem 0; line-height: 1.35; }
