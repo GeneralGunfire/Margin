@@ -3,7 +3,7 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 
 ## Current
 - Pass 1 (Skeleton): Pure Mathematics DONE, Physical Sciences DONE, English HL DONE, History DONE (with big curriculum flag). Business Studies DONE, Tourism DONE, Life Orientation DONE, Religion Studies DONE, Afrikaans FAL DONE, AP Maths PARTIAL (IEB syllabus not obtained; needs user's input). PASS 1 COMPLETE.
-- Pass 2 (Depth): Pure Maths DONE (pure-maths-depth.md). Physical Sciences DONE (physical-sciences-depth.md). English HL DONE (english-hl-depth.md). History DONE (history-depth.md). Business Studies DONE (business-studies-depth.md). Next: Tourism depth. Order: Pure Maths, Physical Sciences, English HL, History, Business Studies, Tourism, LO, Religion Studies, Afrikaans FAL, AP Maths.
+- Pass 2 (Depth): Pure Maths DONE (pure-maths-depth.md). Physical Sciences DONE (physical-sciences-depth.md). English HL DONE (english-hl-depth.md). History DONE (history-depth.md). Business Studies DONE (business-studies-depth.md). Tourism DONE (tourism-depth.md). Next: Life Orientation depth. Order: Pure Maths, Physical Sciences, English HL, History, Business Studies, Tourism, LO, Religion Studies, Afrikaans FAL, AP Maths.
 - Passes 3 to 6 not started.
 
 ## Method notes

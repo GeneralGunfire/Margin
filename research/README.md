@@ -8,7 +8,7 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | English HL | done | done (structure level; set texts unknown) | - | - | - | - |
 | History | done | done (legacy topics only) | - | - | - | - |
 | Business Studies | done | done | - | - | - | - |
-| Tourism | done | - | - | - | - | - |
+| Tourism | done | done | - | - | - | - |
 | Life Orientation | done | - | - | - | - | - |
 | Religion Studies | done | - | - | - | - | - |
 | Afrikaans FAL | done | - | - | - | - | - |
