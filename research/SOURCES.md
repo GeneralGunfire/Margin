@@ -46,3 +46,7 @@
 
 ## AP Maths (IEB)
 - No official IEB AP Maths syllabus obtained. Papers seen in search results only (not read): https://maths.stithian.com/AP%20Maths%20Final%20Papers%202020/Advanced%20Programme%20Maths%20P1%20Memo%202020.pdf (bot check). IEB Further Studies Maths SAG (different course, not used): https://www.theanswer.co.za/wp-content/uploads/2023/09/FS-Maths_Subject-Assessment-Guidelines.pdf
+
+## Resources (Pass 3)
+- Siyavula Gr 11 Mathematics and Physical Sciences open textbooks: https://www.siyavula.com/read/za/mathematics/grade-11 and https://www.siyavula.com/read/za/physical-sciences/grade-11 (all section pages fetched; used for resource mapping).
+- YouTube oEmbed endpoint used to confirm video titles/channels (no content watched).

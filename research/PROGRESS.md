@@ -15,3 +15,7 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 - Check for 2025/2026/2027 ATPs on https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12.aspx (not yet looked).
 - AP Maths needs the user's IEB document.
 - AP Maths: user's PDF read (see ap-maths.md). Still need textbook table of contents / IEB outline for the other topics.
+
+## Pass 3 (Resources) status
+- Pure Maths + Physical Sciences: DONE (resources-pure-maths-physical-sciences.md). 155 Siyavula Gr 11 pages fetched OK (scripts in scratchpad, not committed). YouTube = metadata-verified via oEmbed only.
+- Next: resources for English HL, History, Business Studies, Tourism, LO, Religion Studies, Afrikaans FAL. Then Pass 4 (past papers), Pass 5, Pass 6.
