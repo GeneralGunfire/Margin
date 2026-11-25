@@ -4,4 +4,4 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | Subject | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---|---|---|---|---|
 | Pure Maths | done | - | - | - | - | - |
-| Physical Sciences | - | - | - | - | - | - |
+| Physical Sciences | done | - | - | - | - | - |
