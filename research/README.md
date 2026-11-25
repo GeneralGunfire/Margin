@@ -10,3 +10,4 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | Business Studies | done | - | - | - | - | - |
 | Tourism | done | - | - | - | - | - |
 | Life Orientation | done | - | - | - | - | - |
+| Religion Studies | done | - | - | - | - | - |

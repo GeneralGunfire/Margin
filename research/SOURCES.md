@@ -28,3 +28,7 @@
 
 ## Life Orientation
 - DBE CAPS Life Orientation Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20LIFE%20ORIENTATION%20_%20GR%2010-12%20_%20WEB_E6B3.pdf
+
+## Religion Studies
+- DBE CAPS Religion Studies Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20RELIGION%20STUDIES%20_%20GR%2010-12%20_%20WEB_32D7.pdf
+- DBE 2023/24 ATP Religion Studies Gr 11: https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.040%20ATP%202023-24%20Gr%2011%20Rel%20Stu%20final.pdf (skimmed)
