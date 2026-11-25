@@ -6,3 +6,4 @@
 - Business Studies (Pass 1 fix): added the 2023/24 ATP re-sequencing and exam-format differences.
 - Pass 4 (Pure Maths, EC Gr 11 Nov 2023-2026 memos): Measurement is examined (9-11 marks) although the ATP lists it as revision; linear patterns examined every year; Q1 equations/inequalities heavier than expected. See past-papers-pure-maths-physical-sciences.md.
 - Pass 4 (Physical Sciences, EC Gr 11 Nov 2024-2026 memos): optics, wavefronts, water chemistry, lithosphere not examined; structure matches the 2023/24 ATP.
+- Pass 4 (History, Business Studies; EC Nov 2024 only): confirmed legacy History topics and the ATP two-paper Business Studies format. Secondary host used (Stanmore Physics).

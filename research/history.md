@@ -11,6 +11,8 @@ Status: Pass 1 done. Pass 2 depth NOT yet done.
 Primary sources read: legacy CAPS https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20%20HISTORY%20GR%2010-12%20%20WeB.pdf ; DBE 2023/24 Gr 11 History ATP https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.430%20ATP%202023-24%20Gr%2011%20His%20final.pdf (note: the ATP file name suggests 2023-24, so newer ATPs (2025-26) were NOT checked).
 Split: History has Paper 1 and Paper 2 (below), not Algebra/Geometry-type parts.
 
+- PASS 4 UPDATE: Eastern Cape Gr 11 Nov 2024 History P1 and P2 follow the legacy five topics (P1 Russia, USA, race; P2 African and Afrikaner nationalism, apartheid 1940s-60s); see past-papers-history-business-studies.md.
+
 ## 1. Subject overview
 History develops source analysis (extraction, usefulness, reliability, bias, limitations), essay writing (argument, PEEL paragraphs, line of argument) and understanding of cause/effect, change/continuity, multiple perspectives. Gr 10 (legacy) covers the Mapungubwe/Ancient world, the transatlantic slave trade, colonial expansion after 1750, the South African War and Union, etc. Gr 12 covers the Cold War, independent Africa, civil society protests, the coming of democracy and the 1994 transition.
 

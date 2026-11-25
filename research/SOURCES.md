@@ -54,3 +54,4 @@
 ## Past papers (Pass 4)
 - Eastern Cape Gr 11 November exam memos (Maths 2023-2026, Physical Sciences 2024-2026): https://www.ecexams.co.za/ExaminationPapers.htm and per-year pages; used for topic/mark tables only.
 - DBE Gr 11 common papers page (empty of papers when fetched): https://www.education.gov.za/Curriculum/NationalSeniorCertificate%28NSC%29Examinations/Grade11Exams.aspx
+- Stanmore Physics republished EC Gr 11 Nov 2024 History and Business Studies papers (links in past-papers-history-business-studies.md); third-party host, content matches EC format.

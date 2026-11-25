@@ -155,7 +155,7 @@ Written from the CAPS Gr 11 statements (cited in pure-maths.md) plus standard cu
 - Ideas: angle chasing; proving cyclic quadrilaterals via converse; intersecting circles with a common chord.
 - Lessons: L1 "Chords and the centre"; L2 "Angles at the centre and circumference"; L3 "Cyclic quadrilaterals"; L4 "Tangents"; L5 "Riders and proofs".
 - Visuals: interactive circle with draggable points and live angle values (geometry library).
-- Measurement: CAPS has a 1-week Gr 11 row; the 2023/24 ATP only lists "revision of measurement". Likely Gr 10 surface area/volume (prisms, cylinders, cones, pyramids, spheres). UNVERIFIED.
+- Measurement: CAPS has a 1-week Gr 11 row; the 2023/24 ATP only lists "revision of measurement". Eastern Cape Gr 11 papers 2024-2026 examine it as a 9-11 mark question: surface area and volume of prisms, cylinders, cones, pyramids, spheres and composite solids (Gr 10 formulas, often with algebraic dimensions and a context such as paint coverage). Lessons: L1 "Surface area and volume formulas"; L2 "Composite solids and contexts".
 
 ## 8. Finance, growth and decay [ALG] (Paper 1, ~15 marks)
 - Depreciation: straight line A = P(1 − in); reducing balance A = P(1 − i)^n; solve for i or n (logs).
