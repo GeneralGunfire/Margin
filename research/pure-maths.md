@@ -119,7 +119,7 @@ Source: DBE 2023/24 ATP Mathematics Gr 11, https://www.education.gov.za/LinkClic
     - 12.5 Identifying outliers (scatter plots and box-and-whisker)
 13. Revision (~3 wks); final exams (~3 wks)
 
-## 5. Per sub-topic depth (Pass 2 to do)
+## 5. Per sub-topic depth: see pure-maths-depth.md (Pass 2 done)
 Fields still to fill for every sub-topic above: plain-language summary, key concepts/formulas, prerequisites, examination style, common mistakes, worked/practice ideas, lesson breakdown, visuals needed, resources. None are written yet.
 
 ## 6. Past paper coverage table (Pass 4 to do)
