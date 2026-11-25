@@ -9,7 +9,7 @@ Top summary (to be finalised at end of run): Pass 1 complete only for Pure Mathe
 | History | done | done (legacy topics only) | - | - | - | - |
 | Business Studies | done | done | - | - | - | - |
 | Tourism | done | done | - | - | - | - |
-| Life Orientation | done | - | - | - | - | - |
+| Life Orientation | done | done | - | - | - | - |
 | Religion Studies | done | - | - | - | - | - |
 | Afrikaans FAL | done | - | - | - | - | - |
 | AP Maths | PARTIAL (no IEB syllabus) | - | - | - | - | - |
