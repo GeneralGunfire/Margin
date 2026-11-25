@@ -59,13 +59,47 @@ L1 Marx, communism and the 1905 revolution (pp. 3-8); L2 February 1917 and the P
 ### Guide features useful for Margin
 Flow-chart style summaries per unit; end-of-topic summary; question types: matching leaders, defining terms, place-name gap-fill, comparison table, poster analysis. Answers from p. 195.
 
-## Topic 2: Capitalism in the USA 1900-1940 (Paper 1)
-- Covers: American dream (background); 1920s boom; Wall Street Crash 1929 (causes and effects); Great Depression; election of Franklin D. Roosevelt and the New Deal (relief, recovery, reform); assessment of the New Deal; links to WWII; responses to the crisis of capitalism.
-- Key concepts: capitalism, free market (laissez-faire), speculation, buying on credit/margin, overproduction, Great Depression, New Deal, Hoovervilles (UNVERIFIED if CAPS uses this term).
-- Examined: source-based (Great Depression OR New Deal) and essay on New Deal; "Was the New Deal a success?".
-- Mistakes: giving the Crash as the only cause; mixing Hoover and FDR policies; treating the New Deal as ending the Depression outright.
-- Lessons: L1 "The 1920s boom"; L2 "The Crash and Depression"; L3 "FDR and the New Deal"; L4 "Assessing the New Deal".
-- Visuals: graphs (unemployment, stock index) for source work; photographs; timeline.
+## Topic 2: Capitalism in the USA 1900-1940 (Paper 1) — rebuilt from the Via Afrika guide, pp. 43-76
+Key question in the guide: how did the Great Depression bring about a crisis of capitalism. "CHECK" = disagrees with standard references.
+
+### Unit 1 (pp. 44-54): Nature of capitalism, the American Dream, the 1920s boom
+- **Background:** USA overtook Britain and Germany in industrial output early 1900s; WWI made it a supplier and lender to the Allies; entered the war in 1917 after German unrestricted submarine warfare; Wilson (1913-21) helped design the League of Nations but the Senate did not ratify Versailles, so the USA stayed out and turned isolationist.
+- **1920s politics:** Harding (1920, "return to normalcy"), Coolidge from 1923/24 ("the business of America is business"); laissez-faire, tax cuts favouring the rich, high tariffs, anti-union action; Immigration Act 1924 (quotas, cut southern/eastern Europe).
+- **American Dream:** rags-to-riches, rugged individualism; reality of class, race and ethnic inequality.
+- **Boom drivers:** mass production (Model T "Tin Lizzie"), advertising and hire purchase/credit, rising share prices, buying shares on the margin (about 10% down).
+- **Weak spots under the boom:** tariffs provoked foreign retaliation; wages lagged behind profits; monopolies (e.g. US Steel); agricultural overproduction and falling farm prices (about 6 million pushed off farms per the guide); top 5% took about a third of income (guide's figure, source not given).
+- **Society in the "Roaring Twenties":** jazz, radio, flappers, women's vote but little power, rising divorce; African American Great Migration, Harlem, Jim Crow in the South, Ku Klux Klan (about 5 million members mid-1920s per guide); Prohibition (1920-33), bootlegging, speakeasies, Al Capone. CHECK: the guide says "1931: end of Depression, states realised liquor tax would bring revenue"; the Depression did not end in 1931 (likely meant the Depression's depth was clear).
+- **Skills practised:** cause and effect (boom causes vs hidden weaknesses), cartoons/photographs of the 1920s, comparing who benefited (guide Q1 mind map).
+
+### Unit 2 (pp. 55-58): Wall Street Crash 1929
+- **Events:** 24 October 1929 (panic selling, 13 million shares), Black Tuesday 29 October.
+- **Causes:** speculation and margin buying; weak banks lending to speculators; overproduction and falling spending power; uneven wealth; tariffs and collapsing trade; laissez-faire (no regulation).
+- **Impact:** output about 30% down, prices 25% down, national income halved by 1933 (guide); bank failures (650 in 1929, 4 000 in 1933 per guide); unemployment, evictions, Hoovervilles, breadlines, food riots, Bonus Marchers; no social security; Hoover's late and limited measures.
+- **Skills practised:** interpreting graphs and photographs, explaining "causes vs trigger".
+
+### Unit 3 (pp. 59-66): The New Deal
+- **Why FDR won (1932):** anger at Hoover; promised a "New Deal for the forgotten man"; Brains Trust; first 100 days (15 major laws); fireside chats from 1933.
+- **Three Rs:** relief, recovery, reform.
+- **First New Deal (1933-mid 1935):** Emergency Banking Relief Act (bank holiday, deposit guarantee), FERA, alphabet agencies, NIRA with PWA and NRA ("Blue Eagle"), NRA ruled unconstitutional 1935.
+- **Second New Deal (1935-40):** WPA (over 3 million jobs by 1938), Social Security Act 1935, Wagner Act 1935 (collective bargaining), "soak the rich" tax.
+- **Opposition:** wealthy and business (taxes, unions, "socialism"), conservative Supreme Court (NRA 1935, AAA 1936), Huey Long, Father Coughlin, communists, Southern Democrats (racism; 1936 walkout).
+- **Weaken or strengthen capitalism?** Strengthened: restored confidence, regulated abuses, saved capitalism from revolution; weakened (according to critics): bigger state, big labour and big government at the table; not a cure: 1937-38 recession after spending cuts; excluded many African Americans and women.
+- **Essay angles:** "To what extent did the New Deal strengthen capitalism?"; "Was the New Deal a success?"; compare Hoover and FDR.
+
+### Unit 4 (pp. 67-72): WWII and the world
+- **Recovery:** 1937 spending cuts caused a new slump (guide: 5 million lost jobs, CHECK: figures in standard sources are lower, quote with care); Neutrality Acts 1935-37; rearmament from 1938/39, drafting 1940, Pearl Harbor December 1941 ended the slump.
+- **Global impact:** USSR (cut off from the world economy, claimed immunity), Latin America (export collapse), Germany (loans recalled, bank collapse, Nazis and communists gained), Japan (military control, deficit spending, recovery), South Africa (off the gold standard in 1932, gold boom, Afrikaner poor-white problem, Carnegie Commission on Poor Whites, link to Afrikaner nationalism).
+- **Conclusion:** the boom-bust cycle; the lesson that some state regulation was needed.
+- **Skills practised:** link to Topic 1 (USSR avoiding the Depression) and Topic 4 (SA effects), evaluating sources on the global crisis.
+
+### Common mistakes (Topic 2)
+Treating the Crash as the sole cause of the Depression; mixing Hoover and FDR policies; saying the New Deal ended the Depression; leaving out the 1937-38 recession; omitting African Americans and women from the "who benefited" question.
+
+### Lesson breakdown (Topic 2)
+L1 American capitalism and the 1920s boom (pp. 44-50); L2 Society in the 1920s: women, race, Prohibition (pp. 51-54); L3 The Crash and the Depression (pp. 55-58); L4 FDR and the New Deal (pp. 59-66); L5 WWII and global impact, essay practice (pp. 67-72).
+
+### Guide features useful for Margin
+Summary box per unit; questions: mind maps of causes and consequences, define terms in paragraph form (start/end date, background, outcome, meaning), complete a New Deal agency diagram (relief, recovery, reform), answers from p. 195.
 
 ## Research task (Term 1-2): plan, interviews/oral history or research question; essay-form findings; self-reflection and recommendations (per ATP). Lessons: L1 "Framing a research question"; L2 "Sources and interviews"; L3 "Presenting findings".
 
