@@ -200,13 +200,57 @@ Core: L1 What is nationalism (pp. 102-106). Per case study: L1 context and origi
 ### Guide features useful for Margin
 Two-column account comparison (Israeli vs Arab), inclusive-vs-exclusive comparison table, timelines, definitions task (colonialism, pan-Africanism, Garveyism, neo-colonialism, Uhuru, assimilation), compare-and-contrast questions; answers from p. 195.
 
-## Topic 5: Apartheid South Africa, 1940s-1960s (Paper 2)
-- Covers: segregation in the 1920s-30s after Union; how segregation laid the foundation; Indian, Coloured and African resistance (1946 passive resistance; Congress Alliance, Defiance Campaign 1952, Freedom Charter 1955, Treason Trial, Women's march 1956, Sharpeville 1960, banning of ANC/PAC, rise of armed struggle: dates UNVERIFIED against the textbook); National Party 1948 victory; how apartheid differed from segregation; legislation creating the apartheid state (Population Registration, Group Areas, Mixed Marriages, Immorality, Separate Amenities, Bantu Education, pass laws; labour laws; Suppression of Communism Act and banning of the CPSA); overcoming/resistance to apartheid and state responses (Term 4, no formal task).
-- Key concepts: segregation, apartheid, Africanism, Congress Alliance, mass mobilisation, Satyagraha, universal suffrage, state of emergency.
-- Examined: source-based (segregation and the NP victory; legalising apartheid) and essay (creation of apartheid state; resistance), Test 2/3 on apartheid.
-- Mistakes: dating the laws wrongly; treating all resistance as one organisation; ignoring women's and Indian community roles.
-- Lessons: L1 "Segregation 1910-1948"; L2 "1948 and NP policy"; L3 "Apartheid laws"; L4 "Resistance in the 1950s"; L5 "Sharpeville and state response".
-- Visuals: timeline of laws and campaigns; photographs/political posters; map of Group Areas/homelands (map image).
+## Topic 5: Apartheid South Africa, 1940s-1960s (Paper 2) — rebuilt from the Via Afrika guide, pp. 165-194
+Key questions in the guide (one per unit): racism and segregation globally in the 1920s-30s; how SA segregation laid the foundation for apartheid; what the 1948 victory meant; what legalising apartheid did; what resistance before 1960 looked like; resistance in a global context; the state's response; Sharpeville; Rivonia; why "apartheid" became an international word. The guide has ten units (the contents page lists eight); "CHECK" = disagrees with standard references. NOTE: the guide's law table has an empty "Date" column in the extracted text; the Act numbers and years in the guide's own summary (p. 191) are used below, and years I add from general knowledge are marked "(general knowledge)".
+
+### Unit 1 (pp. 166-167): Racism and segregation in the 1920s and 1930s (global)
+- Definitions: racism and segregation; USA (Jim Crow, KKK, eugenics, anti-lynching resolution April 1937 per guide), Europe (sterilisation laws by 1935 in several countries), Germany (scientific racism, Aryan vs Untermensch), Australia (98% white in 1901, assimilation, Stolen Generation, Immigration Restriction Act).
+- Skills practised: compare segregation across countries; link to Topic 3.
+
+### Unit 2 (pp. 168-169): Segregation after Union, 1910-1940s
+- Union 1910; Natives Land Act 1913 (cornerstone of later policy); Native Urban Areas Act 1923 (urban areas "white", passes); Hertzog (PM 1924): Industrial Conciliation Act 1924, Wages Act 1925, Mines and Works Amendment Act 1926, ISCOR and SAR&H, "civilised labour"; Native Economic Commission 1932; Representation of Natives Act 1936, Native Trust and Land Act 1936 (about 13% of land for Africans; the guide attributes the 13% to the 1913 Act, CHECK: 7% in 1913, 13% after 1936), Native Laws Amendment Act 1937, Electoral Laws Amendment 1940, Factories Act 1941.
+- Skills practised: tracing continuity from segregation to apartheid; reading a law table.
+- Essay angles: how far did segregation lay the foundation for apartheid; how different were they.
+
+### Unit 3 (pp. 170-172): The National Party victory, 1948
+- Apartheid ("apartness") as institutionalised and extended segregation; Fagan Commission (UP, 1946) vs Sauer Commission (HNP, 1947); election results table (numbers missing in the extraction); reasons for the NP win: UP complacency and crumbling coalition, HNP-Afrikaner Party alliance (Malan and Havenga), swart gevaar campaign, promises of influx control and cheap labour, electoral boundaries giving seats without a majority of votes.
+- Differences and similarities between segregation and apartheid in the guide's table.
+
+### Unit 4 (pp. 173-176): Legalising apartheid
+- Grouped by sphere: social (Prohibition of Mixed Marriages Act 55 of 1949, Immorality Amendment Act 21 of 1950, Population Registration Act 30 of 1950, Reservation of Separate Amenities Act 49 of 1953), residential (Group Areas Act 41 of 1950, Native Resettlement Act, Native (Urban Areas) Amendment Act), cultural and educational (Bantu Education Act 47 of 1953, Extension of University Education Act), political (Asiatic Land laws, Separate Representation of Voters Act and the Senate/Appellate Division manoeuvres to remove Cape Coloured voters), economic (Suppression of Communism Act, Native Labour (Settlement of Disputes) Act, Industrial Conciliation Act).
+- Skills practised: law-by-law cause and effect, using the guide's table; Sandra Laing as a case example.
+- Essay angles: how did the NP create a racist state between 1949 and 1953 (guide Q4.2, 10 marks); effects on family, education, labour.
+
+### Unit 5 (pp. 177-182): Overcoming apartheid: resistance to 1956
+- Early: Gandhi (arrived 1893, satyagraha), SANNC against the Land Act (1913), 1914 and 1919 deputations.
+- 1940s: Workers' Party, All African Convention, NRC (1937), Xuma president 1940, Non-European Unity Movement (1943), ANC Youth League (1944), Marabastad riots (1942), Alexandra bus boycotts (1943, 1944), 1946 mineworkers' strike; African Claims (1943).
+- 1949 Programme of Action under Moroka; 1 May 1950 Freedom Day stayaway (18 killed), 26 June day of mourning; Defiance Campaign (26 June 1952, ended January 1953; Mandela volunteer-in-chief); Freedom Charter at Kliptown 26-27 June 1955 (2 844 delegates per the guide); FEDSAW 1954 and the Women's March 9 August 1956 (20 000 women).
+- Skills practised: compare tactics (petition vs mass action); analyse the Freedom Charter as a source; judge turning points.
+- Essay angles: how did resistance change from the 1940s to 1960; assess the Defiance Campaign; role of women.
+
+### Unit 6 (pp. 183-184): Global resistance to racism and oppression
+US Civil Rights movement (Parks, King, 1963 march), anti-Vietnam war, second-wave feminism, 1968 student protests (France, Mexico City, Tokyo); contrast with repression in Eastern Europe, Latin America and SA. The guide quotes "hundreds killed" in Mexico City 1968; estimates are disputed, so treat as uncertain.
+
+### Unit 7 (pp. 185-186): The state's response in the 1950s
+Defiance Campaign trial (June 1952, suspended sentences), Public Safety Act and Criminal Law Amendment Act (1953), Bantu Authorities Act 1951, Promotion of Bantu Self-Government Act 1959, 1956 Treason Trial (acquittal after about five years, in 1961 by general knowledge), Cato Manor 1959.
+
+### Unit 8 (pp. 187-188): Sharpeville
+PAC formed (split November 1958, founded April 1959, Sobukwe); anti-pass campaign; Sharpeville massacre (guide: 21 March 1960 in the unit and "31 March 1960" in the summary; CHECK: 21 March is correct) with 69 killed; state of emergency in 122 of 265 districts; ANC and PAC banned (Unlawful Organisations Act 1960); UN Resolution 134 (1 April 1960); referendum October 1960 and republic 31 May 1961 (left the Commonwealth); MK (Mandela, sabotage from December 1961) and Poqo.
+
+### Unit 9 (p. 189): Rivonia Trial
+Liliesleaf Farm arrests 11 July 1963; trial (guide: began 26 November 1963; CHECK: the trial opened on 9 October 1963; ended 12 June 1964); 10 accused, 8 life sentences (including Mandela and Sisulu); guide summary says "found guilty of treason" (CHECK: convicted of sabotage-related charges); leaders fled to exile; ANC crippled inside SA; economic boom increased NP support.
+
+### Unit 10 (p. 190): Apartheid becomes an international word
+Apartheid unique because it was legally enforced as the world adopted the UN Declaration of Human Rights; Sharpeville; "polecat of the world"; isolation, embargoes, boycotts.
+
+### Common mistakes (Topic 5)
+Dating laws wrongly; treating all resisters as one organisation; mixing up Treason Trial (1956-61) and Rivonia (1963-64); stating Sharpeville's date inconsistently; calling the Freedom Charter the ANC's alone (Congress Alliance); ignoring women and the Indian and Coloured organisations.
+
+### Lesson breakdown (Topic 5)
+L1 Segregation 1910-1948 and global racism (pp. 166-169); L2 1948 election and why apartheid (pp. 170-172); L3 Apartheid laws by sphere (pp. 173-176); L4 Resistance in the 1940s-50s: Programme of Action to Freedom Charter and women (pp. 177-182); L5 State response, Sharpeville and Rivonia, global context (pp. 183-190), summary and questions (pp. 191-194).
+
+### Guide features useful for Margin
+A law table (name, content, significance) per sphere; events/reaction/consequence tables for state responses; marked questions with mark allocations (e.g. "5 x 2 (10)"), which is useful for modelling marking.
 
 ## Cross-links
 Apartheid and human rights ↔ Life Orientation; capitalism/Depression ↔ Business Studies and Pure Maths graphs; religion and politics ↔ Religion Studies; heritage ↔ Tourism.
