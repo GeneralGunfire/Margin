@@ -35,3 +35,5 @@ Branch: research-content (repo initialised by this run; the folder was not a git
   4. Compare Afrikaans FAL and Religion Studies 2023/24 ATPs line by line with their CAPS files; look for 2025-2027 ATPs on the DBE site.
   5. History: confirm with the user which Gr 11 curriculum applies in 2027 (legacy vs draft amended CAPS).
 - Checked the DBE curriculum page (NationalCurriculumStatementsGradesR-12.aspx): the newest ATP index linked is still 2023-24; no 2025-2027 ATPs found. A 2026 Gr 12 PAT page exists (not relevant to Gr 11).
+
+- User supplied Via Afrika Gr 11 History guide: logged in resources-history-via-afrika.md. Still open: read its source-skills sections and exam answers to cross-check history-depth.md.

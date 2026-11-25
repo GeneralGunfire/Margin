@@ -59,7 +59,7 @@ Other flags: Tourism (CAPS says seven domestic market segments, the ATP says fiv
 | religion-studies.md, religion-studies-depth.md | Religion Studies |
 | afrikaans-fal.md, afrikaans-fal-depth.md | Afrikaans First Additional Language |
 | ap-maths.md | AP Mathematics (IEB): placeholder + your notes' structure |
-| resources-pure-maths-physical-sciences.md, resources-others.md | Pass 3 resources |
+| resources-pure-maths-physical-sciences.md, resources-others.md, resources-history-via-afrika.md | Pass 3 resources |
 | past-papers-pure-maths-physical-sciences.md, past-papers-history-business-studies.md | Pass 4 tables |
 
 ## Status per subject and pass
