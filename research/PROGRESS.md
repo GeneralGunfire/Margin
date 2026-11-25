@@ -39,3 +39,5 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 - User supplied Via Afrika Gr 11 History guide: logged in resources-history-via-afrika.md. Still open: read its source-skills sections and exam answers to cross-check history-depth.md.
 
 - History is now fully treated from the Via Afrika guide: all five topics read and rebuilt. Remaining History items: confirm which curriculum applies in 2027; check the guide against the school textbook; no Gr 11 papers beyond EC 2024 (Pass 4); videos not watched.
+
+- History timeline pass done: 92 entries still UNVERIFIED (see history-verified-timeline.md); next: confirm them with SAHO plus a second publisher, and open key pages in full rather than relying on search summaries.
