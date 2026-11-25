@@ -9,3 +9,4 @@
 - Pass 4 (History, Business Studies; EC Nov 2024 only): confirmed legacy History topics and the ATP two-paper Business Studies format. Secondary host used (Stanmore Physics).
 - Pass 5: removed an unsupported FAL weekly-hours claim (afrikaans-fal.md); confirmed Maths cognitive-level split from CAPS text; encoded a parenthesised URL; link-check of 203 unique URLs: all 200 except stithian (bot check) and a placeholder.
 - Pass 5: English HL ATP gives the detailed paper structure (P1 70: 30/10/10/10/10; P2 80: 20/10/25/25; P3 100: 50 + 2x25) and a 150-mark mid-year; LO ATP names a source-based task in Term 1. Both added as flags.
+- Pass 5: searched for newer ATPs (2025-27) on the DBE curriculum page; none linked. 2023/24 ATPs remain the latest official plans found.
