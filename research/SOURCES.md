@@ -25,3 +25,6 @@
 ## Tourism
 - DBE CAPS Tourism Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20TOURISM%20_%20GR%2010-12%20Web_1FAC.pdf
 - DBE 2023/24 ATP Tourism Gr 11: https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.470%20ATP%202023-24%20Gr%2011%20Tou%20final.pdf
+
+## Life Orientation
+- DBE CAPS Life Orientation Gr 10-12: https://www.education.gov.za/Portals/0/CD/National%20Curriculum%20Statements%20and%20Vocational/CAPS%20FET%20_%20LIFE%20ORIENTATION%20_%20GR%2010-12%20_%20WEB_E6B3.pdf
