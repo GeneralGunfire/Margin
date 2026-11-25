@@ -141,16 +141,64 @@ L1 Race science and Social Darwinism (pp. 78-79); L2 Eugenics and its practice i
 ### Guide features useful for Margin
 Explicit "perpetrator, bystander, resister, rescuer" frame; summary boxes; propaganda source activities with scaffolded questions (symbol, audience, message); answers from p. 195.
 
-## Topic 4: Nationalisms (Paper 2; provinces/schools choose ANY TWO case studies)
-- Core: what nationalism is; origins; Italy and Germany as initiation; "imagined community" theory.
-- Case 1 African nationalism in South Africa: effects of Union (1910) and the Land Act (1913); professionals and traditional leaders; WWII influence, the Atlantic Charter and A. B. Xuma's African Claims; ANC Youth League and the split into ANC and PAC (Africanism).
-- Case 2 Afrikaner nationalism: rise in the 1920s and 1930s; Volk; class, race, education, labour, religion; Broederbond; nationalism in power toward apartheid.
-- Case 3 The Middle East: Arab nationalism and Zionism; Balfour Declaration; state of Israel and the 1948 War; Palestinian and Israeli perspectives; later conflicts (Six-Day War 1967, Yom Kippur War 1973, occupation of the West Bank, intifada). Note multi-perspective, politically sensitive.
-- Case 4 Gold Coast to Ghana: early nationalism, WWII influence, mass movements, Nkrumah and the CPP, Pan-Africanism, independence (1957).
-- Examined: Paper 2 questions on two chosen cases (source-based and essay).
-- Mistakes: confusing African and Afrikaner nationalism; presenting one perspective in the Middle East; mixing dates of Israel's creation and the wars.
-- Lessons per case: L1 "Context and origins"; L2 "Key organisations/leaders"; L3 "Turning points"; L4 "Essay practice"; plus L1 "Defining nationalism" for the core.
-- Visuals: maps (Middle East borders, Ghana), timeline, party/organisation family tree.
+## Topic 4: Nationalisms — South Africa, the Middle East and Africa (Paper 2) — rebuilt from the Via Afrika guide, pp. 101-164
+Key question in the guide: when is nationalism beneficial and when is it destructive. The guide treats four case studies (African nationalism in SA, Afrikaner nationalism in SA, the Middle East, Gold Coast to Ghana); my earlier notes said schools choose two case studies, so which two the school teaches is UNVERIFIED. "CHECK" = disagrees with standard references.
+
+### Unit 1 (pp. 102-106): What is nationalism?
+- **Idea:** loyalty to a nation with a shared identity; modern nationalism emerged in Western Europe (1700s-1800s) as new social classes challenged feudal monarchs; French Revolution 1789 (will of the majority), Napoleonic rule 1795-1815 sparked resistance, Congress of Vienna 1815 tried to restore the old order and stimulated nationalism.
+- **Spread:** revolutions of 1830 (France July revolution, Belgium independent 1832, Greece, Polish uprising) and 1848; unification of Germany (Zollverein, Bismarck, three wars) and Italy (Cavour, Garibaldi).
+- **Industry, middle class and imperialism:** Industrial Revolution created a middle class that backed nationalism; New Imperialism; Berlin Conference 1884-85 split Africa (the guide calls it the "Congress of Berlin" in one place; CHECK: that name usually means 1878); colonial borders laid the base for African nationalism.
+- **Imagined community:** Benedict Anderson (1983): a nation is a socially constructed community held together by shared symbols, language and print media. Reused in the Afrikaner case study.
+- **Skills practised:** define nationalism in own words, apply the theory to an example, compare European and African nationalism.
+
+### Case study 1a (pp. 107-122): The rise of African nationalism in South Africa
+- **Context:** Union of 1910 gave power to whites; Natives Land Act 1913; migrant labour; 1920s-40s forced urbanisation.
+- **Early organisations:** APO (Dr Abdurahman, coloured; London delegation 1909), Natal Indian Congress (1894, Gandhi; passive resistance 1908), SANNC (8 January 1912, Bloemfontein; renamed ANC 1924; "politics of petition"; newspaper Abantu Batho), ICU (1919, Kadalie; faded by 1930), Bantu Women's League and anti-pass protests (1913, 1918), 1920 miners' strike (about 70 000), SACP and trade unions.
+- **Two strands:** non-racial inclusive nationalism (Xuma, communists) vs Africanist (Lembede, Youth League, later Sobukwe's PAC).
+- **WWII influences:** Atlantic Charter 1941, Xuma's African Claims (1943), returning soldiers, Manchester Pan-African Congress 1945. CHECK: the guide says the Manchester Congress "gave rise to" the 1943 African Claims, which is out of chronological order. 1946 mineworkers' strike (over 60 000; guide: 12 killed).
+- **From ANC Youth League to Congress Alliance:** Youth League 1944 (Lembede, Mandela, Sisulu, Tambo), Programme of Action, Moroka replaced Xuma in 1949, Congress of the People and Freedom Charter (Kliptown, 1955), PAC breakaway 1959 (Sobukwe; anti-pass campaign leading to Sharpeville and Langa).
+- **Later tradition:** Black Consciousness (Biko), Morogoro conference 1969, Soweto 1976, UDF launched 20 August 1983 (Rocklands, Mitchell's Plain).
+- **Nation-building:** FW de Klerk president 1989, Mandela released 11 February 1990, CODESA (December 1991), first non-racial elections 27 April 1994, GNU, 1995 Rugby World Cup, Constitution (Act 108 of 1996), TRC (Act 34 of 1995, Archbishop Tutu).
+- **Skills practised:** extract and compare evidence from Plaatje's 1918 account and ANC documents, causes-and-consequences, judging inclusive vs exclusive nationalism.
+- **Essay angles:** why did African nationalism take about forty years to become a mass movement; how did WWII change it; how did inclusive nationalism help reconciliation.
+
+### Case study 1b (pp. 123-134): The rise of Afrikaner nationalism
+- **Roots:** Great Trek (1835-46) and Boer republics, "chosen people" idea; Stephanus du Toit and the GRA (Paarl, 14 August 1875, Die Afrikaanse Patriot); Afrikaner Bond.
+- **Drivers:** economic (English-dominated economy), poor whites and the Great Depression, culture.
+- **Movements:** First Language Movement 1875-1900, Second Language Movement 1900-1930 (anglicisation under Milner, Afrikaans recognised 1925, Bible 1933); Afrikaner Broederbond (Jong Zuid Afrika 1918, Broederbond 1919); FAK cultural bodies; Christian National Trade Unions; Volkskapitalisme (Reddingsdaadbond; Volkskongres 1939); newspapers Die Burger, Die Transvaler, Die Huisgenoot.
+- **Volk ideas:** Kuyper's "spheres"; Volk defined as white Afrikaans speakers; links to education (Christian National Education 1939, later Bantu Education), labour (colour bar; 1911 Mines and Works Act; Hertzog's "civilised labour" policy) and the Dutch Reformed Church (volksmoeders, segregation as church duty).
+- **1930s-48:** 1934 split of Malan's "purified" National Party from Hertzog and Smuts; Eeufees 1938 (ox-wagon trek, Voortrekker Monument stone laid 16 December 1938); 1948 election: NP used swart gevaar rhetoric, narrowly won, started apartheid.
+- **Afrikaner nationalism today:** little left of the old project, small pockets such as Orania.
+- **Skills practised:** link to Imagined Communities (Topic 4 Unit 1), analyse the 1939 DRC and Huisgenoot extracts, compare with African nationalism (guide Q4).
+
+### Case study 2 (pp. 135-148): The Middle East
+- **Origins:** Jews (diaspora, Zionism from the 1890s, Herzl, Basle 1897); Arabs under Ottoman rule, First Arab National Congress 1913; WWI promises vs the Sykes-Picot Treaty and the Balfour Declaration (1917); League of Nations mandates 1920s.
+- **Palestine under Britain:** more Jewish immigration, Arab protests 1921 and 1929, Haganah, 1936 Arab revolt, 1937 partition proposal, 1930s surge of Jewish refugees.
+- **1947-49:** UN Partition Plan (guide: more than half to the Jewish state), civil war, Ben-Gurion declared Israel 14 May 1948, invasion by Arab states, 1949 armistices; two perspectives (Israeli "war of independence" vs Palestinian An-Nakba, UN Resolution 194 on refugees).
+- **Arab nationalism and the region:** Arab League 1945; Nasser, Suez 1956 (guide's table lists 1952-56; the coup was 1952, nationalisation 1956); United Arab Republic 1958-61; PLO 1964 (the guide says Arafat was first leader; CHECK: Ahmad Shukeiri was first chairman, Arafat from 1969).
+- **Wars:** Six-Day War June 1967 (UN Resolution 242), Yom Kippur War 1973, first intifada 1987-93; Camp David (guide: 1979 treaty), PLO recognised Israel 1988, Oslo Accords 1993 (guide says signed "in Oslo, Sweden"; CHECK: negotiated in Oslo, Norway, signed in Washington), second intifada from 2000; the guide ends "no peaceful solution in sight" (an opinion, flag for neutral wording).
+- **Sensitive content:** multi-perspective and politically sensitive; present both accounts, do not endorse either.
+- **Skills practised:** comparing two accounts (guide's two-column table), assessing causes of 1948, map and timeline work.
+- **Essay angles:** to what extent did Britain's promises cause conflict; why has peace failed; compare Israeli and Palestinian nationalism.
+
+### Case study 3 (pp. 149-155): From Gold Coast to Ghana
+- **Colonial impact:** British colony by 1901, educated coastal elite, cocoa farmers, strengthened chiefs; NCBWA (founded 1919, first conference Accra March 1920) and its elitist bias; Garvey's influence; cocoa boycott 1937-38; trade unions.
+- **WWII:** Atlantic Charter, soldiers, 1948 ex-servicemen march and riots in Accra (guide: 29 killed); UGCC 1947 (Danquah).
+- **Nkrumah:** studied in the USA; Pan-African Congress Manchester 1945; UGCC general secretary 1947; formed the CPP June 1949; Positive Action January 1950; prime minister 1952; independence 6 March 1957 (guide: March 1957); republic 1960; detention without trial 1958; economic failures; coup 1966; died 1972.
+- **Positive and negative:** unifying national struggle, then authoritarian rule, personality cult, debt.
+- **Skills practised:** causes of independence, evaluating Nkrumah's legacy, comparing with SA nationalism.
+
+### Unit 2 (pp. 156-157): Positive and negative features of nationalism
+Inclusive (SA after 1994, Ghana before independence) vs exclusive (Afrikaner nationalism, Nazism, Zionism/Israel-Palestine tension in the guide's wording); post-1990 Eastern Europe and Bosnia 1992 as a destructive example (the guide says communism collapsed in the USSR "in 1990"; CHECK: 1991).
+
+### Common mistakes (Topic 4)
+Confusing African and Afrikaner nationalism; giving one perspective on the Middle East; dating the ANC and PAC splits wrongly (Youth League 1944, PAC 1959); confusing the African Claims (1943) with Manchester (1945); treating nationalism as only good or only bad.
+
+### Lesson breakdown (Topic 4)
+Core: L1 What is nationalism (pp. 102-106). Per case study: L1 context and origins; L2 organisations and leaders; L3 turning points; L4 essay and source practice. Guide pages: 1a pp. 109-122 (five lessons suit it), 1b pp. 123-134, Middle East pp. 135-148, Ghana pp. 149-155, positives and negatives pp. 156-157.
+
+### Guide features useful for Margin
+Two-column account comparison (Israeli vs Arab), inclusive-vs-exclusive comparison table, timelines, definitions task (colonialism, pan-Africanism, Garveyism, neo-colonialism, Uhuru, assimilation), compare-and-contrast questions; answers from p. 195.
 
 ## Topic 5: Apartheid South Africa, 1940s-1960s (Paper 2)
 - Covers: segregation in the 1920s-30s after Union; how segregation laid the foundation; Indian, Coloured and African resistance (1946 passive resistance; Congress Alliance, Defiance Campaign 1952, Freedom Charter 1955, Treason Trial, Women's march 1956, Sharpeville 1960, banning of ANC/PAC, rise of armed struggle: dates UNVERIFIED against the textbook); National Party 1948 victory; how apartheid differed from segregation; legislation creating the apartheid state (Population Registration, Group Areas, Mixed Marriages, Immorality, Separate Amenities, Bantu Education, pass laws; labour laws; Suppression of Communism Act and banning of the CPSA); overcoming/resistance to apartheid and state responses (Term 4, no formal task).
