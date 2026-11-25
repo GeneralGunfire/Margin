@@ -9,15 +9,55 @@ Covers the LEGACY five-topic Gr 11 (default assumption). The DRAFT amended CAPS 
 - Lessons: L1 "Reading a source"; L2 "Usefulness and reliability"; L3 "Essay planning"; L4 "PEEL paragraphs".
 - Visuals: source-analysis template; essay planning frame; timelines.
 
-## Topic 1: Communism in Russia 1900-1940 (Paper 1)
-- Covers: Marx's ideas (class struggle, historical materialism); 1917 revolutions (February and October) as background; Civil War and war communism; Lenin's consolidation; Marxism-Leninism; the New Economic Policy (NEP); Lenin's death and the power struggle; Stalin's interpretation of Marx (socialism in one country, five-year plans, collectivisation, terror).
-- Key concepts: communism, capitalism, Marxism, Leninism, Stalinism, proletariat, bourgeoisie, dictatorship of the proletariat, Bolsheviks, Soviets, collectivisation, Five-Year Plan, Gulag, purges (dates beyond the ATP's "1900-1940" frame to be confirmed in textbook).
-- Prereqs: Gr 9 (Cold War, WWII), World War I basics (UNVERIFIED which Gr 10 topics are linked).
-- Examined: source-based (Lenin OR Stalin) and essay (Stalin per ATP): "How far did Lenin/Stalin…", "Critically discuss…"; 50-mark questions.
-- Mistakes: confusing Marx with Lenin; ignoring NEP as a retreat from war communism; treating Stalinism as identical to Marxism; chronology mix-ups.
-- Ideas: compare war communism vs NEP; evaluate Stalin's economic policies with sources.
-- Lessons: L1 "What is communism?"; L2 "Revolutions of 1917 (background)"; L3 "Civil War and war communism"; L4 "Lenin, Marxism-Leninism and the NEP"; L5 "Stalin's rise and policies".
-- Visuals: timeline 1900-1940; poster/photograph sources; map of Russia/USSR (map image).
+## Topic 1: Communism in Russia 1900-1940 (Paper 1) — rebuilt from the Via Afrika guide, pp. 2-42
+Source: Via Afrika Gr 11 History Study Guide (see resources-history-via-afrika.md). Key question the guide poses: how was communism applied in Russia under Lenin and Stalin. Dates are the guide's unless flagged. "CHECK" marks a date or claim that disagrees with standard references (see the date-check table in resources-history-via-afrika.md).
+
+### Unit 1 (guide pp. 3-8): Communism, Marx, 1905
+- **Key ideas:** socialism vs communism (communal ownership, no classes or state in principle); Marx (born 1818): Communist Manifesto 1848 (with Engels), Das Kapital 1867; bourgeoisie vs proletariat, class struggle, expected workers' revolution.
+- **Russia before 1905:** autocratic Tsar, multinational empire, mostly peasants; serfs freed 1861 (Alexander II); rapid industrialisation after 1860; Alexander II killed 1881 and reforms stopped under Alexander III; Marxist ideas spread in the 1890s; the party split in 1903 into Bolsheviks (Lenin, small disciplined elite party) and Mensheviks. CHECK: the guide says the Social-Democratic Party formed in "1861"; the standard date is 1898.
+- **1905:** defeat by Japan (war from Feb 1904), then Bloody Sunday (massacre of a peaceful petition march to the Winter Palace, led by Father Gapon), strikes and mutinies, October Manifesto (civil rights, a Duma), December Moscow uprising crushed, Fundamental Laws leave the Tsar a veto. CHECK: the guide says the revolution broke out "February 1905"; Bloody Sunday was 22 January 1905 (9 January old style).
+- **Link 1905 to 1917:** soviets (workers' councils) tried out; Trotsky chaired the St Petersburg Soviet; Marxists learned the power of mass strikes; theory revised to allow a socialist revolution in backward Russia (Trotsky's "permanent revolution").
+- **Skills practised:** timeline, cause and effect, interpreting a Marx extract, defining terms (Duma, zemstvo, soviet, Bolshevik).
+
+### Unit 2 (pp. 9-21): February and October 1917
+- **Calendar note (useful and correct):** Russia used the Julian calendar, 13 days behind, until February 1918, hence "February/March" and "October/November".
+- **Causes (political, economic, social):** Tsar refused real reform after 1905 (Stolypin PM 1906-11, repressive, assassinated Sept 1911); Tsar took army command in 1915 and Tsarina Alexandra with Rasputin ran the government; WWI defeats, food and fuel shortages, inflation, strikes, overcrowded housing in Petrograd.
+- **February revolution:** unplanned; International Women's Day protests grew into a mass strike; troops joined the crowds; Duma formed a Provisional Government; Tsar abdicated (guide: 14 March; CHECK, standard 15 March new style / 2 March old style). The guide's "by 28 October 1917 over 80 000 troops mutinied" sits in the February narrative and is almost certainly a slip; treat as CHECK.
+- **Provisional Government failure:** Petrograd Soviet had equal power (dual power); Order Number 1 undermined army discipline; no land reform, war continued, elections postponed. The guide names Kerensky as leader from the start; standard accounts have Prince Lvov first, Kerensky from July (the guide's own question 1.10 lists Lvov).
+- **Lenin's return (April 1917) and April Theses:** "Peace, Land, Bread", all power to the soviets; July Days (Bolsheviks blamed, Lenin hid, Trotsky jailed); Kornilov affair (August) boosted the Bolsheviks; Bolshevik majorities in Petrograd and Moscow soviets by September.
+- **October revolution:** planned; Trotsky's Military-Revolutionary Committee; key buildings taken 24-25 Oct (old style), Winter Palace taken, cruiser Aurora; decrees on land and peace; Constituent Assembly met once in January 1918 and was dissolved; Brest-Litovsk (March 1918) took Russia out of WWI; Cheka set up.
+- **People:** Nicholas II, Alexandra, Rasputin, Stolypin, Kerensky, Lvov, Kornilov, Lenin, Trotsky, Stalin (Commissar of Nationalities), Gapon. CHECK: the guide says "the Tsar had Rasputin killed in 1916"; he was killed by nobles (Dec 1916).
+- **Skills practised:** causes and consequences, sequencing, comparing the two revolutions (spontaneous vs planned), reading the 1917 proclamation and the Rodzianko telegram as sources.
+- **Essay angles:** why did the Provisional Government fail; why could the Bolsheviks take power; to what extent was October a coup.
+
+### Unit 3 (pp. 22-28): Civil war, War Communism, NEP, Lenin's Marxism, Lenin's death
+- **Civil war 1918-21:** Reds (Trotsky) vs Whites with Western backing; Cheka terror; Tsar's family killed 1918; Red victory helped by White disunity.
+- **War Communism:** nationalised industry, grain requisitioning, labour conscription, banned private trade; result: economic collapse, 1921 famine (guide: five million died), Kronstadt mutiny (March 1921) crushed.
+- **NEP (1921):** a compromise: grain tax replaced requisitioning; small private trade and factories allowed (Nepmen, kulaks); state kept banks and heavy industry; output recovered (1926 grain near 1913 level) but unemployment and poor transport remained; some Bolsheviks saw it as a betrayal of Marxism.
+- **Lenin's interpretation of Marxism:** revolution possible in a peasant country; elite vanguard party; dictatorship of the proletariat; one-party state; USSR name (guide: 1923; CHECK, formed December 1922). CHECK: the guide's summary says the revolutionaries overthrew the Tsar and Provisional Government "in 1921"; it was 1917.
+- **Women:** February protests; Provisional Government gave the vote; Bolsheviks gave legal equality, divorce on request, Zhenotdel; later rolled back under Stalin.
+- **Lenin's death (1924):** Trotsky (internationalism, permanent revolution) vs Stalin (Socialism in One Country); the troika (Stalin, Kamenev, Zinoviev) isolated Trotsky; Stalin then removed the others; Trotsky exiled and later murdered (1940; the guide gives no date).
+- **Key terms:** vanguard, dictatorship of the proletariat, War Communism, NEP, kulak, Nepmen, Cheka, Zhenotdel, troika.
+- **Skills practised:** compare War Communism, NEP and the Five-Year Plans in a table (guide Q6); evidence on Kronstadt.
+
+### Unit 4 (pp. 29-36): Russia under Stalin
+- **Stalin's interpretation:** Socialism in One Country, economic modernisation before world revolution, strong bureaucracy.
+- **Collectivisation from 1929:** kolkhoz (collective) vs sovkhoz (state farm); kulaks resisted (burned crops, killed livestock), arrested or sent to gulags; famine 1930 and 1932-33 (guide: 6 million; estimates in the literature vary, so present as an estimate); by 1941 almost all land collectivised.
+- **Five-Year Plans:** Gosplan; First 1928-33 (heavy industry), Second 1933-37, Third 1938-41 (interrupted by war); industrial superpower but poor consumer goods, housing shortage, forced labour.
+- **Terror:** Kirov murdered 1934; show trials 1934-38 (Kamenev and Zinoviev executed 1936); NKVD head Yezhov from 1936, later replaced; Red Army purge from 1937; the guide says 20 million sent to gulags with half dying (guide's estimate; flag as uncertain); censorship, cult of personality, apparatchiks.
+- **Women under Stalin:** more education and work (28% of industrial workers in 1927, 40% in 1937) but abortion banned, divorce harder.
+- **WWII:** Molotov-Ribbentrop pact 1939; Operation Barbarossa 22 June 1941. CHECK: the p. 39 summary says Stalin "broke pact with Nazi Germany in 1942"; Germany broke it in 1941 (the guide contradicts itself).
+- **Skills practised:** analyse a propaganda poster (guide Q7), compare policies in a table, evidence for and against "success" of the plans.
+- **Essay angles:** how far were the Five-Year Plans a success; was Stalinism a continuation of Leninism; why did Stalin win the succession struggle.
+
+### Common mistakes (Topic 1)
+Mixing Marx, Lenin and Stalin; using the 13-day calendar difference carelessly; treating February and October as one event; saying NEP ended communism instead of being a temporary compromise; quoting casualty figures as exact.
+
+### Lesson breakdown (Topic 1)
+L1 Marx, communism and the 1905 revolution (pp. 3-8); L2 February 1917 and the Provisional Government (pp. 9-18); L3 Lenin, October 1917 and the Bolsheviks in power (pp. 16-21); L4 Civil war, War Communism, NEP and Lenin's death (pp. 22-28); L5 Stalin: collectivisation, plans and terror (pp. 29-36); summary and questions on pp. 37-42.
+
+### Guide features useful for Margin
+Flow-chart style summaries per unit; end-of-topic summary; question types: matching leaders, defining terms, place-name gap-fill, comparison table, poster analysis. Answers from p. 195.
 
 ## Topic 2: Capitalism in the USA 1900-1940 (Paper 1)
 - Covers: American dream (background); 1920s boom; Wall Street Crash 1929 (causes and effects); Great Depression; election of Franklin D. Roosevelt and the New Deal (relief, recovery, reform); assessment of the New Deal; links to WWII; responses to the crisis of capitalism.
