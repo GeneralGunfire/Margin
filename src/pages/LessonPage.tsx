@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowRight, Check, ChevronDown, ChevronLeft, ChevronRight, Circle, Clock, Flag, List } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import { lessonById, lessonMinutes, neighbours, outlineFor, slugify, type Lesson } from "@/lib/content";
 import { useProgress } from "@/hooks/useProgress";
 import { btn, btnPrimary, field, kicker } from "@/lib/styles";
 import { Note } from "@/components/ui/note";
-import { Quiet } from "@/components/page";
+import { Meter, Quiet } from "@/components/page";
+import { Btn } from "@/components/ui/btn";
 import { LessonMarkdown } from "@/components/lesson/blocks";
 import { cn } from "@/lib/utils";
 import type { Progress } from "@/lib/supabase";
@@ -24,6 +25,23 @@ export default function LessonPage() {
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [lesson?.id]);
+
+  // Left and right arrow keys move to the previous and next lesson (not while typing).
+  const navigate = useNavigate();
+  const active = useActiveHeading(lesson?.id);
+  useEffect(() => {
+    if (!lesson) return;
+    const { prev, next } = neighbours(lesson);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (e.key === "ArrowLeft" && prev) navigate(`/library/${prev.id}`);
+      else if (e.key === "ArrowRight" && next) navigate(`/library/${next.id}`);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lesson, navigate]);
 
   if (!lesson || !mySubjects.some((x) => x.slug === lesson.subject)) {
     return (
@@ -49,43 +67,59 @@ export default function LessonPage() {
   const base = `/library/${lesson.subject}`;
   const topicDir = lesson.topicId.split("/")[1];
   const headings = [...lesson.body.matchAll(/^## (.+)$/gm)].map((m) => m[1].replace(/\$[^$]*\$/g, "").trim());
-  const crumbs: { label: string; to?: string }[] = [
+  // Shorter trail: where you are in the library, without repeating the lesson title (it is the heading below).
+  const crumbs: { label: string; to: string }[] = [
     { label: "Library", to: "/library" },
     { label: s?.name ?? lesson.subject, to: base },
-    ...(lesson.part ? [{ label: lesson.part, to: `${base}#part-${slugify(lesson.part)}` }] : []),
-    ...(lesson.term ? [{ label: `Term ${lesson.term}`, to: `${base}#term-${slugify(lesson.part ?? "")}-${lesson.term}` }] : []),
     { label: lesson.topic, to: `${base}/${topicDir}` },
-    ...(lesson.subtopic ? [{ label: lesson.subtopic, to: `${base}/${topicDir}#sub-${topicDir}-${slugify(lesson.subtopic)}` }] : []),
-    { label: lesson.title },
   ];
+  const siblings = outlineFor(lesson);
+  const pos = siblings.findIndex((l) => l.id === lesson.id) + 1;
+  const siblingLive = siblings.filter((l) => l.status === "live");
+  const siblingDone = siblingLive.filter((l) => progress[l.id]?.done).length;
+  const chip = "inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-[11px] text-muted-foreground";
 
   return (
     <div className="mx-auto flex w-full justify-center gap-12">
       <article className="min-w-0 max-w-3xl flex-1">
-        <nav aria-label="Breadcrumb" className="mb-4">
+        <ReadProgress />
+        <nav aria-label="Breadcrumb" className="mb-4 mt-3">
           <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[11px] text-muted-foreground">
             {crumbs.map((c, i) => (
-              <li key={i} className="flex min-w-0 items-center gap-1.5">
-                {i > 0 && <span aria-hidden="true">/</span>}
-                {c.to ? <Link to={c.to} className="hover:text-foreground">{c.label}</Link> : <span aria-current="page" className="text-foreground/80">{c.label}</span>}
+              <li key={c.to} className="flex min-w-0 items-center gap-1.5">
+                {i > 0 && <ChevronRight className="size-3" aria-hidden="true" />}
+                <Link to={c.to} className="hover:text-foreground">{c.label}</Link>
               </li>
             ))}
           </ol>
         </nav>
 
-        <header>
-          <p className={cn(kicker, "flex items-center gap-2.5")}>
-            <span className="label-rule" aria-hidden="true" />
-            {lesson.subtopic ?? lesson.topic}
-          </p>
-          <h1 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{lesson.title}</h1>
-          <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            {lesson.term && <span>Term {lesson.term}</span>}
-            {lesson.part && <span>{lesson.part}</span>}
-            {!isStub && <span className="inline-flex items-center gap-1"><Clock className="size-3" aria-hidden="true" /> About {lessonMinutes(lesson)} min</span>}
-            {p?.done && <span className="inline-flex items-center gap-1 text-primary"><Check className="size-3" aria-hidden="true" /> Done</span>}
-            {p?.flagged && <span className="inline-flex items-center gap-1 text-amber-500"><Flag className="size-3" aria-hidden="true" /> Struggling</span>}
-          </p>
+        <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
+          <div className="min-w-0 flex-1 basis-80">
+            <p className={cn(kicker, "flex items-center gap-2.5")}>
+              <span className="label-rule" aria-hidden="true" />
+              {lesson.subtopic ?? lesson.topic}
+            </p>
+            <h1 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{lesson.title}</h1>
+            <div className="mt-3 flex flex-wrap items-center gap-1.5">
+              {pos > 0 && siblings.length > 1 && <span className={chip}>Lesson {pos} of {siblings.length}</span>}
+              {lesson.term && <span className={chip}>Term {lesson.term}</span>}
+              {lesson.part && <span className={chip}>{lesson.part}</span>}
+              {!isStub && <span className={chip}><Clock className="size-3" aria-hidden="true" /> About {lessonMinutes(lesson)} min</span>}
+              {p?.done && <span className={cn(chip, "border-primary/40 bg-primary/10 text-primary")}><Check className="size-3" aria-hidden="true" /> Done</span>}
+              {p?.flagged && <span className={cn(chip, "border-amber-500/40 bg-amber-500/10 text-amber-500")}><Flag className="size-3" aria-hidden="true" /> Struggling</span>}
+            </div>
+          </div>
+          {!isStub && (
+            <div className="flex shrink-0 gap-1.5">
+              <Btn size="sm" variant={p?.flagged ? "primary" : "secondary"} aria-pressed={!!p?.flagged} aria-label={p?.flagged ? "Remove struggling flag" : "Flag as struggling"} onClick={() => update(lesson.id, { flagged: !p?.flagged })}>
+                <Flag aria-hidden="true" /> <span className="hidden sm:inline">{p?.flagged ? "Flagged" : "Flag"}</span>
+              </Btn>
+              <Btn size="sm" variant={p?.done ? "primary" : "secondary"} aria-pressed={!!p?.done} onClick={() => update(lesson.id, { done: !p?.done })}>
+                <Check aria-hidden="true" /> {p?.done ? "Done" : "Mark as done"}
+              </Btn>
+            </div>
+          )}
         </header>
 
         <div className="mt-5 xl:hidden"><Outline lesson={lesson} progress={progress} compact /></div>
@@ -130,33 +164,55 @@ export default function LessonPage() {
           </section>
         )}
 
-        <nav aria-label="Previous and next lesson" className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <nav aria-label="Previous and next lesson" className="mt-6 grid gap-3 sm:grid-cols-2">
           {prev ? (
-            <Link to={`/library/${prev.id}`} className="card card-interactive flex min-w-0 flex-1 items-center gap-2 px-4 py-3 text-left">
-              <ChevronLeft className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
-              <span className="min-w-0"><span className={cn(kicker, "block text-[9.5px]")}>Previous</span><span className="block truncate text-[13px] font-medium">{prev.title}</span></span>
+            <Link to={`/library/${prev.id}`} className="card card-interactive group flex min-w-0 items-center gap-3 px-4 py-3.5 text-left">
+              <ChevronLeft className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-x-0.5" aria-hidden="true" />
+              <span className="min-w-0"><span className={cn(kicker, "block text-[9.5px]")}>Previous lesson</span><span className="block truncate text-[13px] font-medium group-hover:text-primary">{prev.title}</span></span>
             </Link>
-          ) : <span className="hidden flex-1 sm:block" />}
+          ) : <span className="hidden sm:block" />}
           {next ? (
-            <Link to={`/library/${next.id}`} className="card card-interactive flex min-w-0 flex-1 items-center justify-end gap-2 px-4 py-3 text-right">
-              <span className="min-w-0"><span className={cn(kicker, "block text-[9.5px]")}>Next</span><span className="block truncate text-[13px] font-medium">{next.title}</span></span>
+            <Link to={`/library/${next.id}`} className={cn("card card-interactive group flex min-w-0 items-center justify-end gap-3 px-4 py-3.5 text-right", p?.done && "border-primary/50")}>
+              <span className="min-w-0"><span className={cn(kicker, "block text-[9.5px]")}>Next lesson</span><span className="block truncate text-[13px] font-medium group-hover:text-primary">{next.title}</span></span>
+              <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+            </Link>
+          ) : (
+            <Link to={`${base}/${topicDir}`} className="card card-interactive group flex min-w-0 items-center justify-end gap-3 px-4 py-3.5 text-right">
+              <span className="min-w-0"><span className={cn(kicker, "block text-[9.5px]")}>That's the last one</span><span className="block truncate text-[13px] font-medium group-hover:text-primary">Back to {lesson.topic}</span></span>
               <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
             </Link>
-          ) : <span className="hidden flex-1 sm:block" />}
+          )}
         </nav>
+        <p className="mt-3 hidden text-center text-[11px] text-muted-foreground sm:block">Tip: press the left and right arrow keys to move between lessons.</p>
       </article>
 
-      <aside className="sticky top-6 hidden h-fit w-[220px] shrink-0 xl:block">
+      <aside className="sticky top-20 hidden h-fit max-h-[calc(100svh-6rem)] w-[232px] shrink-0 space-y-6 overflow-y-auto xl:block">
+        {siblingLive.length > 0 && (
+          <div className="card p-3.5">
+            <div className="flex items-baseline justify-between gap-2">
+              <p className={cn(kicker, "text-[9.5px]")}>Your progress</p>
+              <p className="text-[11px] tabular-nums text-muted-foreground">{siblingDone}/{siblingLive.length}</p>
+            </div>
+            <Meter pct={Math.round((100 * siblingDone) / siblingLive.length)} className="mt-2.5" />
+            <p className="mt-2 text-[11px] text-muted-foreground">{siblingDone === siblingLive.length ? "Everything here is done." : `${siblingLive.length - siblingDone} to go in ${lesson.subtopic ?? lesson.topic}`}</p>
+          </div>
+        )}
+
         <Outline lesson={lesson} progress={progress} />
+
         {headings.length > 1 && !isStub && (
-          <nav aria-label="On this page" className="mt-6">
-            <p className={cn(kicker, "flex items-center gap-1.5 text-[9.5px]")}><List className="size-3" aria-hidden="true" /> Contents</p>
+          <nav aria-label="On this page">
+            <p className={cn(kicker, "flex items-center gap-1.5 text-[9.5px]")}><List className="size-3" aria-hidden="true" /> On this page</p>
             <ul className="mt-2 border-l border-border">
               {headings.map((h, i) => (
                 <li key={h}>
                   <button
                     type="button"
-                    className="-ml-px block w-full border-l-2 border-transparent py-1.5 pl-3 text-left text-[12px] text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
+                    aria-current={active === i ? "location" : undefined}
+                    className={cn(
+                      "-ml-px block w-full border-l-2 py-1.5 pl-3 text-left text-[12px] transition-colors",
+                      active === i ? "border-primary font-medium text-foreground" : "border-transparent text-muted-foreground hover:border-muted-foreground hover:text-foreground",
+                    )}
                     onClick={() => document.querySelectorAll(".prose-lesson h2")[i]?.scrollIntoView({ behavior: "smooth", block: "start" })}
                   >
                     {h}
@@ -166,6 +222,10 @@ export default function LessonPage() {
             </ul>
           </nav>
         )}
+
+        <Link to={`${base}/${topicDir}`} className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground">
+          <ChevronLeft className="size-4" aria-hidden="true" /> Back to {lesson.topic}
+        </Link>
       </aside>
     </div>
   );
@@ -221,5 +281,57 @@ function Outline({ lesson, progress, compact }: { lesson: Lesson; progress: Reco
       <p className="mb-2 mt-1 flex items-center gap-1 text-sm font-medium"><ArrowRight className="size-3 text-muted-foreground" aria-hidden="true" />{heading}</p>
       {list}
     </nav>
+  );
+}
+
+/** Index of the "##" section the reader is currently in, for highlighting the contents list. */
+function useActiveHeading(key?: string) {
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    setActive(0);
+    let off = () => {};
+    const t = setTimeout(() => {
+      const heads = Array.from(document.querySelectorAll<HTMLElement>(".prose-lesson h2"));
+      if (!heads.length) return;
+      const onScroll = () => {
+        let idx = 0;
+        heads.forEach((h, i) => {
+          if (h.getBoundingClientRect().top < 140) idx = i;
+        });
+        setActive(idx);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      off = () => window.removeEventListener("scroll", onScroll);
+    }, 0);
+    return () => {
+      clearTimeout(t);
+      off();
+    };
+  }, [key]);
+  return active;
+}
+
+/** A thin bar under the top bar that fills as you read down the page. */
+function ReadProgress() {
+  const [pct, setPct] = useState(0);
+  useEffect(() => {
+    const on = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setPct(max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0);
+    };
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    return () => {
+      window.removeEventListener("scroll", on);
+      window.removeEventListener("resize", on);
+    };
+  }, []);
+  return (
+    <div aria-hidden="true" className="sticky top-14 z-10 h-0.5 rounded-full bg-border/50">
+      <div className="h-full rounded-full bg-primary transition-[width] duration-100 motion-reduce:transition-none" style={{ width: `${pct}%` }} />
+    </div>
   );
 }

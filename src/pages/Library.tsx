@@ -48,9 +48,10 @@ export default function Library() {
   const numbered = new Map<string, number>(); // topic id -> number, in ATP order across the subject
   tree.forEach((p) => p.terms.forEach((tm) => tm.topics.forEach((t) => numbered.set(t.id, numbered.size + 1))));
 
-  /* ---- Topic page: sub-topics with their lesson cards ---- */
+  /* ---- Topic page: lesson rows grouped by sub-topic + overview sidebar ---- */
   if (topicDir) {
-    const topic = tree.flatMap((p) => p.terms.flatMap((tm) => tm.topics)).find((t) => t.dir === topicDir);
+    const flat = tree.flatMap((p) => p.terms.flatMap((tm) => tm.topics));
+    const topic = flat.find((t) => t.dir === topicDir);
     if (!topic) {
       return (
         <div>
@@ -64,49 +65,126 @@ export default function Library() {
     const n = numbered.get(topic.id) ?? 1;
     const live = topic.lessons.filter((l) => l.status === "live");
     const done = live.filter((l) => progress[l.id]?.done).length;
+    const pct = live.length ? Math.round((100 * done) / live.length) : 0;
     const hasSubs = topic.subtopics.some((s) => s.title);
+    const next = live.find((l) => !progress[l.id]?.done);
+    const flagged = live.filter((l) => progress[l.id]?.flagged);
+    const minsLeft = live.filter((l) => !progress[l.id]?.done).reduce((m, l) => m + lessonMinutes(l), 0);
+    const left = minsLeft >= 60 ? `${Math.floor(minsLeft / 60)} h ${minsLeft % 60} min` : `${minsLeft} min`;
+    const at = flat.findIndex((x) => x.id === topic.id);
+    const hasLive = (x: TopicNode) => x.lessons.some((l) => l.status === "live");
+    const prevTopic = flat.slice(0, at).reverse().find(hasLive);
+    const nextTopic = flat.slice(at + 1).find(hasLive);
+    const groups = hasSubs ? topic.subtopics : [{ id: "all", title: "", lessons: topic.lessons }];
+
     return (
       <div>
         <Link to={`/library/${slug}`} className="mb-4 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
           <ChevronLeft className="size-4" aria-hidden="true" /> {subject.name}
         </Link>
         <PageHead
-          kicker={[topic.part, topic.term ? `Term ${topic.term}` : ""].filter(Boolean).join(" · ") || "Topic"}
+          kicker={[topic.part, topic.term ? `Term ${topic.term}` : ""].filter(Boolean).join(", ") || "Topic"}
           title={`${n}. ${topic.title}`}
-          sub={live.length ? `${done} of ${live.length} lessons done` : "Coming soon"}
-        />
-        {live.length > 0 && <div className="mt-4 max-w-md"><Meter pct={Math.round((100 * done) / live.length)} color={subject.color} /></div>}
-        <div className="mt-8 space-y-8">
-          {hasSubs ? (
-            topic.subtopics.map((s, si) => {
+          sub={live.length ? `${live.length} ${live.length === 1 ? "lesson" : "lessons"}, ${done} done` : "Coming soon"}
+        >
+          {next && (
+            <Btn variant="primary" asChild>
+              <Link to={`/library/${next.id}`}>{done > 0 ? "Continue" : "Start"} <ArrowRight aria-hidden="true" /></Link>
+            </Btn>
+          )}
+        </PageHead>
+
+        <div className="mt-6 border-t border-border pt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-10">
+          <div className="min-w-0 space-y-8">
+            {groups.map((s, si) => {
               const sl = s.lessons.filter((l) => l.status === "live");
               const sd = sl.filter((l) => progress[l.id]?.done).length;
               return (
-                <section key={s.id} id={`sub-${s.id}`} className="scroll-mt-6">
-                  <div className={cn("mb-3 flex flex-wrap items-center gap-x-3 gap-y-1", sl.length === 0 && "opacity-50")}>
-                    <h2 className={cn(kicker, "flex min-w-0 flex-1 basis-48 items-center gap-2.5")}>
-                      <span className="label-rule" aria-hidden="true" />
-                      <span className="tabular-nums">{n}.{si + 1}</span>
-                      {s.title}
-                    </h2>
-                    {sl.length ? (
-                      <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">{sl.length} {sl.length === 1 ? "lesson" : "lessons"} · {sd}/{sl.length} done</span>
-                    ) : (
-                      <ComingSoon />
-                    )}
-                  </div>
-                  <ul className="space-y-2">{s.lessons.map((l, i) => <LessonCard key={l.id} l={l} i={i} p={progress[l.id]} />)}</ul>
+                <section key={s.id} id={s.title ? `sub-${s.id}` : undefined} className="scroll-mt-20">
+                  {s.title && (
+                    <div className={cn("mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-1", sl.length === 0 && "opacity-50")}>
+                      <h2 className="text-sm font-semibold tracking-tight"><span className="mr-2 tabular-nums text-muted-foreground">{n}.{si + 1}</span>{s.title}</h2>
+                      {sl.length ? <span className="text-[11px] tabular-nums text-muted-foreground">{sd}/{sl.length} done</span> : <ComingSoon />}
+                    </div>
+                  )}
+                  <ul className="card divide-y divide-border overflow-hidden">
+                    {s.lessons.map((l, i) => <LessonCard key={l.id} l={l} i={i} p={progress[l.id]} />)}
+                  </ul>
                 </section>
               );
-            })
-          ) : (
-            <ul className="space-y-2">{topic.lessons.map((l, i) => <LessonCard key={l.id} l={l} i={i} p={progress[l.id]} />)}</ul>
-          )}
+            })}
+          </div>
+
+          <aside className="mt-10 lg:mt-0">
+            <div className="space-y-6 lg:sticky lg:top-20">
+              <div className="card flex items-center gap-4 p-4">
+                <Ring value={done} max={live.length} size={84} stroke={7}>
+                  <span className="text-lg font-semibold tabular-nums">{pct}%</span>
+                </Ring>
+                <div className="min-w-0 text-xs text-muted-foreground">
+                  <p className="text-sm font-medium text-foreground tabular-nums">{done} of {live.length}</p>
+                  <p>lessons done</p>
+                  {next && <p className="mt-1.5">About {left} left</p>}
+                </div>
+              </div>
+
+              {hasSubs && topic.subtopics.length > 1 && (
+                <nav aria-label="Jump to sub-topic">
+                  <h2 className={cn(kicker, "mb-2 px-1")}>In this topic</h2>
+                  <ul className="divide-y divide-border">
+                    {topic.subtopics.map((s, si) => {
+                      const sl = s.lessons.filter((l) => l.status === "live");
+                      return (
+                        <li key={s.id}>
+                          <a href={`#sub-${s.id}`} className="flex items-center justify-between gap-3 px-1 py-2 text-[13px] transition-colors hover:text-primary">
+                            <span className="truncate"><span className="mr-2 tabular-nums text-muted-foreground">{n}.{si + 1}</span>{s.title}</span>
+                            <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">{sl.length ? `${sl.filter((l) => progress[l.id]?.done).length}/${sl.length}` : "Soon"}</span>
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              )}
+
+              {flagged.length > 0 && (
+                <div>
+                  <h2 className={cn(kicker, "mb-2 px-1")}>Struggling</h2>
+                  <ul className="divide-y divide-border">
+                    {flagged.map((l) => (
+                      <li key={l.id}>
+                        <Link to={`/library/${l.id}`} className="flex items-center gap-2 px-1 py-2 text-[13px] transition-colors hover:text-primary">
+                          <Flag className="size-3.5 shrink-0 text-amber-500" aria-hidden="true" />
+                          <span className="truncate">{l.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {(prevTopic || nextTopic) && (
+                <nav aria-label="Other topics" className="flex flex-col gap-2">
+                  {prevTopic && (
+                    <Link to={`/library/${slug}/${prevTopic.dir}`} className="card card-interactive group flex items-center gap-3 px-3.5 py-3">
+                      <ChevronLeft className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+                      <span className="min-w-0"><span className={cn(kicker, "block")}>Previous topic</span><span className="block truncate text-[13px] font-medium group-hover:text-primary">{prevTopic.title}</span></span>
+                    </Link>
+                  )}
+                  {nextTopic && (
+                    <Link to={`/library/${slug}/${nextTopic.dir}`} className="card card-interactive group flex items-center gap-3 px-3.5 py-3">
+                      <span className="min-w-0 flex-1"><span className={cn(kicker, "block")}>Next topic</span><span className="block truncate text-[13px] font-medium group-hover:text-primary">{nextTopic.title}</span></span>
+                      <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+                    </Link>
+                  )}
+                </nav>
+              )}
+            </div>
+          </aside>
         </div>
       </div>
     );
   }
-
   /* ---- Subject page: overview sidebar + Part > Term > topic rows ---- */
   const all = lessonsForSubject(slug);
   const done = all.filter((l) => progress[l.id]?.done).length;
@@ -282,39 +360,37 @@ function TopicCard({ t, n, slug, progress }: { t: TopicNode; n: number; slug: st
     <Link id={`topic-${t.dir}`} to={`/library/${slug}/${t.dir}`} className="group flex items-center gap-3.5 px-4 py-3.5 transition-colors hover:bg-secondary/50">{body}</Link>
   );
 }
-/** A lesson as a card: number, title, reading time, status. Stubs are inert and greyed. */
+/** A lesson as a row: number or tick, title, reading time, status. Stubs are inert and greyed. */
 function LessonCard({ l, i, p }: { l: Lesson; i: number; p?: Progress }) {
   if (l.status === "stub") {
     return (
-      <li aria-disabled="true" className="card flex cursor-not-allowed select-none items-center gap-4 px-5 py-3 opacity-45">
-        <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-border text-muted-foreground"><Lock className="size-4" aria-hidden="true" /></span>
-        <span className="min-w-0 flex-1 truncate text-[13.5px]">{l.title}</span>
+      <li aria-disabled="true" className="flex cursor-not-allowed select-none items-center gap-3.5 px-4 py-3 opacity-45">
+        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-muted-foreground"><Lock className="size-3.5" aria-hidden="true" /></span>
+        <span className="min-w-0 flex-1 truncate text-sm">{l.title}</span>
         <ComingSoon />
       </li>
     );
   }
   return (
     <li>
-      <Link to={`/library/${l.id}`} className="card card-interactive group flex items-center gap-4 px-5 py-4">
-        <span className={cn("grid size-9 shrink-0 place-items-center rounded-lg border border-border bg-secondary text-[11.75px] font-semibold tabular-nums", p?.done ? "text-primary" : "text-muted-foreground")}>
+      <Link to={`/library/${l.id}`} className="group flex items-center gap-3.5 px-4 py-3.5 transition-colors hover:bg-secondary/50">
+        <span className={cn("grid size-8 shrink-0 place-items-center rounded-lg text-xs font-semibold tabular-nums", p?.done ? "bg-primary/15 text-primary" : "bg-secondary text-muted-foreground")}>
           {p?.done ? <Check aria-label="Done" className="size-4" strokeWidth={2.5} /> : i + 1}
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-[13.5px] font-semibold group-hover:text-primary">{l.title}</span>
-          <span className="mt-1 flex items-center gap-1.5 text-[11px] text-muted-foreground"><Clock className="size-3" aria-hidden="true" /> ~{lessonMinutes(l)} min</span>
+          <span className="block truncate text-sm font-medium group-hover:text-primary">{l.title}</span>
+          <span className="mt-0.5 flex items-center gap-1.5 text-[11px] text-muted-foreground"><Clock className="size-3" aria-hidden="true" /> About {lessonMinutes(l)} min</span>
         </span>
         {p?.flagged && (
           <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-medium text-amber-500">
             <Flag aria-label="Flagged as struggling" className="size-3" /> Struggling
           </span>
         )}
-        {p?.done && <span className="shrink-0 rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-medium text-primary">Done</span>}
         <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
       </Link>
     </li>
   );
 }
-
 /* ---------- First page: the subjects overview ---------- */
 
 type Filter = "all" | "progress" | "new" | "done";
