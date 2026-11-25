@@ -20,6 +20,14 @@ Time allocation and exact weekly hours: not extracted, UNVERIFIED (CAPS shows 4 
 - Grade 12: external NSC with Paper 1 (language), 2 (literature), 3 (writing), 4 (orals); see CAPS Section 4 and DBE papers.
 - Cognitive levels for language/literature papers: CAPS table not extracted, UNVERIFIED.
 
+## 2b. !! 2023/24 DBE ATP: more detailed paper structure than the CAPS tables (and some differences)
+Source: DBE 2023/24 ATP English Home Language Gr 11 https://www.education.gov.za/LinkClick.aspx?fileticket=4WZaNZmHP38%3d&tabid=3205&portalid=0&mid=10754 (read in extracted form).
+- Final exam Task 10 (300 marks): **Paper 1 Language in context 70 marks, 2 hours:** comprehension 30, summary 10, advertisement 10, cartoon 10, prose (language in a prose text) 10. **Paper 2 Literature 80 marks, 2.5 hours:** seen poems 20, unseen poem 10, contextual questions on the novel 25, literary essay on the novel 25. **Paper 3 Writing 100 marks, 3 hours:** essay 50, transactional texts 2 x 25. **Paper 4 Orals 50 marks.**
+- Mid-year Task 7 in the ATP is 150 marks (Paper 1 + Paper 2, same structure) rather than the 250 marks (with Paper 3) in the CAPS table. DISAGREEMENT: CAPS table 250 vs ATP 150; the ATP is the later document; school practice UNCONFIRMED.
+- ATP SBA tasks differ in detail from the CAPS table: Term 1: Task 1 oral (listening, 15), Task 2 transactional writing (25), Task 3 oral (unprepared speech, 15), Task 4 Test 1 (35: comprehension, summary, language structures). Term 2: Task 5 writing (50: reflective, discursive, argumentative, visual stimuli), Task 6 oral (10: unprepared reading aloud / prepared speech), Task 7 mid-year. Term 3: Task 8 literature assignment/project (35), Task 9 oral (10). Term 4: Task 10 final exams.
+- Orals in the ATP: one listening for comprehension, one unprepared speech, and either two prepared speeches OR one prepared speech and one unprepared reading aloud.
+- Literature in the ATP mentions seen poems, an unseen poem and a NOVEL (with folklore also named in Term 2 review); drama is not named in the paper structure I read: UNVERIFIED which genres the school studies.
+
 ## 3. Prior knowledge (Grade 10 checklist)
 - [ ] Comprehension: literal, inferential, evaluative questions; vocabulary in context
 - [ ] Summary writing: main ideas, own words, word limit
