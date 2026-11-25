@@ -25,3 +25,6 @@ Back matter: answers to questions (p195), exam papers (p214), answers to exam pa
 - It does not cover the DRAFT amended CAPS (2026) topics; if those replace the legacy content, this guide will be out of date.
 - The edition year (file path says 2020) and whether it follows the Gr 11 ATP term order are UNVERIFIED. The guide's order is topic 1 to 5; the ATP order was recorded in history.md.
 - Licence: unknown; link only.
+
+## Practice exam section (checked)
+The guide's exam-practice section (p214 on) has three source-based questions (each with five sources A-E) on Lenin's policies, causes of the Great Depression and the effect of eugenics on Nazi race policy, plus three extended-writing (essay) questions on Lenin's economic policies versus communist ideology, weaknesses in the US economy before the crash, and eugenics and the Holocaust. So the practice paper covers Topics 1-3 only; nationalisms (Topic 4) and apartheid (Topic 5) are not in it. Marks per question and memo contents not reviewed (digits lost in extraction). Own-words description only; no questions copied.
