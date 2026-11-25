@@ -26,3 +26,11 @@ Branch: research-content (repo initialised by this run; the folder was not a git
 
 ## Pass 6 status
 - pass6-extras.md written for all subjects except AP Maths (strategy, glossary, formulas/key facts, Gr 11-Gr 12 bridge). Not expert-reviewed.
+
+## RESUME HERE (end of this run)
+- All six passes have had a first treatment. Open items, in priority order:
+  1. AP Maths: needs the user's IEB outline / textbook table of contents (Pass 1-4 blocked).
+  2. Pass 5 full sceptical re-read of every file (only link check + targeted fixes done).
+  3. Pass 3/4 for English HL, Tourism, LO, Religion Studies, Afrikaans FAL (no past papers found; resources weak; verify videos by watching).
+  4. Compare Afrikaans FAL and Religion Studies 2023/24 ATPs line by line with their CAPS files; look for 2025-2027 ATPs on the DBE site.
+  5. History: confirm with the user which Gr 11 curriculum applies in 2027 (legacy vs draft amended CAPS).
