@@ -5,7 +5,7 @@ topic: Vectors in two dimensions
 part: Physics
 term: 1
 subtopic: Resultant of perpendicular vectors
-order: 2101
+order: 101
 pages: []
 ---
 
@@ -171,9 +171,7 @@ name: direction-two-ways
 The same resultant can be described by an angle from the horizontal axis or an angle from the vertical axis. Both are correct if you say which one you used. Make the angle part of the answer in words: "37° south of west" or "23° east of north".
 
 ```diagram
-name: interactive-placeholder
-title: draggable perpendicular vectors with live R and θ
-note: Drag the heads of A and B and watch R and θ update. Not built yet; listed in content/NEEDS_INTERACTIVE.md.
+name: vector-components-explorer
 ```
 
 ## Units and conversions

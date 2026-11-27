@@ -1,4 +1,42 @@
-import { DirectionTwoWays, InteractivePlaceholder, VectorResultant } from "./vectors";
+import { DirectionTwoWays, InteractivePlaceholder, VectorComponentsExplorer, VectorResultant } from "./vectors";
+import {
+  CircuitNetworkExplorer,
+  CoulombAndFieldVisual,
+  FaradayLenzExplorer,
+  InclineForcesExplorer,
+  InverseSquareExplorer,
+} from "./physics";
+import {
+  AcidBaseRedoxVisual,
+  EnthalpyProfileExplorer,
+  GasLawsExplorer,
+  ImfBoilingPointVisual,
+  StoichRoadmapVisual,
+  VseprPolarityExplorer,
+} from "./chemistry";
+import {
+  AfrikaansGrammarTransformer,
+  AfrikaansStompiBuilder,
+  AfrikaansTransactionalTemplates,
+  EnglishEditingGrammarLab,
+  EnglishVisualLiteracyExplorer,
+  EnglishWritingFormatsExplorer,
+} from "./languages";
+import {
+  HistorySourceAnalysisLab,
+  HistoryTimelineExplorer,
+  ReligionConceptsMatrix,
+  ReligionStateModelsExplorer,
+  TourismForexAndItineraryLab,
+  TourismSadcAndServiceExplorer,
+} from "./humanities";
+import {
+  BusinessEnvironmentsRing,
+  BusinessGanttAndCostLab,
+  BusinessMarketingProductionMatrix,
+  LoApsAndFundingLab,
+  LoGoalsAndLifestyleWheel,
+} from "./businessAndLo";
 import { ExpAlwaysPositiveVisual, ExponentAnatomy, FactorPowerVisual, RootVsPowerExplorer, SurdExtraneousVisual, SurdSplitExplorer } from "./exponents";
 import { CompletingSquareVisual, DiscriminantExplorer, InequalitySignVisual, LineParabolaIntersectionVisual, ParabolaVertexVisual } from "./quadratics";
 import { DifferencePyramid, QuadraticDotPattern } from "./patterns";
@@ -42,6 +80,64 @@ export function DiagramBlock({ source }: { source: string }) {
       );
     case "direction-two-ways":
       return <DirectionTwoWays />;
+    case "vector-components-explorer":
+      return <VectorComponentsExplorer />;
+    case "incline-forces-explorer":
+      return <InclineForcesExplorer />;
+    case "inverse-square-explorer":
+      return <InverseSquareExplorer />;
+    case "coulomb-2d-and-field-visual":
+      return <CoulombAndFieldVisual />;
+    case "faraday-lenz-explorer":
+      return <FaradayLenzExplorer />;
+    case "circuit-ohms-power-explorer":
+      return <CircuitNetworkExplorer />;
+    case "vsepr-polarity-explorer":
+      return <VseprPolarityExplorer />;
+    case "imf-boiling-point-visual":
+      return <ImfBoilingPointVisual />;
+    case "gas-laws-explorer":
+      return <GasLawsExplorer />;
+    case "stoich-roadmap-visual":
+      return <StoichRoadmapVisual />;
+    case "enthalpy-profile-explorer":
+      return <EnthalpyProfileExplorer />;
+    case "acid-base-redox-visual":
+      return <AcidBaseRedoxVisual />;
+    case "english-visual-literacy-explorer":
+      return <EnglishVisualLiteracyExplorer />;
+    case "english-editing-grammar-lab":
+      return <EnglishEditingGrammarLab />;
+    case "english-writing-formats-explorer":
+      return <EnglishWritingFormatsExplorer />;
+    case "afrikaans-stompi-builder":
+      return <AfrikaansStompiBuilder />;
+    case "afrikaans-grammar-transformer":
+      return <AfrikaansGrammarTransformer />;
+    case "afrikaans-transactional-templates":
+      return <AfrikaansTransactionalTemplates />;
+    case "history-source-analysis-lab":
+      return <HistorySourceAnalysisLab />;
+    case "history-timeline-explorer":
+      return <HistoryTimelineExplorer />;
+    case "religion-state-models-explorer":
+      return <ReligionStateModelsExplorer />;
+    case "religion-concepts-matrix":
+      return <ReligionConceptsMatrix />;
+    case "tourism-forex-and-itinerary-lab":
+      return <TourismForexAndItineraryLab />;
+    case "tourism-sadc-and-service-explorer":
+      return <TourismSadcAndServiceExplorer />;
+    case "business-environments-ring":
+      return <BusinessEnvironmentsRing />;
+    case "business-gantt-and-cost-lab":
+      return <BusinessGanttAndCostLab />;
+    case "business-marketing-production-matrix":
+      return <BusinessMarketingProductionMatrix />;
+    case "lo-aps-and-funding-lab":
+      return <LoApsAndFundingLab />;
+    case "lo-goals-and-lifestyle-wheel":
+      return <LoGoalsAndLifestyleWheel />;
     case "interactive-placeholder":
       return <InteractivePlaceholder title={o.title ?? "Interactive"} note={o.note ?? ""} />;
     case "exponent-anatomy":

@@ -399,9 +399,9 @@ export function IndependenceExplorer() {
             <>
               <circle cx={102} cy={84} r={46} fill={roleColour.a} fillOpacity={0.14} stroke={roleColour.a} strokeWidth={2} />
               <circle cx={162} cy={84} r={40} fill={roleColour.b} fillOpacity={0.14} stroke={roleColour.b} strokeWidth={2} />
-              <text x={82} y={88} fontSize={11} fontWeight={600} textAnchor="middle" fill={roleColour.a}>12 other ♥</text>
-              <text x={132} y={88} fontSize={11.5} fontWeight={700} textAnchor="middle" fill={roleColour.result}>K♥ (1)</text>
-              <text x={178} y={88} fontSize={11} fontWeight={600} textAnchor="middle" fill={roleColour.b}>3 other K</text>
+              <text x={82} y={88} fontSize={10.5} fontWeight={600} textAnchor="middle" fill={roleColour.a}>12 other H</text>
+              <text x={132} y={88} fontSize={11} fontWeight={700} textAnchor="middle" fill={roleColour.result}>K-H (1)</text>
+              <text x={178} y={88} fontSize={10.5} fontWeight={600} textAnchor="middle" fill={roleColour.b}>3 other K</text>
             </>
           )}
 
@@ -409,8 +409,8 @@ export function IndependenceExplorer() {
             <>
               <circle cx={130} cy={84} r={48} fill={roleColour.a} fillOpacity={0.14} stroke={roleColour.a} strokeWidth={2} />
               <circle cx={146} cy={86} r={28} fill={roleColour.b} fillOpacity={0.22} stroke={roleColour.b} strokeWidth={2} />
-              <text x={96} y={76} fontSize={11} fontWeight={600} textAnchor="middle" fill={roleColour.a}>13 ♦</text>
-              <text x={146} y={90} fontSize={11} fontWeight={700} textAnchor="middle" fill={roleColour.b}>13 ♥</text>
+              <text x={96} y={76} fontSize={10.5} fontWeight={600} textAnchor="middle" fill={roleColour.a}>13 D</text>
+              <text x={146} y={90} fontSize={10.5} fontWeight={700} textAnchor="middle" fill={roleColour.b}>13 H</text>
             </>
           )}
         </svg>

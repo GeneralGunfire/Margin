@@ -1,4 +1,7 @@
-import { AngleArc, Arrow, Axes, Compass, Diagram, InteractivePlaceholder, Label, Line, RightAngle, along, unit, type P } from "./toolkit";
+import { useState } from "react";
+import katex from "katex";
+import { AngleArc, Arrow, Axes, Compass, Diagram, InteractivePlaceholder, Label, Line, RightAngle, along, roleColour, unit, type P } from "./toolkit";
+import { cn } from "@/lib/utils";
 
 /**
  * Vector diagrams. Physics coordinates (y up) are converted to SVG here.
@@ -99,3 +102,146 @@ export function DirectionTwoWays() {
 }
 
 export { InteractivePlaceholder };
+
+function VecTex({ tex }: { tex: string }) {
+  return <span dangerouslySetInnerHTML={{ __html: katex.renderToString(tex, { throwOnError: false, strict: false }) }} />;
+}
+
+/**
+ * Interactive 2D vector explorer: adjust resultant magnitude R and angle theta (0..360 deg)
+ * and see live x/y components, quadrant signs, and resultant triangle.
+ */
+export function VectorComponentsExplorer() {
+  const [mag, setMag] = useState(50);
+  const [deg, setDeg] = useState(37);
+
+  const rad = (deg * Math.PI) / 180;
+  const rx = mag * Math.cos(rad);
+  const ry = mag * Math.sin(rad);
+
+  const W = 320, H = 220;
+  const ox = 160, oy = 110;
+  const scale = 1.45;
+  const ex = ox + rx * scale;
+  const ey = oy - ry * scale;
+
+  const quad =
+    deg === 0 || deg === 90 || deg === 180 || deg === 270 || deg === 360
+      ? "On axis"
+      : deg < 90
+        ? "Q I (+x, +y)"
+        : deg < 180
+          ? "Q II (−x, +y)"
+          : deg < 270
+            ? "Q III (−x, −y)"
+            : "Q IV (+x, −y)";
+
+  return (
+    <figure className="not-prose my-6 overflow-hidden rounded-lg border border-border bg-card">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-4 py-2.5">
+        <span className="text-xs font-medium text-foreground">Interactive 2D vector &amp; components explorer</span>
+        <span className="text-xs text-muted-foreground tabular-nums">{quad}</span>
+      </div>
+
+      <div className="grid items-center gap-4 p-4 sm:grid-cols-[320px_1fr]">
+        <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto block h-auto w-full max-w-[320px]" style={{ background: "var(--dg-bg)", borderRadius: 6 }} aria-hidden="true">
+          <defs>
+            <marker id="vec-exp-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill={roleColour.result} />
+            </marker>
+            <marker id="vec-exp-x" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill={roleColour.a} />
+            </marker>
+            <marker id="vec-exp-y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill={roleColour.b} />
+            </marker>
+          </defs>
+
+          <line x1={18} y1={oy} x2={W - 18} y2={oy} stroke="var(--dg-line)" strokeOpacity={0.4} strokeWidth={1.2} />
+          <line x1={ox} y1={16} x2={ox} y2={H - 16} stroke="var(--dg-line)" strokeOpacity={0.4} strokeWidth={1.2} />
+          <text x={W - 20} y={oy - 6} fontSize={10} textAnchor="end" fill="var(--dg-line)">+x (E)</text>
+          <text x={ox + 6} y={24} fontSize={10} fill="var(--dg-line)">+y (N)</text>
+
+          {/* Dashed rectangle guide */}
+          <line x1={ex} y1={oy} x2={ex} y2={ey} stroke="var(--dg-line)" strokeOpacity={0.35} strokeDasharray="3 3" strokeWidth={1.1} />
+          <line x1={ox} y1={ey} x2={ex} y2={ey} stroke="var(--dg-line)" strokeOpacity={0.35} strokeDasharray="3 3" strokeWidth={1.1} />
+
+          {/* x component */}
+          {Math.abs(rx) > 1.5 && (
+            <line x1={ox} y1={oy} x2={ex} y2={oy} stroke={roleColour.a} strokeWidth={2.3} markerEnd="url(#vec-exp-x)" />
+          )}
+          {/* y component drawn tail-to-head at ex */}
+          {Math.abs(ry) > 1.5 && (
+            <line x1={ex} y1={oy} x2={ex} y2={ey} stroke={roleColour.b} strokeWidth={2.3} markerEnd="url(#vec-exp-y)" />
+          )}
+          {/* Resultant */}
+          <line x1={ox} y1={oy} x2={ex} y2={ey} stroke={roleColour.result} strokeWidth={2.8} markerEnd="url(#vec-exp-r)" />
+
+          {/* Angle arc from +x axis */}
+          {deg > 0 && deg < 360 && (
+            <path
+              d={`M ${ox + 26},${oy} A 26,26 0 ${deg > 180 ? 1 : 0} 0 ${(ox + 26 * Math.cos(rad)).toFixed(1)},${(oy - 26 * Math.sin(rad)).toFixed(1)}`}
+              fill="none"
+              stroke={roleColour.result}
+              strokeWidth={1.5}
+              strokeOpacity={0.75}
+            />
+          )}
+
+          <text
+            x={(ox + ex) / 2}
+            y={(oy + ey) / 2 + (ry >= 0 ? -10 : 14)}
+            fontSize={11}
+            fontWeight={700}
+            textAnchor="middle"
+            fill={roleColour.result}
+            style={{ paintOrder: "stroke", stroke: "var(--dg-bg)", strokeWidth: 4 }}
+          >
+            R = {mag} N
+          </text>
+        </svg>
+
+        <div className="space-y-3 text-xs">
+          <div className="space-y-1">
+            <div className="flex justify-between">
+              <label htmlFor="vec-mag" className="font-medium text-foreground">Magnitude R</label>
+              <span className="tabular-nums text-muted-foreground">{mag} N</span>
+            </div>
+            <input id="vec-mag" type="range" min={10} max={60} step={5} value={mag} onChange={(e) => setMag(Number(e.target.value))} className="w-full accent-primary" />
+          </div>
+
+          <div className="space-y-1">
+            <div className="flex justify-between">
+              <label htmlFor="vec-deg" className="font-medium text-foreground">Direction θ (from +x-axis)</label>
+              <span className="tabular-nums text-muted-foreground">{deg}°</span>
+            </div>
+            <input id="vec-deg" type="range" min={0} max={355} step={5} value={deg} onChange={(e) => setDeg(Number(e.target.value))} className="w-full accent-primary" />
+          </div>
+
+          <div className="flex flex-wrap gap-1">
+            {[37, 130, 215, 310].map((preset) => (
+              <button
+                key={preset}
+                type="button"
+                onClick={() => setDeg(preset)}
+                className={cn(
+                  "rounded px-2 py-0.5 text-[11px] tabular-nums transition-colors",
+                  deg === preset ? "bg-primary font-medium text-primary-foreground" : "bg-secondary text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {preset}°
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-1.5 rounded bg-secondary/50 p-2.5 text-muted-foreground">
+            <div className="overflow-x-auto"><VecTex tex={`R_x = ${mag}\\cos ${deg}^\\circ = ${rx.toFixed(1).replace(".", "{,")}\\text{ N}`} /></div>
+            <div className="overflow-x-auto"><VecTex tex={`R_y = ${mag}\\sin ${deg}^\\circ = ${ry.toFixed(1).replace(".", "{,")}\\text{ N}`} /></div>
+            <div className="overflow-x-auto text-foreground"><VecTex tex={`\\sqrt{R_x^2 + R_y^2} = ${Math.hypot(rx, ry).toFixed(1).replace(".", "{,")}\\text{ N}`} /></div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  );
+}
+

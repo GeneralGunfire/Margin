@@ -48,7 +48,7 @@ Calling an ambiguous angle $\hat{A}$, skipping an intermediate step like `∠s o
 
 ```tryit
 title: Quick check (Picking the right target)
-prompt: You want to prove that line $DE$ is parallel to chord $BC$ in circle $ABC$, and you already have a tangent $FE$ at $A$? Wait: say you have shown $D\hat{A}E = A\hat{B}C = x$ where $E$-$A$-$D$ is a straight line and $A$-$B$ is a transversal. Which reason proves $DE \parallel BC$?
+prompt: You want to prove that tangent line $EAD$ (ordered $E$-$A$-$D$) is parallel to chord $BC$ in circle $ABC$, and you have already shown $D\hat{A}B = A\hat{B}C = x$ across transversal $AB$. Which CAPS reason proves $ED \parallel BC$?
 hint: $D\hat{A}B$ and $A\hat{B}C$ lie on opposite sides of transversal $AB$ between lines $DE$ and $BC$.
 answer: If $D\hat{A}B = A\hat{B}C$ (a Z-shape across $AB$), then $DE \parallel BC$ ($\text{alt }\angle\text{s } =$)! Always name which angle pair is equal (`alt ∠s =`, not just `parallel lines`).
 ```
@@ -56,7 +56,7 @@ answer: If $D\hat{A}B = A\hat{B}C$ (a Z-shape across $AB$), then $DE \parallel B
 ## 3. Worked multi-theorem riders
 
 ```steps
-title: Example 1 (Chasing x across 4 theorems): Tangent PT touches circle ABC at B, with A, B, C on the circle and diameter AC passing through centre O. Given CÂB = x, express PÂB? No: express CḂT, AĈB, and PḂA in terms of x (where P-B-T is ordered with A on the P-side and C on the T-side).
+title: Example 1 (Chasing x across 4 theorems): Tangent PT touches circle ABC at B, with A, B, C on the circle and diameter AC passing through centre O. Given CÂB = x, express CḂT, AĈB, and PḂA in terms of x (where P-B-T is ordered with A on the P-side and C on the T-side).
 Use diameter $AC$ for $90^\circ$ :: A\hat{B}C = 90^\circ \quad (\angle\text{ in semi-circle})
 Find $A\hat{C}B$ in $\triangle ABC$ :: A\hat{C}B = 90^\circ - x \quad (\angle\text{s of }\triangle)
 Apply tan-chord across chord $BC$ :: C\hat{B}T = C\hat{A}B = x \quad (\text{tan-chord theorem})
